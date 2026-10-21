@@ -1,5 +1,7 @@
 # EvCC Degree Planner
 
+Engineering, Computer Science and Information Technology pathways at Everett Community College: course prerequisite maps, transfer requirements for Washington universities and applied bachelor's programs, a checklist export, and an optional quarter-by-quarter route planner.
+
 A static site: `index.html` (the app) and `data.json` (all courses, degrees and transfer requirements). There is no server code and no database. Students' "completed" checkmarks are saved only in their own browser.
 
 ## Publish on GitHub Pages

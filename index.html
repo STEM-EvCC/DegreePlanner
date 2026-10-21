@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="EvCC engineering, computer science and IT courses, prerequisites and transfer requirements.">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>EvCC Engineering Pathways</title>
+<title>EvCC Degree Planner</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
 :root{
   --bg:#F3F5F7; --surface:#FFFFFF; --surface-2:#E9EDF1; --ink:#15212C; --ink-2:#4A5865; --ink-3:#5E6A76;
   --rule:#D5DCE3; --accent:#0F5E86; --accent-ink:#FFFFFF; --focus:#E07A1F;
-  --l-math:#2C5FC4; --l-phys:#D1512A; --l-chem:#23905A; --l-bio:#7C9A1E; --l-engr:#7446BF; --l-cs:#0A8E9A; --l-engl:#A97A1F; --l-gen:#66717C;
+  --l-math:#2C5FC4; --l-phys:#D1512A; --l-chem:#23905A; --l-bio:#7C9A1E; --l-engr:#7446BF; --l-cs:#0A8E9A; --l-engl:#A97A1F; --l-gen:#66717C; --l-it:#B23A6E;
   --anc:#E07A1F; --desc:#0F5E86;
   --ok:#23905A; --warn:#B7791F; --bad:#C2413A;
   --lane-tint:.06;
@@ -28,12 +28,12 @@
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
   --bg:#0F161D; --surface:#17212B; --surface-2:#1F2B36; --ink:#E6ECF1; --ink-2:#A9B6C2; --ink-3:#97A4B0;
   --rule:#2C3A47; --accent:#5DB3DD; --accent-ink:#0B1218; --focus:#F09A4A;
-  --l-math:#6E9BF0; --l-phys:#F07A55; --l-chem:#4FC287; --l-bio:#A9C64A; --l-engr:#A584E8; --l-cs:#3CC2CD; --l-engl:#D6A54A; --l-gen:#9AA6B1;
+  --l-math:#6E9BF0; --l-phys:#F07A55; --l-chem:#4FC287; --l-bio:#A9C64A; --l-engr:#A584E8; --l-cs:#3CC2CD; --l-engl:#D6A54A; --l-gen:#9AA6B1; --l-it:#E57FA8;
   --anc:#F09A4A; --desc:#5DB3DD; --ok:#4FC287; --warn:#E0A84A; --bad:#EF7B73; --lane-tint:.09; color-scheme:dark }}
 :root[data-theme="dark"]{
   --bg:#0F161D; --surface:#17212B; --surface-2:#1F2B36; --ink:#E6ECF1; --ink-2:#A9B6C2; --ink-3:#97A4B0;
   --rule:#2C3A47; --accent:#5DB3DD; --accent-ink:#0B1218; --focus:#F09A4A;
-  --l-math:#6E9BF0; --l-phys:#F07A55; --l-chem:#4FC287; --l-bio:#A9C64A; --l-engr:#A584E8; --l-cs:#3CC2CD; --l-engl:#D6A54A; --l-gen:#9AA6B1;
+  --l-math:#6E9BF0; --l-phys:#F07A55; --l-chem:#4FC287; --l-bio:#A9C64A; --l-engr:#A584E8; --l-cs:#3CC2CD; --l-engl:#D6A54A; --l-gen:#9AA6B1; --l-it:#E57FA8;
   --anc:#F09A4A; --desc:#5DB3DD; --ok:#4FC287; --warn:#E0A84A; --bad:#EF7B73; --lane-tint:.09; color-scheme:dark }
 
 *{box-sizing:border-box}
@@ -332,8 +332,8 @@ th .colh .inlist{font:600 .62rem/1 var(--f-mono);letter-spacing:.05em;text-trans
 <div class="wrap">
   <header class="top">
     <div class="brand">
-      <h1>Engineering Pathways <span class="proto">Prototype</span></h1>
-      <div class="sub">Everett Community College · engineering courses, prerequisites and transfer requirements</div>
+      <h1>Degree Planner <span class="proto">Prototype</span></h1>
+      <div class="sub">Everett Community College · Engineering, Computer Science &amp; IT courses, prerequisites and transfer requirements</div>
     </div>
     <div class="top-right">
       <label class="switch" title="Build a quarter-by-quarter plan for one major"><input type="checkbox" id="routeToggle"> Plan my route</label>
@@ -366,9 +366,9 @@ const S={who:{},majors:[],routeOn:false,hl:true,view:"map",drawer:false,track:nu
 
 const LANES=[
  {id:"math",label:"Math",v:"--l-math"},{id:"phys",label:"Physics",v:"--l-phys"},{id:"chem",label:"Chemistry",v:"--l-chem"},
- {id:"bio",label:"Biology",v:"--l-bio"},{id:"engr",label:"Engineering",v:"--l-engr"},{id:"cs",label:"Computer Sci",v:"--l-cs"},
+ {id:"bio",label:"Biology",v:"--l-bio"},{id:"engr",label:"Engineering",v:"--l-engr"},{id:"cs",label:"Comp Sci",v:"--l-cs"},{id:"it",label:"Info Tech",v:"--l-it"},
  {id:"engl",label:"English",v:"--l-engl"},{id:"gen",label:"Gen Ed",v:"--l-gen"}];
-const laneOf=c=>{const p=c.split(" ")[0];if(c==="STEM 102")return"engr";
+const laneOf=c=>{const p=c.split(" ")[0];if(c==="STEM 102")return"engr"; if(c==="STEM 103"||p==="IT"||p==="CL")return"it"; if(p==="TS")return"math";
  return p.startsWith("MATH")?"math":p.startsWith("PHYS")?"phys":p.startsWith("CHEM")?"chem":p.startsWith("BIOL")?"bio":
  p.startsWith("ENGR")?"engr":p==="MFG"?"phys":p.startsWith("CS")?"cs":p.startsWith("ENGL")?"engl":"gen"};
 const laneColor=id=>`var(${LANES.find(l=>l.id===id).v})`;
@@ -386,7 +386,10 @@ function syncFocus(){ if(!S.schools.includes(S.focus))S.focus=S.schools[0]||""; 
 function stag(s,cat){return`<span class="stag c-${cat}" title="${esc(s.short+": "+CAT[cat].l)}">${esc(s.abbr||s.short)}</span>`}
 const sid=()=>S.school||"";
 const schoolProg=(sch=school(),major=S.major)=>{ if(!sch)return null; let p=sch.programs.find(x=>x.major===major); if(!p&&major==="environmental")p=sch.programs.find(x=>x.major==="civil"&&/env/i.test(x.degree)); return p||null};
-const specKey=(sid,spec)=>{ if(!sid)return null; if(sid==="uw-bothell"&&spec["UW Bothell"]!==undefined)return"UW Bothell"; if(sid.startsWith("uw-"))return"UW"; if(sid.startsWith("wsu"))return"WSU"; return null};
+const specKey=(sid,spec)=>{ if(!sid)return null; const sc=D.schools.find(s=>s.id===sid), keys=Object.keys(spec||{});
+  if(sc&&keys.includes(sc.short))return sc.short; if(sid==="uw-bothell"&&keys.includes("UW Bothell"))return"UW Bothell";
+  if((sid==="uw-seattle"||sid==="uw-bothell")&&keys.includes("UW"))return"UW"; if(sid.startsWith("wsu")&&keys.includes("WSU"))return"WSU"; return null };
+const specKeyOld=(sid,spec)=>{ if(!sid)return null; if(sid==="uw-bothell"&&spec["UW Bothell"]!==undefined)return"UW Bothell"; if(sid.startsWith("uw-"))return"UW"; if(sid.startsWith("wsu"))return"WSU"; return null};
 function getSpec(p=prog(),major=S.major,sid=S.school){
   let by=p.spec.by[major]||{}; if(by.same_as)by=p.spec.by[by.same_as];
   const key=specKey(sid,by);
@@ -396,7 +399,7 @@ function getSpec(p=prog(),major=S.major,sid=S.school){
   const sp=schoolProg(D.schools.find(s=>s.id===sid),major); if(!sp)return{none:true,reason:"No transfer data for this school and major yet."};
   const core=coreCourses(p); const courses=[],later=[];
   sp.requirements.forEach(r=>{ if(r.logic==="all")r.courses.forEach(c=>{ if(D.courses[c]&&!core.has(c)){ (r.category==="degree"||r.category==="recommended"?later:courses).push(c)} }) });
-  return{src:"school",courses:[...new Set(courses)],later:[...new Set(later)].filter(c=>!courses.includes(c)),note:"EvCC's catalog only lists specialization courses for UW and WSU. For this school the map uses the university's own transfer requirements. Confirm your picks with an advisor."};
+  return{src:"school",courses:[...new Set(courses)],later:[...new Set(later)].filter(c=>!courses.includes(c)),note:"EvCC's catalog doesn't list specialization courses for this school, so the site uses the school's own transfer requirements. Confirm your picks with an advisor."};
 }
 function coreCourses(p=prog()){const s=new Set();p.groups.forEach(g=>g.items.forEach(it=>{if(it.course)s.add(it.course)}));return s}
 function choiceSets(p=prog()){const a=[];p.groups.forEach(g=>g.items.forEach(it=>{if(it.one_of)a.push(it.one_of)}));return a}
@@ -439,9 +442,19 @@ const crNum=c=>{const v=parseFloat(String(C(c).credits).split("-").pop());return
 
 /* ---------- layout of the map ---------- */
 let L=null;
+function areasSel(){ const a=new Set(); S.majors.forEach(m=>D.programs.filter(p=>p.majors.includes(m)).forEach(p=>a.add(p.area||"engineering"))); if(!a.size)a.add("engineering"); return a }
+function areaCourses(areas){ const set=new Set(); const add=c=>{if(D.courses[c]&&!D.courses[c].hidden&&!D.courses[c].menu)set.add(c)};
+  const menuOk=c=>/^(IT|CS|CL|STEM)/.test(c);
+  D.programs.filter(p=>areas.has(p.area||"engineering")).forEach(p=>{ p.groups.forEach(g=>g.items.forEach(it=>{if(it.course)add(it.course);(it.one_of||[]).forEach(c=>{if(it.one_of.length<4||menuOk(c))add(c)})}));
+    Object.values(p.spec.by||{}).forEach(by=>Object.values(by||{}).forEach(v=>{ if(!v||typeof v!=="object")return; ["courses","later","bothell_extra"].forEach(k=>(v[k]||[]).forEach(add)); (v.one_of||[]).forEach(a=>a.forEach(add)); if(v.choose)(v.choose.from||[]).forEach(add) })) });
+  D.schools.forEach(sc=>sc.programs.filter(p=>S.majors.includes(p.major)).forEach(p=>{p.requirements.forEach(r=>r.courses.forEach(add));(p.choose_groups||[]).forEach(g=>g.courses.forEach(add))}));
+  // pull in prerequisites: for "A or B" groups add only the first option unless one is already shown
+  let changed=true; while(changed){ changed=false; [...set].forEach(c=>(C(c).prereq?.all||[]).forEach(g=>{ const opts=(g.any||[]).filter(o=>D.courses[o.course]&&!D.courses[o.course].hidden&&!D.courses[o.course].menu&&!o.alt);
+    if(!opts.length||opts.some(o=>set.has(o.course)))return; add(opts[0].course); changed=true })) }
+  return set }
 function computeLayout(){
-  const codes=Object.keys(D.courses).filter(c=>!D.courses[c].hidden);
-  CHILD={}; codes.forEach(c=>preEdges(c).forEach(o=>{(CHILD[o.course]=CHILD[o.course]||[]).push(c)}));
+  const areas=areasSel(); S.areaKey=[...areas].sort().join("+"); const vis=areaCourses(areas); for(const k in _desc)delete _desc[k];
+  const codes=Object.keys(D.courses).filter(c=>vis.has(c));
   const lvl={}, OV=D.layout_overrides||{}; const visit=(c,stack=new Set())=>{ if(lvl[c]!=null)return lvl[c]; if(stack.has(c))return 0;
     if(OV[c]&&OV[c].same_as&&!stack.has(OV[c].same_as)){stack.add(c);const v=visit(OV[c].same_as,stack);stack.delete(c);return lvl[c]=v}
     stack.add(c);
@@ -477,7 +490,7 @@ function renderMap(){
       </div>
     </div>
     <div class="mapscroll" id="mapscroll"${S.listView?" hidden":""}></div><div id="maplist"${S.listView?"":" hidden"}></div>
-    <div class="mapcap">Every course in EvCC's engineering degrees is here. Courses your chosen majors don't need are greyed out. Each arrow is a prerequisite; dashed arrows may be taken in the same quarter. Click a course to trace what it needs (orange) and what it opens up (blue).</div>
+    <div class="mapcap">Every course in EvCC's degrees for your chosen fields is here. Courses your chosen majors don't need are greyed out. Each arrow is a prerequisite; dashed arrows may be taken in the same quarter. Click a course to trace what it needs (orange) and what it opens up (blue).</div>
    </div>
   </div>`;
   drawSVG(); renderLegend(); if(S.listView)renderList();
@@ -503,7 +516,7 @@ function renderLegend(){
   $("#legend").innerHTML=`<span class="k"><span class="sw" style="border-color:var(--ink-2)"></span>Needed for ${S.majors.length>1?"your majors":esc(D.majors[S.majors[0]]||"your major")}</span>
    <span class="k"><span class="sw" style="border-style:dotted;border-color:var(--ink-2)"></span>Choose one</span>
    <span class="k"><span class="sw" style="border-style:dashed;border-color:var(--ink-3)"></span>Prereq if needed</span>
-   <span class="k"><span class="sw" style="border-color:var(--ink-3);opacity:.35"></span>Other engineering courses</span>
+   <span class="k"><span class="sw" style="border-color:var(--ink-3);opacity:.35"></span>Other courses in these degrees</span>
    <span class="k"><svg width="10" height="14"><text x="1" y="12" class="star">*</text></svg>BS course you can take early</span>
    ${S.schools.length?Object.entries(CAT).map(([k,v])=>`<span class="k"><span class="catpill c-${k}">${v.s}</span>${v.l}</span>`).join(""):""}`;
 }
@@ -642,7 +655,7 @@ function degreePanel(){
       const label=it.course?chip(it.course)+` <span class="rowt">${esc(C(it.course).short||C(it.course).title)}</span>`:it.one_of?it.one_of.map(chip).join(' <span class="rowt">or</span> '):`<b>${esc(it.label)}</b>`;
       return`<li><span class="ck${d?" y":""}">${d?"✓":""}</span><span>${label}${it.hint?`<div class="rowt">${esc(it.hint)}</div>`:""}</span><span class="cr-sm">${esc(it.credits||(it.course?fmtCr(it.course):""))}</span></li>`}).join("");
     return`<div><div class="sect-t">${esc(g.label)} · ${g.credits} cr${g.min_grade?" · min "+g.min_grade:""}</div><ul class="reqlist">${rows}</ul>${g.note&&S.advisor?`<div class="rowt" style="margin-top:6px">${esc(g.note)}</div>`:""}</div>`}).join("");
-  let spec=""; if(sp.none)spec=`<div><div class="sect-t">Specialization · ${p.spec.credits} cr</div><div class="note">${esc(sp.reason)}</div></div>`;
+  let spec=""; if(!p.spec.credits)spec=""; else if(sp.none)spec=`<div><div class="sect-t">Specialization · ${p.spec.credits} cr</div><div class="note">${esc(sp.reason)}</div></div>`;
   else{ const rows=[]; (sp.courses||[]).forEach(c=>{const d=S.done.has(c);if(d)earned+=crNum(c);rows.push(`<li><span class="ck${d?" y":""}">${d?"✓":""}</span><span>${chip(c)} <span class="rowt">${esc(C(c).short||C(c).title)}</span></span><span class="cr-sm">${esc(fmtCr(c))}</span></li>`)});
     (sp.one_of||[]).forEach(a=>{const d=a.some(c=>S.done.has(c));if(d)earned+=crNum(a[0]);rows.push(`<li><span class="ck${d?" y":""}">${d?"✓":""}</span><span>${a.map(chip).join(' <span class="rowt">or</span> ')}</span><span class="cr-sm">5</span></li>`)});
     if(sp.choose){const n=sp.choose.from.filter(c=>S.done.has(c)).length;rows.push(`<li><span class="ck${n>=sp.choose.pick?" y":n?" part":""}">${n>=sp.choose.pick?"✓":""}</span><span><b>Choose ${sp.choose.pick}</b>${sp.choose.from.length?" of "+sp.choose.from.map(chip).join(" "):" more course with your advisor"}</span><span class="cr-sm"></span></li>`)}
@@ -687,7 +700,7 @@ function wirePanel(el){
   $$("[data-clear]",el).forEach(b=>b.onclick=()=>{S.done.clear();store.set("done",[]);paint();renderPanel()});
 }
 function scrollToCard(c){const el=$(`.cc[data-code="${CSS.escape(c)}"]`);if(el)el.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"})}
-function scrollToNode(c){const p=L.pos[c],sc=$("#mapscroll");if(!p||!sc)return;sc.scrollTo({left:Math.max(0,p.x*S.zoom-sc.clientWidth/2),top:Math.max(0,p.y*S.zoom-sc.clientHeight/2),behavior:"smooth"})}
+function scrollToNode(c){const p=L&&L.pos[c],sc=$("#mapscroll");if(!p||!sc)return;sc.scrollTo({left:Math.max(0,p.x*S.zoom-sc.clientWidth/2),top:Math.max(0,p.y*S.zoom-sc.clientHeight/2),behavior:"smooth"})}
 
 /* ---------- compare ---------- */
 function renderCompare(){
@@ -802,7 +815,8 @@ function renderTrip(){
   const offersAny=s=>S.majors.some(m=>schoolProg(s,m));
   const offer=D.schools.filter(offersAny), rest=D.schools.filter(s=>s.programs.length&&!offersAny(s));
   const tracks=tracksFor(S.major);
-  const groups=[["civil-mech","Civil & Mechanical MRP"],["comp-ee","Computer & Electrical MRP"],["bio-chem","Bioengineering & Chemical MRP"],["general","General Engineering AS-T"]].map(([id,l])=>[l,majorsAll().filter(m=>tracksFor(m)[0].id===id)]).filter(g=>g[1].length);
+  const GL={"civil-mech":"Engineering · Civil & Mechanical MRP","comp-ee":"Engineering · Computer & Electrical MRP","bio-chem":"Engineering · Bioengineering & Chemical MRP","general":"Engineering · General AS-T","cs-dta":"Computer Science · CS DTA/MRP","it-aast":"Information Technology · IT AAS-T / ATA"};
+  const groups=D.programs.map(p=>[GL[p.id]||p.name,majorsAll().filter(m=>tracksFor(m)[0].id===p.id)]).filter(g=>g[1].length);
   const trackList=[...new Set(S.majors.map(m=>progFor(m)))];
   $("#trip").innerHTML=`<div class="sentence" role="group" aria-label="Your goal"><span class="w">Show me</span> <details class="unipick" id="majPick"${S.majOpen?" open":""}><summary><span class="sr-only">Majors: </span>${esc(majPhrase())}</summary><div class="unipop" role="group" aria-label="Choose majors">
    ${groups.map(([l,ms])=>`<div class="gl">${esc(l)}</div>${ms.map(m=>`<label><input type="checkbox" data-maj="${m}"${S.majors.includes(m)?" checked":""}><span>${esc(D.majors[m])}</span><small>${(n=>n+(n===1?" school":" schools"))(D.schools.filter(s=>schoolProg(s,m)).length)}</small></label>`).join("")}`).join("")}
@@ -860,7 +874,7 @@ function renderRoute(){
    <div class="route" id="route"><div class="route-inner" id="routeInner">
     ${doneList.length?`<div class="col donecol"><div class="col-h"><span class="yr">Already done</span><b>Completed<span>${doneList.reduce((a,c)=>a+crNum(c),0)} cr</span></b></div>${doneList.map(c=>card(c)).join("")}</div>`:""}
     ${r.quarters.map((q,i)=>`<div class="col"><div class="col-h"><span class="yr">${q.year} · Quarter ${i+1}</span><b>${TNAME[q.term]}<span>${q.credits} cr</span></b></div>
-      ${q.items.map(it=>it.c?card(it.c):`<div class="cc slot" style="--lc:var(--l-gen)"><span class="cd">${esc(it.slot.slot==="HUM"?"Humanities":it.slot.slot==="SPEC"?"Specialization":"Hum / Soc Sci")}</span><span class="crd" style="grid-column:2">${it.slot.credits} cr</span><span class="tt">${esc(it.slot.label)}</span></div>`).join("")}
+      ${q.items.map(it=>it.c?card(it.c):`<div class="cc slot" style="--lc:var(--l-gen)"><span class="cd">${esc(({HUM:"Humanities",SS:"Social Science",HUMSS:"Hum / Soc Sci",SCI:"Lab science",SPEC:"Specialization",ELEC:"Elective"}[it.slot.slot]||it.slot.label))}</span><span class="crd" style="grid-column:2">${it.slot.credits} cr</span><span class="tt">${esc(it.slot.label)}</span></div>`).join("")}
       ${(flags[i]||[]).map(f=>`<div class="flag">${FLAG}<span><b>Apply to ${esc(f.s.short)}</b>${esc(f.sp.admission?.deadlines||"Check the deadline")}</span></div>`).join("")}</div>`).join("")}
     <div class="col endcol"><div class="col-h"><span class="yr">Next stop</span><b>Transfer</b></div>${sl.map(s=>{const sp=schoolProg(s);return`<div class="endcard"><b>${uniLink(s,sp)}</b><span>${esc(sp?sp.degree:D.majors[S.major])}</span>${sp?.admission?.start_terms?`<span>Starts: ${esc(sp.admission.start_terms)}</span>`:""}<button class="linkish" data-open="transfer" data-sf="${s.id}" style="font-size:.85rem">See requirements →</button></div>`}).join("")}</div>
     <svg class="route-svg" id="routeSvg"></svg>
@@ -901,7 +915,7 @@ function checklistModel(){
   p.groups.forEach(g=>secs.push({title:g.label,group:"EvCC: "+p.name+" "+p.credential,sub:`${g.credits} credits${g.min_grade?" · minimum grade "+g.min_grade:""}`,
     items:g.items.map(x=>x.course?it(`${x.course} ${C(x.course).title}`,S.done.has(x.course),{cr:crOf(x.course)}):x.one_of?it(x.one_of.map(c=>`${c} ${C(c).short||C(c).title}`).join("  OR  "),x.one_of.some(c=>S.done.has(c)),{cr:(x.credits||crNum(x.one_of[0]))+" cr",note:x.hint||""}):it(x.label,false,{cr:(x.credits||5)+" cr",note:x.hint||""}))}));
   const seenSpec=new Set();
-  S.schools.forEach(sid=>{const sp=getSpec(p,S.major,sid); const key=sp.src==="catalog"?sp.key:sid; if(sp.none||seenSpec.has(key))return; seenSpec.add(key);
+  if(p.spec.credits)S.schools.forEach(sid=>{const sp=getSpec(p,S.major,sid); const key=sp.src==="catalog"?sp.key:sid; if(sp.none||seenSpec.has(key))return; seenSpec.add(key);
     const items=[];(sp.courses||[]).forEach(c=>items.push(it(`${c} ${C(c).title}`,S.done.has(c),{cr:crOf(c)})));
     (sp.one_of||[]).forEach(a=>items.push(it(a.map(c=>`${c} ${C(c).short||C(c).title}`).join("  OR  "),a.some(c=>S.done.has(c)))));
     if(sp.choose)items.push(it(sp.choose.from.length?`Choose ${sp.choose.pick}: ${sp.choose.from.join(", ")}`:`Choose ${sp.choose.pick} more course with your advisor`,sp.choose.from.filter(c=>S.done.has(c)).length>=sp.choose.pick));
@@ -919,7 +933,7 @@ function checklistModel(){
     secs.push({title:`${sch.short}: ${sp.degree}`,group:"Universities",sub:[a.model,a.min_gpa?"GPA: "+a.min_gpa:"",a.start_terms?"Starts: "+a.start_terms:""].filter(Boolean).join(" · "),url:uniUrl(sch,sp),items})});
   // plan
   if(S.routeOn)secs.push({title:"Draft quarter plan",group:"Plan",sub:"Built from catalog prerequisites and typical offerings. Check the class schedule before registering.",
-    items:r.quarters.map(q=>it(`${TNAME[q.term]} ${q.year}: ${q.items.map(x=>x.c?x.c:(x.slot.slot==="HUM"?"Humanities":x.slot.slot==="SPEC"?"Specialization":"Hum/Soc Sci")).join(", ")}`,false,{cr:q.credits+" cr"}))});
+    items:r.quarters.map(q=>it(`${TNAME[q.term]} ${q.year}: ${q.items.map(x=>x.c?x.c:(({HUM:"Humanities",SS:"Social Science",HUMSS:"Hum/Soc Sci",SCI:"Lab science",SPEC:"Specialization",ELEC:"Elective"}[x.slot.slot]||x.slot.label))).join(", ")}`,false,{cr:q.credits+" cr"}))});
   if(S.advisor){const ns=D.advisor_notes.filter(noteApplies); if(ns.length)secs.push({title:"Advising notes",group:"Advisor",items:ns.map(n=>it(n.text,false,{note:n.source+", "+n.date,plain:true}))})}
   const goal=`${D.majors[S.major]} at ${selSchools().filter(x=>schoolProg(x)).map(x=>x.short).join(", ")}.${S.routeOn?` Starting ${TNAME[S.plan.start]} ${S.plan.year} in ${S.plan.math}.`:""}`;
   return{goal,secs,student:S.who.student||"",advisor:S.who.advisor||"",date:new Date().toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"}),total:p.total};
@@ -1005,14 +1019,14 @@ function renderData(){
    <div class="cmp-wrap" style="max-height:none"><table class="cmp" style="text-align:left"><thead><tr><th class="rowh">University</th><th style="text-align:left">Program</th><th>Status</th><th style="text-align:left">Changed since 2021 advising sheet</th><th style="text-align:left">Sources</th></tr></thead><tbody>
     ${rows.map(({s,p})=>`<tr><th class="rowh" style="vertical-align:top">${esc(s.short)}</th><td style="text-align:left;white-space:normal;vertical-align:top;min-width:180px">${esc(p.degree)}</td><td style="vertical-align:top"><span class="vbadge v-${p.verified}">${esc(p.verified)}</span></td>
       <td style="text-align:left;white-space:normal;vertical-align:top;min-width:280px;font-size:.8rem">${(p.changes_from_2021_sheet||[]).map(esc).join("<br>")}</td>
-      <td style="text-align:left;white-space:normal;vertical-align:top;font-size:.75rem;min-width:220px;word-break:break-all">${(p.sources||[]).map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//,"").slice(0,60))}</a>`).join("<br>")}</td></tr>`).join("")}
+      <td style="text-align:left;white-space:normal;vertical-align:top;font-size:.75rem;min-width:220px;word-break:break-all">${(p.sources||[]).map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//,"").slice(0,60))}</a>`).join("<br>")}${(p.local_sources||[]).map(x=>`<br><span class="rowt">EvCC advising file: ${esc(x)}</span>`).join("")}</td></tr>`).join("")}
    </tbody></table></div></div>`;
 }
 
 /* ---------- views ---------- */
 function fixSchool(){ S.schools=S.schools.filter(id=>S.majors.some(m=>schoolProg(D.schools.find(s=>s.id===id),m))); if(!S.schools.length){const s=D.schools.find(s=>schoolProg(s,S.majors[0]||S.major));if(s)S.schools=[s.id]} syncFocus(); syncFocusSchoolForMajor() }
 function save(){store.set("sel",{majors:S.majors,major:S.major,schools:S.schools,track:S.track})}
-function rerender(){ if(S.view==="map"){ if($("#mapsvg")){paint();renderLegend()}else renderMap() } else if(S.view==="compare")renderCompare(); else if(S.view==="checklist")renderChecklist(); else if(S.view==="data")renderData(); else renderRoute() }
+function rerender(){ if(S.view==="map"){ const ak=[...areasSel()].sort().join("+")+"|"+S.majors.join(",")+"|"+S.schools.join(","); if($("#mapsvg")&&ak===S.mapKey){paint();renderLegend()}else{S.mapKey=ak;computeLayout();renderMap()} } else if(S.view==="compare")renderCompare(); else if(S.view==="checklist")renderChecklist(); else if(S.view==="data")renderData(); else renderRoute() }
 function applyRouteToggle(go){ $('nav.views [data-view="route"]').hidden=!S.routeOn; if(!D)return; renderTrip(); if(go)setView(S.routeOn?"route":(S.view==="route"?"map":S.view)) }
 function setView(v){ if(v==="route"&&!S.routeOn)v="map"; if(S.drawer&&v==="data")closeDrawer(); S.view=v; $$("nav.views button").forEach(b=>{if(b.dataset.view===v)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")}); $("#app").innerHTML=""; rerender(); try{history.replaceState(null,"","#"+v)}catch(e){} }
 
@@ -1030,7 +1044,8 @@ async function boot(){
   $("#scrim").onclick=closeDrawer; document.addEventListener("keydown",e=>{if(e.key==="Escape"&&S.drawer)closeDrawer()});
   let rt; window.addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(traceRoute,120)});
   $$("nav.views button").forEach(b=>b.onclick=()=>setView(b.dataset.view));
-  computeLayout(); if(window.innerWidth<700)S.zoom=.72; renderTrip();
+  CHILD={}; Object.keys(D.courses).filter(c=>!D.courses[c].hidden).forEach(c=>preEdges(c).forEach(o=>{(CHILD[o.course]=CHILD[o.course]||[]).push(c)}));
+  if(window.innerWidth<700)S.zoom=.72; renderTrip();
   $("#footMeta").innerHTML=`Prototype built from the EvCC ${esc(D.meta.catalog_year)} catalog and university transfer pages checked ${esc(D.meta.checked)}. Not an official EvCC publication. Always confirm requirements with an advisor and the university. Your completed courses are saved only in this browser.`;
   $("#dataLink").onclick=()=>{setView("data");window.scrollTo({top:0,behavior:"smooth"})};
   const h=(location.hash||"").slice(1); setView(["route","map","compare","checklist","data"].includes(h)?h:(S.routeOn?"route":"map"));
