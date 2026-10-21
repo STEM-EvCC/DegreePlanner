@@ -682,7 +682,7 @@ function transferPanel(){
    <dl class="kv">${a.model?`<dt>Admission</dt><dd>${esc(a.model)}</dd>`:""}${a.deadlines?`<dt>Deadline</dt><dd>${esc(a.deadlines)}</dd>`:""}${a.start_terms?`<dt>Starts</dt><dd>${esc(a.start_terms)}</dd>`:""}${a.min_gpa?`<dt>GPA</dt><dd>${esc(a.min_gpa)}</dd>`:""}</dl>
    ${req}${ch}
    ${(sp.notes||[]).length||(a.notes||[]).length?`<div><div class="sect-t">Notes</div><ul style="margin:0;padding-left:18px;font-size:.85rem;color:var(--ink-2)">${[...(a.notes||[]),...(sp.notes||[])].map(n=>`<li>${esc(n)}</li>`).join("")}</ul></div>`:""}
-   <p class="rowt">Course matches to EvCC numbers come from each university's published transfer pages; where a note says "confirm", check the university's equivalency guide. Requirements change, so confirm with the university and an EvCC advisor each quarter.</p>${S.advisor?advSchool(s,sp):""}
+   <p class="rowt">Course matches to EvCC numbers come from each university's published transfer pages; where a note says "confirm", check the university's equivalency guide. Requirements change, so confirm with the university and an EvCC advisor each quarter.</p>${(s.general_notes||[]).length?`<details class="more"><summary>School-wide transfer notes (${s.general_notes.length})</summary><ul style="margin:8px 0 0;padding-left:18px;font-size:.84rem;color:var(--ink-2)">${s.general_notes.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></details>`:""}
    ${sp.dept_url?`<p style="font-size:.8rem"><a href="${esc(sp.dept_url)}" target="_blank" rel="noopener">Department transfer page ↗</a></p>`:""}</div>`;
 }
 function advSchool(s,sp){
