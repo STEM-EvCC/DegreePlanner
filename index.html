@@ -767,7 +767,7 @@ function neededForPlan(){
   const pick=arr=>{ // choose best of a one_of list given school + completed
     const d=arr.find(c=>S.done.has(c)); if(d)return d;
     const tc=transferAll(); const t=arr.slice().sort((a,b)=>(tc[b]?.length||0)-(tc[a]?.length||0)).find(c=>tc[c]); if(t)return t;
-    const hint={"CS& 131":selHas("wsu"),"CS& 141":selHas("uw"),"BIOL& 221":S.major==="bioengineering","CHEM& 262":S.major==="chemical","ECON& 202":selHas("wsu")&&S.major==="mechanical","ECON& 201":selHas("wsu")&&S.major==="electrical","STEM 101":true,"ENGR 111":true,"CS 132":selHas("wsu"),"CS 143":selHas("uw")};
+    const hint={"CS& 131":selHas("wsu"),"CS& 141":selHas("uw"),"BIOL& 221":S.major==="bioengineering","CHEM& 262":S.major==="chemical","ECON& 202":selHas("wsu")&&S.major==="mechanical","ECON& 201":selHas("wsu")&&S.major==="electrical","STEM 101":true,"ENGR 111":true,"STEM 103":true,"CS 132":selHas("wsu"),"CS 143":selHas("uw")};
     const placedNow=placedOut(); const cost=c=>[...ancestors(c)].filter(a=>!need.has(a)&&!S.done.has(a)&&!placedNow.has(a)).length;
     const hinted=arr.find(c=>hint[c]); if(hinted)return hinted;
     return arr.map((c,i)=>[c,cost(c),i]).sort((x,y)=>x[1]-y[1]||x[2]-y[2])[0][0]};
@@ -1047,12 +1047,12 @@ function renderExplore(){
    {k:"engineering",t:"Engineering",c:"--l-engr",what:"Design and build machines, structures, circuits and systems. Heavy on math and physics.",
     math:"Calculus through differential equations (MATH& 151 → MATH 261), plus calculus-based physics.",
     leads:"A bachelor's in engineering after transfer. Most engineering jobs need the BS.",
-    degrees:["civil-mech","comp-ee","bio-chem","general"], start:["STEM 101","ENGR 111","MATH& 151"],
+    degrees:["civil-mech","comp-ee","bio-chem","general"], start:["STEM 101","ENGR 111","STEM 102","MATH& 151"],
     acts:[["transfer",["mechanical"],"See engineering transfer paths"]]},
    {k:"cs",t:"Computer Science",c:"--l-cs",what:"Software, programming, algorithms and data structures. Mostly about writing and reasoning about code.",
     math:"Calculus I–II for most programs (UW Seattle and WSU want Calculus 3). Several community-college BS-CS programs need less.",
     leads:"A bachelor's in computer science or software engineering after transfer, at a university or a community college offering the BS.",
-    degrees:["cs-dta"], start:["STEM 101","CS 110","CS& 141"],
+    degrees:["cs-dta"], start:["STEM 101","STEM 103","CS& 141"],
     acts:[["transfer",["computer-science"],"See CS transfer paths"]]},
    {k:"it",t:"Information Technology",c:"--l-it",what:"Networks, servers, cloud, user support and security. Hands-on and certification-focused.",
     math:"Math 86 level for the ATA; precalculus or statistics (MATH& 107, 141 or 146) for the AAS-T.",
@@ -1065,8 +1065,9 @@ function renderExplore(){
      <dt>Start with</dt><dd><div class="chiprow">${x.start.filter(c=>D.courses[c]).map(chip).join("")}</div></dd></dl>
      <div class="acts">${x.acts.map(([g,ms,l],i)=>`<button class="btn${i?" ghost":""}" data-go="${g}" data-ms="${ms.join(",")}">${esc(l)} →</button>`).join("")}</div></section>`).join("")}</div>
    <section class="tips" aria-labelledby="tips-h"><h3 id="tips-h">Torn between two?</h3><ul>
-    <li><b>CS or IT?</b> CS 110 counts toward both, so it's a good way to find out. IT generally needs less math.</li>
-    <li><b>CS or engineering?</b> If you're drawn to hardware or robots, look at Computer or Electrical Engineering, and take ENGR 121 instead of CS 110.</li>
+    <li><b>CS or IT?</b> Start with STEM 103. It's required for IT and counts toward the CS degree, so it's a good way to find out. IT generally needs less math.</li>
+    <li><b>Still deciding whether STEM is for you?</b> Take STEM 102. It's a good way to explore STEM fields, and it meets the same engineering degree requirement as ENGR 111.</li>
+    <li><b>CS or engineering?</b> If you're drawn to hardware or robots, look at Computer or Electrical Engineering. ENGR 121 also counts toward the CS degree in place of STEM 103.</li>
     <li><b>Any STEM path:</b> take a math class every quarter. Your math placement sets how long the degree takes.</li>
     <li><b>Going to work vs. transferring in IT:</b> the ATA and certificates lead straight to jobs; the AAS-T is built for transfer, and both can lead to an applied bachelor's later.</li>
    </ul><p class="rowt">From EvCC's STEM and IT advising guides. Talk with a program advisor before you register.</p></section>`;
