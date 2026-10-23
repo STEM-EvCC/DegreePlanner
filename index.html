@@ -310,6 +310,33 @@ button.stat:hover{border-color:var(--ink-3)}
 .focusbar button{border:1px solid var(--rule);background:var(--surface);border-radius:999px;padding:4px 10px;font:600 .8rem/1.2 var(--f-display);letter-spacing:.03em;cursor:pointer;color:var(--ink-2)}
 .focusbar button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 th .colh .inlist{font:600 .62rem/1 var(--f-mono);letter-spacing:.05em;text-transform:uppercase;color:var(--accent)}
+/* explore + careers */
+.xgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;padding-block:16px}
+.xcard{background:var(--surface);border:1px solid var(--rule);border-top:6px solid var(--xc);border-radius:var(--r);padding:16px;display:grid;gap:10px;align-content:start;min-width:0}
+.xcard h3{margin:0;font:700 1.6rem/1 var(--f-display);text-transform:uppercase;letter-spacing:.02em}
+.xcard p{margin:0;font-size:.92rem;color:var(--ink-2)}
+.xcard dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin:0;font-size:.86rem}
+.xcard dt{font:600 .7rem/1.6 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.xcard dd{margin:0}
+.xcard .acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.tips{background:var(--surface);border:1px solid var(--rule);border-radius:var(--r);padding:16px;display:grid;gap:8px;max-width:900px}
+.tips h3{margin:0;font:700 1.15rem/1.1 var(--f-display);text-transform:uppercase;letter-spacing:.03em}
+.tips ul{margin:0;padding-left:18px;font-size:.9rem;color:var(--ink-2);display:grid;gap:6px}
+.ccard{background:var(--surface);border:1px solid var(--rule);border-radius:var(--r);padding:18px;display:grid;gap:16px;min-width:0}
+.ccard h3{margin:0;font:700 1.7rem/1.05 var(--f-display);text-transform:uppercase;letter-spacing:.02em}
+.ladder{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch}
+.step{display:grid;gap:2px;background:var(--bg);border:1px solid var(--rule);border-radius:var(--r);padding:10px 12px;min-width:150px;flex:1 1 150px;text-align:left;cursor:pointer;font:inherit;color:inherit}
+.step b{font:700 1.02rem/1.1 var(--f-display);letter-spacing:.02em}
+.step small{color:var(--ink-3);font-size:.75rem}
+.step[aria-pressed="true"]{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
+.step.later{border-style:dashed;cursor:default;background:transparent}
+.ladder .arr{align-self:center;color:var(--ink-3);font-weight:700}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.cgrid h4{margin:0 0 6px;font:600 .72rem/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.pay{font:700 1.8rem/1 var(--f-display);font-variant-numeric:tabular-nums}
+.paybar{position:relative;height:8px;background:var(--surface-2);border-radius:4px;margin:8px 0 4px}
+.paybar i{position:absolute;top:0;bottom:0;background:var(--ok);border-radius:4px;opacity:.55}
+.paybar b{position:absolute;top:-3px;width:3px;height:14px;background:var(--ink);border-radius:2px}
 /* checklist */
 .ck-tools{display:flex;flex-wrap:wrap;gap:10px;align-items:end;justify-content:space-between;padding-block:16px 12px}
 .ck-tools .who{display:flex;flex-wrap:wrap;gap:10px}
@@ -344,7 +371,9 @@ th .colh .inlist{font:600 .62rem/1 var(--f-mono);letter-spacing:.05em;text-trans
     <button data-view="route" hidden>My route</button>
     <button data-view="map" aria-current="page">Course map</button>
     <button data-view="compare">Compare universities</button>
+    <button data-view="careers" hidden>Career paths</button>
     <button data-view="checklist">Checklist</button>
+    <button data-view="explore" hidden>Explore</button>
   </nav>
   <main id="app"><div class="loading">Loading pathway data…</div></main>
   <footer><div id="footMeta"></div><p style="margin:.6em 0 0"><button class="linkish" id="dataLink">Data &amp; sources</button></p></footer>
@@ -406,7 +435,8 @@ function choiceSets(p=prog()){const a=[];p.groups.forEach(g=>g.items.forEach(it=
 // status of each course inside the selected track+major+school
 function statusMap(major=S.major){
   const p=progFor(major),m={};const set=(c,v)=>{const rank={core:5,spec:4,choice:3,later:2,prereq:1};if(!m[c]||rank[v]>rank[m[c]])m[c]=v};
-  p.groups.forEach(g=>g.items.forEach(it=>{if(it.course)set(it.course,"core");if(it.one_of)it.one_of.forEach(c=>set(c,"choice"))}));
+  const car=CAREER(major); const progs=car?[p,...tracksFor(major).filter(x=>x.id!=="it-aast"&&x!==p)]:[p];
+  progs.forEach(pp=>pp.groups.forEach(g=>g.items.forEach(it=>{if(it.course)set(it.course,"core");if(it.one_of)it.one_of.forEach(c=>set(c,"choice"))})));
   (S.schools.length?S.schools:[""]).forEach(sid=>{const sp=getSpec(p,major,sid); if(!sp.none){(sp.courses||[]).forEach(c=>set(c,"spec"));(sp.one_of||[]).forEach(a=>a.forEach(c=>set(c,"choice")));if(sp.choose)sp.choose.from.forEach(c=>set(c,"choice"));(sp.later||[]).forEach(c=>set(c,"later"))}});
   Object.keys(m).forEach(c=>ancestors(c).forEach(a=>{if(!m[a])m[a]="prereq"}));
   return m;
@@ -632,7 +662,7 @@ function coursePanel(){
    ${unlocks.length?`<div><div class="sect-t">Opens up</div><div class="chiprow">${[...new Set(unlocks)].map(chip).join("")}</div></div>`:""}
    ${ta.length?`<div><div class="sect-t">Your universities</div><ul class="reqlist">${ta.map(t=>`<li><span>${stag(t.s,t.cat)}</span><span><b>${esc(t.s.short)}</b>${S.majors.length>1?" "+esc(MABBR[t.major]||""):""} · ${CAT[t.cat].l}${t.notes.filter(Boolean).length?`<div class="rowt">${esc(t.notes.filter(Boolean).join("; "))}</div>`:""}</span><span></span></li>`).join("")}</ul></div>`:""}
    ${where.length?`<div><div class="sect-t">Wanted by (${esc(D.majors[S.major])})</div><ul class="reqlist">${where.map(w=>`<li><span>${S.schools.includes(w.s.id)?"★":""}</span><span>${S.schools.includes(w.s.id)?"<b>"+esc(w.s.short)+"</b>":esc(w.s.short)}</span><span class="catpill c-${w.cat}">${CAT[w.cat].s}</span></li>`).join("")}</ul></div>`:""}
-   <dl class="kv"><dt>Usually offered</dt><dd>${x.offered&&x.offered.length?x.offered.map(t=>TNAME[t]).join(", ")+' <span class="rowt">(check the class schedule)</span>':"Check the class schedule"}</dd>${x.min_grade?`<dt>Minimum grade</dt><dd>${esc(x.min_grade)} in prerequisites</dd>`:""}</dl>
+   <dl class="kv">${x.cert?`<dt>Certification</dt><dd>${esc(x.cert)}</dd>`:""}<dt>Usually offered</dt><dd>${x.offered&&x.offered.length?x.offered.map(t=>TNAME[t]).join(", ")+' <span class="rowt">(check the class schedule)</span>':"Check the class schedule"}</dd>${x.min_grade?`<dt>Minimum grade</dt><dd>${esc(x.min_grade)} in prerequisites</dd>`:""}</dl>
    ${x.url?`<p style="font-size:.8rem"><a href="${esc(x.url)}" target="_blank" rel="noopener">Catalog entry ↗</a></p>`:""}
   </div>`;
 }
@@ -738,7 +768,9 @@ function neededForPlan(){
     const d=arr.find(c=>S.done.has(c)); if(d)return d;
     const tc=transferAll(); const t=arr.slice().sort((a,b)=>(tc[b]?.length||0)-(tc[a]?.length||0)).find(c=>tc[c]); if(t)return t;
     const hint={"CS& 131":selHas("wsu"),"CS& 141":selHas("uw"),"BIOL& 221":S.major==="bioengineering","CHEM& 262":S.major==="chemical","ECON& 202":selHas("wsu")&&S.major==="mechanical","ECON& 201":selHas("wsu")&&S.major==="electrical","STEM 101":true,"ENGR 111":true,"CS 132":selHas("wsu"),"CS 143":selHas("uw")};
-    return arr.find(c=>hint[c])||arr[0]};
+    const placedNow=placedOut(); const cost=c=>[...ancestors(c)].filter(a=>!need.has(a)&&!S.done.has(a)&&!placedNow.has(a)).length;
+    const hinted=arr.find(c=>hint[c]); if(hinted)return hinted;
+    return arr.map((c,i)=>[c,cost(c),i]).sort((x,y)=>x[1]-y[1]||x[2]-y[2])[0][0]};
   p.groups.forEach(g=>g.items.forEach(it=>{ if(it.course)need.add(it.course); else if(it.one_of)need.add(pick(it.one_of)); else slots.push({slot:it.slot,label:it.label,credits:it.credits||5}) }));
   S.schools.forEach(sid=>{ const sp=getSpec(p,S.major,sid); if(sp.none)return;
     (sp.courses||[]).forEach(c=>need.add(c));(sp.one_of||[]).forEach(a=>{if(!a.some(c=>need.has(c)))need.add(pick(a))});
@@ -793,21 +825,23 @@ function degreeProgress(){ const p=prog(),sp=getSpec(); let earned=0;
 function uniProgress(sch=school()){ const sp=schoolProg(sch); if(!sp)return null; const rs=sp.requirements.filter(r=>(r.category==="admission"||r.category==="pre-transfer")&&r.courses.some(c=>D.courses[c]));
   const met=rs.filter(r=>r.logic==="one"?r.courses.some(c=>S.done.has(c)):r.courses.filter(c=>D.courses[c]).every(c=>S.done.has(c))).length;
   return{met,total:rs.length,pct:rs.length?Math.round(met/rs.length*100):0} }
-function majorsAll(){ const set=new Set(); D.programs.forEach(p=>p.majors.forEach(m=>set.add(m))); D.schools.forEach(s=>s.programs.forEach(p=>set.add(p.major))); return Object.keys(D.majors).filter(m=>set.has(m)&&m!=="other") }
-function tracksFor(m){ const t=D.programs.filter(p=>p.majors.includes(m)); return t.length?t:D.programs.filter(p=>p.id==="general") }
+const CAREER=id=>(D.careers||[]).find(c=>c.id===id);
+function majorsAll(){ if(S.goal==="work")return (D.careers||[]).map(c=>c.id); return majorsAllT() }
+function majorsAllT(){ const set=new Set(); D.programs.forEach(p=>p.majors.forEach(m=>set.add(m))); D.schools.forEach(s=>s.programs.forEach(p=>set.add(p.major))); return Object.keys(D.majors).filter(m=>set.has(m)&&m!=="other"&&!CAREER(m)) }
+function tracksFor(m){ const car=CAREER(m); if(car)return car.credentials.map(id=>D.programs.find(p=>p.id===id)).filter(Boolean); const t=D.programs.filter(p=>p.majors.includes(m)); return t.length?t:D.programs.filter(p=>p.id==="general") }
 const MABBR={mechanical:"ME",civil:"CE",environmental:"EnvE",aeronautics:"AA",industrial:"ISE",materials:"MSE",electrical:"EE",computer:"CpE",bioengineering:"BioE",chemical:"ChE",manufacturing:"MfgE"};
-function progFor(m){ if(m===S.major&&S.track){const t=tracksFor(m).find(p=>p.id===S.track)||(S.advisor&&S.track==="general"?D.programs.find(p=>p.id==="general"):null); if(t)return t} return tracksFor(m)[0] }
+function progFor(m){ if(CAREER(m)&&!(m===S.major&&S.track)){const a=D.programs.find(p=>p.id==="it-ata"); if(a)return a} if(m===S.major&&S.track){const t=tracksFor(m).find(p=>p.id===S.track)||(S.advisor&&S.track==="general"?D.programs.find(p=>p.id==="general"):null); if(t)return t} return tracksFor(m)[0] }
 function statusUnion(){ const rank={core:5,spec:4,choice:3,later:2,prereq:1}, m={};
   S.majors.forEach(mj=>Object.entries(statusMap(mj)).forEach(([c,v])=>{ if(!m[c])m[c]={st:v,majors:[]}; if(rank[v]>rank[m[c].st])m[c].st=v; if(v!=="prereq")m[c].majors.push(mj) })); return m }
 function transferUnion(){ const m={}; S.majors.forEach(mj=>Object.entries(transferAll(mj)).forEach(([c,a])=>{ a.forEach(t=>(m[c]=m[c]||[]).push(Object.assign({major:mj},t))) }));
   Object.values(m).forEach(a=>a.sort((x,y)=>CATRANK[y.cat]-CATRANK[x.cat])); return m }
-function majPhrase(){ const n=S.majors.map(m=>D.majors[m].replace(/ Engineering$/,"").replace(/^Aeronautics & Astronautics$/,"Aeronautics")); if(!n.length)return"choose majors"; if(n.length===1)return D.majors[S.majors[0]]; if(n.length<=3)return n.slice(0,-1).join(", ")+" & "+n[n.length-1]+" Engineering"; return n.slice(0,2).join(", ")+" + "+(n.length-2)+" more" }
+function majPhrase(){ if(S.goal==="work"){const n=S.majors.map(m=>CAREER(m)?CAREER(m).name:D.majors[m]); return n.length<=2?n.join(" & "):n.slice(0,2).join(", ")+" + "+(n.length-2)+" more"} const n=S.majors.map(m=>D.majors[m].replace(/ Engineering$/,"").replace(/^Aeronautics & Astronautics$/,"Aeronautics")); if(!n.length)return"choose majors"; if(n.length===1)return D.majors[S.majors[0]]; if(n.length<=3)return n.slice(0,-1).join(", ")+" & "+n[n.length-1]+" Engineering"; return n.slice(0,2).join(", ")+" + "+(n.length-2)+" more" }
 function toggleMajor(m){ const i=S.majors.indexOf(m); if(i>=0){ if(S.majors.length>1)S.majors.splice(i,1) } else S.majors.push(m); if(!S.majors.includes(S.major)){S.major=S.majors[0];S.track=null} autoTrack(); fixSchool(); save(); renderTrip(); rerender(); if(S.drawer)renderPanel() }
 function setFocusMajor(m){ S.major=m; S.track=null; autoTrack(); syncFocusSchoolForMajor(); renderTrip(); rerender(); if(S.drawer)renderPanel() }
 function syncFocusSchoolForMajor(){ if(!schoolProg(school(),S.major)){const s=selSchools().find(x=>schoolProg(x,S.major)); if(s){S.focus=s.id;S.school=s.id}} }
 function majorBar(label){ if(S.majors.length<2)return""; return`<div class="majbar" role="group" aria-label="Choose major"><span>${esc(label)}</span>${S.majors.map(m=>`<button data-fmaj="${m}" aria-pressed="${m===S.major}">${esc(D.majors[m])}</button>`).join("")}</div>` }
 function wireMajorBar(el){ $$("[data-fmaj]",el).forEach(b=>b.onclick=()=>setFocusMajor(b.dataset.fmaj)) }
-function autoTrack(){ const t=tracksFor(S.major); if(!S.track||!t.find(p=>p.id===S.track))S.program=t[0].id; else S.program=S.track }
+function autoTrack(){ const t=tracksFor(S.major); if(S.track&&!t.find(p=>p.id===S.track))S.track=null; S.program=progFor(S.major).id }
 function uniPhrase(){ const n=selSchools().map(s=>s.short); if(!n.length)return"choose universities"; if(n.length===1)return n[0]; if(n.length<=3)return n.slice(0,-1).join(", ")+" & "+n[n.length-1]; return n.slice(0,2).join(", ")+" + "+(n.length-2)+" more" }
 function toggleSchool(id){ const i=S.schools.indexOf(id); if(i>=0){ if(S.schools.length>1)S.schools.splice(i,1) } else S.schools.push(id); syncFocus(); save(); renderTrip(); if(S.view!=="compare")rerender(); if(S.drawer)renderPanel() }
 function renderTrip(){
@@ -816,14 +850,16 @@ function renderTrip(){
   const offer=D.schools.filter(offersAny), rest=D.schools.filter(s=>s.programs.length&&!offersAny(s));
   const tracks=tracksFor(S.major);
   const GL={"civil-mech":"Engineering · Civil & Mechanical MRP","comp-ee":"Engineering · Computer & Electrical MRP","bio-chem":"Engineering · Bioengineering & Chemical MRP","general":"Engineering · General AS-T","cs-dta":"Computer Science · CS DTA/MRP","it-aast":"Information Technology · IT AAS-T / ATA"};
-  const groups=D.programs.map(p=>[GL[p.id]||p.name,majorsAll().filter(m=>tracksFor(m)[0].id===p.id)]).filter(g=>g[1].length);
+  const groups=S.goal==="work"?[["IT career paths",majorsAll()]]:D.programs.map(p=>[GL[p.id]||p.name,majorsAll().filter(m=>tracksFor(m)[0].id===p.id)]).filter(g=>g[1].length);
+  const goalSel=`<select id="tGoal" aria-label="Your goal">${opt([["transfer","transfer and study"],["work","go to work in"],["explore","explore my options"]],S.goal)}</select>`;
+  if(S.goal==="explore"){ $("#trip").innerHTML=`<div class="sentence" role="group" aria-label="Your goal"><span class="w">I want to</span> ${goalSel}<span class="w">.</span></div><div class="trip-meta">Not sure yet? Compare Engineering, Computer Science and IT below, then pick a goal.</div>`; $("#tGoal").onchange=e=>setGoal(e.target.value); return }
   const trackList=[...new Set(S.majors.map(m=>progFor(m)))];
-  $("#trip").innerHTML=`<div class="sentence" role="group" aria-label="Your goal"><span class="w">Show me</span> <details class="unipick" id="majPick"${S.majOpen?" open":""}><summary><span class="sr-only">Majors: </span>${esc(majPhrase())}</summary><div class="unipop" role="group" aria-label="Choose majors">
-   ${groups.map(([l,ms])=>`<div class="gl">${esc(l)}</div>${ms.map(m=>`<label><input type="checkbox" data-maj="${m}"${S.majors.includes(m)?" checked":""}><span>${esc(D.majors[m])}</span><small>${(n=>n+(n===1?" school":" schools"))(D.schools.filter(s=>schoolProg(s,m)).length)}</small></label>`).join("")}`).join("")}
-   <button class="btn done" type="button" id="majDone">Done</button></div></details> <span class="w">for transfer to</span> <details class="unipick" id="uniPick"${S.uniOpen?" open":""}><summary><span class="sr-only">Universities: </span>${esc(uniPhrase())}</summary><div class="unipop" role="group" aria-label="Choose universities">
+  $("#trip").innerHTML=`<div class="sentence" role="group" aria-label="Your goal"><span class="w">I want to</span> ${goalSel} <details class="unipick" id="majPick"${S.majOpen?" open":""}><summary><span class="sr-only">${S.goal==="work"?"Career paths":"Majors"}: </span>${esc(majPhrase())}</summary><div class="unipop" role="group" aria-label="Choose majors">
+   ${groups.map(([l,ms])=>`<div class="gl">${esc(l)}</div>${ms.map(m=>`<label><input type="checkbox" data-maj="${m}"${S.majors.includes(m)?" checked":""}><span>${esc(D.majors[m])}</span><small>${S.goal==="work"?"":(n=>n+(n===1?" school":" schools"))(D.schools.filter(s=>schoolProg(s,m)).length)}</small></label>`).join("")}`).join("")}
+   ${S.goal==="work"?`<p class="rowt" style="margin:8px 6px 0;font-size:.8rem">Engineering and computer science jobs usually need a bachelor's degree. Choose "transfer and study" for those.</p>`:""}<button class="btn done" type="button" id="majDone">Done</button></div></details>${S.goal==="work"?"":` <span class="w">at</span> <details class="unipick" id="uniPick"${S.uniOpen?" open":""}><summary><span class="sr-only">Universities: </span>${esc(uniPhrase())}</summary><div class="unipop" role="group" aria-label="Choose universities">
    <div class="gl">Offers ${S.majors.length>1?"at least one of your majors":esc(D.majors[S.major])}</div>${offer.map(s=>`<label><input type="checkbox" data-uni="${s.id}"${S.schools.includes(s.id)?" checked":""}><span>${esc(s.short)}</span><small>${esc(s.type==="private"?"private":"public")}</small></label>`).join("")}
    ${rest.length?`<div class="gl">Doesn't list this major</div>${rest.map(s=>`<label style="opacity:.6"><input type="checkbox" data-uni="${s.id}" disabled><span>${esc(s.short)}</span><small></small></label>`).join("")}`:""}
-   <button class="btn done" type="button" id="uniDone">Done</button></div></details>${S.routeOn?`<span class="w">, starting</span> <select id="tStart" aria-label="First quarter">${opt([["F","Fall"],["W","Winter"],["Sp","Spring"]],P.start)}</select> <select id="tYear" aria-label="First year">${opt([[2026,"2026"],[2027,"2027"],[2028,"2028"]],P.year)}</select> <span class="w">in</span> <select id="tMath" aria-label="Math placement">${opt([["MATH 86","Math 86"],["MATH 96","Math 96"],["MATH& 141","Precalculus I"],["MATH& 142","Precalculus II"],["MATH& 151","Calculus I"],["MATH& 152","Calculus II"],["MATH& 163","Calculus 3"]],P.math)}</select>`:""}<span class="w">.</span></div>
+   <button class="btn done" type="button" id="uniDone">Done</button></div></details>`}${S.routeOn?`<span class="w">, starting</span> <select id="tStart" aria-label="First quarter">${opt([["F","Fall"],["W","Winter"],["Sp","Spring"]],P.start)}</select> <select id="tYear" aria-label="First year">${opt([[2026,"2026"],[2027,"2027"],[2028,"2028"]],P.year)}</select> <span class="w">with math at</span> <select id="tMath" aria-label="Math placement">${opt([["MATH 86","Math 86"],["MATH 96","Math 96"],["MATH& 141","Precalculus I"],["MATH& 142","Precalculus II"],["MATH& 151","Calculus I"],["MATH& 152","Calculus II"],["MATH& 163","Calculus 3"]],P.math)}</select>`:""}<span class="w">.</span></div>
    <div class="trip-meta"><span class="tag">EvCC degree${trackList.length>1?"s":""}</span><span>${trackList.map(p=>`<b>${esc(p.name)}</b> ${esc(p.credential)} · ${p.total} cr${S.advisor?" · "+esc(p.code):""}`).join(" &nbsp;|&nbsp; ")}</span>
     <details class="more" id="moreOpts"${S.moreOpen?" open":""}><summary>More options</summary><div class="more-grid">
      ${tracks.length>1||S.advisor?`<div class="pick"><label for="tTrack">EvCC degree track${S.majors.length>1?" for "+esc(D.majors[S.major]):""}</label><select id="tTrack">${opt(D.programs.filter(p=>tracks.includes(p)||S.advisor&&p.id==="general").map(p=>[p.id,p.name+" ("+p.total+" cr)"]),S.program)}</select></div>`:""}
@@ -838,8 +874,8 @@ function renderTrip(){
   $("#majDone").onclick=()=>{S.majOpen=false;$("#majPick").open=false};
   $("#majPick").ontoggle=e=>{S.majOpen=e.target.open};
   $$("[data-uni]").forEach(b=>b.onchange=()=>{S.uniOpen=true;toggleSchool(b.dataset.uni)});
-  $("#uniDone").onclick=()=>{S.uniOpen=false;$("#uniPick").open=false};
-  $("#uniPick").ontoggle=e=>{S.uniOpen=e.target.open};
+  if($("#uniDone")){$("#uniDone").onclick=()=>{S.uniOpen=false;$("#uniPick").open=false}; $("#uniPick").ontoggle=e=>{S.uniOpen=e.target.open}}
+  $("#tGoal").onchange=e=>setGoal(e.target.value);
   const bind=(id,k,num)=>{const el=$("#"+id);if(el)el.onchange=e=>{P[k]=e.target.type==="checkbox"?e.target.checked:(num?+e.target.value:e.target.value);after()}};
   bind("tStart","start");bind("tYear","year",1);bind("tMath","math");bind("pChem","chem");bind("pEngl","engl");bind("pPhys","phys");bind("pCap","cap",1);bind("pSum","summer");bind("pLater","later");
   const tt=$("#tTrack"); if(tt)tt.onchange=e=>{S.track=e.target.value;S.program=S.track;after()};
@@ -876,7 +912,7 @@ function renderRoute(){
     ${r.quarters.map((q,i)=>`<div class="col"><div class="col-h"><span class="yr">${q.year} · Quarter ${i+1}</span><b>${TNAME[q.term]}<span>${q.credits} cr</span></b></div>
       ${q.items.map(it=>it.c?card(it.c):`<div class="cc slot" style="--lc:var(--l-gen)"><span class="cd">${esc(({HUM:"Humanities",SS:"Social Science",HUMSS:"Hum / Soc Sci",SCI:"Lab science",SPEC:"Specialization",ELEC:"Elective"}[it.slot.slot]||it.slot.label))}</span><span class="crd" style="grid-column:2">${it.slot.credits} cr</span><span class="tt">${esc(it.slot.label)}</span></div>`).join("")}
       ${(flags[i]||[]).map(f=>`<div class="flag">${FLAG}<span><b>Apply to ${esc(f.s.short)}</b>${esc(f.sp.admission?.deadlines||"Check the deadline")}</span></div>`).join("")}</div>`).join("")}
-    <div class="col endcol"><div class="col-h"><span class="yr">Next stop</span><b>Transfer</b></div>${sl.map(s=>{const sp=schoolProg(s);return`<div class="endcard"><b>${uniLink(s,sp)}</b><span>${esc(sp?sp.degree:D.majors[S.major])}</span>${sp?.admission?.start_terms?`<span>Starts: ${esc(sp.admission.start_terms)}</span>`:""}<button class="linkish" data-open="transfer" data-sf="${s.id}" style="font-size:.85rem">See requirements →</button></div>`}).join("")}</div>
+    <div class="col endcol"><div class="col-h"><span class="yr">Next stop</span><b>${S.goal==="work"?"Work":"Transfer"}</b></div>${S.goal==="work"&&CAREER(S.major)?`<div class="endcard"><b>${esc(CAREER(S.major).name)}</b><span>Certifications along the way: ${esc(CAREER(S.major).certs.map(c=>c.name).join(", "))}</span><button class="linkish" data-gocareers style="font-size:.85rem">See career path →</button></div>`:""}${sl.map(s=>{const sp=schoolProg(s);return`<div class="endcard"><b>${uniLink(s,sp)}</b><span>${esc(sp?sp.degree:D.majors[S.major])}</span>${sp?.admission?.start_terms?`<span>Starts: ${esc(sp.admission.start_terms)}</span>`:""}<button class="linkish" data-open="transfer" data-sf="${s.id}" style="font-size:.85rem">See requirements →</button></div>`}).join("")}</div>
     <svg class="route-svg" id="routeSvg"></svg>
    </div></div>
    ${r.unplaced.length?`<div class="warnbox">Couldn't fit: ${r.unplaced.map(esc).join(", ")}. Check prerequisites and offerings with an advisor.</div>`:""}
@@ -886,6 +922,7 @@ function renderRoute(){
     el.onclick=e=>{ if(e.target.closest("[data-tick]"))return; selectCourse(S.sel===c&&S.drawer?null:c)};
     el.onmouseenter=()=>{S.hover=c;traceRoute()}; el.onmouseleave=()=>{S.hover=null;traceRoute()}});
   $$("[data-tick]",app).forEach(b=>b.onclick=e=>{e.stopPropagation();toggleDone(b.dataset.tick)});
+  $$("[data-gocareers]",app).forEach(b=>b.onclick=()=>setView("careers"));
   $$("[data-open]",app).forEach(b=>b.onclick=()=>{if(b.dataset.sf){S.focus=b.dataset.sf;S.school=S.focus}openDrawer(b.dataset.open)});
   $("#allLines").onchange=e=>{S.allLines=e.target.checked;traceRoute()}; wireMajorBar(app);
   traceRoute();
@@ -931,11 +968,14 @@ function checklistModel(){
     (sp.choose_groups||[]).forEach(g=>items.push(it(`Choose ${g.pick}: ${g.courses.join(", ")}`,g.courses.filter(c=>S.done.has(c)).length>=g.pick,{tag:CAT[g.category||"degree"].l})));
     items.push(it(`Apply: ${a.deadlines||"check the university's deadline"}`,false,{tag:"Deadline"}));
     secs.push({title:`${sch.short}: ${sp.degree}`,group:"Universities",sub:[a.model,a.min_gpa?"GPA: "+a.min_gpa:"",a.start_terms?"Starts: "+a.start_terms:""].filter(Boolean).join(" · "),url:uniUrl(sch,sp),items})});
+  if(S.goal==="work"){ const car=CAREER(S.major);
+    if(car){ secs.push({title:"Industry certifications",group:"Career: "+car.name,sub:"Courses aligned to each exam. Ask your instructor about exam vouchers.",items:car.certs.map(ct=>it(ct.name,ct.courses.every(c=>S.done.has(c)),{note:"Prepared by "+ct.courses.join(", ")+(ct.voucher?" · voucher offered":"")+(ct.note?" · "+ct.note:"")}))});
+      const ata=p.id!=="it-aast"; secs.push({title:"Keep going later: bachelor's options",group:"Career: "+car.name,sub:"With an IT "+(ata?"ATA":"AAS-T")+". Confirm with each school.",items:(D.it_entry||[]).map(r=>it(r.program,false,{note:ata?r.ata:r.aas_t,plain:true}))}) } }
   // plan
   if(S.routeOn)secs.push({title:"Draft quarter plan",group:"Plan",sub:"Built from catalog prerequisites and typical offerings. Check the class schedule before registering.",
     items:r.quarters.map(q=>it(`${TNAME[q.term]} ${q.year}: ${q.items.map(x=>x.c?x.c:(({HUM:"Humanities",SS:"Social Science",HUMSS:"Hum/Soc Sci",SCI:"Lab science",SPEC:"Specialization",ELEC:"Elective"}[x.slot.slot]||x.slot.label))).join(", ")}`,false,{cr:q.credits+" cr"}))});
   if(S.advisor){const ns=D.advisor_notes.filter(noteApplies); if(ns.length)secs.push({title:"Advising notes",group:"Advisor",items:ns.map(n=>it(n.text,false,{note:n.source+", "+n.date,plain:true}))})}
-  const goal=`${D.majors[S.major]} at ${selSchools().filter(x=>schoolProg(x)).map(x=>x.short).join(", ")}.${S.routeOn?` Starting ${TNAME[S.plan.start]} ${S.plan.year} in ${S.plan.math}.`:""}`;
+  const goal=S.goal==="work"?`Go to work in ${CAREER(S.major)?CAREER(S.major).name:D.majors[S.major]} with the ${p.name} ${p.credential}.${S.routeOn?` Starting ${TNAME[S.plan.start]} ${S.plan.year}.`:""}`:`${D.majors[S.major]} at ${selSchools().filter(x=>schoolProg(x)).map(x=>x.short).join(", ")}.${S.routeOn?` Starting ${TNAME[S.plan.start]} ${S.plan.year} in ${S.plan.math}.`:""}`;
   return{goal,secs,student:S.who.student||"",advisor:S.who.advisor||"",date:new Date().toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"}),total:p.total};
 }
 function renderChecklist(){
@@ -1000,6 +1040,68 @@ async function buildPdf(m){
 async function savePdf(m){ try{ const doc=await buildPdf(m); await saveFile(fname(m,"pdf"),doc.output("blob")) }catch(e){ toast("Couldn't build the PDF. Try Copy instead.") } }
 window.__evccTest={checklistModel,checklistText,checklistTable,buildPdf};
 
+/* ---------- explore ---------- */
+function renderExplore(){
+  const P=id=>D.programs.find(p=>p.id===id);
+  const cards=[
+   {k:"engineering",t:"Engineering",c:"--l-engr",what:"Design and build machines, structures, circuits and systems. Heavy on math and physics.",
+    math:"Calculus through differential equations (MATH& 151 → MATH 261), plus calculus-based physics.",
+    leads:"A bachelor's in engineering after transfer. Most engineering jobs need the BS.",
+    degrees:["civil-mech","comp-ee","bio-chem","general"], start:["STEM 101","ENGR 111","MATH& 151"],
+    acts:[["transfer",["mechanical"],"See engineering transfer paths"]]},
+   {k:"cs",t:"Computer Science",c:"--l-cs",what:"Software, programming, algorithms and data structures. Mostly about writing and reasoning about code.",
+    math:"Calculus I–II for most programs (UW Seattle and WSU want Calculus 3). Several community-college BS-CS programs need less.",
+    leads:"A bachelor's in computer science or software engineering after transfer, at a university or a community college offering the BS.",
+    degrees:["cs-dta"], start:["STEM 101","CS 110","CS& 141"],
+    acts:[["transfer",["computer-science"],"See CS transfer paths"]]},
+   {k:"it",t:"Information Technology",c:"--l-it",what:"Networks, servers, cloud, user support and security. Hands-on and certification-focused.",
+    math:"Math 86 level for the ATA; precalculus or statistics (MATH& 107, 141 or 146) for the AAS-T.",
+    leads:"Jobs right after EvCC with a certificate or the ATA, or a bachelor's later (applied bachelor's degrees at CWU, Bellevue College and others).",
+    degrees:["it-ata","it-aast","it-cert-support","it-cert-networking","it-cert-sysadmin","it-cert-cyber"], start:["STEM 101","STEM 103","IT 161"],
+    acts:[["work",(D.careers||[]).map(c=>c.id),"See IT career paths"],["transfer",["information-technology","cybersecurity","it-management"],"See IT bachelor's options"]]}];
+  $("#app").innerHTML=`<h2 class="sr-only">Explore</h2><div class="xgrid">${cards.map(x=>`<section class="xcard" style="--xc:var(${x.c})" aria-labelledby="x-${x.k}"><h3 id="x-${x.k}">${x.t}</h3><p>${esc(x.what)}</p>
+     <dl><dt>Math</dt><dd>${esc(x.math)}</dd><dt>Leads to</dt><dd>${esc(x.leads)}</dd>
+     <dt>At EvCC</dt><dd>${x.degrees.map(P).filter(Boolean).map(p=>`${esc(p.name)} ${esc(p.credential)} <span class="rowt">(${p.total} cr)</span>`).join("<br>")}</dd>
+     <dt>Start with</dt><dd><div class="chiprow">${x.start.filter(c=>D.courses[c]).map(chip).join("")}</div></dd></dl>
+     <div class="acts">${x.acts.map(([g,ms,l],i)=>`<button class="btn${i?" ghost":""}" data-go="${g}" data-ms="${ms.join(",")}">${esc(l)} →</button>`).join("")}</div></section>`).join("")}</div>
+   <section class="tips" aria-labelledby="tips-h"><h3 id="tips-h">Torn between two?</h3><ul>
+    <li><b>CS or IT?</b> CS 110 counts toward both, so it's a good way to find out. IT generally needs less math.</li>
+    <li><b>CS or engineering?</b> If you're drawn to hardware or robots, look at Computer or Electrical Engineering, and take ENGR 121 instead of CS 110.</li>
+    <li><b>Any STEM path:</b> take a math class every quarter. Your math placement sets how long the degree takes.</li>
+    <li><b>Going to work vs. transferring in IT:</b> the ATA and certificates lead straight to jobs; the AAS-T is built for transfer, and both can lead to an applied bachelor's later.</li>
+   </ul><p class="rowt">From EvCC's STEM and IT advising guides. Talk with a program advisor before you register.</p></section>`;
+  $$("[data-go]").forEach(b=>b.onclick=()=>{ const g=b.dataset.go, ms=b.dataset.ms.split(",").filter(m=>D.majors[m]); S.byGoal[g]=Object.assign({},S.byGoal[g]||{}, {majors:ms,major:ms[0],track:null,schools:(S.byGoal[g]&&S.byGoal[g].schools)||[]}); setGoal(g) });
+  $$("[data-goto]",$("#app")).forEach(b=>b.onclick=()=>selectCourse(b.dataset.goto));
+}
+/* ---------- careers ---------- */
+function money(n){return n==null?"—":"$"+Math.round(n).toLocaleString("en-US")}
+function payBlock(occ){ if(!occ)return""; const w=occ.wa||{}, m=occ.seattle_msa||{}; const lo=Math.min(...[w.p25,m.p25].filter(Boolean),40000), hi=Math.max(...[w.p75,m.p75].filter(Boolean),160000); const pos=v=>((v-lo)/(hi-lo)*100).toFixed(1)+"%";
+  const row=(lab,d)=>d&&d.median?`<div style="margin-top:8px"><div class="rowt">${esc(lab)} · median</div><div class="pay">${money(d.median)}</div>${d.p25&&d.p75?`<div class="paybar" aria-hidden="true"><i style="left:${pos(d.p25)};width:calc(${pos(d.p75)} - ${pos(d.p25)})"></i><b style="left:${pos(d.median)}"></b></div><div class="rowt">Middle half earns ${money(d.p25)}–${money(d.p75)}</div>`:""}</div>`:"";
+  return`<div><div class="rowt" style="font-weight:600">${esc(occ.name)}</div>${row("Seattle–Tacoma–Bellevue area (incl. Everett)",m)}${row("Washington State",w)}
+    ${occ.outlook&&occ.outlook.text?`<p class="rowt" style="margin-top:6px">${esc(occ.outlook.text)}${occ.outlook.url?` <a href="${esc(occ.outlook.url)}" target="_blank" rel="noopener">Source</a>`:""}</p>`:""}
+    <p class="rowt" style="margin-top:4px">${esc((w.period||m.period)?"BLS OEWS, "+(w.period||m.period):"")}${(m.url||w.url)?` · <a href="${esc(m.url||w.url)}" target="_blank" rel="noopener">BLS data</a>`:""}</p></div>` }
+function renderCareers(){
+  const app=$("#app"); const cars=S.majors.map(CAREER).filter(Boolean);
+  const occ=soc=>((D.wages&&D.wages.occupations)||[]).find(o=>o.soc===soc);
+  app.innerHTML=`<h2 class="sr-only">Career paths</h2><div style="display:grid;gap:16px;padding-block:16px 30px">${cars.map(car=>{
+    const all=car.credentials.map(id=>D.programs.find(p=>p.id===id)).filter(Boolean), ladder=all.filter(p=>p.id!=="it-aast"), alt=all.find(p=>p.id==="it-aast"); const cur=progFor(car.id);
+    const pct=pp=>{const cs=[];pp.groups.forEach(g=>g.items.forEach(it=>{if(it.course)cs.push(it.course)}));return cs.length?Math.round(cs.filter(c=>S.done.has(c)).length/cs.length*100):0};
+    const titles=[...new Set(car.soc.flatMap(sc=>(occ(sc)&&occ(sc).titles)||[]))].slice(0,8);
+    return`<section class="ccard" aria-labelledby="c-${car.id}"><div><h3 id="c-${car.id}">${esc(car.name)}</h3><p style="margin:6px 0 0;color:var(--ink-2);max-width:65ch">${esc(car.blurb)}</p></div>
+     <div><div class="sect-t">Ways to get there at EvCC</div><div class="ladder">${ladder.map((pp,i)=>`${i?'<span class="arr" aria-hidden="true">→</span>':""}<button class="step" data-car="${car.id}" data-track="${pp.id}" aria-pressed="${pp===cur&&car.id===S.major}"><b>${esc(pp.name)}</b><small>${esc(pp.credential)} · ${pp.total} credits${pct(pp)?" · "+pct(pp)+"% done":""}</small></button>`).join("")}<span class="arr" aria-hidden="true">→</span><div class="step later"><b>Bachelor's later</b><small>Applied bachelor's (BAS) options below</small></div></div>
+      <p class="rowt" style="margin-top:6px">Certificates stack into the ATA. Pick a step to see its courses on the map, route and checklist.</p>
+      ${alt?`<div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center"><span class="rowt">Planning to transfer instead?</span><button class="step" style="flex:0 1 260px" data-car="${car.id}" data-track="${alt.id}" aria-pressed="${alt===cur&&car.id===S.major}"><b>${esc(alt.name)}</b><small>${esc(alt.credential)} · ${alt.total} credits · built for transfer</small></button></div>`:""}</div>
+     <div class="cgrid"><div><h4>Industry certifications</h4><ul class="reqlist">${car.certs.map(ct=>`<li><span class="ck${ct.courses.every(c=>S.done.has(c))?" y":""}">${ct.courses.every(c=>S.done.has(c))?"✓":""}</span><span><b>${esc(ct.name)}</b><div class="chiprow" style="margin-top:4px">${ct.courses.map(chip).join("")}</div>${ct.note?`<div class="rowt">${esc(ct.note)}</div>`:""}</span><span class="cr-sm">${ct.voucher?"voucher":""}</span></li>`).join("")}</ul></div>
+      <div><h4>Pay</h4>${car.soc.map(sc=>payBlock(occ(sc))).join("")||'<p class="rowt">Pay data is being added.</p>'}</div>
+      <div><h4>Typical job titles</h4>${titles.length?`<ul style="margin:0;padding-left:18px;font-size:.9rem">${titles.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>`:'<p class="rowt">Coming soon.</p>'}</div></div>
+     <details class="more"><summary>Keep going later: bachelor's options (${(D.it_entry||[]).length})</summary><div class="cmp-wrap" style="margin-top:8px;max-height:none"><table class="cmp" style="text-align:left"><thead><tr><th class="rowh" scope="col">Program</th><th scope="col" style="text-align:left">With the ATA</th><th scope="col" style="text-align:left">With the AAS-T</th></tr></thead><tbody>
+      ${(D.it_entry||[]).map(r=>`<tr><th class="rowh" scope="row" style="white-space:normal;min-width:180px">${esc(r.program)}</th><td style="text-align:left;white-space:normal;font-size:.82rem;min-width:200px">${esc(r.ata)}</td><td style="text-align:left;white-space:normal;font-size:.82rem;min-width:200px">${esc(r.aas_t)}</td></tr>`).join("")}</tbody></table></div></details>
+    </section>`}).join("")}
+    <p class="rowt">Course–certification alignment and voucher availability come from EvCC's IT program. Pay figures are U.S. Bureau of Labor Statistics estimates; actual offers vary with experience and employer.</p></div>`;
+  $$("[data-track]",app).forEach(b=>b.onclick=()=>{ S.major=b.dataset.car; S.track=b.dataset.track; autoTrack(); save(); renderTrip(); renderCareers() });
+  $$("[data-goto]",app).forEach(b=>b.onclick=()=>selectCourse(b.dataset.goto));
+}
+
 /* ---------- data & sources ---------- */
 function renderData(){
   const rows=[]; D.schools.forEach(s=>s.programs.filter(p=>D.majors[p.major]&&p.major!=="other").forEach(p=>rows.push({s,p})));
@@ -1024,16 +1126,24 @@ function renderData(){
 }
 
 /* ---------- views ---------- */
-function fixSchool(){ S.schools=S.schools.filter(id=>S.majors.some(m=>schoolProg(D.schools.find(s=>s.id===id),m))); if(!S.schools.length){const s=D.schools.find(s=>schoolProg(s,S.majors[0]||S.major));if(s)S.schools=[s.id]} syncFocus(); syncFocusSchoolForMajor() }
-function save(){store.set("sel",{majors:S.majors,major:S.major,schools:S.schools,track:S.track})}
-function rerender(){ if(S.view==="map"){ const ak=[...areasSel()].sort().join("+")+"|"+S.majors.join(",")+"|"+S.schools.join(","); if($("#mapsvg")&&ak===S.mapKey){paint();renderLegend()}else{S.mapKey=ak;computeLayout();renderMap()} } else if(S.view==="compare")renderCompare(); else if(S.view==="checklist")renderChecklist(); else if(S.view==="data")renderData(); else renderRoute() }
-function applyRouteToggle(go){ $('nav.views [data-view="route"]').hidden=!S.routeOn; if(!D)return; renderTrip(); if(go)setView(S.routeOn?"route":(S.view==="route"?"map":S.view)) }
-function setView(v){ if(v==="route"&&!S.routeOn)v="map"; if(S.drawer&&v==="data")closeDrawer(); S.view=v; $$("nav.views button").forEach(b=>{if(b.dataset.view===v)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")}); $("#app").innerHTML=""; rerender(); try{history.replaceState(null,"","#"+v)}catch(e){} }
+function fixSchool(){ if(S.goal!=="transfer"){S.schools=[];S.focus="";S.school="";return} S.schools=S.schools.filter(id=>S.majors.some(m=>schoolProg(D.schools.find(s=>s.id===id),m))); if(!S.schools.length){const s=D.schools.find(s=>schoolProg(s,S.majors[0]||S.major));if(s)S.schools=[s.id]} syncFocus(); syncFocusSchoolForMajor() }
+function save(){ S.byGoal[S.goal]={majors:S.majors.slice(),major:S.major,schools:S.schools.slice(),track:S.track}; store.set("goal",S.goal); store.set("byGoal",S.byGoal); store.set("sel",{majors:S.majors,major:S.major,schools:S.schools,track:S.track}) }
+const GOAL_VIEWS={transfer:["route","map","compare","checklist"],work:["route","map","careers","checklist"],explore:["explore"]};
+function setGoal(g){ save(); S.goal=g; const b=S.byGoal[g]||(g==="work"?{majors:["it-support"],major:"it-support",schools:[],track:null}:{majors:["mechanical"],major:"mechanical",schools:["uw-seattle"],track:null});
+  if(g!=="explore"){S.majors=b.majors.filter(m=>D.majors[m]);S.major=S.majors.includes(b.major)?b.major:S.majors[0];S.schools=(b.schools||[]).slice();S.track=b.track||null;autoTrack();fixSchool()}
+  save(); renderTrip(); applyGoal(true) }
+function applyGoal(go){ const vs=GOAL_VIEWS[S.goal]; $$("nav.views button").forEach(b=>{const v=b.dataset.view; b.hidden=!vs.includes(v)||(v==="route"&&!S.routeOn)}); $(".top-right").hidden=S.goal==="explore";
+  if(go||!vs.includes(S.view))setView(S.goal==="explore"?"explore":(S.routeOn?"route":"map")) }
+function rerender(){ if(S.view==="map"){ const ak=[...areasSel()].sort().join("+")+"|"+S.majors.join(",")+"|"+S.schools.join(","); if($("#mapsvg")&&ak===S.mapKey){paint();renderLegend()}else{S.mapKey=ak;computeLayout();renderMap()} } else if(S.view==="compare")renderCompare(); else if(S.view==="checklist")renderChecklist(); else if(S.view==="careers")renderCareers(); else if(S.view==="explore")renderExplore(); else if(S.view==="data")renderData(); else renderRoute() }
+function applyRouteToggle(go){ $('nav.views [data-view="route"]').hidden=!S.routeOn||S.goal==="explore"; if(!D)return; renderTrip(); if(go)setView(S.routeOn?"route":(S.view==="route"?"map":S.view)) }
+function setView(v){ if(v==="route"&&!S.routeOn)v="map"; if(S.goal&&v!=="data"&&!GOAL_VIEWS[S.goal].includes(v))v=S.goal==="explore"?"explore":"map"; if(S.drawer&&v==="data")closeDrawer(); S.view=v; $$("nav.views button").forEach(b=>{if(b.dataset.view===v)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")}); $("#app").innerHTML=""; rerender(); try{history.replaceState(null,"","#"+v)}catch(e){} }
 
 async function boot(){
   try{ const r=await fetch("data.json",{cache:"no-cache"}); D=await r.json() }catch(e){ $("#app").innerHTML=`<div class="warnbox">The pathway data (data.json) didn't load. Reload the page; if that doesn't fix it, the data file is missing from this site.</div>`; return }
-  S.schools=["uw-seattle"]; S.majors=["mechanical"]; const sel=store.get("sel",null);
-  if(sel&&D.majors[sel.major]){S.major=sel.major;S.majors=(sel.majors||[sel.major]).filter(m=>D.majors[m]);if(!S.majors.includes(S.major))S.majors.unshift(S.major);S.schools=(sel.schools||[sel.school]).filter(id=>D.schools.find(s=>s.id===id));S.track=sel.track||null}
+  S.byGoal=store.get("byGoal",{})||{}; S.goal=store.get("goal",null)||"explore";
+  S.schools=["uw-seattle"]; S.majors=["mechanical"]; const sel=S.goal==="work"?S.byGoal.work:(S.byGoal.transfer||store.get("sel",null));
+  if(S.goal==="work"&&!sel){S.majors=["it-support"];S.major="it-support";S.schools=[]}
+  if(sel&&D.majors[sel.major]){S.major=sel.major;S.majors=(sel.majors||[sel.major]).filter(m=>D.majors[m]&&(S.goal==="work"?!!CAREER(m):!CAREER(m)));if(!S.majors.length)S.majors=[S.goal==="work"?"it-support":"mechanical"];if(!S.majors.includes(S.major))S.major=S.majors[0];S.schools=(sel.schools||[sel.school]).filter(id=>D.schools.find(s=>s.id===id));S.track=sel.track||null}
   S.routeOn=!!store.get("routeOn",false); $("#routeToggle").checked=S.routeOn; applyRouteToggle(false);
   $("#routeToggle").onchange=e=>{S.routeOn=e.target.checked;store.set("routeOn",S.routeOn);applyRouteToggle(true)};
   S.done=new Set(store.get("done",[])); S.who=store.get("who",{})||{}; S.advisor=false; S.listView=!!store.get("listView",false); Object.assign(S.plan,store.get("plan",{}));
@@ -1048,7 +1158,7 @@ async function boot(){
   if(window.innerWidth<700)S.zoom=.72; renderTrip();
   $("#footMeta").innerHTML=`Prototype built from the EvCC ${esc(D.meta.catalog_year)} catalog and university transfer pages checked ${esc(D.meta.checked)}. Not an official EvCC publication. Always confirm requirements with an advisor and the university. Your completed courses are saved only in this browser.`;
   $("#dataLink").onclick=()=>{setView("data");window.scrollTo({top:0,behavior:"smooth"})};
-  const h=(location.hash||"").slice(1); setView(["route","map","compare","checklist","data"].includes(h)?h:(S.routeOn?"route":"map"));
+  const h=(location.hash||"").slice(1); applyGoal(false); setView(["route","map","compare","checklist","data","careers","explore"].includes(h)?h:(S.goal==="explore"?"explore":S.routeOn?"route":"map"));
 }
 boot();
 })();
