@@ -1075,11 +1075,17 @@ function renderExplore(){
 }
 /* ---------- careers ---------- */
 function money(n){return n==null?"—":"$"+Math.round(n).toLocaleString("en-US")}
-function payBlock(occ){ if(!occ)return""; const w=occ.wa||{}, m=occ.seattle_msa||{}; const lo=Math.min(...[w.p25,m.p25].filter(Boolean),40000), hi=Math.max(...[w.p75,m.p75].filter(Boolean),160000); const pos=v=>((v-lo)/(hi-lo)*100).toFixed(1)+"%";
-  const row=(lab,d)=>d&&d.median?`<div style="margin-top:8px"><div class="rowt">${esc(lab)} · median</div><div class="pay">${money(d.median)}</div>${d.p25&&d.p75?`<div class="paybar" aria-hidden="true"><i style="left:${pos(d.p25)};width:calc(${pos(d.p75)} - ${pos(d.p25)})"></i><b style="left:${pos(d.median)}"></b></div><div class="rowt">Middle half earns ${money(d.p25)}–${money(d.p75)}</div>`:""}</div>`:"";
-  return`<div><div class="rowt" style="font-weight:600">${esc(occ.name)}</div>${row("Seattle–Tacoma–Bellevue area (incl. Everett)",m)}${row("Washington State",w)}
-    ${occ.outlook&&occ.outlook.text?`<p class="rowt" style="margin-top:6px">${esc(occ.outlook.text)}${occ.outlook.url?` <a href="${esc(occ.outlook.url)}" target="_blank" rel="noopener">Source</a>`:""}</p>`:""}
-    <p class="rowt" style="margin-top:4px">${esc((w.period||m.period)?"BLS OEWS, "+(w.period||m.period):"")}${(m.url||w.url)?` · <a href="${esc(m.url||w.url)}" target="_blank" rel="noopener">BLS data</a>`:""}</p></div>` }
+function payBlock(occ){ if(!occ)return""; const w=occ.wa||{}, m=occ.seattle_msa||{}, u=occ.us||{};
+  const ds=[m,w,u].filter(d=>d&&d.median); if(!ds.length)return"";
+  const lo=Math.min(35000,...ds.map(d=>d.p25||d.median)), hi=Math.max(180000,...ds.map(d=>d.p75||d.median)); const pos=v=>((v-lo)/(hi-lo)*100).toFixed(1)+"%";
+  const row=(lab,d)=>d&&d.median?`<div style="margin-top:8px"><div class="rowt">${esc(lab)} · median yearly pay</div><div class="pay">${money(d.median)}</div>${d.p25&&d.p75?`<div class="paybar" aria-hidden="true"><i style="left:${pos(d.p25)};width:calc(${pos(d.p75)} - ${pos(d.p25)})"></i><b style="left:${pos(d.median)}"></b></div><div class="rowt">Middle half earns ${money(d.p25)}–${money(d.p75)}</div>`:""}</div>`:"";
+  const local=m.median||w.median; const per=(m.period||w.period||u.period||"");
+  return`<div style="padding-bottom:10px;border-bottom:1px solid var(--surface-2)"><div style="font-weight:600;font-size:.9rem">${esc(occ.name)}</div>
+    ${row("Seattle–Tacoma–Bellevue area (includes Everett)",m)}${row("Washington State",w)}${local?"":row("United States (no Washington figure available)",u)}
+    ${occ.typical_entry_education?`<p class="rowt" style="margin-top:6px">Typical entry education: <b>${esc(occ.typical_entry_education)}</b></p>`:""}
+    ${occ.outlook&&occ.outlook.text?`<p class="rowt" style="margin-top:4px">${esc(occ.outlook.text)}${occ.outlook.url?` <a href="${esc(occ.outlook.url)}" target="_blank" rel="noopener">Source</a>`:""}</p>`:""}
+    ${occ.us_outlook&&occ.us_outlook.text?`<p class="rowt" style="margin-top:4px">${esc(occ.us_outlook.text)}${occ.us_outlook.url?` <a href="${esc(occ.us_outlook.url)}" target="_blank" rel="noopener">BLS</a>`:""}</p>`:""}
+    <p class="rowt" style="margin-top:4px">BLS wage estimates${per?", "+esc(per):""}${(m.url||w.url||u.url)?` · <a href="${esc(m.url||w.url||u.url)}" target="_blank" rel="noopener">wage data</a>`:""}</p></div>` }
 function renderCareers(){
   const app=$("#app"); const cars=S.majors.map(CAREER).filter(Boolean);
   const occ=soc=>((D.wages&&D.wages.occupations)||[]).find(o=>o.soc===soc);
@@ -1097,7 +1103,7 @@ function renderCareers(){
      <details class="more"><summary>Keep going later: bachelor's options (${(D.it_entry||[]).length})</summary><div class="cmp-wrap" style="margin-top:8px;max-height:none"><table class="cmp" style="text-align:left"><thead><tr><th class="rowh" scope="col">Program</th><th scope="col" style="text-align:left">With the ATA</th><th scope="col" style="text-align:left">With the AAS-T</th></tr></thead><tbody>
       ${(D.it_entry||[]).map(r=>`<tr><th class="rowh" scope="row" style="white-space:normal;min-width:180px">${esc(r.program)}</th><td style="text-align:left;white-space:normal;font-size:.82rem;min-width:200px">${esc(r.ata)}</td><td style="text-align:left;white-space:normal;font-size:.82rem;min-width:200px">${esc(r.aas_t)}</td></tr>`).join("")}</tbody></table></div></details>
     </section>`}).join("")}
-    <p class="rowt">Course–certification alignment and voucher availability come from EvCC's IT program. Pay figures are U.S. Bureau of Labor Statistics estimates; actual offers vary with experience and employer.</p></div>`;
+    <p class="rowt">Course–certification alignment and voucher availability come from EvCC's IT program. Pay figures are U.S. Bureau of Labor Statistics (OEWS) estimates, read through O*NET OnLine; outlook comes from Washington's Career Bridge and BLS. Actual offers vary with experience and employer.</p></div>`;
   $$("[data-track]",app).forEach(b=>b.onclick=()=>{ S.major=b.dataset.car; S.track=b.dataset.track; autoTrack(); save(); renderTrip(); renderCareers() });
   $$("[data-goto]",app).forEach(b=>b.onclick=()=>selectCourse(b.dataset.goto));
 }
