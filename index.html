@@ -16,7 +16,7 @@
 :root{
   --bg:#F3F5F7; --surface:#FFFFFF; --surface-2:#E9EDF1; --ink:#15212C; --ink-2:#4A5865; --ink-3:#5E6A76;
   --rule:#D5DCE3; --accent:#0F5E86; --accent-ink:#FFFFFF; --focus:#E07A1F;
-  --l-math:#2C5FC4; --l-phys:#D1512A; --l-chem:#23905A; --l-bio:#7C9A1E; --l-engr:#7446BF; --l-cs:#0A8E9A; --l-engl:#A97A1F; --l-gen:#66717C; --l-it:#B23A6E;
+  --l-math:#2C5FC4; --l-phys:#D1512A; --l-chem:#23905A; --l-bio:#7C9A1E; --l-engr:#7446BF; --l-cs:#0A8E9A; --l-engl:#A97A1F; --l-gen:#66717C; --l-it:#B23A6E; --l-mfg:#3E6A8A;
   --anc:#E07A1F; --desc:#0F5E86;
   --ok:#23905A; --warn:#B7791F; --bad:#C2413A;
   --lane-tint:.06;
@@ -28,12 +28,12 @@
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
   --bg:#0F161D; --surface:#17212B; --surface-2:#1F2B36; --ink:#E6ECF1; --ink-2:#A9B6C2; --ink-3:#97A4B0;
   --rule:#2C3A47; --accent:#5DB3DD; --accent-ink:#0B1218; --focus:#F09A4A;
-  --l-math:#6E9BF0; --l-phys:#F07A55; --l-chem:#4FC287; --l-bio:#A9C64A; --l-engr:#A584E8; --l-cs:#3CC2CD; --l-engl:#D6A54A; --l-gen:#9AA6B1; --l-it:#E57FA8;
+  --l-math:#6E9BF0; --l-phys:#F07A55; --l-chem:#4FC287; --l-bio:#A9C64A; --l-engr:#A584E8; --l-cs:#3CC2CD; --l-engl:#D6A54A; --l-gen:#9AA6B1; --l-it:#E57FA8; --l-mfg:#86B0CF;
   --anc:#F09A4A; --desc:#5DB3DD; --ok:#4FC287; --warn:#E0A84A; --bad:#EF7B73; --lane-tint:.09; color-scheme:dark }}
 :root[data-theme="dark"]{
   --bg:#0F161D; --surface:#17212B; --surface-2:#1F2B36; --ink:#E6ECF1; --ink-2:#A9B6C2; --ink-3:#97A4B0;
   --rule:#2C3A47; --accent:#5DB3DD; --accent-ink:#0B1218; --focus:#F09A4A;
-  --l-math:#6E9BF0; --l-phys:#F07A55; --l-chem:#4FC287; --l-bio:#A9C64A; --l-engr:#A584E8; --l-cs:#3CC2CD; --l-engl:#D6A54A; --l-gen:#9AA6B1; --l-it:#E57FA8;
+  --l-math:#6E9BF0; --l-phys:#F07A55; --l-chem:#4FC287; --l-bio:#A9C64A; --l-engr:#A584E8; --l-cs:#3CC2CD; --l-engl:#D6A54A; --l-gen:#9AA6B1; --l-it:#E57FA8; --l-mfg:#86B0CF;
   --anc:#F09A4A; --desc:#5DB3DD; --ok:#4FC287; --warn:#E0A84A; --bad:#EF7B73; --lane-tint:.09; color-scheme:dark }
 
 *{box-sizing:border-box}
@@ -360,7 +360,7 @@ th .colh .inlist{font:600 .62rem/1 var(--f-mono);letter-spacing:.05em;text-trans
   <header class="top">
     <div class="brand">
       <h1>Degree Planner <span class="proto">Prototype</span></h1>
-      <div class="sub">Everett Community College · Engineering, Computer Science &amp; IT courses, prerequisites and transfer requirements</div>
+      <div class="sub">Everett Community College · Engineering, Computer Science, IT &amp; Advanced Manufacturing courses, prerequisites and transfer requirements</div>
     </div>
     <div class="top-right">
       <label class="switch" title="Build a quarter-by-quarter plan for one major"><input type="checkbox" id="routeToggle"> Plan my route</label>
@@ -395,11 +395,11 @@ const S={who:{},majors:[],routeOn:false,hl:true,view:"map",drawer:false,track:nu
 
 const LANES=[
  {id:"math",label:"Math",v:"--l-math"},{id:"phys",label:"Physics",v:"--l-phys"},{id:"chem",label:"Chemistry",v:"--l-chem"},
- {id:"bio",label:"Biology",v:"--l-bio"},{id:"engr",label:"Engineering",v:"--l-engr"},{id:"cs",label:"Comp Sci",v:"--l-cs"},{id:"it",label:"Info Tech",v:"--l-it"},
+ {id:"bio",label:"Biology",v:"--l-bio"},{id:"engr",label:"Engineering",v:"--l-engr"},{id:"cs",label:"Comp Sci",v:"--l-cs"},{id:"it",label:"Info Tech",v:"--l-it"},{id:"mfg",label:"Manufacturing",v:"--l-mfg"},
  {id:"engl",label:"English",v:"--l-engl"},{id:"gen",label:"Gen Ed",v:"--l-gen"}];
-const laneOf=c=>{const p=c.split(" ")[0];if(c==="STEM 102")return"engr"; if(c==="STEM 103"||p==="IT"||p==="CL")return"it"; if(p==="TS")return"math";
+const laneOf=c=>{const p=c.split(" ")[0];if(c==="STEM 102")return"engr"; if(c==="STEM 103"||p==="IT"||p==="CL")return"it"; if(p==="TS")return"math"; if(c==="MFG T 103")return"phys"; if(["WELD","MFG","CT","MECH"].includes(p)||c.startsWith("ENG T "))return"mfg";
  return p.startsWith("MATH")?"math":p.startsWith("PHYS")?"phys":p.startsWith("CHEM")?"chem":p.startsWith("BIOL")?"bio":
- p.startsWith("ENGR")?"engr":p==="MFG"?"phys":p.startsWith("CS")?"cs":p.startsWith("ENGL")?"engl":"gen"};
+ p.startsWith("ENGR")?"engr":p.startsWith("CS")?"cs":p.startsWith("ENGL")?"engl":"gen"};
 const laneColor=id=>`var(${LANES.find(l=>l.id===id).v})`;
 const CAT={admission:{s:"APPLY",l:"Required to apply"},"pre-transfer":{s:"PRE",l:"Before transfer"},degree:{s:"BS",l:"Counts toward BS"},recommended:{s:"REC",l:"Recommended"}};
 const CATRANK={admission:4,"pre-transfer":3,degree:2,recommended:1};
@@ -435,7 +435,7 @@ function choiceSets(p=prog()){const a=[];p.groups.forEach(g=>g.items.forEach(it=
 // status of each course inside the selected track+major+school
 function statusMap(major=S.major){
   const p=progFor(major),m={};const set=(c,v)=>{const rank={core:5,spec:4,choice:3,later:2,prereq:1};if(!m[c]||rank[v]>rank[m[c]])m[c]=v};
-  const car=CAREER(major); const progs=car?[p,...tracksFor(major).filter(x=>x.id!=="it-aast"&&x!==p)]:[p];
+  const car=CAREER(major); const progs=car?[p,...tracksFor(major).filter(x=>x.credential!=="AAS-T"&&x!==p)]:[p];
   progs.forEach(pp=>pp.groups.forEach(g=>g.items.forEach(it=>{if(it.course)set(it.course,"core");if(it.one_of)it.one_of.forEach(c=>set(c,"choice"))})));
   (S.schools.length?S.schools:[""]).forEach(sid=>{const sp=getSpec(p,major,sid); if(!sp.none){(sp.courses||[]).forEach(c=>set(c,"spec"));(sp.one_of||[]).forEach(a=>a.forEach(c=>set(c,"choice")));if(sp.choose)sp.choose.from.forEach(c=>set(c,"choice"));(sp.later||[]).forEach(c=>set(c,"later"))}});
   Object.keys(m).forEach(c=>ancestors(c).forEach(a=>{if(!m[a])m[a]="prereq"}));
@@ -474,7 +474,7 @@ const crNum=c=>{const v=parseFloat(String(C(c).credits).split("-").pop());return
 let L=null;
 function areasSel(){ const a=new Set(); S.majors.forEach(m=>D.programs.filter(p=>p.majors.includes(m)).forEach(p=>a.add(p.area||"engineering"))); if(!a.size)a.add("engineering"); return a }
 function areaCourses(areas){ const set=new Set(); const add=c=>{if(D.courses[c]&&!D.courses[c].hidden&&!D.courses[c].menu)set.add(c)};
-  const menuOk=c=>/^(IT|CS|CL|STEM)/.test(c);
+  const menuOk=c=>/^(IT|CS|CL|STEM|WELD|MFG|ENG T|CT|MECH)\b/.test(c);
   D.programs.filter(p=>areas.has(p.area||"engineering")).forEach(p=>{ p.groups.forEach(g=>g.items.forEach(it=>{if(it.course)add(it.course);(it.one_of||[]).forEach(c=>{if(it.one_of.length<4||menuOk(c))add(c)})}));
     Object.values(p.spec.by||{}).forEach(by=>Object.values(by||{}).forEach(v=>{ if(!v||typeof v!=="object")return; ["courses","later","bothell_extra"].forEach(k=>(v[k]||[]).forEach(add)); (v.one_of||[]).forEach(a=>a.forEach(add)); if(v.choose)(v.choose.from||[]).forEach(add) })) });
   D.schools.forEach(sc=>sc.programs.filter(p=>S.majors.includes(p.major)).forEach(p=>{p.requirements.forEach(r=>r.courses.forEach(add));(p.choose_groups||[]).forEach(g=>g.courses.forEach(add))}));
@@ -830,7 +830,7 @@ function majorsAll(){ if(S.goal==="work")return (D.careers||[]).map(c=>c.id); re
 function majorsAllT(){ const set=new Set(); D.programs.forEach(p=>p.majors.forEach(m=>set.add(m))); D.schools.forEach(s=>s.programs.forEach(p=>set.add(p.major))); return Object.keys(D.majors).filter(m=>set.has(m)&&m!=="other"&&!CAREER(m)) }
 function tracksFor(m){ const car=CAREER(m); if(car)return car.credentials.map(id=>D.programs.find(p=>p.id===id)).filter(Boolean); const t=D.programs.filter(p=>p.majors.includes(m)); return t.length?t:D.programs.filter(p=>p.id==="general") }
 const MABBR={mechanical:"ME",civil:"CE",environmental:"EnvE",aeronautics:"AA",industrial:"ISE",materials:"MSE",electrical:"EE",computer:"CpE",bioengineering:"BioE",chemical:"ChE",manufacturing:"MfgE"};
-function progFor(m){ if(CAREER(m)&&!(m===S.major&&S.track)){const a=D.programs.find(p=>p.id==="it-ata"); if(a)return a} if(m===S.major&&S.track){const t=tracksFor(m).find(p=>p.id===S.track)||(S.advisor&&S.track==="general"?D.programs.find(p=>p.id==="general"):null); if(t)return t} return tracksFor(m)[0] }
+function progFor(m){ if(CAREER(m)&&!(m===S.major&&S.track)){const a=tracksFor(m).find(p=>p.credential==="ATA")||tracksFor(m)[0]; if(a)return a} if(m===S.major&&S.track){const t=tracksFor(m).find(p=>p.id===S.track)||(S.advisor&&S.track==="general"?D.programs.find(p=>p.id==="general"):null); if(t)return t} return tracksFor(m)[0] }
 function statusUnion(){ const rank={core:5,spec:4,choice:3,later:2,prereq:1}, m={};
   S.majors.forEach(mj=>Object.entries(statusMap(mj)).forEach(([c,v])=>{ if(!m[c])m[c]={st:v,majors:[]}; if(rank[v]>rank[m[c].st])m[c].st=v; if(v!=="prereq")m[c].majors.push(mj) })); return m }
 function transferUnion(){ const m={}; S.majors.forEach(mj=>Object.entries(transferAll(mj)).forEach(([c,a])=>{ a.forEach(t=>(m[c]=m[c]||[]).push(Object.assign({major:mj},t))) }));
@@ -850,9 +850,9 @@ function renderTrip(){
   const offer=D.schools.filter(offersAny), rest=D.schools.filter(s=>s.programs.length&&!offersAny(s));
   const tracks=tracksFor(S.major);
   const GL={"civil-mech":"Engineering · Civil & Mechanical MRP","comp-ee":"Engineering · Computer & Electrical MRP","bio-chem":"Engineering · Bioengineering & Chemical MRP","general":"Engineering · General AS-T","cs-dta":"Computer Science · CS DTA/MRP","it-aast":"Information Technology · IT AAS-T / ATA"};
-  const groups=S.goal==="work"?[["IT career paths",majorsAll()]]:D.programs.map(p=>[GL[p.id]||p.name,majorsAll().filter(m=>tracksFor(m)[0].id===p.id)]).filter(g=>g[1].length);
+  const groups=S.goal==="work"?[["IT career paths",majorsAll().filter(m=>CAREER(m).area==="it")],["Manufacturing career paths",majorsAll().filter(m=>CAREER(m).area!=="it")]].filter(g=>g[1].length):D.programs.map(p=>[GL[p.id]||p.name,majorsAll().filter(m=>tracksFor(m)[0].id===p.id)]).filter(g=>g[1].length);
   const goalSel=`<select id="tGoal" aria-label="Your goal">${opt([["transfer","transfer and study"],["work","go to work in"],["explore","explore my options"]],S.goal)}</select>`;
-  if(S.goal==="explore"){ $("#trip").innerHTML=`<div class="sentence" role="group" aria-label="Your goal"><span class="w">I want to</span> ${goalSel}<span class="w">.</span></div><div class="trip-meta">Not sure yet? Compare Engineering, Computer Science and IT below, then pick a goal.</div>`; $("#tGoal").onchange=e=>setGoal(e.target.value); return }
+  if(S.goal==="explore"){ $("#trip").innerHTML=`<div class="sentence" role="group" aria-label="Your goal"><span class="w">I want to</span> ${goalSel}<span class="w">.</span></div><div class="trip-meta">Not sure yet? Compare Engineering, Computer Science, IT and Advanced Manufacturing below, then pick a goal.</div>`; $("#tGoal").onchange=e=>setGoal(e.target.value); return }
   const trackList=[...new Set(S.majors.map(m=>progFor(m)))];
   $("#trip").innerHTML=`<div class="sentence" role="group" aria-label="Your goal"><span class="w">I want to</span> ${goalSel} <details class="unipick" id="majPick"${S.majOpen?" open":""}><summary><span class="sr-only">${S.goal==="work"?"Career paths":"Majors"}: </span>${esc(majPhrase())}</summary><div class="unipop" role="group" aria-label="Choose majors">
    ${groups.map(([l,ms])=>`<div class="gl">${esc(l)}</div>${ms.map(m=>`<label><input type="checkbox" data-maj="${m}"${S.majors.includes(m)?" checked":""}><span>${esc(D.majors[m])}</span><small>${S.goal==="work"?"":(n=>n+(n===1?" school":" schools"))(D.schools.filter(s=>schoolProg(s,m)).length)}</small></label>`).join("")}`).join("")}
@@ -969,8 +969,9 @@ function checklistModel(){
     items.push(it(`Apply: ${a.deadlines||"check the university's deadline"}`,false,{tag:"Deadline"}));
     secs.push({title:`${sch.short}: ${sp.degree}`,group:"Universities",sub:[a.model,a.min_gpa?"GPA: "+a.min_gpa:"",a.start_terms?"Starts: "+a.start_terms:""].filter(Boolean).join(" · "),url:uniUrl(sch,sp),items})});
   if(S.goal==="work"){ const car=CAREER(S.major);
-    if(car){ secs.push({title:"Industry certifications",group:"Career: "+car.name,sub:"Courses aligned to each exam. Ask your instructor about exam vouchers.",items:car.certs.map(ct=>it(ct.name,ct.courses.every(c=>S.done.has(c)),{note:"Prepared by "+ct.courses.join(", ")+(ct.voucher?" · voucher offered":"")+(ct.note?" · "+ct.note:"")}))});
-      const ata=p.id!=="it-aast"; secs.push({title:"Keep going later: BAS and BS options",group:"Career: "+car.name,sub:"With an IT "+(ata?"ATA":"AAS-T")+". Confirm with each school.",items:(D.it_entry||[]).map(r=>it(r.program,false,{note:ata?r.ata:r.aas_t,plain:true}))}) } }
+    if(car){ if(car.certs.length)secs.push({title:"Industry certifications",group:"Career: "+car.name,sub:"Courses aligned to each exam. Ask your instructor about exam vouchers.",items:car.certs.map(ct=>it(ct.name,ct.courses.every(c=>S.done.has(c)),{note:"Prepared by "+ct.courses.join(", ")+(ct.voucher?" · voucher offered":"")+(ct.note?" · "+ct.note:"")}))});
+      const ata=p.credential!=="AAS-T"; if(car.area==="it")secs.push({title:"Keep going later: BAS and BS options",group:"Career: "+car.name,sub:"With an IT "+(ata?"ATA":"AAS-T")+". Confirm with each school.",items:(D.it_entry||[]).map(r=>it(r.program,false,{note:ata?r.ata:r.aas_t,plain:true}))});
+      else if((car.next||[]).length)secs.push({title:"Keep going later: BAS options",group:"Career: "+car.name,sub:"With an ATA. Confirm with each school.",items:car.next.map(n=>{const sc=D.schools.find(x=>x.id===n.school);return it(n.program+(sc?", "+sc.short:""),false,{note:n.note||"",plain:true})})}) } }
   // plan
   if(S.routeOn)secs.push({title:"Draft quarter plan",group:"Plan",sub:"Built from catalog prerequisites and typical offerings. Check the class schedule before registering.",
     items:r.quarters.map(q=>it(`${TNAME[q.term]} ${q.year}: ${q.items.map(x=>x.c?x.c:(({HUM:"Humanities",SS:"Social Science",HUMSS:"Hum/Soc Sci",SCI:"Lab science",SPEC:"Specialization",ELEC:"Elective"}[x.slot.slot]||x.slot.label))).join(", ")}`,false,{cr:q.credits+" cr"}))});
@@ -1058,7 +1059,12 @@ function renderExplore(){
     math:"Math 86 level for the ATA; precalculus or statistics (MATH& 107, 141 or 146) for the AAS-T.",
     leads:"Jobs right after EvCC with a certificate or the ATA, or a BAS or BS later (BAS programs at CWU, Bellevue College and others).",
     degrees:["it-ata","it-aast","it-cert-support","it-cert-networking","it-cert-sysadmin","it-cert-cyber"], start:["STEM 101","STEM 103","IT 161"],
-    acts:[["work",(D.careers||[]).map(c=>c.id),"See IT career paths"],["transfer",["information-technology","cybersecurity","it-management"],"See IT BAS and BS options"]]}];
+    acts:[["work",(D.careers||[]).filter(c=>c.area==="it").map(c=>c.id),"See IT career paths"],["transfer",["information-technology","cybersecurity","it-management"],"See IT BAS and BS options"]]},
+   {k:"amtec",t:"Advanced Manufacturing",c:"--l-mfg",what:"Welding, precision machining, composites, mechatronics and CAD design at AMTEC. Hands-on, shop-based and job-ready.",
+    math:"MATH 86 level, or ENG T 101 (Technical Problem Solving), for the ATA degrees. Most certificates need no college math.",
+    leads:"Jobs right after EvCC with a certificate or an ATA. The ATA degrees also connect to BAS programs at CWU and Clover Park Technical College.",
+    degrees:["amt-weld-ata","amt-machining-ata","amt-composites-ata","amt-mechatronics-ata","amt-cad-ata"], start:["MFG T 100","ENG T 111","WELD 101","MECH 119"],
+    acts:[["work",(D.careers||[]).filter(c=>c.area==="amtec").map(c=>c.id),"See manufacturing career paths"]]}];
   $("#app").innerHTML=`<h2 class="sr-only">Explore</h2><div class="xgrid">${cards.map(x=>`<section class="xcard" style="--xc:var(${x.c})" aria-labelledby="x-${x.k}"><h3 id="x-${x.k}">${x.t}</h3><p>${esc(x.what)}</p>
      <dl><dt>Math</dt><dd>${esc(x.math)}</dd><dt>Leads to</dt><dd>${esc(x.leads)}</dd>
      <dt>At EvCC</dt><dd>${x.degrees.map(P).filter(Boolean).map(p=>`${esc(p.name)} ${esc(p.credential)} <span class="rowt">(${p.total} cr)</span>`).join("<br>")}</dd>
@@ -1069,8 +1075,9 @@ function renderExplore(){
     <li><b>Still deciding whether STEM is for you?</b> Take STEM 102. It's a good way to explore STEM fields, and it meets the same engineering degree requirement as ENGR 111.</li>
     <li><b>CS or engineering?</b> If you're drawn to hardware or robots, look at Computer or Electrical Engineering. ENGR 121 also counts toward the CS degree in place of STEM 103.</li>
     <li><b>Any STEM path:</b> take a math class every quarter. Your math placement sets how long the degree takes.</li>
+    <li><b>Not sure which trade?</b> The AMT degrees all start with MFG T 100 and ENG T 111, and include one course each from composites, machining, mechatronics and welding, so you try them all.</li>
     <li><b>Going to work vs. transferring in IT:</b> the ATA and certificates lead straight to jobs; the AAS-T is built for transfer, and both can lead to a BAS later.</li>
-   </ul><p class="rowt">From EvCC's STEM and IT advising guides. Talk with a program advisor before you register.</p></section>`;
+   </ul><p class="rowt">From EvCC's STEM and IT advising guides and the AMTEC program pages in the catalog. Talk with a program advisor before you register.</p></section>`;
   $$("[data-go]").forEach(b=>b.onclick=()=>{ const g=b.dataset.go, ms=b.dataset.ms.split(",").filter(m=>D.majors[m]); S.byGoal[g]=Object.assign({},S.byGoal[g]||{}, {majors:ms,major:ms[0],track:null,schools:(S.byGoal[g]&&S.byGoal[g].schools)||[]}); setGoal(g) });
   $$("[data-goto]",$("#app")).forEach(b=>b.onclick=()=>selectCourse(b.dataset.goto));
 }
@@ -1091,20 +1098,20 @@ function renderCareers(){
   const app=$("#app"); const cars=S.majors.map(CAREER).filter(Boolean);
   const occ=soc=>((D.wages&&D.wages.occupations)||[]).find(o=>o.soc===soc);
   app.innerHTML=`<h2 class="sr-only">Career paths</h2><div style="display:grid;gap:16px;padding-block:16px 30px">${cars.map(car=>{
-    const all=car.credentials.map(id=>D.programs.find(p=>p.id===id)).filter(Boolean), ladder=all.filter(p=>p.id!=="it-aast"), alt=all.find(p=>p.id==="it-aast"); const cur=progFor(car.id);
+    const all=car.credentials.map(id=>D.programs.find(p=>p.id===id)).filter(Boolean), ladder=all.filter(p=>p.credential!=="AAS-T"), alt=all.find(p=>p.credential==="AAS-T"); const cur=progFor(car.id);
     const pct=pp=>{const cs=[];pp.groups.forEach(g=>g.items.forEach(it=>{if(it.course)cs.push(it.course)}));return cs.length?Math.round(cs.filter(c=>S.done.has(c)).length/cs.length*100):0};
     const titles=[...new Set(car.soc.flatMap(sc=>(occ(sc)&&occ(sc).titles)||[]))].slice(0,8);
     return`<section class="ccard" aria-labelledby="c-${car.id}"><div><h3 id="c-${car.id}">${esc(car.name)}</h3><p style="margin:6px 0 0;color:var(--ink-2);max-width:65ch">${esc(car.blurb)}</p></div>
-     <div><div class="sect-t">Ways to get there at EvCC</div><div class="ladder">${ladder.map((pp,i)=>`${i?'<span class="arr" aria-hidden="true">→</span>':""}<button class="step" data-car="${car.id}" data-track="${pp.id}" aria-pressed="${pp===cur&&car.id===S.major}"><b>${esc(pp.name)}</b><small>${esc(pp.credential)} · ${pp.total} credits${pct(pp)?" · "+pct(pp)+"% done":""}</small></button>`).join("")}<span class="arr" aria-hidden="true">→</span><div class="step later"><b>BAS or BS later</b><small>Options below</small></div></div>
+     <div><div class="sect-t">Ways to get there at EvCC</div><div class="ladder">${ladder.map((pp,i)=>`${i?'<span class="arr" aria-hidden="true">→</span>':""}<button class="step" data-car="${car.id}" data-track="${pp.id}" aria-pressed="${pp===cur&&car.id===S.major}"><b>${esc(pp.name)}</b><small>${esc(pp.credential)} · ${pp.total} credits${pct(pp)?" · "+pct(pp)+"% done":""}</small></button>`).join("")}<span class="arr" aria-hidden="true">→</span><div class="step later"><b>${car.area==="it"?"BAS or BS later":"BAS later"}</b><small>Options below</small></div></div>
       <p class="rowt" style="margin-top:6px">Certificates stack into the ATA. Pick a step to see its courses on the map, route and checklist.</p>
       ${alt?`<div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center"><span class="rowt">Planning to transfer instead?</span><button class="step" style="flex:0 1 260px" data-car="${car.id}" data-track="${alt.id}" aria-pressed="${alt===cur&&car.id===S.major}"><b>${esc(alt.name)}</b><small>${esc(alt.credential)} · ${alt.total} credits · built for transfer</small></button></div>`:""}</div>
-     <div class="cgrid"><div><h4>Industry certifications</h4><ul class="reqlist">${car.certs.map(ct=>`<li><span class="ck${ct.courses.every(c=>S.done.has(c))?" y":""}">${ct.courses.every(c=>S.done.has(c))?"✓":""}</span><span><b>${esc(ct.name)}</b><div class="chiprow" style="margin-top:4px">${ct.courses.map(chip).join("")}</div>${ct.note?`<div class="rowt">${esc(ct.note)}</div>`:""}</span><span class="cr-sm">${ct.voucher?"voucher":""}</span></li>`).join("")}</ul></div>
+     <div class="cgrid">${car.certs.length?`<div><h4>Industry certifications</h4><ul class="reqlist">${car.certs.map(ct=>`<li><span class="ck${ct.courses.every(c=>S.done.has(c))?" y":""}">${ct.courses.every(c=>S.done.has(c))?"✓":""}</span><span><b>${esc(ct.name)}</b><div class="chiprow" style="margin-top:4px">${ct.courses.map(chip).join("")}</div>${ct.note?`<div class="rowt">${esc(ct.note)}</div>`:""}</span><span class="cr-sm">${ct.voucher?"voucher":""}</span></li>`).join("")}</ul></div>`:""}
       <div><h4>Pay</h4>${car.soc.map(sc=>payBlock(occ(sc))).join("")||'<p class="rowt">Pay data is being added.</p>'}</div>
       <div><h4>Typical job titles</h4>${titles.length?`<ul style="margin:0;padding-left:18px;font-size:.9rem">${titles.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>`:'<p class="rowt">Coming soon.</p>'}</div></div>
-     <details class="more"><summary>Keep going later: BAS and BS options (${(D.it_entry||[]).length})</summary><div class="cmp-wrap" style="margin-top:8px;max-height:none"><table class="cmp" style="text-align:left"><thead><tr><th class="rowh" scope="col">Program</th><th scope="col" style="text-align:left">With the ATA</th><th scope="col" style="text-align:left">With the AAS-T</th></tr></thead><tbody>
-      ${(D.it_entry||[]).map(r=>`<tr><th class="rowh" scope="row" style="white-space:normal;min-width:180px">${esc(r.program)}</th><td style="text-align:left;white-space:normal;font-size:.82rem;min-width:200px">${esc(r.ata)}</td><td style="text-align:left;white-space:normal;font-size:.82rem;min-width:200px">${esc(r.aas_t)}</td></tr>`).join("")}</tbody></table></div></details>
+     ${car.area==="it"?`<details class="more"><summary>Keep going later: BAS and BS options (${(D.it_entry||[]).length})</summary><div class="cmp-wrap" style="margin-top:8px;max-height:none"><table class="cmp" style="text-align:left"><thead><tr><th class="rowh" scope="col">Program</th><th scope="col" style="text-align:left">With the ATA</th><th scope="col" style="text-align:left">With the AAS-T</th></tr></thead><tbody>
+      ${(D.it_entry||[]).map(r=>`<tr><th class="rowh" scope="row" style="white-space:normal;min-width:180px">${esc(r.program)}</th><td style="text-align:left;white-space:normal;font-size:.82rem;min-width:200px">${esc(r.ata)}</td><td style="text-align:left;white-space:normal;font-size:.82rem;min-width:200px">${esc(r.aas_t)}</td></tr>`).join("")}</tbody></table></div></details>`:(car.next||[]).length?`<details class="more"><summary>Keep going later: BAS options (${car.next.length})</summary><ul class="reqlist" style="margin-top:8px">${car.next.map(n=>{const sc=D.schools.find(x=>x.id===n.school);return`<li><span></span><span><b>${esc(n.program)}</b>${sc?`, ${esc(sc.short)}`:""}${n.note?`<div class="rowt">${esc(n.note)}</div>`:""}</span><span class="cr-sm">${n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener">Info ↗</a>`:""}</span></li>`}).join("")}</ul></details>`:""}
     </section>`}).join("")}
-    <p class="rowt">Course–certification alignment and voucher availability come from EvCC's IT program. Pay figures are U.S. Bureau of Labor Statistics (OEWS) estimates, read through O*NET OnLine; outlook comes from Washington's Career Bridge and BLS. Actual offers vary with experience and employer.</p></div>`;
+    <p class="rowt">${cars.some(c=>c.area==="it")?"Course–certification alignment and voucher availability come from EvCC's IT program. ":""}Programs come from the EvCC catalog. Pay figures are U.S. Bureau of Labor Statistics (OEWS) estimates, read through O*NET OnLine; outlook comes from Washington's Career Bridge and BLS. Actual offers vary with experience and employer.</p></div>`;
   $$("[data-track]",app).forEach(b=>b.onclick=()=>{ S.major=b.dataset.car; S.track=b.dataset.track; autoTrack(); save(); renderTrip(); renderCareers() });
   $$("[data-goto]",app).forEach(b=>b.onclick=()=>selectCourse(b.dataset.goto));
 }
