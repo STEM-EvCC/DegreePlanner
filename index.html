@@ -395,7 +395,7 @@ const S={who:{},majors:[],routeOn:false,hl:true,view:"map",drawer:false,track:nu
 
 const LANES=[
  {id:"math",label:"Math",v:"--l-math"},{id:"phys",label:"Physics",v:"--l-phys"},{id:"chem",label:"Chemistry",v:"--l-chem"},
- {id:"bio",label:"Biology",v:"--l-bio"},{id:"engr",label:"Engineering",v:"--l-engr"},{id:"cs",label:"Comp Sci",v:"--l-cs"},{id:"it",label:"Info Tech",v:"--l-it"},{id:"mfg",label:"Manufacturing",v:"--l-mfg"},
+ {id:"bio",label:"Biology",v:"--l-bio"},{id:"engr",label:"Engineering",v:"--l-engr"},{id:"cs",label:"Comp Sci",v:"--l-cs"},{id:"it",label:"Info Tech",v:"--l-it"},{id:"mfg",label:"Advanced Manufacturing",v:"--l-mfg"},
  {id:"engl",label:"English",v:"--l-engl"},{id:"gen",label:"Gen Ed",v:"--l-gen"}];
 const laneOf=c=>{const p=c.split(" ")[0];if(c==="STEM 102")return"engr"; if(c==="STEM 103"||p==="IT"||p==="CL")return"it"; if(p==="TS")return"math"; if(c==="MFG T 103")return"phys"; if(["WELD","MFG","CT","MECH"].includes(p)||c.startsWith("ENG T "))return"mfg";
  return p.startsWith("MATH")?"math":p.startsWith("PHYS")?"phys":p.startsWith("CHEM")?"chem":p.startsWith("BIOL")?"bio":
@@ -493,7 +493,7 @@ function computeLayout(){
     stack.delete(c); return lvl[c]=L0 };
   codes.forEach(c=>visit(c));
 
-  const NW=138,NH=54,CW=176,RH=66,TOP=30,LEFT=118;
+  const NW=138,NH=54,CW=176,RH=66,TOP=30,LEFT=136;
   const cells={}; codes.forEach(c=>{const k=laneOf(c)+"|"+lvl[c];(cells[k]=cells[k]||[]).push(c)});
   Object.values(cells).forEach(a=>a.sort((x,y)=>(C(x).order??0)-(C(y).order??0)||x.localeCompare(y,undefined,{numeric:true})));
   const laneRows={}; LANES.forEach(l=>{laneRows[l.id]=Math.max(0,...Object.keys(cells).filter(k=>k.startsWith(l.id+"|")).map(k=>cells[k].length))});
@@ -555,7 +555,7 @@ function drawSVG(){
   let s=`<svg class="map" id="mapsvg" viewBox="0 0 ${W} ${H}" role="group" aria-label="Course prerequisite map. Tab moves between courses; Enter opens details. A text version is under the List button.">`;
   lanes.forEach((l,i)=>{ s+=`<rect class="lane-band" x="0" y="${l.y}" width="${W}" height="${l.h}" fill="${laneColor(l.id)}" style="opacity:${i%2?'calc(var(--lane-tint) * .55)':'var(--lane-tint)'}"/>
     <rect x="0" y="${l.y}" width="6" height="${l.h}" fill="${laneColor(l.id)}"/>
-    <text class="lane-label" x="16" y="${l.y+l.h/2+4}">${l.label}</text>`});
+    <text class="lane-label" x="16" y="${l.y+l.h/2+4}"${l.label.split(" ").some(w=>w.length>11)?' style="font-size:12px;letter-spacing:.03em"':""}>${l.label.length>12&&l.label.includes(" ")?l.label.split(" ").map((w,k,a)=>`<tspan x="16" dy="${k?15:-(a.length-1)*7.5}">${w}</tspan>`).join(""):l.label}</text>`});
   // mandatory ancestors (single-option groups) to drop arrows the chain already implies
   const reqPar=c=>(C(c).prereq?.all||[]).map(g=>(g.any||[]).filter(o=>D.courses[o.course]&&!D.courses[o.course].hidden&&!o.alt)).filter(o=>o.length===1).map(o=>o[0].course);
   const RA={}; const ra=c=>{ if(RA[c])return RA[c]; RA[c]=new Set(); reqPar(c).forEach(x=>{RA[c].add(x);ra(x).forEach(y=>RA[c].add(y))}); return RA[c] };
@@ -850,7 +850,7 @@ function renderTrip(){
   const offer=D.schools.filter(offersAny), rest=D.schools.filter(s=>s.programs.length&&!offersAny(s));
   const tracks=tracksFor(S.major);
   const GL={"civil-mech":"Engineering · Civil & Mechanical MRP","comp-ee":"Engineering · Computer & Electrical MRP","bio-chem":"Engineering · Bioengineering & Chemical MRP","general":"Engineering · General AS-T","cs-dta":"Computer Science · CS DTA/MRP","it-aast":"Information Technology · IT AAS-T / ATA"};
-  const groups=S.goal==="work"?[["IT career paths",majorsAll().filter(m=>CAREER(m).area==="it")],["Manufacturing career paths",majorsAll().filter(m=>CAREER(m).area!=="it")]].filter(g=>g[1].length):D.programs.map(p=>[GL[p.id]||p.name,majorsAll().filter(m=>tracksFor(m)[0].id===p.id)]).filter(g=>g[1].length);
+  const groups=S.goal==="work"?[["IT career paths",majorsAll().filter(m=>CAREER(m).area==="it")],["Advanced Manufacturing career paths",majorsAll().filter(m=>CAREER(m).area==="amtec")]].filter(g=>g[1].length):D.programs.map(p=>[GL[p.id]||p.name,majorsAll().filter(m=>tracksFor(m)[0].id===p.id)]).filter(g=>g[1].length);
   const goalSel=`<select id="tGoal" aria-label="Your goal">${opt([["transfer","transfer and study"],["work","go to work in"],["explore","explore my options"]],S.goal)}</select>`;
   if(S.goal==="explore"){ $("#trip").innerHTML=`<div class="sentence" role="group" aria-label="Your goal"><span class="w">I want to</span> ${goalSel}<span class="w">.</span></div><div class="trip-meta">Not sure yet? Compare Engineering, Computer Science, IT and Advanced Manufacturing below, then pick a goal.</div>`; $("#tGoal").onchange=e=>setGoal(e.target.value); return }
   const trackList=[...new Set(S.majors.map(m=>progFor(m)))];
@@ -1064,7 +1064,7 @@ function renderExplore(){
     math:"MATH 86 level, or ENG T 101 (Technical Problem Solving), for the ATA degrees. Most certificates need no college math.",
     leads:"Jobs right after EvCC with a certificate or an ATA. The ATA degrees also connect to BAS programs at CWU and Clover Park Technical College.",
     degrees:["amt-weld-ata","amt-machining-ata","amt-composites-ata","amt-mechatronics-ata","amt-cad-ata"], start:["MFG T 100","ENG T 111","WELD 101","MECH 119"],
-    acts:[["work",(D.careers||[]).filter(c=>c.area==="amtec").map(c=>c.id),"See manufacturing career paths"]]}];
+    acts:[["work",(D.careers||[]).filter(c=>c.area==="amtec").map(c=>c.id),"See advanced manufacturing career paths"]]}];
   $("#app").innerHTML=`<h2 class="sr-only">Explore</h2><div class="xgrid">${cards.map(x=>`<section class="xcard" style="--xc:var(${x.c})" aria-labelledby="x-${x.k}"><h3 id="x-${x.k}">${x.t}</h3><p>${esc(x.what)}</p>
      <dl><dt>Math</dt><dd>${esc(x.math)}</dd><dt>Leads to</dt><dd>${esc(x.leads)}</dd>
      <dt>At EvCC</dt><dd>${x.degrees.map(P).filter(Boolean).map(p=>`${esc(p.name)} ${esc(p.credential)} <span class="rowt">(${p.total} cr)</span>`).join("<br>")}</dd>
