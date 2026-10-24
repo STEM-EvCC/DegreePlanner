@@ -1,24 +1,35 @@
 # EvCC Degree Planner
 
-Engineering, Computer Science and Information Technology pathways at Everett Community College: course prerequisite maps, transfer requirements for Washington universities and applied bachelor's programs, a checklist export, and an optional quarter-by-quarter route planner.
+Engineering, Computer Science and Information Technology pathways at Everett Community College: course prerequisite maps, transfer requirements for Washington universities and applied degree programs, a checklist export, and an optional quarter-by-quarter route planner.
 
-A static site: `index.html` (the app) and `data.json` (all courses, degrees and transfer requirements). There is no server code and no database. Students' "completed" checkmarks are saved only in their own browser.
+A static site: `index.html` is the whole app. There is no server code and no database. Students' "completed" checkmarks are saved only in their own browser.
+
+## Where the data lives
+
+All courses, degrees and transfer requirements come from the shared data repo, **[STEM-EvCC/PathwaysData](https://github.com/STEM-EvCC/PathwaysData)**. This site loads it when it opens:
+
+```
+https://stem-evcc.github.io/PathwaysData/data.json
+```
+
+The [Pathways](https://github.com/STEM-EvCC/Pathways) site reads the same file, so a fix in PathwaysData updates both sites. That repo checks every change automatically before it goes live; its README explains how to edit.
+
+The address is set once, near the bottom of `index.html`:
+
+```js
+const DATA_URL="https://stem-evcc.github.io/PathwaysData/data.json";
+```
 
 ## Publish on GitHub Pages
-1. Create a repository (ideally under a department or college GitHub organization rather than a personal account), for example `degree-planner`.
-2. Upload `index.html`, `data.json`, `.nojekyll` and this README to the repository root.
-3. Settings → Pages → Source: "Deploy from a branch", branch `main`, folder `/ (root)`. Save.
-4. After about a minute the site is live at `https://<org>.github.io/degree-planner/`.
-5. Optional: add a custom domain (e.g. a subdomain EvCC IT gives you) under Settings → Pages.
+Settings → Pages → Source: "Deploy from a branch", branch `main`, folder `/ (root)`. The site is live at `https://stem-evcc.github.io/DegreePlanner/`. PathwaysData must be published too.
 
 ## Publish on any other web server
-Copy the same files to any folder a web server serves. The page loads `data.json` from the same folder, so it must be served over http(s). Opening the file directly from disk will not load the data.
+Copy `index.html` and `.nojekyll` to any folder a web server serves, and copy PathwaysData's files to a web server as well. If the data moves, change `DATA_URL` to its new address. The page must be served over http(s); opening the file directly from disk will not load the data.
 
 ## Updating requirements
-- Edit `data.json` (GitHub's web editor works fine). Each university program has `requirements`, `admission`, `sources` and `verified`.
-- Update `meta.checked` when you re-verify.
-- The "Data & sources" link in the footer lists every program's status and sources, which works as a yearly review checklist.
+Edit `data.json` in [PathwaysData](https://github.com/STEM-EvCC/PathwaysData), not here. The "Data & sources" link in this site's footer lists every program's status and sources, which works as a yearly review checklist.
 
 ## External services the page uses
+- stem-evcc.github.io/PathwaysData (the shared data)
 - Google Fonts (typefaces)
 - cdnjs.cloudflare.com (the PDF library, loaded only when someone downloads a PDF)
