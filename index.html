@@ -475,7 +475,7 @@ const laneOf=c=>{const p=c.split(" ")[0];if(c==="STEM 102")return"engr"; if(c===
  return p.startsWith("MATH")?"math":p.startsWith("PHYS")?"phys":p.startsWith("CHEM")?"chem":p.startsWith("BIOL")?"bio":
  p.startsWith("ENGR")?"engr":p.startsWith("CS")?"cs":p.startsWith("ENGL")?"engl":"gen"};
 const laneColor=id=>`var(${LANES.find(l=>l.id===id).v})`;
-const CAT={admission:{s:"APPLY",l:"Required to apply"},"pre-transfer":{s:"PRE",l:"Before transfer"},degree:{s:"BS",l:"Counts toward BS"},recommended:{s:"REC",l:"Recommended"}};
+const CAT={admission:{s:"APPLY",l:"Required to apply"},"pre-transfer":{s:"START",l:"Finish before you start"},degree:{s:"BS",l:"Counts toward BS"},recommended:{s:"REC",l:"Recommended"}};
 const CATRANK={admission:4,"pre-transfer":3,degree:2,recommended:1};
 const TERMS=["F","W","Sp","Su"], TNAME={F:"Fall",W:"Winter",Sp:"Spring",Su:"Summer"};
 
@@ -992,12 +992,12 @@ function renderRoute(){
   const app=$("#app");
   app.innerHTML=`<h2 class="sr-only">My route</h2>${majorBar("Route for:")}<div class="summary">
     <button class="stat" data-open="degree">${ring(dp.pct,dp.pct+"%")}<span><span class="lbl">EvCC degree</span><br><b>${dp.earned}</b> <span class="lbl">of ${dp.total} credits done</span></span></button>
-    ${sl.map(s=>{const sp=schoolProg(s),up=uniProgress(s);return up?`<button class="stat" data-open="transfer" data-sf="${s.id}">${ring(up.pct,up.met+"/"+up.total)}<span><span class="lbl"><b style="color:var(--ink)">${esc(s.short)}</b> requirements</span><br><span class="lbl">${sp.admission?.deadlines?"Apply: "+esc(sp.admission.deadlines.length>60?sp.admission.deadlines.slice(0,58)+"…":sp.admission.deadlines):"to apply or before transfer"}</span></span></button>`:""}).join("")}
+    ${sl.map(s=>{const sp=schoolProg(s),up=uniProgress(s);return up?`<button class="stat" data-open="transfer" data-sf="${s.id}">${ring(up.pct,up.met+"/"+up.total)}<span><span class="lbl"><b style="color:var(--ink)">${esc(s.short)}</b> requirements</span><br><span class="lbl">${sp.admission?.deadlines?"Apply: "+esc(sp.admission.deadlines.length>60?sp.admission.deadlines.slice(0,58)+"…":sp.admission.deadlines):"to apply or before you start"}</span></span></button>`:""}).join("")}
     <div class="stat"><span class="big">${r.quarters.length}</span><span class="lbl">quarters to go<br>${last?`finish ${TNAME[last.term]} ${last.year}`:"all done"}</span></div>
 
    </div>
    <div class="routebar"><div class="legend">${LANES.filter(l=>l.id!=="bio"||S.major==="bioengineering"||S.major==="chemical").map(l=>`<span class="k"><span class="sw" style="border-color:${laneColor(l.id)};background:${laneColor(l.id)}"></span>${l.label}</span>`).join("")}
-     ${sl.length?`<span class="k"><span class="stag c-admission">${esc(sl[0].abbr)}</span>Needed to apply</span><span class="k"><span class="stag c-pre-transfer">${esc(sl[0].abbr)}</span>Before transfer</span><span class="k"><span class="stag c-degree">${esc(sl[0].abbr)}</span>Counts toward BS</span>`:""}</div>
+     ${sl.length?["admission","pre-transfer","degree"].map(k=>`<span class="k"><span class="stag c-${k}">${esc(sl[0].abbr)}</span>${CAT[k].l}</span>`).join(""):""}</div>
      <label class="chk"><input type="checkbox" id="allLines"${S.allLines?" checked":""}> Show all prerequisite lines</label></div>
    <div class="route" id="route"><div class="route-inner" id="routeInner">
     ${doneList.length?`<div class="col donecol"><div class="col-h"><span class="yr">Already done</span><b>Completed<span>${doneList.reduce((a,c)=>a+crNum(c),0)} cr</span></b></div>${doneList.map(c=>card(c)).join("")}</div>`:""}
