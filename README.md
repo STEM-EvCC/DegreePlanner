@@ -33,3 +33,4 @@ Edit `data.json` in [PathwaysData](https://github.com/STEM-EvCC/PathwaysData), n
 - stem-evcc.github.io/PathwaysData (the shared data)
 - Google Fonts (typefaces)
 - cdnjs.cloudflare.com (the PDF library, loaded only when someone downloads a PDF)
+- cdn.jsdelivr.net (the QR code library, loaded on the checklist to draw a QR code for each university's requirements page)
