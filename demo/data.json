@@ -9779,7 +9779,7 @@
      "items": [
       {
        "slot": "HUM-SS",
-       "label": "Humanities, Social Science or Natural Science (DTA lists)",
+       "label": "Humanities or Social Science (DTA lists)",
        "credits": 5
       },
       {
@@ -11677,11 +11677,10 @@
        "courses": [
         "PHYS& 114",
         "PHYS& 115",
-        "PHYS& 116",
         "PHYS& 241",
         "PHYS& 231",
-        "PHYS& 242",
-        "PHYS& 232"
+        "PHYS& 243",
+        "PHYS& 233"
        ],
        "logic": "one",
        "category": "degree",
@@ -11693,12 +11692,12 @@
         [
          "PHYS& 241",
          "PHYS& 231",
-         "PHYS& 242",
-         "PHYS& 232"
+         "PHYS& 243",
+         "PHYS& 233"
         ]
        ],
-       "univ_equiv": "PHYS 114, 115; or PHYS 121, 122 (or PHYS 141, 142)",
-       "note": "BS only (the BA needs no physics). Two quarters of one series. EvCC equivalents for physics were not read on the UW guide; confirm before advising."
+       "univ_equiv": "PHYS 114, 115; or PHYS 121, 122",
+       "note": "BS only (the BA needs no physics). Two quarters of one series. UW's Everett planning sheet: PHYS& 241/231 = PHYS 121 and PHYS& 243/233 = PHYS 122 (each only if lecture and lab are both taken); PHYS& 242/232 = PHYS 2XX. PHYS& 243 needs PHYS& 242 first at EvCC, so the calculus route is the full series."
       },
       {
        "courses": [
@@ -12527,7 +12526,7 @@
     "The UW Bothell guide for Everett has no geology section; it lists only ASTR& 101 = B PHYS 101 among the astronomy courses.",
     "UW Bothell's School of Nursing and Health Studies offers RN to BSN only (no pre-licensure BSN on its admissions pages).",
     "The Winter cohort meets at the Everett University Center, next to EvCC.",
-    "EvCC is a Nurse Scholars Program partner (with Lake Washington Tech and Shoreline CC): simpler application and review, fee waived, no resume or personal statement."
+    "EvCC is a Nurse Scholars Program partner (with Lake Washington Tech and Shoreline CC). Students enrolled in those RN programs get a simpler application and review, fee waived, no resume or personal statement."
    ],
    "programs": [
     {
@@ -13068,7 +13067,7 @@
      "degree": "RN to BSN",
      "dept_url": "https://www.uwb.edu/nhs/undergraduate/rn-bsn/admissions",
      "admission": {
-      "model": "Application with goal statement (400 to 650 words), resume (2 pages max), recommendation, and official transcripts. Nurse Scholars (EvCC grads) use a streamlined application.",
+      "model": "Application with goal statement (400 to 650 words), resume (2 pages max), recommendation, and official transcripts. Nurse Scholars (students enrolled in the EvCC, LWTech or Shoreline RN programs) use a streamlined application.",
       "license": "Requires an active, unencumbered or pending Washington RN license. NCLEX may be pending; license is due by the second quarter in the program.",
       "nursing_education": "ADN, Associate in Nursing DTA/MRP, or a hospital diploma. Final-year nursing students may apply.",
       "deadlines": "Winter start: applications open in August. Fall start: applications open in February. Exact dates are on UW Bothell's application dates page (not confirmed here).",
@@ -13529,7 +13528,7 @@
       "start_terms": "Fall or Winter (major cohort)",
       "min_gpa": "No minimum pre-major GPA. Pre-major courses must be passed with C- or higher.",
       "notes": [
-       "Transfers should email chemistry@wwu.edu for transfer-specific instructions before planning courses.",
+       "WWU Chemistry sends transfer instructions after enrollment is confirmed. Questions before then: chemistry@wwu.edu.",
        "Application includes self-reported grades and short essays."
       ]
      },
@@ -13630,7 +13629,7 @@
       "start_terms": "Fall or Winter (major cohort)",
       "min_gpa": "No minimum pre-major GPA. Pre-major courses must be passed with C- or higher.",
       "notes": [
-       "Transfers should email chemistry@wwu.edu for transfer-specific instructions before planning courses.",
+       "WWU Chemistry sends transfer instructions after enrollment is confirmed. Questions before then: chemistry@wwu.edu.",
        "Application includes self-reported grades and short essays."
       ]
      },
@@ -14865,7 +14864,8 @@
      "notes": [
       "EWU says an AA-DTA satisfies its Math, English, Humanities, Social Science and Natural Science breadth requirements. All breadth and graduation requirements must be done before fall entry.",
       "Total prerequisite credits: 59-60 quarter credits.",
-      "EWU publishes a dental hygiene transfer guide for Everett CC but warns it may be out of date. Check equivalencies in the EWU Transfer Guide (CollegeSource TES)."
+      "EWU publishes a dental hygiene transfer guide for Everett CC but warns it may be out of date. Check equivalencies in the EWU Transfer Guide (CollegeSource TES).",
+      "Sources disagree on retakes: the EWU catalog allows two of the five priority courses to be retaken once; the department page says the most recent attempt is used, with no stated limit."
      ],
      "sources": [
       "https://www.ewu.edu/chsph/dental-hygiene/entry-level-bs/",
@@ -14987,7 +14987,7 @@
       "model": "Junior-level transfer cohort. Two essays (interest in nursing, and the SU mission) and a Prerequisite Form listing all 10 prerequisites, done or planned.",
       "deadlines": "Application and all official transcripts due December 1. Updated transcripts with fall grades due January 5. Decisions mid-March; 30 days to respond. The prerequisite page also lists July 1 for updated transcripts.",
       "start_terms": "Fall quarter only.",
-      "min_gpa": "2.0 cumulative prerequisite GPA and 2.0 (C) or higher in each prerequisite. No more than two repeated prerequisites.",
+      "min_gpa": "Sources disagree. The prerequisite page says a 2.0 cumulative prerequisite GPA; the nursing transfer guide says 3.0 or higher cumulative and prerequisite GPA, and 3.0 in English Composition. Plan for 3.0. 2.0 (C) or higher in each prerequisite; no more than two repeated prerequisites.",
       "tests": "TEAS is not required. Recommendations, high school transcript and SAT/ACT are not reviewed.",
       "healthcare_experience": "Not required but highly encouraged. List health care, volunteer and work experience (including CNA) on the Activity Log.",
       "timing": "By the end of fall term before entry: 7 of the 10 prerequisites, including at least one of A&P I, A&P II or Microbiology, and either Statistics or College Algebra. All 10 by the end of spring term.",
@@ -15370,7 +15370,7 @@
       "notes": [
        "At least 4 prerequisites done at application, including at least 2 sciences (A&P I, A&P II, Microbiology, General Chemistry or Organic/Biochemistry).",
        "All prerequisites must be done by the end of Spring quarter before entry.",
-       "Applicants must not have been enrolled at SPU in the past four quarters (to apply as a transfer)."
+       "Current SPU students apply on a different track: they must have been enrolled full-time at SPU for four consecutive quarters before beginning the program."
       ]
      },
      "requirements": [
