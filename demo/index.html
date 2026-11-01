@@ -471,7 +471,7 @@ const LANES=[
  {id:"math",label:"Math",v:"--l-math"},{id:"phys",label:"Physics",v:"--l-phys"},{id:"chem",label:"Chemistry",v:"--l-chem"},
  {id:"bio",label:"Biology",v:"--l-bio"},{id:"geo",label:"Earth Science",v:"--l-geo"},{id:"hlth",label:"Health",v:"--l-hlth"},{id:"engr",label:"Engineering",v:"--l-engr"},{id:"cs",label:"Comp Sci",v:"--l-cs"},{id:"it",label:"Info Tech",v:"--l-it"},{id:"mfg",label:"Advanced Manufacturing",v:"--l-mfg"},
  {id:"engl",label:"English",v:"--l-engl"},{id:"gen",label:"Gen Ed",v:"--l-gen"}];
-const HLTH=new Set(["NURS", "MEDA", "MA", "HIM", "HCA", "AH", "AHE", "EMT", "PHLB", "PHLEB", "NA", "NAC", "HEOC", "HSCI", "HLTH", "HIT", "MBC", "MEDIC", "INTP", "HRM", "PHARM"]); const GEO=new Set(["GEOL","GEOL&","OCEA","OCEA&","ATM","ENVS","ENVS&","GEOG"]);
+const HLTH=new Set(["NURS", "HLTH", "HCM", "MC", "HP", "EMS"]); const GEO=new Set(["GEOL","GEOL&","OCEA","OCEA&","ATM","ENVS","ENVS&","GEOG"]);
 const laneOf=c=>{const p=c.split(" ")[0]; if(HLTH.has(p)||HLTH.has(c.replace(/\s\d.*$/,"")))return"hlth"; if(GEO.has(p))return"geo"; if(p.startsWith("ASTR"))return"phys"; if(p.startsWith("NUTR"))return"bio";if(c==="STEM 102")return"engr"; if(c==="STEM 103"||p==="IT"||p==="CL")return"it"; if(p==="TS")return"math"; if(c==="MFG T 103")return"phys"; if(["WELD","MFG","CT","MECH"].includes(p)||c.startsWith("ENG T "))return"mfg";
  return p.startsWith("MATH")?"math":p.startsWith("PHYS")?"phys":p.startsWith("CHEM")?"chem":p.startsWith("BIOL")?"bio":
  p.startsWith("ENGR")?"engr":p.startsWith("CS")?"cs":p.startsWith("ENGL")?"engl":"gen"};
@@ -509,7 +509,7 @@ function getSpec(p=prog(),major=S.major,sid=S.school){
   const sp=schoolProg(D.schools.find(s=>s.id===sid),major); if(!sp)return{none:true,reason:"No transfer data for this school and major yet."};
   const core=coreCourses(p); const courses=[],later=[];
   sp.requirements.forEach(r=>{ if(r.logic==="all")r.courses.forEach(c=>{ if(D.courses[c]&&!core.has(c)){ (r.category==="degree"||r.category==="recommended"?later:courses).push(c)} }) });
-  return{src:"school",courses:[...new Set(courses)],later:[...new Set(later)].filter(c=>!courses.includes(c)),note:"EvCC's catalog doesn't list specialization courses for this school, so the site uses the school's own transfer requirements. Confirm your picks with an advisor."};
+  return{src:"school",courses:[...new Set(courses)],later:[...new Set(later)].filter(c=>!courses.includes(c)),note:Object.keys(p.spec.by||{}).length?"EvCC's catalog doesn't list specialization courses for this school, so the site uses the school's own transfer requirements. Confirm your picks with an advisor.":""};
 }
 function coreCourses(p=prog()){const s=new Set();p.groups.forEach(g=>g.items.forEach(it=>{if(it.course)s.add(it.course)}));return s}
 function choiceSets(p=prog()){const a=[];p.groups.forEach(g=>g.items.forEach(it=>{if(it.one_of)a.push(it.one_of)}));return a}
@@ -1312,18 +1312,18 @@ function renderExplore(){
    {k:"earth",t:"Geology & Earth Science",c:"--l-geo",what:"Rocks, landforms, water and hazards like earthquakes and volcanoes. Fieldwork plus chemistry and physics.",
     math:"Calculus I and II (MATH& 151, 152).",
     leads:"A BS in geology or earth and space sciences after transfer, toward environmental, engineering-geology and resource jobs.",
-    degrees:["geol-ast"], start:["STEM 101","GEOL& 101","CHEM& 161","MATH& 151"],
+    degrees:["geol-ast"], start:["STEM 101","GEOL 102","GEOL& 103","CHEM& 161"],
     acts:[["transfer",["geology","environmental-science"],"See geology transfer paths"]]},
-   {k:"nursing",t:"Nursing",c:"--l-hlth",what:"__NURSING_WHAT__",
-    math:"__NURSING_MATH__",
-    leads:"__NURSING_LEADS__",
-    degrees:["nursing-dta","prenursing-dta"], start:__NURSING_START__,
+   {k:"nursing",t:"Nursing",c:"--l-hlth",what:"Patient care, from EvCC's own RN program to a BSN. Science-heavy: chemistry, anatomy and physiology, and microbiology.",
+    math:"Statistics (MATH& 146), after MATH 86. MATH 96 eligibility before CHEM& 121.",
+    leads:"The Nursing DTA/MRP is EvCC's RN program (selective admission), with an RN-to-BSN later. The Pre-Nursing DTA/MRP prepares you to apply to a university BSN.",
+    degrees:["nursing-dta","prenursing-dta"], start:["HP 101","ENGL& 101","CHEM& 121","MATH& 146"],
     acts:[["transfer",["nursing"],"See nursing transfer paths"]]},
-   {k:"health",t:"Health Careers",c:"--l-hlth",what:"__HEALTH_WHAT__",
-    math:"__HEALTH_MATH__",
-    leads:"__HEALTH_LEADS__",
-    degrees:["allied-health-dta","ma-ata","ma-aast","mbc-ata","phleb-cert","na-cert","emt-cert","med-interp-cert","hrm-cert"], start:__HEALTH_START__,
-    acts:[["work",careersIn("health"),"See health career paths"],["transfer",__ALLIED_MAJORS__,"See allied health transfer paths"]]},
+   {k:"health",t:"Health Careers",c:"--l-hlth",what:"Patient care and the business side of health care: medical assisting, phlebotomy, nursing assistant, EMT, billing and coding, and interpreting.",
+    math:"MATH or TS 76 level (or BUS 130) for the Medical Assistant and Billing and Coding degrees. Short certificates need no college math. The Allied Health DTA needs one college-level math course.",
+    leads:"Jobs right after EvCC with a certificate or an ATA, and BAS programs later. The Allied Health DTA prepares you to transfer toward programs like dental hygiene, sonography and health sciences.",
+    degrees:["allied-health-dta","ma-ata","ma-aast","mbc-ata","phleb-cert","na-cert","emt-cert","med-interp-cert","hrm-cert"], start:["HP 101","HLTH 100","HLTH 109","HCM 101"],
+    acts:[["work",careersIn("health"),"See health career paths"],["transfer",((P("allied-health-dta")||{}).majors||[]),"See allied health transfer paths"]]},
    {k:"amtec",t:"Advanced Manufacturing",c:"--l-mfg",what:"Welding, precision machining, composites, mechatronics and CAD design at AMTEC. Hands-on, shop-based and job-ready.",
     math:"MATH 86 level, or ENG T 101 (Technical Problem Solving), for the ATA degrees. Most certificates need no college math.",
     leads:"Jobs right after EvCC with a certificate or an ATA. The ATA degrees also connect to BAS programs at CWU and Clover Park Technical College.",
@@ -1335,7 +1335,12 @@ function renderExplore(){
      <dt>Start with</dt><dd><div class="chiprow">${x.start.filter(c=>D.courses[c]).map(chip).join("")}</div></dd></dl>
      <div class="acts">${x.acts.filter(a=>a[1].some(m=>D.majors[m])).map(([g,ms,l],i)=>`<button class="btn${i?" ghost":""}" data-go="${g}" data-ms="${ms.join(",")}">${esc(l)} →</button>`).join("")}</div></section>`).join("")}</div>
    <section class="tips" aria-labelledby="tips-h"><h3 id="tips-h">Torn between two?</h3><ul>
-    __TIPS__
+    <li><b>RN now, or BSN first?</b> The Nursing DTA/MRP is EvCC's RN program, with a selective application. The Pre-Nursing DTA/MRP is for going straight to a university BSN. They share most of the science prerequisites (CHEM& 121, BIOL& 211, anatomy and physiology, microbiology), so you can start either way.</li>
+    <li><b>Biology or chemistry?</b> Both AS-T degrees include a full year of general chemistry, a year of organic chemistry and Calculus I to 3. Biology adds the BIOL& 221-223 majors sequence; chemistry adds a physics or biology sequence.</li>
+    <li><b>Pre-med, pre-dental or pre-vet?</b> These aren't majors. Most students choose Biology or Chemistry and add what each professional school asks for. Check each school's list early.</li>
+    <li><b>Science sequences:</b> start CHEM& 161 as early as your math allows. Organic chemistry (CHEM& 261-263) starts in fall and runs fall, winter, spring. Don't split a sequence between colleges.</li>
+    <li><b>Medical Assistant certificate, ATA or AAS-T?</b> They share the core coursework. The ATA is built for work; the AAS-T is built to continue to a BAS.</li>
+    <li><b>Not sure which trade?</b> The AMT degrees all start with MFG T 100 and ENG T 111, and include one course each from composites, machining, mechatronics and welding, so you try them all.</li>
    </ul><p class="rowt">From the EvCC 2026-27 catalog program pages. Talk with a program advisor before you register.</p></section>`;
   $$("[data-go]").forEach(b=>b.onclick=()=>{ const g=b.dataset.go, ms=b.dataset.ms.split(",").filter(m=>D.majors[m]); S.byGoal[g]=Object.assign({},S.byGoal[g]||{}, {majors:ms,major:ms[0],track:null,schools:[]}); setGoal(g) });
   $$("[data-goto]",$("#app")).forEach(b=>b.onclick=()=>selectCourse(b.dataset.goto));
@@ -1364,7 +1369,7 @@ function renderCareers(){
      <div><div class="sect-t">Ways to get there at EvCC</div><div class="ladder">${ladder.map((pp,i)=>`${i?'<span class="arr" aria-hidden="true">→</span>':""}<button class="step" data-car="${car.id}" data-track="${pp.id}" aria-pressed="${pp===cur&&car.id===S.major}"><b>${esc(pp.name)}</b><small>${esc(pp.credential)} · ${pp.total} credits${pct(pp)?" · "+pct(pp)+"% done":""}</small></button>`).join("")}<span class="arr" aria-hidden="true">→</span><div class="step later"><b>${car.area==="it"?"BAS or BS later":"BAS later"}</b><small>Options below</small></div></div>
       <p class="rowt" style="margin-top:6px">${car.area==="amtec"||car.area==="it"?"Certificates stack into the ATA. ":""}Pick a step to see its courses on the map, route and checklist.</p>
       ${alt?`<div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center"><span class="rowt">Planning to transfer instead?</span><button class="step" style="flex:0 1 260px" data-car="${car.id}" data-track="${alt.id}" aria-pressed="${alt===cur&&car.id===S.major}"><b>${esc(alt.name)}</b><small>${esc(alt.credential)} · ${alt.total} credits · built for transfer</small></button></div>`:""}</div>
-     <div class="cgrid">${car.certs.length?`<div><h4>Industry certifications</h4><ul class="reqlist">${car.certs.map(ct=>`<li><span class="ck${ct.courses.every(c=>S.done.has(c))?" y":""}">${ct.courses.every(c=>S.done.has(c))?"✓":""}</span><span><b>${esc(ct.name)}</b><div class="chiprow" style="margin-top:4px">${ct.courses.map(chip).join("")}</div>${ct.note?`<div class="rowt">${esc(ct.note)}</div>`:""}</span><span class="cr-sm">${ct.voucher?"voucher":""}</span></li>`).join("")}</ul></div>`:""}
+     <div class="cgrid">${car.certs.length?`<div><h4>Industry certifications</h4><ul class="reqlist">${car.certs.map(ct=>`<li><span class="ck${ct.courses.length&&ct.courses.every(c=>S.done.has(c))?" y":""}">${ct.courses.length&&ct.courses.every(c=>S.done.has(c))?"✓":""}</span><span><b>${esc(ct.name)}</b><div class="chiprow" style="margin-top:4px">${ct.courses.map(chip).join("")}</div>${ct.note?`<div class="rowt">${esc(ct.note)}</div>`:""}</span><span class="cr-sm">${ct.voucher?"voucher":""}</span></li>`).join("")}</ul></div>`:""}
       <div><h4>Pay</h4>${car.soc.map(sc=>payBlock(occ(sc))).join("")||'<p class="rowt">Pay data is being added.</p>'}</div>
       <div><h4>Typical job titles</h4>${titles.length?`<ul style="margin:0;padding-left:18px;font-size:.9rem">${titles.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>`:'<p class="rowt">Coming soon.</p>'}</div></div>
      ${car.area==="it"?`<details class="more"><summary>Keep going later: BAS and BS options (${(D.it_entry||[]).length})</summary><div class="cmp-wrap" style="margin-top:8px;max-height:none"><table class="cmp" style="text-align:left"><thead><tr><th class="rowh" scope="col">Program</th><th scope="col" style="text-align:left">With the ATA</th><th scope="col" style="text-align:left">With the AAS-T</th></tr></thead><tbody>

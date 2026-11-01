@@ -98,6 +98,11 @@ start = src.index("function renderExplore(){")
 end = src.index("/* ---------- careers ---------- */")
 rep(src[start:end], EXPLORE + "\n", "explore page")
 
+# ---- spec note: only programs that have specialization lists ----------------------
+rep('note:"EvCC\'s catalog doesn\'t list specialization courses for this school, so the site uses the school\'s own transfer requirements. Confirm your picks with an advisor."};',
+    'note:Object.keys(p.spec.by||{}).length?"EvCC\'s catalog doesn\'t list specialization courses for this school, so the site uses the school\'s own transfer requirements. Confirm your picks with an advisor.":""};',
+    "spec note")
+
 # ---- careers ------------------------------------------------------------------
 rep('<p class="rowt" style="margin-top:6px">Certificates stack into the ATA. Pick a step to see its courses on the map, route and checklist.</p>',
     '<p class="rowt" style="margin-top:6px">${car.area==="amtec"||car.area==="it"?"Certificates stack into the ATA. ":""}Pick a step to see its courses on the map, route and checklist.</p>',

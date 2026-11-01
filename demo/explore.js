@@ -15,7 +15,7 @@ function renderExplore(){
    {k:"earth",t:"Geology & Earth Science",c:"--l-geo",what:"Rocks, landforms, water and hazards like earthquakes and volcanoes. Fieldwork plus chemistry and physics.",
     math:"Calculus I and II (MATH& 151, 152).",
     leads:"A BS in geology or earth and space sciences after transfer, toward environmental, engineering-geology and resource jobs.",
-    degrees:["geol-ast"], start:["STEM 101","GEOL& 101","CHEM& 161","MATH& 151"],
+    degrees:["geol-ast"], start:["STEM 101","GEOL 102","GEOL& 103","CHEM& 161"],
     acts:[["transfer",["geology","environmental-science"],"See geology transfer paths"]]},
    {k:"nursing",t:"Nursing",c:"--l-hlth",what:"Patient care, from EvCC's own RN program to a BSN. Science-heavy: chemistry, anatomy and physiology, and microbiology.",
     math:"Statistics (MATH& 146), after MATH 86. MATH 96 eligibility before CHEM& 121.",
