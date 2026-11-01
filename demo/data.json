@@ -1,0 +1,4943 @@
+{
+ "schema_version": 1,
+ "meta": {
+  "catalog_year": "2026-2027",
+  "checked": "Nov 2026",
+  "built": "2026-11-01",
+  "statewide": [],
+  "demo": "Demo data for review: EvCC sciences, health sciences and Advanced Manufacturing. Not used by the live sites."
+ },
+ "majors": {
+  "precision-machining": "Precision Machining",
+  "technical-design": "Technical Design (CAD)",
+  "welding": "Welding & Fabrication",
+  "composites": "Composites",
+  "mechatronics": "Mechatronics & Robotics",
+  "astronomy": "Astronomy",
+  "biochemistry": "Biochemistry",
+  "biology": "Biology",
+  "chemistry": "Chemistry",
+  "environmental-science": "Environmental Science",
+  "geology": "Geology",
+  "physics": "Physics"
+ },
+ "careers": [
+  {
+   "id": "welding",
+   "name": "Welding & Fabrication",
+   "short": "Welding",
+   "area": "amtec",
+   "blurb": "Join, cut and shape metal for aerospace, fabrication shops, pipelines and construction. Lab-heavy, building toward state and national welding certifications.",
+   "credentials": [
+    "amt-weld-entry",
+    "amt-weld-subarc",
+    "amt-weld-tig",
+    "amt-weld-aero",
+    "amt-weld-cert",
+    "amt-weld-welding-cert",
+    "amt-weld-ata",
+    "amt-weld-trad-ata"
+   ],
+   "soc": [
+    "51-4121"
+   ],
+   "certs": [],
+   "next": [
+    {
+     "school": "cwu",
+     "program": "BAS Information Technology & Administrative Management (ITAM)",
+     "url": "https://www.cwu.edu/academics/it-management/",
+     "note": "EvCC's AMT and Welding ATA degrees list a direct transfer pathway."
+    },
+    {
+     "school": "clover-park",
+     "program": "BAS Operations Management (Manufacturing Operations)",
+     "url": "https://www.cptc.edu/programs/basmo",
+     "note": "EvCC's AMT and Welding ATA degrees list a direct transfer pathway."
+    }
+   ]
+  },
+  {
+   "id": "precision-machining",
+   "name": "Precision Machining",
+   "short": "Machining",
+   "area": "amtec",
+   "blurb": "Turn drawings into precise parts on manual and CNC mills and lathes, and program CNC machines.",
+   "credentials": [
+    "amt-mastercam-cert",
+    "amt-machining-cert",
+    "amt-machining-ata"
+   ],
+   "soc": [
+    "51-4041",
+    "51-9161"
+   ],
+   "certs": [],
+   "next": [
+    {
+     "school": "cwu",
+     "program": "BAS Information Technology & Administrative Management (ITAM)",
+     "url": "https://www.cwu.edu/academics/it-management/",
+     "note": "EvCC's AMT and Welding ATA degrees list a direct transfer pathway."
+    },
+    {
+     "school": "clover-park",
+     "program": "BAS Operations Management (Manufacturing Operations)",
+     "url": "https://www.cptc.edu/programs/basmo",
+     "note": "EvCC's AMT and Welding ATA degrees list a direct transfer pathway."
+    }
+   ]
+  },
+  {
+   "id": "composites",
+   "name": "Composites",
+   "short": "Composites",
+   "area": "amtec",
+   "blurb": "Build strong, light parts from fiber and resin, the materials in modern aircraft. Layup, molding, vacuum bagging, inspection and repair.",
+   "credentials": [
+    "amt-composites-found",
+    "amt-composites-tech",
+    "amt-composites-ata"
+   ],
+   "soc": [
+    "51-2051"
+   ],
+   "certs": [],
+   "next": [
+    {
+     "school": "cwu",
+     "program": "BAS Information Technology & Administrative Management (ITAM)",
+     "url": "https://www.cwu.edu/academics/it-management/",
+     "note": "EvCC's AMT and Welding ATA degrees list a direct transfer pathway."
+    },
+    {
+     "school": "clover-park",
+     "program": "BAS Operations Management (Manufacturing Operations)",
+     "url": "https://www.cptc.edu/programs/basmo",
+     "note": "EvCC's AMT and Welding ATA degrees list a direct transfer pathway."
+    }
+   ]
+  },
+  {
+   "id": "mechatronics",
+   "name": "Mechatronics & Robotics",
+   "short": "Mechatronics",
+   "area": "amtec",
+   "blurb": "Keep automated production running: electrical, mechanical and pneumatic systems, PLCs and industrial robots.",
+   "credentials": [
+    "amt-robotics-cert",
+    "amt-mechatronics-cert",
+    "amt-mechatronics-ata"
+   ],
+   "soc": [
+    "17-3024",
+    "49-9041"
+   ],
+   "certs": [],
+   "next": [
+    {
+     "school": "cwu",
+     "program": "BAS Information Technology & Administrative Management (ITAM)",
+     "url": "https://www.cwu.edu/academics/it-management/",
+     "note": "EvCC's AMT and Welding ATA degrees list a direct transfer pathway."
+    },
+    {
+     "school": "clover-park",
+     "program": "BAS Operations Management (Manufacturing Operations)",
+     "url": "https://www.cptc.edu/programs/basmo",
+     "note": "EvCC's AMT and Welding ATA degrees list a direct transfer pathway."
+    }
+   ]
+  },
+  {
+   "id": "technical-design",
+   "name": "Technical Design (CAD)",
+   "short": "CAD",
+   "area": "amtec",
+   "blurb": "Create the drawings and 3D models parts are built from, in AutoCAD, SolidWorks and CATIA, and program CNC machines from CAD.",
+   "credentials": [
+    "amt-autocad-cert",
+    "amt-nc-catia-cert",
+    "amt-nc-foundation-cert",
+    "amt-solidworks-cert",
+    "amt-nc-mastercam-cert",
+    "amt-catia-cert",
+    "amt-cad-cert",
+    "amt-cad-ata"
+   ],
+   "soc": [
+    "17-3013"
+   ],
+   "certs": [],
+   "next": [
+    {
+     "school": "cwu",
+     "program": "BAS Information Technology & Administrative Management (ITAM)",
+     "url": "https://www.cwu.edu/academics/it-management/",
+     "note": "EvCC's AMT and Welding ATA degrees list a direct transfer pathway."
+    },
+    {
+     "school": "clover-park",
+     "program": "BAS Operations Management (Manufacturing Operations)",
+     "url": "https://www.cptc.edu/programs/basmo",
+     "note": "EvCC's AMT and Welding ATA degrees list a direct transfer pathway."
+    }
+   ]
+  }
+ ],
+ "wages": {
+  "checked": "Nov 2026",
+  "notes": "Wage percentiles are BLS OEWS May 2025 estimates (the current release as of Oct 2026), read from O*NET OnLine Local Wages pages, which republish BLS OEWS state/MSA data ('Source: Bureau of Labor Statistics 2025 wage data'). The national medians on these pages match the BLS OOH figures for May 2025. bls.gov state/MSA tables (now served from data.bls.gov) could not be reached from this environment. Employment counts were not confirmed and are null. Seattle-Tacoma-Bellevue MSA = King, Pierce, and Snohomish counties.",
+  "occupations": []
+ },
+ "it_entry": [],
+ "layout_overrides": {
+  "MATH& 144": {
+   "same_as": "MATH& 142"
+  },
+  "MFG T 103": {
+   "same_as": "PHYS& 242"
+  }
+ },
+ "courses": {
+  "STEM 101": {
+   "title": "College Success In STEM",
+   "credits": "2",
+   "description": "Orientation to academic and career opportunities in STEM, with guest speakers from industry and universities and development of skills that promote success in college. Satisfies COLL 101 requirement for new degree seeking students.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/stem-science-tech-engr-and-math/100/stem-101",
+   "year_used": "2026-2027",
+   "short": "College Success in STEM"
+  },
+  "COLL 101": {
+   "title": "College Success",
+   "credits": "2",
+   "description": "College success strategies including college resources and student services, financing college, time management, learning strategies, choosing a major, and preparing an academic plan.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/coll-college-success/100/coll-101",
+   "year_used": "2026-2027",
+   "short": "College Success"
+  },
+  "ENGL 98": {
+   "title": "Intro to College Writing",
+   "credits": "5",
+   "description": "Writing and revising paragraphs and essays, covering the writing process, diction, grammar, essay patterns, and rhetorical devices. Equivalent to TS 98 and HSC 98; credit cannot be earned in both ENGL 98 and either TS 98 or HSC 98.",
+   "prereq_text": "Completion of ENGL 97 or equivalent with a grade of C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "ENGL 97",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "or equivalent",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/engl-english/90/engl-98",
+   "year_used": "2026-2027",
+   "short": "Pre-college English"
+  },
+  "ENGL& 101": {
+   "title": "English Composition I",
+   "credits": "5",
+   "description": "Writing clear, unified, coherent, well-developed essays of increasing complexity with an emphasis on critical thinking, about or springing from literary or nonliterary texts.",
+   "prereq_text": "Completion of ENGL 98 or equivalent with a grade of C or higher.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "ENGL 98",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "or equivalent",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/engl-english-ccn/100/engl-101",
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp",
+    "Su"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "MATH& 141": {
+   "title": "Precalc I: College Algebra",
+   "credits": "5",
+   "description": "College-level algebra; first of a two-course sequence for students intending to take calculus beginning with MATH& 151. Functions and graphs, polynomial and rational functions, exponential and logarithmic functions, conics, non-linear systems, and determinants.",
+   "prereq_text": "MATH 96 or equivalent with a grade of C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MATH 96",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "or equivalent",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/math-mathematics-ccn/100/math-141",
+   "year_used": "2026-2027",
+   "short": "Precalculus I",
+   "offered": [
+    "F",
+    "W",
+    "Sp",
+    "Su"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "MATH& 142": {
+   "title": "Precalculus II: Trig",
+   "credits": "5",
+   "description": "College-level trigonometry; second course in the two-course sequence leading to MATH& 151. Right-triangle and general-angle trigonometry, identities, inverses, trig equations, polar coordinates, parametric equations, and vectors.",
+   "prereq_text": "MATH& 141 or equivalent with a grade of C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MATH& 141",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "or equivalent",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/math-mathematics-ccn/100/math-142",
+   "year_used": "2026-2027",
+   "short": "Precalculus II",
+   "offered": [
+    "F",
+    "W",
+    "Sp",
+    "Su"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "MATH& 144": {
+   "title": "Pre-Calc I & II: Review",
+   "credits": "5",
+   "description": "A refresher course in college algebra and trigonometry for students planning to take the calculus sequence beginning with MATH& 151. Polynomial, rational, exponential, logarithmic, and trigonometric functions, conic sections, and an introduction to vectors.",
+   "prereq_text": "One year of high school precalculus or college equivalent; or permission of a math instructor",
+   "prereq": {
+    "all": []
+   },
+   "placement": "One year of high school precalculus or college equivalent; or permission of a math instructor",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/math-mathematics-ccn/100/math-144",
+   "year_used": "2026-2027",
+   "short": "Precalculus Review",
+   "offered": [
+    "F"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "MATH& 151": {
+   "title": "Calculus I",
+   "credits": "5",
+   "description": "First course in the calculus sequence: limits, continuity, differentiation and antidifferentiation of algebraic and transcendental functions with applications. For engineering, science, and math majors.",
+   "prereq_text": "MATH& 142 or 144 or equivalent with a grade of C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MATH& 142",
+        "concurrent": false
+       },
+       {
+        "course": "MATH& 144",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "or equivalent",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/math-mathematics-ccn/100/math-151",
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp",
+    "Su"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "MATH& 152": {
+   "title": "Calculus II",
+   "credits": "5",
+   "description": "Second course in the calculus sequence: integration and applications of definite integrals (areas, volumes, work, hydrostatic force, centers of mass), polar and parametric calculus, numerical techniques, and improper integrals.",
+   "prereq_text": "MATH& 151 with a grade of C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MATH& 151",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/math-mathematics-ccn/100/math-152",
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp",
+    "Su"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "MATH& 163": {
+   "title": "Calculus 3",
+   "credits": "5",
+   "description": "Third course in the calculus sequence: infinite series, power series and Taylor polynomials, vectors in 2D and 3D, lines and planes, partial differentiation, and double integrals in rectangular and polar coordinates.",
+   "prereq_text": "MATH& 152 with a grade of C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MATH& 152",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/math-mathematics-ccn/100/math-163",
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp",
+    "Su"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "MATH& 264": {
+   "title": "Calculus 4",
+   "credits": "5",
+   "description": "Fourth course in the calculus sequence: triple integrals, vector-valued functions and space curves, directional derivatives and gradients, line and surface integrals, and the theorems of Green, Stokes, and Divergence.",
+   "prereq_text": "MATH& 163 with a grade of C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MATH& 163",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/math-mathematics-ccn/200/math-264",
+   "year_used": "2026-2027",
+   "short": "Calculus 4",
+   "offered": [
+    "F",
+    "W",
+    "Sp",
+    "Su"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "CHEM& 140": {
+   "title": "General Chem Prep W/Lab",
+   "credits": "5",
+   "description": "Measurements, properties and structure of matter, nomenclature, and weight relations, for students needing chemistry background for the CHEM& 161-163 series. Not intended for students with recent high school chemistry, and does not meet nursing program prerequisites.",
+   "prereq_text": "Eligibility for ENGL& 101 AND eligibility for MATH 96",
+   "prereq": {
+    "all": []
+   },
+   "placement": "Eligibility for ENGL& 101 AND eligibility for MATH 96",
+   "eligibility": [
+    "ENGL& 101",
+    "MATH 96"
+   ],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/chem-chemistry-ccn/100/chem-140",
+   "year_used": "2026-2027",
+   "short": "Gen Chem Prep",
+   "offered": [
+    "F",
+    "W",
+    "Sp",
+    "Su"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "CHEM& 161": {
+   "title": "General Chemistry I with Lab",
+   "credits": "5.5",
+   "description": "Properties of matter, atomic theory and structure, periodicity, bonding models, nomenclature, molecular shapes, intermolecular forces, reactions, and stoichiometry. For pre-health professions and all engineering and science majors.",
+   "prereq_text": "Eligibility for ENGL& 101 AND eligibility for MATH& 141. One of the following: CHEM& 140 with a grade of C or higher, or one year of high school chemistry with a C or higher within the last one year, or MATH& 152 with a B+ or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "CHEM& 140",
+        "concurrent": false
+       },
+       {
+        "course": "MATH& 152",
+        "concurrent": false,
+        "min_grade": "B+",
+        "alt": true
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "Eligibility for ENGL& 101 AND eligibility for MATH& 141; alternative to CHEM& 140/MATH& 152: one year of high school chemistry with a C or higher within the last one year",
+   "eligibility": [
+    "ENGL& 101",
+    "MATH& 141"
+   ],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/chem-chemistry-ccn/100/chem-161",
+   "year_used": "2026-2027",
+   "short": "General Chem I",
+   "offered": [
+    "F",
+    "W",
+    "Sp",
+    "Su"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "CHEM& 162": {
+   "title": "General Chemistry II with Lab",
+   "credits": "5.5",
+   "description": "Aqueous reactions (precipitation, acid-base, redox), stoichiometry, thermochemistry, thermodynamics, ideal gases, and properties of liquids, solids, and solutions. For pre-health professions and all engineering and science majors.",
+   "prereq_text": "CHEM& 161 with a grade of C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "CHEM& 161",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/chem-chemistry-ccn/100/chem-162",
+   "year_used": "2026-2027",
+   "short": "General Chem II",
+   "offered": [
+    "F",
+    "W",
+    "Sp",
+    "Su"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "CHEM& 163": {
+   "title": "General Chemistry III with Lab",
+   "credits": "5.5",
+   "description": "Equilibrium, acid/base and solubility equilibria, buffers, electrochemistry, kinetics, and nuclear chemistry. For pre-health professions and all engineering and science majors.",
+   "prereq_text": "CHEM& 162 with a grade of C or higher.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "CHEM& 162",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/chem-chemistry-ccn/100/chem-163",
+   "year_used": "2026-2027",
+   "short": "General Chem III",
+   "offered": [
+    "F",
+    "W",
+    "Sp",
+    "Su"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "CHEM& 261": {
+   "title": "Organic Chem W/Lab I",
+   "credits": "6",
+   "description": "Chemistry of carbon compounds, with emphasis on structure, nomenclature, reactions, mechanisms, and synthesis of main types of organic compounds.",
+   "prereq_text": "Eligibility for ENGL& 101 and CHEM& 163 with grade of C or higher, or CHEM& 162 with instructor permission.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "CHEM& 163",
+        "concurrent": false
+       },
+       {
+        "course": "CHEM& 162",
+        "concurrent": false,
+        "note": "with instructor permission"
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "Eligibility for ENGL& 101; or CHEM& 162 with instructor permission (in place of CHEM& 163)",
+   "eligibility": [
+    "ENGL& 101"
+   ],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/chem-chemistry-ccn/200/chem-261",
+   "year_used": "2026-2027",
+   "short": "Organic Chem I",
+   "offered": [
+    "F",
+    "W"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "CHEM& 262": {
+   "title": "Organic Chemistry II with Lab",
+   "credits": "6",
+   "description": "Continuation of CHEM& 261: structure, nomenclature, reactions, mechanisms, and synthesis of main types of organic compounds.",
+   "prereq_text": "CHEM& 261 with grade of C or higher.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "CHEM& 261",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/chem-chemistry-ccn/200/chem-262",
+   "year_used": "2026-2027",
+   "short": "Organic Chem II",
+   "offered": [
+    "W",
+    "Sp"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "CHEM& 263": {
+   "title": "Organic Chemistry III with Lab",
+   "credits": "6",
+   "description": "Continuation of CHEM& 262: structure, nomenclature, reactions, mechanisms, and synthesis of main types of organic compounds.",
+   "prereq_text": "CHEM& 262 with grade of C or higher.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "CHEM& 262",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/chem-chemistry-ccn/200/chem-263",
+   "year_used": "2026-2027",
+   "short": "Organic Chem III",
+   "offered": [
+    "Sp",
+    "Su"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "BIOL& 221": {
+   "title": "Majors Ecology/Evolution",
+   "credits": "6",
+   "description": "Mendelian genetics, evolution, biodiversity of life forms, and ecology. First course of the three-quarter majors series for students intending to major in the sciences.",
+   "prereq_text": "CHEM& 161 (or concurrent enrollment) or equivalent, with a grade of C (2.0) or higher. All prerequisites must be taken within the last five years, OR instructor permission.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "CHEM& 161",
+        "concurrent": true
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "or equivalent; prerequisites must be taken within the last five years, OR instructor permission",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/biol-biology-ccn/200/biol-221",
+   "year_used": "2026-2027",
+   "short": "Ecology/Evolution",
+   "offered": [
+    "F",
+    "W"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "BIOL& 222": {
+   "title": "Majors Cell/Molecular",
+   "credits": "6",
+   "description": "Metabolism and energetics, structure and function of biomolecules and cells, and applications of biotechnology and molecular biology. Second course of the three-quarter majors series.",
+   "prereq_text": "BIOL& 221 with a grade of C (2.0) or higher and CHEM& 162 (or concurrent enrollment) with a grade of C (2.0) or higher. All prerequisites must be taken within the last five years, or instructor permission.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "BIOL& 221",
+        "concurrent": false
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "course": "CHEM& 162",
+        "concurrent": true
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "prerequisites must be taken within the last five years, or instructor permission",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/biol-biology-ccn/200/biol-222",
+   "year_used": "2026-2027",
+   "short": "Cell/Molecular",
+   "offered": [
+    "W",
+    "Sp"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "BIOL& 223": {
+   "title": "Majors Organismal Physiology",
+   "credits": "6",
+   "description": "Animal and plant development and physiology, including photosynthesis. Final course of the three-quarter majors series for students intending to major in the sciences.",
+   "prereq_text": "BIOL& 222 with a grade of C (2.0) or higher and CHEM& 163 (or concurrent enrollment) with a grade of C or higher.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "BIOL& 222",
+        "concurrent": false
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "course": "CHEM& 163",
+        "concurrent": true
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/biol-biology-ccn/200/biol-223",
+   "year_used": "2026-2027",
+   "short": "Organismal Physiology",
+   "offered": [
+    "F",
+    "Sp"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "PHYS& 114": {
+   "title": "General Physics I",
+   "credits": "5",
+   "description": "First course in the one-year algebra-based General Physics sequence (PHYS& 114-116), covering motion, force, momentum, and energy.",
+   "prereq_text": "Eligibility for ENGL& 101, AND completion of (or concurrent enrollment in) MATH& 142 or MATH& 144 or equivalent.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MATH& 142",
+        "concurrent": true
+       },
+       {
+        "course": "MATH& 144",
+        "concurrent": true
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "Eligibility for ENGL& 101; MATH& 142/144 or equivalent",
+   "eligibility": [
+    "ENGL& 101"
+   ],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/phys-physics-ccn/100/phys-114",
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp",
+    "Su"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "PHYS& 241": {
+   "title": "Engineering Physics I + Lab (PHYS& 231)",
+   "credits": "5.5",
+   "description": "Mechanics. First quarter of the one-year calculus-based sequence (PHYS& 241-243) for engineering and most science majors planning to transfer.",
+   "prereq_text": "MATH& 151 AND PHYS& 114, each with a C or higher, OR passing Physics Placement test, AND eligibility for ENGL& 101.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MATH& 151",
+        "concurrent": false
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "course": "PHYS& 114",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "OR passing Physics Placement test (catalog wording is ambiguous whether the test replaces both MATH& 151 and PHYS& 114 or only PHYS& 114); AND eligibility for ENGL& 101",
+   "eligibility": [
+    "ENGL& 101"
+   ],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/phys-physics-ccn/200/phys-241",
+   "year_used": "2026-2027",
+   "short": "Engr Physics I + Lab",
+   "offered": [
+    "F",
+    "W"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "PHYS& 242": {
+   "title": "Engineering Physics II + Lab (PHYS& 232)",
+   "credits": "5.5",
+   "description": "Thermodynamics and waves. Second quarter of the one-year calculus-based sequence (PHYS& 241-243) for engineering and most science majors planning to transfer.",
+   "prereq_text": "PHYS& 241 AND MATH& 152, each with a C or higher.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "PHYS& 241",
+        "concurrent": false
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "course": "MATH& 152",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/phys-physics-ccn/200/phys-242",
+   "year_used": "2026-2027",
+   "short": "Engr Physics II + Lab",
+   "offered": [
+    "W",
+    "Sp"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "PHYS& 243": {
+   "title": "Engineering Physics III + Lab (PHYS& 233)",
+   "credits": "5.5",
+   "description": "Electromagnetism. Third quarter of the one-year calculus-based sequence (PHYS& 241-243) for engineering and most science majors planning to transfer.",
+   "prereq_text": "PHYS& 242 AND MATH& 163, each with a C or higher.  Lab PHYS& 233: Completion of MFG T 103 or PHYS 130 with a C or higher.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "PHYS& 242",
+        "concurrent": false
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "course": "MATH& 163",
+        "concurrent": false
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "course": "MFG T 103",
+        "concurrent": false
+       },
+       {
+        "course": "PHYS 130",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/phys-physics-ccn/200/phys-243",
+   "year_used": "2026-2027",
+   "short": "Engr Physics III + Lab",
+   "offered": [
+    "F",
+    "Sp"
+   ],
+   "offered_src": "dept course list 2021"
+  },
+  "MFG T 103": {
+   "title": "Machining Lab for Engineers",
+   "credits": "2",
+   "description": "Introduces machining and manufacturing processes: setup and operation of manual mills, lathes, drill presses, band saws and other shop tools, basic blueprint reading, and an introduction to 3-axis CNC vertical mills.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mfg-t-manufacturing-technology/100/mfg-t-103",
+   "year_used": "2026-2027",
+   "short": "Needed for PHYS& 243 lab"
+  },
+  "ENGR& 114": {
+   "title": "Engineering Graphics",
+   "credits": "4",
+   "description": "Methods of depicting three-dimensional objects and communicating design information, emphasizing parametric solid modeling software. Freehand sketching develops visualization and design communication skills.",
+   "prereq_text": "Eligibility for MATH& 107 or higher; OR completion of ENG T 100",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "ENG T 100",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "Eligibility for MATH& 107 or higher (alternative to ENG T 100)",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/engr-engineering-ccn/100/engr-114",
+   "year_used": "2026-2027",
+   "short": "Engineering Graphics",
+   "offered": [
+    "W",
+    "Su"
+   ],
+   "offered_src": "advising notes W2024"
+  },
+  "MATH 86": {
+   "title": "Essential Intermediate Algebra",
+   "credits": "5",
+   "description": "Introductory course in mathematical reasoning, focusing on real-world applications and conceptual understanding.",
+   "prereq_text": "MATH 76 or equivalent with a grade of C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MATH 76",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/math-mathematics/80/math-86",
+   "year_used": "2026-2027",
+   "short": "Essential Int. Algebra"
+  },
+  "MATH 96": {
+   "title": "Intermediate Algebra for Precalculus",
+   "credits": "5",
+   "description": "Intermediate algebra for students headed into science, business or engineering: functions, linear systems, polynomials, rational expressions, exponents and radicals, quadratics and exponential functions.",
+   "prereq_text": "MATH 86 or equivalent with a grade of C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MATH 86",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/math-mathematics/90/math-96",
+   "year_used": "2026-2027",
+   "short": "Int. Algebra for Precalc"
+  },
+  "TS 86": {
+   "title": "Intermediate Algebra",
+   "credits": "5",
+   "description": "Transitional Studies course in mathematical reasoning with real-world applications: ratios and percentages, linear models, quadratic applications, algebraic manipulation, measures of center, and geometry. Equivalent to MATH 86 (credit cannot be earned in both).",
+   "prereq_text": "Eligibility for HSC, TS, or MATH 86.Students must have completed the TS orientation & assessment or taken a TS class within the last 6 months. Contact Transitional Studies at transitional@everettcc.edu or Rainier Hall Rm 227.",
+   "prereq": {
+    "all": []
+   },
+   "placement": "Eligibility for HSC, TS, or MATH 86; TS orientation & assessment, or a TS class within the last 6 months",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/ts-transitional-studies/80/ts-86",
+   "year_used": "2026-2027"
+  },
+  "TS 98": {
+   "title": "Intro/College Essays",
+   "credits": "5",
+   "description": "Transitional Studies preparation for college writing: formal academic writing and essay structure, with an introduction to information literacy, research, and documentation styles.",
+   "prereq_text": "Students must have completed the Transitional Studies orientation and assessment or taken a TS class within the last 6 months. Please contact Transitional Studies at transitional@everettcc.edu or Rainier Hall Rm 227.",
+   "prereq": {
+    "all": []
+   },
+   "placement": "Transitional Studies orientation and assessment, or a TS class within the last 6 months",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/ts-transitional-studies/90/ts-98",
+   "year_used": "2026-2027"
+  },
+  "BUS 110": {
+   "title": "Business Communications",
+   "credits": "5",
+   "description": "Business communication in global workplaces: good/neutral/bad-news messages, persuasive requests, short reports, presentations, listening, and nonverbal communication across cultures.",
+   "prereq_text": "Eligibility for ENGL& 101",
+   "prereq": {
+    "all": []
+   },
+   "placement": "Eligibility for ENGL& 101",
+   "eligibility": [
+    "ENGL& 101"
+   ],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/bus-business/100/bus-110",
+   "year_used": "2026-2027",
+   "menu": true
+  },
+  "BUS 165": {
+   "title": "Found of Leadership & Service",
+   "credits": "5",
+   "description": "Employment documents, customer service fundamentals, and leadership and management skills, emphasizing a service culture and a loyal workforce.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/bus-business/100/bus-165",
+   "year_used": "2026-2027",
+   "menu": true
+  },
+  "CMST& 210": {
+   "title": "Interpersonal Communication",
+   "credits": "5",
+   "description": "Theories and skills for communication in social, family, and work settings: self-concept, perception, language, nonverbal cues, relationships, and conflict.",
+   "prereq_text": "Eligibility for ENGL& 101",
+   "prereq": {
+    "all": []
+   },
+   "placement": "Eligibility for ENGL& 101",
+   "eligibility": [
+    "ENGL& 101"
+   ],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/cmst-communication-studies-ccn/200/cmst-210",
+   "year_used": "2026-2027",
+   "menu": true
+  },
+  "CMST& 230": {
+   "title": "Small Group Communication",
+   "credits": "5",
+   "description": "How people interact in social, family, learning, and problem-solving groups: participation, power, leadership, and conflict management.",
+   "prereq_text": "Eligibility for ENGL& 101",
+   "prereq": {
+    "all": []
+   },
+   "placement": "Eligibility for ENGL& 101",
+   "eligibility": [
+    "ENGL& 101"
+   ],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/cmst-communication-studies-ccn/200/cmst-230",
+   "year_used": "2026-2027",
+   "menu": true
+  },
+  "CL 101": {
+   "title": "Intro to Computer Applications",
+   "credits": "5",
+   "description": "How computers work: device types, input and storage, operating systems, search engines, the Windows environment, application programs, and file management. BT 100 or keyboarding speed of 20 wpm recommended.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/cl-computer-literacy/100/cl-101",
+   "year_used": "2026-2027"
+  },
+  "GEOL 102": {
+   "title": "Intro to Geological Science I",
+   "credits": "5",
+   "description": "Earth's composition, structure, and dynamic processes: earthquakes, volcanoes, plate tectonics, and mountain building (lab).",
+   "prereq_text": "Eligibility for ENGL& 101 AND eligibility for MATH 86.",
+   "prereq": {
+    "all": []
+   },
+   "placement": "Eligibility for ENGL& 101 AND eligibility for MATH 86",
+   "eligibility": [
+    "ENGL& 101",
+    "MATH 86"
+   ],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/geol-geology/100/geol-102",
+   "year_used": "2026-2027",
+   "menu": true
+  },
+  "MFG T 100": {
+   "title": "Success & Safety",
+   "credits": "5",
+   "description": "Covers industrial and manufacturing trade standards, workflows, and operating procedures, along with workplace soft skills and the reasoning and communication habits employers expect. Connects these expectations to advanced manufacturing fields such as composites, engineering technology, precision machining, and mechatronics/robotics.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mfg-t-manufacturing-technology/100/mfg-t-100",
+   "year_used": "2026-2027"
+  },
+  "MFG T 101": {
+   "title": "Introduction to Machining",
+   "credits": "5",
+   "description": "Introduction to machining and manufacturing processes commonly used in the industry. The course covers setup and operations of manual mills, lathes, drill presses, band saws, and basic blueprint reading.",
+   "prereq_text": "MFG T 100 with a grade of C or higher, or concurrent enrollment in MFG T 100, or instructor permission",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MFG T 100",
+        "concurrent": true
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mfg-t-manufacturing-technology/100/mfg-t-101",
+   "year_used": "2026-2027"
+  },
+  "MFG T 104": {
+   "title": "Machine Operator 1",
+   "credits": "20",
+   "description": "Covers applied machinist math, measurement, basic blueprint reading, and operation of conventional lathes, mills, and small shop tools, with an introduction to CNC machines. It also teaches manufacturing processes, shop safety, and teamwork.",
+   "prereq_text": "Eligibility for MATH 076.",
+   "prereq": {
+    "all": []
+   },
+   "placement": "Eligibility for MATH 76",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mfg-t-manufacturing-technology/100/mfg-t-104",
+   "year_used": "2026-2027"
+  },
+  "MFG T 105": {
+   "title": "Machine Operator 2",
+   "credits": "20",
+   "description": "Covers advanced blueprint interpretation, including GD&T, along with geometry and trigonometry applications, while deepening CNC programming and operation skills. Students may repeat the course twice for credit.",
+   "prereq_text": "Completion of MFG 104 with a grade of C or higher.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MFG T 104",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mfg-t-manufacturing-technology/100/mfg-t-105",
+   "year_used": "2026-2027"
+  },
+  "MFG T 107": {
+   "title": "Machining with Mastercam",
+   "credits": "4",
+   "description": "Introduction to the Computer Aided Manufacturing software Mastercam.",
+   "prereq_text": "MFG T 105 with a grade of C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MFG T 105",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mfg-t-manufacturing-technology/100/mfg-t-107",
+   "year_used": "2026-2027"
+  },
+  "MFG T 108": {
+   "title": "NC Programming with Vericut",
+   "credits": "4",
+   "description": "Introduction to the Computer Aided Manufacturing software Vericut. Students learn to use this software, which simulates CNC machining.",
+   "prereq_text": "MFG T 101 or MFG T 113, with a grade of C or higher, or instructor permission",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MFG T 101",
+        "concurrent": false
+       },
+       {
+        "course": "MFG T 113",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mfg-t-manufacturing-technology/100/mfg-t-108",
+   "year_used": "2026-2027"
+  },
+  "MFG T 109": {
+   "title": "NC Programming with CATIA",
+   "credits": "4",
+   "description": "Introduction to the Computer Aided Manufacturing software CATIA. Students will be able to use the software used for creating and simulating CNC machining.",
+   "prereq_text": "MFG T 101 and ENG T 185, each with a grade of C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MFG T 101",
+        "concurrent": false
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "course": "ENG T 185",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mfg-t-manufacturing-technology/100/mfg-t-109",
+   "year_used": "2026-2027"
+  },
+  "MFG T 113": {
+   "title": "CNC Cutting Solutions",
+   "credits": "5",
+   "description": "Covers waterjet cutting, three-axis routing, and fabric cutting machines. Students create CAD/CAM programs for each machine, then practice setup, operation, troubleshooting, corrective actions, and part inspection to meet industry standards.",
+   "prereq_text": "MFG T 100 with a grade of C or higher, or concurrent enrollment in MFG T 100",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MFG T 100",
+        "concurrent": true
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mfg-t-manufacturing-technology/100/mfg-t-113",
+   "year_used": "2026-2027"
+  },
+  "MFG T 117": {
+   "title": "Blueprint Reading & Schematics",
+   "credits": "3",
+   "description": "Drafting fundamentals and orthographic interpretation necessary to read, manipulate and understand a mechanical part print.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mfg-t-manufacturing-technology/100/mfg-t-117",
+   "year_used": "2026-2027"
+  },
+  "MFG T 229": {
+   "title": "Manufacturing Team Project",
+   "credits": "5",
+   "description": "A capstone course where students apply what they've learned about manufacturing technology in a team project, designing and producing a manufactured good and writing a final report.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mfg-t-manufacturing-technology/200/mfg-t-229",
+   "year_used": "2026-2027"
+  },
+  "MFG T 230": {
+   "title": "Mfg Team Project Aerospace",
+   "credits": "5",
+   "description": "Students collaborate with peers from multiple schools in distributed teams through the AerosPACE program to design, build, and fly a 3/4 scale aircraft. The work covers concept development, design documentation, prototype fabrication, testing, analysis, and reporting.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mfg-t-manufacturing-technology/200/mfg-t-230",
+   "year_used": "2026-2027"
+  },
+  "ENG T 100": {
+   "title": "Engineering Graphics",
+   "credits": "4",
+   "description": "Introductory course in 2D computer-aided design software for creating, modifying, analyzing, and optimizing designs. Students apply drafting standards, such as borders, orthographic views, and auxiliary views, to produce engineering drawings.",
+   "prereq_text": "DEVED 96 or CL 101 with a grade of C or higher, or instructor permission",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "DEVED 96",
+        "concurrent": false
+       },
+       {
+        "course": "CL 101",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/100/eng-t-100",
+   "year_used": "2026-2027"
+  },
+  "ENG T 101": {
+   "title": "Technical Problem Solving",
+   "credits": "5",
+   "description": "Solving problems involving manufactured assemblies for students in manufacturing technology. Covers engineering and mechanical scales and precision measuring instruments, and applies basic algebra, geometry, and trigonometry to problems such as volumes and weights.",
+   "prereq_text": "Eligibility for MATH 76 or higher",
+   "prereq": {
+    "all": []
+   },
+   "placement": "Eligibility for MATH 76 or higher",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/100/eng-t-101",
+   "year_used": "2026-2027"
+  },
+  "ENG T 103": {
+   "title": "Introduction to Revit",
+   "credits": "4",
+   "description": "Introduces the architectural design and documentation tools in Revit, including the Building Information Modeling interface and the fundamentals of creating a building model.",
+   "prereq_text": "Completion of ENG T 100 with a C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "ENG T 100",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/100/eng-t-103",
+   "year_used": "2026-2027"
+  },
+  "ENG T 108": {
+   "title": "Engineering Graphics: 3D CAD",
+   "credits": "4",
+   "description": "Fundamentals of design with introduction to a 3D parametric CAD modeler in the preparation of designs and working drawings.",
+   "prereq_text": "Completion of DEVED 96 or CL 101 with a C or higher, or instructor permission",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "DEVED 96",
+        "concurrent": false
+       },
+       {
+        "course": "CL 101",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/100/eng-t-108",
+   "year_used": "2026-2027"
+  },
+  "ENG T 111": {
+   "title": "Intro Engineering Tech Design",
+   "credits": "5",
+   "description": "Introduces CAD software as a tool for engineering technical design, covering blueprint drafting and programming 3D printers to produce additive mechanical and structural parts.",
+   "prereq_text": "Prerequisite may be waived by instructor permission.",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/100/eng-t-111",
+   "year_used": "2026-2027"
+  },
+  "ENG T 185": {
+   "title": "Intro to Catia 3DE",
+   "credits": "4",
+   "description": "Introduces parametric, three-dimensional modeling in CATIA 3D Experience. Students learn to navigate the software, build solid parts using industry best practices, and then assemble and manipulate those parts.",
+   "prereq_text": "DEVED 96 or CL 101 with a grade of C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "DEVED 96",
+        "concurrent": false
+       },
+       {
+        "course": "CL 101",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/100/eng-t-185",
+   "year_used": "2026-2027"
+  },
+  "ENG T 193": {
+   "title": "Intermediate CAD W/ Catia 3DE",
+   "credits": "4",
+   "description": "Techniques for using CATIA 3D Experience to produce working-level engineering drawings: detail and assembly drawings with views, text, dimensions, tolerances, bills of material, borders, and title blocks.",
+   "prereq_text": "Completion of ENG T 185 with a C or higher.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "ENG T 185",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/100/eng-t-193",
+   "year_used": "2026-2027"
+  },
+  "ENG T 194": {
+   "title": "Tool Design and Product",
+   "credits": "4",
+   "description": "Students design tooling fixtures used to make or assemble engineering parts, modeling each one in accurate 3D coordinates with proper product-structure practices, working in collaborative teams.",
+   "prereq_text": "Completion of ENG T 185 with a C or higher.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "ENG T 185",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/100/eng-t-194",
+   "year_used": "2026-2027"
+  },
+  "ENG T 195": {
+   "title": "Adv Surfacing with Catia 3DE",
+   "credits": "4",
+   "description": "Tools and methods from the Generative Structural Analysis, Free Style, Wireframe, and Generative Shape Design workbenches in CATIA 3D Experience.",
+   "prereq_text": "Completion of ENG T 193 with a C or higher.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "ENG T 193",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/100/eng-t-195",
+   "year_used": "2026-2027"
+  },
+  "ENG T 196": {
+   "title": "Adv Workbenches with Catia 3DE",
+   "credits": "4",
+   "description": "Advanced CATIA 3D Experience workbenches: Knowledgeware, DMU Kinematics, Generative Structural Analysis, Generative Sheet Metal Design, Weld Design, and Prismatic Machining.",
+   "prereq_text": "Completion of ENG T 193 with a C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "ENG T 193",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/100/eng-t-196",
+   "year_used": "2026-2027"
+  },
+  "ENG T 203": {
+   "title": "AutoCAD II - Intermediate",
+   "credits": "4",
+   "description": "Intermediate AutoCAD skills for producing engineering drawings more efficiently: layouts and paper space, layer management, reusable blocks, symbols, external references, and attributes for bills of materials.",
+   "prereq_text": "Completion of ENG T 100 with a C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "ENG T 100",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/200/eng-t-203",
+   "year_used": "2026-2027"
+  },
+  "ENG T 204": {
+   "title": "Drafting Using CAD",
+   "credits": "4",
+   "description": "Core drafting skills for mechanical and structural work, including detailing parts, assemblies, and installation drawings in a 3D coordinate system, drawing checking, revisions under ASME and ANSI standards, and bills of materials.",
+   "prereq_text": "Completion of ENG T 185 and ENG T 108 with a C or higher.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "ENG T 185",
+        "concurrent": false
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "course": "ENG T 108",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/200/eng-t-204",
+   "year_used": "2026-2027"
+  },
+  "ENG T 205": {
+   "title": "Precision, Fits, w/ GD&T",
+   "credits": "5",
+   "description": "Dimensioning and tolerancing theory and application using CAD software, with emphasis on standard tolerances, precision fits, and Geometric Dimensioning and Tolerancing (GD&T), including GD&T through Model Based Definition (MBD).",
+   "prereq_text": "Completion of ENG T 204 with a C or higher.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "ENG T 204",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/200/eng-t-205",
+   "year_used": "2026-2027"
+  },
+  "ENG T 217": {
+   "title": "CAD Design Project",
+   "credits": "4",
+   "description": "CAD design projects for advanced manufacturing and technical design students: take apart a precision mechanical assembly, redesign it, and document the changes in a parametric 3D modeler, including a detailed parts list.",
+   "prereq_text": "ENG T 259 and ENG T 193 (or concurrent enrollment), each with a grade C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "ENG T 259",
+        "concurrent": false
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "course": "ENG T 193",
+        "concurrent": true
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/200/eng-t-217",
+   "year_used": "2026-2027"
+  },
+  "ENG T 230": {
+   "title": "Mfg Materials and Processes",
+   "credits": "3",
+   "description": "Survey of materials used in manufacturing and the methods for shaping them into finished parts, how material properties influence selection, and how materials and processes affect feasibility and cost.",
+   "prereq_text": "Eligibility for MATH 86 or equivalent OR completion of ENG T 101 with a C or higher.",
+   "prereq": {
+    "all": []
+   },
+   "placement": "Eligibility for MATH 86, or ENG T 101 with a C or higher",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/200/eng-t-230",
+   "year_used": "2026-2027"
+  },
+  "ENG T 259": {
+   "title": "Engr Graphics: 3D CAD-CAM",
+   "credits": "4",
+   "description": "Using a 3D parametric CAD program to produce flat patterns, weldments, machining drawings, bills of material, and title blocks, and 3D CAM software to run a three-axis benchtop milling machine.",
+   "prereq_text": "Completion of ENG T 108, or ENGR& 114 or equivalent, with a C or higher.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "ENG T 108",
+        "concurrent": false
+       },
+       {
+        "course": "ENGR& 114",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/200/eng-t-259",
+   "year_used": "2026-2027"
+  },
+  "CT 101": {
+   "title": "Intro to Composites",
+   "credits": "5",
+   "description": "Composite materials and how industries use them, with an emphasis on building basic fabrication skills and handling materials safely.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/ct-composites-technology/100/ct-101",
+   "year_used": "2026-2027"
+  },
+  "CT 102": {
+   "title": "Composite Technology 1",
+   "credits": "20",
+   "description": "Composite manufacturing fundamentals, including resin types, polymer curing, laminate and sandwich-core design, layup methods, and open and closed molding such as wet layup, filament winding, vacuum bagging, VARTM, and LRTM.",
+   "prereq_text": "Eligibility for MATH 76 or equivalent, OR instructor permission.",
+   "prereq": {
+    "all": []
+   },
+   "placement": "Eligibility for MATH 76, or instructor permission",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/ct-composites-technology/100/ct-102",
+   "year_used": "2026-2027"
+  },
+  "CT 145": {
+   "title": "Composite Special Projects",
+   "credits": "5",
+   "description": "Applying the full composite production process, including reading prints, planning and layout, controlling distortion, and designing fixtures, to design and manufacture an original product independently and in a team.",
+   "prereq_text": "Completion of CT 101 or CT 102 with a C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "CT 101",
+        "concurrent": false
+       },
+       {
+        "course": "CT 102",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/ct-composites-technology/100/ct-145",
+   "year_used": "2026-2027"
+  },
+  "CT 203": {
+   "title": "Composite Technology 2",
+   "credits": "20",
+   "description": "Theory and hands-on application of advanced composite manufacturing methods, plus inspecting and repairing composite damage.",
+   "prereq_text": "Completion of CT 102 with a C or higher.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "CT 102",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/ct-composites-technology/200/ct-203",
+   "year_used": "2026-2027"
+  },
+  "MECH 118": {
+   "title": "Predictive Maintenance",
+   "credits": "2",
+   "description": "Forecasting-based and scheduled maintenance methods and instruments for factory machinery, plus continuous improvement principles for plant operations, troubleshooting, and repair.",
+   "prereq_text": "MFG T 100 with a grade of C or higher, or concurrent enrollment in MFG T 100",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MFG T 100",
+        "concurrent": true
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mech-mechatronics/100/mech-118",
+   "year_used": "2026-2027"
+  },
+  "MECH 119": {
+   "title": "Introduction to Robotics",
+   "credits": "5",
+   "description": "Basics of operating robots, simple programming, interfacing, and material handling within complex mechatronic systems, using interactive robotic devices.",
+   "prereq_text": "Eligibility for ENGL& 101 AND either ENG T 101 with a grade of C or higher, or eligibility for MATH 86",
+   "prereq": {
+    "all": []
+   },
+   "placement": "Eligibility for ENGL& 101, and ENG T 101 (C or higher) or eligibility for MATH 86",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mech-mechatronics/100/mech-119",
+   "year_used": "2026-2027"
+  },
+  "MECH 120": {
+   "title": "Electrical Components",
+   "credits": "5",
+   "description": "Functions and physical traits of electrical components and how they fit into complex mechatronics systems, plus schematics, timing diagrams, system specifications, and safety.",
+   "prereq_text": "Eligibility for ENGL& 101 AND either ENG T 101 with a grade of C or higher, or eligibility for MATH 86",
+   "prereq": {
+    "all": []
+   },
+   "placement": "Eligibility for ENGL& 101, and ENG T 101 (C or higher) or eligibility for MATH 86",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mech-mechatronics/100/mech-120",
+   "year_used": "2026-2027"
+  },
+  "MECH 121": {
+   "title": "Mechanical Components",
+   "credits": "5",
+   "description": "Basics of mechanical components and electrical drives in a complex mechatronics system. Students will understand the flow of energy, troubleshooting, preventive maintenance and safety issues.",
+   "prereq_text": "Eligibility for ENGL& 101 AND either ENG T 101 with a grade of C or higher, or eligibility for MATH 86",
+   "prereq": {
+    "all": []
+   },
+   "placement": "Eligibility for ENGL& 101, and ENG T 101 (C or higher) or eligibility for MATH 86",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mech-mechatronics/100/mech-121",
+   "year_used": "2026-2027"
+  },
+  "MECH 122": {
+   "title": "Elec-Pneumatic Ctrl Circuits",
+   "credits": "5",
+   "description": "Pneumatic, electro-pneumatic, and hydraulic control circuits within complex mechatronics systems: how control elements work and the roles of components in pneumatic and hydraulic setups.",
+   "prereq_text": "Eligibility for ENGL& 101 AND either ENG T 101 with a grade of C or higher, or eligibility for MATH 86",
+   "prereq": {
+    "all": []
+   },
+   "placement": "Eligibility for ENGL& 101, and ENG T 101 (C or higher) or eligibility for MATH 86",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mech-mechatronics/100/mech-122",
+   "year_used": "2026-2027"
+  },
+  "MECH 123": {
+   "title": "Digital Fundamentals",
+   "credits": "4",
+   "description": "Core digital logic concepts and an introduction to programmable logic controllers (PLCs) in a mechatronics system. Students write and test small PLC programs on a real system.",
+   "prereq_text": "MECH 120 with a grade of C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MECH 120",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mech-mechatronics/100/mech-123",
+   "year_used": "2026-2027"
+  },
+  "MECH 124": {
+   "title": "Controls and Instrumentation",
+   "credits": "5",
+   "description": "Controls and instrumentation in mechatronic systems: circuit boards, sensors, calibration, loop tuning, and AC, DC, and servo motors, drives, relays, and starters, with practice diagnosing motor and drive faults.",
+   "prereq_text": "Completion of MECH 123 with a C or higher, OR instructor permission.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MECH 123",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mech-mechatronics/100/mech-124",
+   "year_used": "2026-2027"
+  },
+  "MECH 219": {
+   "title": "Industrial Robotics",
+   "credits": "5",
+   "description": "Prepares students for the NOCTI Robotics Certification exam: robot operation, frame setup, basic motion programs, offsets, backups, simulations, six-axis mastering, pick-and-place programming, and 2D vision.",
+   "prereq_text": "MECH 119 with a grade of C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MECH 119",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mech-mechatronics/200/mech-219",
+   "year_used": "2026-2027"
+  },
+  "MECH 295": {
+   "title": "Mechatronics Internship 1",
+   "credits": "1-5",
+   "description": "Internship developing the basic mechatronics skills needed to work in manufacturing, through instruction-based hands-on learning or on-the-job practice.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mech-mechatronics/200/mech-295",
+   "year_used": "2026-2027"
+  },
+  "MECH 296": {
+   "title": "Mechatronics Internship 2",
+   "credits": "1-5",
+   "description": "Internship building core mechatronics skills for a manufacturing company, through hands-on work or job-shadowing of manufacturing support functions.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mech-mechatronics/200/mech-296",
+   "year_used": "2026-2027"
+  },
+  "WELD 101": {
+   "title": "Introduction to Welding",
+   "credits": "5",
+   "description": "Introduces welding: shop safety, setup and operation of common fabrication tools and equipment, key metallurgical terms, and the alloying elements used in carbon steel and their effects.",
+   "prereq_text": "Completion of MFG T 100 with a C or higher, or concurrent enrollment.",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MFG T 100",
+        "concurrent": true
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-101",
+   "year_used": "2026-2027"
+  },
+  "WELD 105": {
+   "title": "Intro to Fabrication Planning",
+   "credits": "5",
+   "description": "The planning work that comes before fabrication: material lists, stock inventory, efficient layout, measuring fabrication dimensions, and calculating lengths and weights for weldments in English and metric units.",
+   "prereq_text": "Eligibility for MATH 76",
+   "prereq": {
+    "all": []
+   },
+   "placement": "Eligibility for MATH 76",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-105",
+   "year_used": "2026-2027"
+  },
+  "WELD 106": {
+   "title": "Intro Fabrication Document",
+   "credits": "5",
+   "description": "The documentation used in the welding industry for safety, quality control, production, performance, and daily business operations, and the strengths, limits, and uses of each.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-106",
+   "year_used": "2026-2027"
+  },
+  "WELD 111": {
+   "title": "Basic Layout",
+   "credits": "2",
+   "description": "Baseline, radial, cylindrical, and triangulation layout methods for flat patterns, pipe intersections, and cones, plus basic lofting as used in sheet metal fabrication and HVAC work.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-111",
+   "year_used": "2026-2027"
+  },
+  "WELD 150": {
+   "title": "Blueprint Reading for Industry",
+   "credits": "5",
+   "description": "Engineering drawings, lines, and symbols as used in the machine and fabrication trades: blueprint lines, three-view, isometric, and orthographic drawings, and welding symbols.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-150",
+   "year_used": "2026-2027"
+  },
+  "WELD 151": {
+   "title": "Carbon Steel Metallurgy",
+   "credits": "3",
+   "description": "Metallurgical terminology for carbon steels: metal properties, phase changes, melting and solidification rates, weld bead metallurgy, and heat-affected zones.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-151",
+   "year_used": "2026-2027"
+  },
+  "WELD 152": {
+   "title": "Weld Base Mtrls and Processes",
+   "credits": "3",
+   "description": "How base metals are classified and identified under SAE, ASTM, and AWS systems, common welding processes and power sources, and reading and writing welding procedures.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-152",
+   "year_used": "2026-2027"
+  },
+  "WELD 153": {
+   "title": "Non-ferrous Metallurgy",
+   "credits": "3",
+   "description": "Basic metallurgy of stainless steels, aluminum, and cast iron, their heat treatment, material and filler metal designations, and common welding procedures.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-153",
+   "year_used": "2026-2027"
+  },
+  "WELD 160": {
+   "title": "Intro Weld Nondestructive Test",
+   "credits": "5",
+   "description": "Introduction to nondestructive examination methods, with practice interpreting results and the advantages, limits, and uses of each technique.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-160",
+   "year_used": "2026-2027"
+  },
+  "WELD 191": {
+   "title": "Basic Arc Welding",
+   "credits": "5",
+   "description": "Manual Shielded Metal Arc Welding with E 6010 and/or E 6011 electrodes, producing fillet and open root welds to industry standards in all positions. May be repeated twice for credit.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-191",
+   "year_used": "2026-2027"
+  },
+  "WELD 193": {
+   "title": "Basic Pipe Welding",
+   "credits": "5",
+   "description": "Pipe welding with shielded metal arc or gas tungsten arc processes: joint preparation and filler metal selection for the 2G, 5G, and 6G positions, building toward the AWS D1.1 standard.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-193",
+   "year_used": "2026-2027"
+  },
+  "WELD 194": {
+   "title": "Gas Tungsten Arc Welding",
+   "credits": "5",
+   "description": "Fundamentals and techniques of Gas Tungsten Arc Welding, including setting up and adjusting GTAW equipment for steel, stainless steel, and aluminum.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-194",
+   "year_used": "2026-2027"
+  },
+  "WELD 195": {
+   "title": "Gas Metal Arc Welding",
+   "credits": "5",
+   "description": "Gas Metal Arc Welding on steel and aluminum, setting up and adjusting GMAW equipment for short arc, spray, and pulse spray transfer.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-195",
+   "year_used": "2026-2027"
+  },
+  "WELD 211": {
+   "title": "Sheet Metal Fabrication",
+   "credits": "5",
+   "description": "Basic sheet metal fabrication: projects from prints using flat pattern layout, bending sequences, spot welding, hand tools, brakes, roll forms, and punching and notching equipment.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/200/weld-211",
+   "year_used": "2026-2027"
+  },
+  "WELD 214": {
+   "title": "Pressbrake/Sub Arc Weld",
+   "credits": "5",
+   "description": "Safety, setup, and operation of sub arc welding on plate and pipe sections and the 120-ton hydraulic press brake, including bending sequences, bump rolling, and basic maintenance.",
+   "prereq_text": "WELD 195 or WELD 196, AND WELD 210, each with a grade of C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "WELD 195",
+        "concurrent": false
+       },
+       {
+        "course": "WELD 196",
+        "concurrent": false
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "course": "WELD 210",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/200/weld-214",
+   "year_used": "2026-2027"
+  },
+  "WELD 216": {
+   "title": "Advanced TIG Welding",
+   "credits": "3",
+   "description": "Advanced TIG welding for specialized manufacturing such as aerospace and nuclear, including water-cooled torches, purge systems, and gas lenses.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/200/weld-216",
+   "year_used": "2026-2027"
+  },
+  "WELD 217": {
+   "title": "Aerospace Sheet Metal Fab",
+   "credits": "5",
+   "description": "Sheet metal fabrication with an aerospace emphasis: projects from prints using flat pattern layout, bend sequencing, spot welding, pan and finger brakes, roll forming, and punching and notching.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/200/weld-217",
+   "year_used": "2026-2027"
+  },
+  "WELD 225": {
+   "title": "Welding Skills Building",
+   "credits": "3",
+   "description": "Extra lab practice before a state welding certification exam, or to sharpen skills. May be repeated two times for credit.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/200/weld-225",
+   "year_used": "2026-2027"
+  },
+  "WELD 231": {
+   "title": "Welding Capstone",
+   "credits": "5",
+   "description": "Building an aluminum boat hull with GTAW and GMAW, working to hull and structural welding codes (ABS Part 2, AWS D1.2, AWS D3.7) and evaluating welds against them.",
+   "prereq_text": "MFG T 100; WELD 101, WELD 105, WELD 194, WELD 195",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MFG T 100",
+        "concurrent": false
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "course": "WELD 101",
+        "concurrent": false
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "course": "WELD 105",
+        "concurrent": false
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "course": "WELD 194",
+        "concurrent": false
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "course": "WELD 195",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/200/weld-231",
+   "year_used": "2026-2027"
+  },
+  "WELD 285": {
+   "title": "CNC Plasma/Waterjet Cutting",
+   "credits": "5",
+   "description": "Automated manufacturing on three-axis CNC plasma and waterjet cutting equipment using several 2D CAD programs. May be repeated once for credit.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/200/weld-285",
+   "year_used": "2026-2027"
+  },
+  "WELD 286": {
+   "title": "Aero CNC Plasma Cutting 2",
+   "credits": "5",
+   "description": "Programming and operating a computerized plasma cutting system with AutoCAD for aerospace applications, including production parts, quality control, and industry tolerances.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/200/weld-286",
+   "year_used": "2026-2027"
+  },
+  "WELD 295": {
+   "title": "Work Experience Internship",
+   "credits": "2-5",
+   "description": "Supervised workplace practice of welding and fabrication skills. May be taken one additional time for credit.",
+   "prereq_text": "",
+   "prereq": {
+    "all": []
+   },
+   "placement": "",
+   "eligibility": [],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/200/weld-295",
+   "year_used": "2026-2027"
+  },
+  "BIOL 130": {
+   "title": "Marine Biology Pacific NW",
+   "credits": "5",
+   "description": "Life processes and ecology of marine organisms, with field trips focused on intertidal communities of the Salish Sea. Covers the scientific method, oceanographic drivers, marine ecology, and identifying marine organisms.",
+   "prereq_text": "Eligibility for ENGL& 101 AND eligibility for MATH 96.",
+   "prereq": {
+    "all": []
+   },
+   "placement": "Eligibility for ENGL& 101 AND eligibility for MATH 96.",
+   "eligibility": [
+    "ENGL& 101",
+    "MATH 96"
+   ],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/biol-biology/100/biol-130",
+   "year_used": "2026-2027",
+   "short": "Marine Biology"
+  },
+  "BOT 113": {
+   "title": "Plants of the Pacific NW",
+   "credits": "5",
+   "description": "Classification and identification of ferns, conifers and flowering plants, focused on Pacific Northwest flora. Includes plant naming, reproduction, ecology and human uses of plants.",
+   "prereq_text": "Eligibility for ENGL& 101 AND eligibility for MATH 86.",
+   "prereq": {
+    "all": []
+   },
+   "placement": "Eligibility for ENGL& 101 AND eligibility for MATH 86.",
+   "eligibility": [
+    "ENGL& 101",
+    "MATH 86"
+   ],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/bot-botany/100/bot-113",
+   "year_used": "2026-2027",
+   "short": "PNW Plants"
+  },
+  "GEOL 104": {
+   "title": "Intro to Geol Science II",
+   "credits": "5",
+   "description": "Surface processes that shape Earth: rivers, glaciers, groundwater, oceans and deserts. Also covers geologic hazards, environmental geology and resource management, with hands-on labs and field work.",
+   "prereq_text": "Eligibility for ENGL& 101 AND eligibility for MATH 86.",
+   "prereq": {
+    "all": []
+   },
+   "placement": "Eligibility for ENGL& 101 AND eligibility for MATH 86.",
+   "eligibility": [
+    "ENGL& 101",
+    "MATH 86"
+   ],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/geol-geology/100/geol-104",
+   "year_used": "2026-2027",
+   "short": "Geol Science II"
+  },
+  "GEOL& 103": {
+   "title": "Historical Geology",
+   "credits": "5",
+   "description": "Geologic history of Earth with a focus on North America and the Pacific Northwest. Topics include plate tectonics, past environments, and the origin and evolution of life, with hands-on labs and field work.",
+   "prereq_text": "Eligibility for ENGL& 101 AND eligibility for MATH 86.",
+   "prereq": {
+    "all": []
+   },
+   "placement": "Eligibility for ENGL& 101 AND eligibility for MATH 86.",
+   "eligibility": [
+    "ENGL& 101",
+    "MATH 86"
+   ],
+   "min_grade": "",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/geol-geology-ccn/100/geol-103",
+   "year_used": "2026-2027"
+  },
+  "MATH 138": {
+   "title": "Applied College Algebra",
+   "credits": "5",
+   "description": "College algebra with applications: functions, equations and systems, matrices, linear programming and the mathematics of finance. For business, social science and some life science students, not math, science or engineering majors.",
+   "prereq_text": "MATH 96 or equivalent with a grade of C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "MATH 96",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "or equivalent",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/math-mathematics/100/math-138",
+   "year_used": "2026-2027",
+   "short": "Applied College Alg"
+  },
+  "PHYS& 115": {
+   "title": "General Physics II",
+   "credits": "5",
+   "description": "Second course in the one-year algebra-based General Physics sequence (PHYS& 114-116). Covers periodic motion, mechanical waves and thermodynamics.",
+   "prereq_text": "PHYS& 114 AND MATH 138 or MATH& 142 or MATH& 144 or equivalent, each with a grade of C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "PHYS& 114",
+        "concurrent": false
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "course": "MATH 138",
+        "concurrent": false
+       },
+       {
+        "course": "MATH& 142",
+        "concurrent": false
+       },
+       {
+        "course": "MATH& 144",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "or equivalent",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/phys-physics-ccn/100/phys-115",
+   "year_used": "2026-2027",
+   "short": "Gen Physics II"
+  },
+  "PHYS& 116": {
+   "title": "General Physics III",
+   "credits": "5",
+   "description": "Third course in the one-year algebra-based General Physics sequence (PHYS& 114-116). Covers electricity, magnetism and light.",
+   "prereq_text": "PHYS& 114 AND MATH& 142 or MATH& 144 or equivalent, each with a grade C or higher",
+   "prereq": {
+    "all": [
+     {
+      "any": [
+       {
+        "course": "PHYS& 114",
+        "concurrent": false
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "course": "MATH& 142",
+        "concurrent": false
+       },
+       {
+        "course": "MATH& 144",
+        "concurrent": false
+       }
+      ]
+     }
+    ]
+   },
+   "placement": "or equivalent",
+   "eligibility": [],
+   "min_grade": "C",
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/phys-physics-ccn/100/phys-116",
+   "year_used": "2026-2027",
+   "short": "Gen Physics III"
+  }
+ },
+ "programs": [
+  {
+   "id": "amt-weld-ata",
+   "name": "AMT in Welding and Fabrication",
+   "credential": "ATA",
+   "code": "WETAFAPT",
+   "active": "",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "welding"
+   ],
+   "total": 90,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/welding/amt-in-welding-and-fabrication-ata",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "related",
+     "label": "Related Instruction",
+     "credits": 15,
+     "items": [
+      {
+       "one_of": [
+        "ENG T 101",
+        "WELD 105",
+        "MATH 86"
+       ],
+       "credits": 5,
+       "hint": "Or TS 86 or higher from the Quantitative Skills list"
+      },
+      {
+       "one_of": [
+        "ENGL& 101",
+        "ENGL 98",
+        "TS 98"
+       ],
+       "credits": 5
+      },
+      {
+       "one_of": [
+        "BUS 110",
+        "BUS 165",
+        "CMST& 210",
+        "CMST& 230"
+       ],
+       "credits": 5,
+       "hint": "Or H DEV 155 (3 credits)"
+      }
+     ]
+    },
+    {
+     "id": "common",
+     "label": "Common Technical Requirements",
+     "credits": 33,
+     "items": [
+      {
+       "course": "MFG T 100"
+      },
+      {
+       "course": "ENG T 111"
+      },
+      {
+       "one_of": [
+        "CT 101",
+        "CT 145"
+       ],
+       "credits": 5
+      },
+      {
+       "one_of": [
+        "MFG T 117",
+        "WELD 150"
+       ],
+       "credits": 3
+      },
+      {
+       "one_of": [
+        "MFG T 101",
+        "MFG T 107",
+        "MFG T 113"
+       ],
+       "credits": 5,
+       "hint": "MFG T 107 is 4 credits"
+      },
+      {
+       "one_of": [
+        "MECH 119",
+        "MECH 120",
+        "MECH 121",
+        "MECH 122",
+        "MECH 124"
+       ],
+       "credits": 5
+      },
+      {
+       "slot": "WELD-ANY",
+       "label": "One welding, cutting or testing course",
+       "credits": 5,
+       "hint": "WELD 101, 160-164, 190-196, 210-213, 217, 218, 261-264, 285-288, 290-292, 294 or 296"
+      }
+     ]
+    },
+    {
+     "id": "core",
+     "label": "Welding and Fabrication Technical Core",
+     "credits": 25,
+     "items": [
+      {
+       "course": "WELD 111"
+      },
+      {
+       "course": "WELD 152"
+      },
+      {
+       "course": "WELD 191"
+      },
+      {
+       "course": "WELD 193"
+      },
+      {
+       "course": "WELD 194"
+      },
+      {
+       "course": "WELD 195"
+      }
+     ]
+    },
+    {
+     "id": "elect",
+     "label": "Electives",
+     "credits": 12,
+     "items": [
+      {
+       "one_of": [
+        "WELD 151",
+        "WELD 153"
+       ],
+       "credits": 3
+      },
+      {
+       "slot": "WELD-ELECT",
+       "label": "Welding elective",
+       "credits": 5,
+       "hint": "WELD 161-164, 190, 192, 196 or 210-213"
+      },
+      {
+       "one_of": [
+        "WELD 225",
+        "WELD 295"
+       ],
+       "credits": 3,
+       "hint": "Enough credits to reach 90"
+      }
+     ],
+     "note": "10 to 14 credits, enough to reach 90 total."
+    },
+    {
+     "id": "capstone",
+     "label": "Capstone Project",
+     "credits": 5,
+     "items": [
+      {
+       "one_of": [
+        "MFG T 229",
+        "WELD 231"
+       ],
+       "credits": 5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-weld-trad-ata",
+   "name": "Welding",
+   "credential": "ATA",
+   "code": "WETWEAPT",
+   "active": "",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "welding"
+   ],
+   "total": 90,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/welding/welding-ata",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "related",
+     "label": "Related Instruction",
+     "credits": 15,
+     "items": [
+      {
+       "one_of": [
+        "WELD 105",
+        "MATH 86",
+        "TS 86"
+       ],
+       "credits": 5,
+       "hint": "Or higher from the Quantitative Skills list"
+      },
+      {
+       "one_of": [
+        "WELD 106",
+        "ENGL& 101",
+        "ENGL 98",
+        "BUS 110",
+        "BUS 165",
+        "CMST& 210",
+        "CMST& 230"
+       ],
+       "credits": 5,
+       "hint": "WELD 105, WELD 106 and BUS 110 recommended"
+      }
+     ]
+    },
+    {
+     "id": "core",
+     "label": "Technical Core",
+     "credits": 31,
+     "items": [
+      {
+       "course": "WELD 101"
+      },
+      {
+       "course": "WELD 111"
+      },
+      {
+       "course": "MFG T 100"
+      },
+      {
+       "course": "WELD 150"
+      },
+      {
+       "course": "WELD 151"
+      },
+      {
+       "course": "WELD 152"
+      },
+      {
+       "course": "WELD 153"
+      },
+      {
+       "course": "WELD 160"
+      }
+     ]
+    },
+    {
+     "id": "practical",
+     "label": "Welding Practical",
+     "credits": 44,
+     "items": [
+      {
+       "slot": "WELD-SKILLS",
+       "label": "Welding skills courses (25+ credits)",
+       "credits": 25,
+       "hint": "WELD 190-196, 291, 292, 294 and 296"
+      },
+      {
+       "slot": "WELD-FAB",
+       "label": "Fabrication courses (10+ credits)",
+       "credits": 10,
+       "hint": "WELD 205, 210-213, 216, 231, 285 or 290"
+      },
+      {
+       "slot": "WELD-PRAC-ELECT",
+       "label": "Electives (4+ credits)",
+       "credits": 4,
+       "hint": "WELD 161-164, 225, 226, 295, 297 or MECH 119"
+      }
+     ],
+     "note": "44 credits, or as many as needed to reach 90. Most welding courses may be repeated for credit."
+    }
+   ]
+  },
+  {
+   "id": "amt-weld-entry",
+   "name": "Entry Level Welding",
+   "credential": "Certificate",
+   "code": "WETELC01",
+   "active": "",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "welding"
+   ],
+   "total": 17,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/welding/entry-level-welding-certificate",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "req",
+     "label": "Required Courses",
+     "credits": 17,
+     "min_grade": "C",
+     "items": [
+      {
+       "course": "MFG T 100"
+      },
+      {
+       "course": "WELD 101"
+      },
+      {
+       "course": "WELD 111"
+      },
+      {
+       "course": "WELD 195"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-weld-subarc",
+   "name": "Welding - Sub Arc",
+   "credential": "Certificate",
+   "code": "WETSWC01",
+   "active": "Fall 2020",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "welding"
+   ],
+   "total": 17,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/welding/welding-sub-arc-certificate",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "req",
+     "label": "Required Courses",
+     "credits": 17,
+     "min_grade": "C",
+     "items": [
+      {
+       "course": "MFG T 100"
+      },
+      {
+       "course": "WELD 111"
+      },
+      {
+       "course": "WELD 150"
+      },
+      {
+       "course": "WELD 214"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-weld-tig",
+   "name": "Advanced TIG Welding",
+   "credential": "Certificate",
+   "code": "WETATC01",
+   "active": "",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "welding"
+   ],
+   "total": 20,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/welding/advanced-tig-welding-certificate",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "req",
+     "label": "Required Courses",
+     "credits": 20,
+     "min_grade": "C",
+     "items": [
+      {
+       "course": "MFG T 100"
+      },
+      {
+       "course": "WELD 111"
+      },
+      {
+       "course": "WELD 150"
+      },
+      {
+       "course": "WELD 194"
+      },
+      {
+       "course": "WELD 216"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-weld-aero",
+   "name": "Aerospace Welding and Fabrication",
+   "credential": "Certificate",
+   "code": "MEFAWC20",
+   "active": "",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "welding"
+   ],
+   "total": 35,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/welding/aerospace-welding-and-fabrication-certificate",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "core",
+     "label": "Core Courses",
+     "credits": 17,
+     "min_grade": "C",
+     "items": [
+      {
+       "course": "MFG T 100"
+      },
+      {
+       "course": "WELD 111"
+      },
+      {
+       "course": "WELD 150"
+      },
+      {
+       "course": "WELD 194"
+      }
+     ]
+    },
+    {
+     "id": "fab",
+     "label": "Sheet Metal, Press Brake, TIG and CNC Plasma",
+     "credits": 18,
+     "min_grade": "C",
+     "items": [
+      {
+       "one_of": [
+        "WELD 211",
+        "WELD 217"
+       ],
+       "credits": 5
+      },
+      {
+       "course": "WELD 214"
+      },
+      {
+       "course": "WELD 216"
+      },
+      {
+       "one_of": [
+        "WELD 285",
+        "WELD 286"
+       ],
+       "credits": 5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-weld-cert",
+   "name": "AMT in Welding and Fabrication",
+   "credential": "Certificate",
+   "code": "WETAFC20",
+   "active": "",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "welding"
+   ],
+   "total": 40,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/welding/amt-in-welding-and-fabrication-certificate",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "req",
+     "label": "Required Courses",
+     "credits": 35,
+     "min_grade": "C",
+     "items": [
+      {
+       "course": "MFG T 100"
+      },
+      {
+       "one_of": [
+        "WELD 101",
+        "WELD 152"
+       ],
+       "credits": 5,
+       "hint": "WELD 152 is 3 credits"
+      },
+      {
+       "course": "WELD 191"
+      },
+      {
+       "course": "WELD 193"
+      },
+      {
+       "course": "WELD 194"
+      },
+      {
+       "course": "WELD 195"
+      },
+      {
+       "one_of": [
+        "ENG T 100",
+        "WELD 150"
+       ],
+       "credits": 5,
+       "hint": "ENG T 100 is 4 credits"
+      }
+     ]
+    },
+    {
+     "id": "add",
+     "label": "Additional Courses",
+     "credits": 5,
+     "min_grade": "C",
+     "items": [
+      {
+       "slot": "WELD-ADD",
+       "label": "Additional courses to reach 40 credits",
+       "credits": 5,
+       "hint": "Any of WELD 111, 150-153, 191-195, 210-213, 217, 225, 295, ENG T 100 or MFG T 100 not already used"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-weld-welding-cert",
+   "name": "Welding",
+   "credential": "Certificate",
+   "code": "WETWEC20",
+   "active": "",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "welding"
+   ],
+   "total": 43,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/welding/welding-certificate",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "basic",
+     "label": "English and Math (by placement)",
+     "credits": 0,
+     "items": [
+      {
+       "slot": "PLACEMENT",
+       "label": "English and math if needed (0 to 10 credits)",
+       "credits": 0,
+       "hint": "ENGL 97 or TS 97, and MATH 76 or TS 76, only if you place below ENGL 98 or MATH 76"
+      }
+     ]
+    },
+    {
+     "id": "core",
+     "label": "Core Requirements",
+     "credits": 15,
+     "min_grade": "C",
+     "items": [
+      {
+       "course": "MFG T 100"
+      },
+      {
+       "course": "WELD 101"
+      },
+      {
+       "course": "WELD 150"
+      }
+     ]
+    },
+    {
+     "id": "fab",
+     "label": "Fabrication and Welding Courses",
+     "credits": 28,
+     "min_grade": "C",
+     "items": [
+      {
+       "slot": "WELD-FAB",
+       "label": "Fabrication and welding courses (18 to 28 credits)",
+       "credits": 28,
+       "hint": "WELD 152, 190-196, 211-213, 216, 217, 225, 285, 286, 291, 292, 294 or 296"
+      }
+     ],
+     "note": "28 credits if no English or math is needed, 23 if one is, 18 if both are."
+    }
+   ]
+  },
+  {
+   "id": "amt-machining-ata",
+   "name": "AMT in Precision Machining",
+   "credential": "ATA",
+   "code": "MTCAPAPT",
+   "active": "",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "precision-machining"
+   ],
+   "total": 93,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/precision-machining/amt-in-precision-machining-ata",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "related",
+     "label": "Related Instruction",
+     "credits": 15,
+     "items": [
+      {
+       "one_of": [
+        "ENG T 101",
+        "MATH 86",
+        "TS 86"
+       ],
+       "credits": 5,
+       "hint": "Or a higher course from the Quantitative Skills list"
+      },
+      {
+       "one_of": [
+        "ENGL& 101",
+        "ENGL 98",
+        "TS 98"
+       ],
+       "credits": 5
+      },
+      {
+       "one_of": [
+        "BUS 110",
+        "BUS 165",
+        "CMST& 210",
+        "CMST& 230"
+       ],
+       "credits": 5,
+       "hint": "BUS 110 recommended"
+      }
+     ]
+    },
+    {
+     "id": "common",
+     "label": "Common Technical Requirements",
+     "credits": 33,
+     "items": [
+      {
+       "course": "MFG T 100"
+      },
+      {
+       "course": "CT 101"
+      },
+      {
+       "course": "MFG T 117"
+      },
+      {
+       "course": "ENG T 111"
+      },
+      {
+       "one_of": [
+        "MFG T 101",
+        "MFG T 107",
+        "MFG T 113"
+       ],
+       "credits": 5,
+       "hint": "MFG T 107 is 4 credits"
+      },
+      {
+       "one_of": [
+        "MECH 119",
+        "MECH 120",
+        "MECH 121",
+        "MECH 122",
+        "MECH 124"
+       ],
+       "credits": 5
+      },
+      {
+       "slot": "WELD-ANY",
+       "label": "One welding, cutting or testing course",
+       "credits": 5,
+       "hint": "WELD 101, 160-164, 190-196, 210-213, 217, 218, 261-264, 285-288, 290-292, 294 or 296"
+      }
+     ]
+    },
+    {
+     "id": "core",
+     "label": "Precision Machining Technical Core",
+     "credits": 40,
+     "items": [
+      {
+       "course": "MFG T 104"
+      },
+      {
+       "course": "MFG T 105"
+      }
+     ]
+    },
+    {
+     "id": "capstone",
+     "label": "Capstone Project",
+     "credits": 5,
+     "items": [
+      {
+       "one_of": [
+        "MFG T 229",
+        "MFG T 230"
+       ],
+       "credits": 5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-machining-cert",
+   "name": "AMT in Precision Machining",
+   "credential": "Certificate",
+   "code": "MTCAPC20",
+   "active": "",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "precision-machining"
+   ],
+   "total": 40,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/precision-machining/amt-in-precision-machining-certificate",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "req",
+     "label": "Required Courses",
+     "credits": 40,
+     "min_grade": "C",
+     "items": [
+      {
+       "course": "MFG T 104"
+      },
+      {
+       "course": "MFG T 105"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-mastercam-cert",
+   "name": "Mastercam Machining",
+   "credential": "Certificate",
+   "code": "DDTMMC01",
+   "active": "Spring 2023",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "precision-machining"
+   ],
+   "total": 18,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/precision-machining/mastercam-machining-certificate",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "req",
+     "label": "Required Courses",
+     "credits": 18,
+     "min_grade": "C",
+     "items": [
+      {
+       "course": "ENG T 111"
+      },
+      {
+       "course": "ENG T 185"
+      },
+      {
+       "course": "MFG T 107"
+      },
+      {
+       "one_of": [
+        "MFG T 101",
+        "MFG T 113"
+       ],
+       "credits": 5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-composites-ata",
+   "name": "AMT in Composites",
+   "credential": "ATA",
+   "code": "PETACAPT",
+   "active": "",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "composites"
+   ],
+   "total": 92,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/composites/amt-in-composites-ata",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "related",
+     "label": "Related Instruction",
+     "credits": 15,
+     "items": [
+      {
+       "one_of": [
+        "ENG T 101",
+        "MATH 86",
+        "TS 86"
+       ],
+       "credits": 5,
+       "hint": "Or a higher course from the Quantitative Skills list"
+      },
+      {
+       "one_of": [
+        "ENGL& 101",
+        "ENGL 98",
+        "TS 98"
+       ],
+       "credits": 5
+      },
+      {
+       "one_of": [
+        "BUS 110",
+        "BUS 165",
+        "CMST& 210",
+        "CMST& 230"
+       ],
+       "credits": 5,
+       "hint": "BUS 110 recommended"
+      }
+     ]
+    },
+    {
+     "id": "common",
+     "label": "Common Technical Requirements",
+     "credits": 32,
+     "items": [
+      {
+       "course": "MFG T 100"
+      },
+      {
+       "course": "MFG T 117"
+      },
+      {
+       "course": "ENG T 111"
+      },
+      {
+       "one_of": [
+        "CT 101",
+        "CT 145",
+        "MFG T 107",
+        "MFG T 113"
+       ],
+       "credits": 5,
+       "hint": "MFG T 107 is 4 credits"
+      },
+      {
+       "one_of": [
+        "MFG T 101",
+        "MFG T 113"
+       ],
+       "credits": 5
+      },
+      {
+       "one_of": [
+        "MECH 119",
+        "MECH 120",
+        "MECH 121",
+        "MECH 122",
+        "MECH 124"
+       ],
+       "credits": 5
+      },
+      {
+       "slot": "WELD-ANY",
+       "label": "One welding, cutting or testing course",
+       "credits": 5,
+       "hint": "WELD 101, 160-164, 190-196, 210-213, 217, 218, 261-264, 285-288, 290-292, 294 or 296"
+      }
+     ]
+    },
+    {
+     "id": "core",
+     "label": "Composites Technical Core",
+     "credits": 40,
+     "items": [
+      {
+       "course": "CT 102"
+      },
+      {
+       "course": "CT 203"
+      }
+     ]
+    },
+    {
+     "id": "capstone",
+     "label": "Capstone Project",
+     "credits": 5,
+     "items": [
+      {
+       "course": "MFG T 229"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-composites-found",
+   "name": "Aerospace Composites Foundations",
+   "credential": "Certificate",
+   "code": "PETAFC01",
+   "active": "Fall 2014",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "composites"
+   ],
+   "total": 5,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/composites/aerospace-composites-foundations-certificate",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "req",
+     "label": "Required Course",
+     "credits": 5,
+     "min_grade": "C",
+     "items": [
+      {
+       "course": "CT 101"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-composites-tech",
+   "name": "Aerospace Composites Technician",
+   "credential": "Certificate",
+   "code": "PETATC20",
+   "active": "Winter 2017",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "composites"
+   ],
+   "total": 40,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/composites/aerospace-composites-technician-certificate",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "req",
+     "label": "Required Courses",
+     "credits": 40,
+     "min_grade": "C",
+     "items": [
+      {
+       "course": "CT 102"
+      },
+      {
+       "course": "CT 203"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-mechatronics-ata",
+   "name": "AMT in Mechatronics",
+   "credential": "ATA",
+   "code": "IMMATAPT",
+   "active": "",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "mechatronics"
+   ],
+   "total": 90,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/mechatronics/amt-in-mechatronics-ata",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "related",
+     "label": "Related Instruction",
+     "credits": 15,
+     "items": [
+      {
+       "one_of": [
+        "ENG T 101",
+        "MATH 86",
+        "TS 86"
+       ],
+       "credits": 5,
+       "hint": "Or a higher course from the Quantitative Skills list"
+      },
+      {
+       "one_of": [
+        "ENGL& 101",
+        "ENGL 98",
+        "TS 98"
+       ],
+       "credits": 5
+      },
+      {
+       "one_of": [
+        "BUS 110",
+        "BUS 165",
+        "CMST& 210",
+        "CMST& 230"
+       ],
+       "credits": 5,
+       "hint": "BUS 110 recommended"
+      }
+     ]
+    },
+    {
+     "id": "common",
+     "label": "Common Technical Requirements",
+     "credits": 33,
+     "items": [
+      {
+       "course": "MFG T 100"
+      },
+      {
+       "course": "CT 101"
+      },
+      {
+       "course": "MFG T 117"
+      },
+      {
+       "course": "ENG T 111"
+      },
+      {
+       "one_of": [
+        "MFG T 101",
+        "MFG T 113"
+       ],
+       "credits": 5
+      },
+      {
+       "one_of": [
+        "MECH 119",
+        "MECH 219"
+       ],
+       "credits": 5
+      },
+      {
+       "slot": "WELD-ANY",
+       "label": "One welding, cutting or testing course",
+       "credits": 5,
+       "hint": "WELD 101, 160-164, 190-196, 210-213, 217, 218, 261-264, 285-288, 290-292, 294 or 296"
+      }
+     ]
+    },
+    {
+     "id": "core",
+     "label": "Mechatronics Technical Core",
+     "credits": 32,
+     "items": [
+      {
+       "course": "MECH 118"
+      },
+      {
+       "course": "MECH 120"
+      },
+      {
+       "course": "MECH 121"
+      },
+      {
+       "course": "MECH 122"
+      },
+      {
+       "course": "MECH 123"
+      },
+      {
+       "course": "MECH 124"
+      },
+      {
+       "course": "MECH 295"
+      },
+      {
+       "course": "MECH 296"
+      }
+     ],
+     "note": "MECH 295 and MECH 296 are 1 to 5 credits each."
+    },
+    {
+     "id": "elect",
+     "label": "Technical Electives",
+     "credits": 5,
+     "items": [
+      {
+       "slot": "MECH-ELECT",
+       "label": "Technical electives (1 to 9 credits)",
+       "credits": 5,
+       "hint": "From the approved list, e.g. MFG T 102 (recommended), MFG T 104, MFG T 113, ENG T 100, CT 145 or WELD courses"
+      }
+     ]
+    },
+    {
+     "id": "capstone",
+     "label": "Capstone Project",
+     "credits": 5,
+     "items": [
+      {
+       "one_of": [
+        "MFG T 229",
+        "MFG T 230"
+       ],
+       "credits": 5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-mechatronics-cert",
+   "name": "Mechatronics Systems",
+   "credential": "Certificate",
+   "code": "MTCMYC01",
+   "active": "",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "mechatronics"
+   ],
+   "total": 19,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/mechatronics/mechatronics-systems-certificate",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "req",
+     "label": "Required Courses",
+     "credits": 19,
+     "min_grade": "C",
+     "items": [
+      {
+       "course": "MECH 120"
+      },
+      {
+       "course": "MECH 121"
+      },
+      {
+       "course": "MECH 122"
+      },
+      {
+       "course": "MECH 123"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-robotics-cert",
+   "name": "Robotics Foundations",
+   "credential": "Certificate",
+   "code": "ROTRFC01",
+   "active": "Spring 2019",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "mechatronics"
+   ],
+   "total": 5,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/mechatronics/robotics-foundations-certificate",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "req",
+     "label": "Required Course",
+     "credits": 5,
+     "min_grade": "C",
+     "items": [
+      {
+       "course": "MECH 119"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-cad-ata",
+   "name": "AMT in Technical Design, CAD",
+   "credential": "ATA",
+   "code": "DDTATAPT",
+   "active": "",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "technical-design"
+   ],
+   "total": 90,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/technical-design/amt-in-technical-design-cad-ata",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "related",
+     "label": "Related Instruction",
+     "credits": 15,
+     "items": [
+      {
+       "one_of": [
+        "ENG T 101",
+        "MATH 86",
+        "TS 86"
+       ],
+       "credits": 5,
+       "hint": "Or a higher course from the Quantitative Skills list"
+      },
+      {
+       "one_of": [
+        "ENGL& 101",
+        "ENGL 98",
+        "TS 98"
+       ],
+       "credits": 5
+      },
+      {
+       "one_of": [
+        "BUS 110",
+        "BUS 165",
+        "CMST& 210",
+        "CMST& 230"
+       ],
+       "credits": 5,
+       "hint": "BUS 110 recommended"
+      }
+     ]
+    },
+    {
+     "id": "common",
+     "label": "Common Technical Requirements",
+     "credits": 30,
+     "items": [
+      {
+       "course": "ENG T 111"
+      },
+      {
+       "course": "MFG T 100"
+      },
+      {
+       "one_of": [
+        "CT 101",
+        "CT 145"
+       ],
+       "credits": 5
+      },
+      {
+       "one_of": [
+        "MFG T 101",
+        "MFG T 107",
+        "MFG T 113"
+       ],
+       "credits": 5,
+       "hint": "MFG T 107 is 4 credits"
+      },
+      {
+       "one_of": [
+        "MECH 119",
+        "MECH 120",
+        "MECH 121",
+        "MECH 122",
+        "MECH 124"
+       ],
+       "credits": 5
+      },
+      {
+       "slot": "WELD-ANY",
+       "label": "One welding, cutting or testing course",
+       "credits": 5,
+       "hint": "WELD 101, 160-164, 190-196, 210-213, 217, 218, 261-264, 285-288, 290-292, 294 or 296"
+      }
+     ]
+    },
+    {
+     "id": "core",
+     "label": "Computer Aided Design Technical Core",
+     "credits": 24,
+     "items": [
+      {
+       "course": "ENG T 100"
+      },
+      {
+       "one_of": [
+        "ENG T 108",
+        "ENGR& 114"
+       ],
+       "credits": 4
+      },
+      {
+       "course": "ENG T 185"
+      },
+      {
+       "course": "ENG T 204"
+      },
+      {
+       "course": "ENG T 205"
+      },
+      {
+       "one_of": [
+        "ENG T 230",
+        "WELD 151"
+       ],
+       "credits": 3
+      }
+     ]
+    },
+    {
+     "id": "elect",
+     "label": "Technical Electives",
+     "credits": 16,
+     "items": [
+      {
+       "slot": "CAD-ELECT",
+       "label": "Technical electives (16 credits)",
+       "credits": 16,
+       "hint": "MATH& 141 or higher, MATH 96, ENG T 103, 193-196, 203, 217, 225, 226 or 259"
+      }
+     ]
+    },
+    {
+     "id": "capstone",
+     "label": "Capstone Project",
+     "credits": 5,
+     "items": [
+      {
+       "course": "MFG T 229"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-cad-cert",
+   "name": "AMT in Technical Design, CAD",
+   "credential": "Certificate",
+   "code": "DDTATC20",
+   "active": "Spring 2023",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "technical-design"
+   ],
+   "total": 39,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/technical-design/amt-in-technical-design-cad-certificate",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "req",
+     "label": "Required Courses",
+     "credits": 21,
+     "min_grade": "C",
+     "items": [
+      {
+       "course": "ENG T 111"
+      },
+      {
+       "course": "ENG T 100"
+      },
+      {
+       "course": "ENG T 185"
+      },
+      {
+       "course": "ENG T 204"
+      },
+      {
+       "one_of": [
+        "ENG T 108",
+        "ENGR& 114"
+       ],
+       "credits": 4
+      }
+     ]
+    },
+    {
+     "id": "elect",
+     "label": "Technical Electives",
+     "credits": 18,
+     "min_grade": "C",
+     "items": [
+      {
+       "slot": "CAD-ELECT",
+       "label": "Technical electives (18 credits)",
+       "credits": 18,
+       "hint": "ENG T 103, 193-196, 203, 205, 217, 225 or 259"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-autocad-cert",
+   "name": "AutoCAD",
+   "credential": "Certificate",
+   "code": "DDTAUC01",
+   "active": "Spring 2023",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "technical-design"
+   ],
+   "total": 12,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/technical-design/autocad-certificate",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "req",
+     "label": "Required Courses",
+     "credits": 12,
+     "min_grade": "C",
+     "items": [
+      {
+       "course": "ENG T 100"
+      },
+      {
+       "course": "ENG T 103"
+      },
+      {
+       "course": "ENG T 203"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-catia-cert",
+   "name": "CATIA 3D Experience",
+   "credential": "Certificate",
+   "code": "DEOC3C20",
+   "active": "Winter 2019",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "technical-design"
+   ],
+   "total": 33,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/technical-design/catia-3d-experience-certificate",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "req",
+     "label": "Required Courses",
+     "credits": 33,
+     "min_grade": "C",
+     "items": [
+      {
+       "course": "ENG T 185"
+      },
+      {
+       "course": "ENG T 193"
+      },
+      {
+       "course": "ENG T 194"
+      },
+      {
+       "course": "ENG T 195"
+      },
+      {
+       "course": "ENG T 196"
+      },
+      {
+       "course": "ENG T 204"
+      },
+      {
+       "course": "ENG T 205"
+      },
+      {
+       "course": "ENG T 217"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-solidworks-cert",
+   "name": "Solid Works",
+   "credential": "Certificate",
+   "code": "DDTSWC01",
+   "active": "",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "technical-design"
+   ],
+   "total": 17,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/technical-design/solid-works-certificate",
+   "potential_prereqs": [],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "req",
+     "label": "Required Courses",
+     "credits": 17,
+     "min_grade": "C",
+     "items": [
+      {
+       "course": "ENG T 204"
+      },
+      {
+       "course": "ENG T 205"
+      },
+      {
+       "course": "ENG T 259"
+      },
+      {
+       "one_of": [
+        "ENG T 108",
+        "ENGR& 114"
+       ],
+       "credits": 4
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-nc-foundation-cert",
+   "name": "Numerical Control Programming Foundation",
+   "credential": "Certificate",
+   "code": "DDTNFC01",
+   "active": "Spring 2023",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "technical-design"
+   ],
+   "total": 14,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/technical-design/numerical-control-programming-foundation-certificate",
+   "potential_prereqs": [
+    "MFG T 101, or industry experience with instructor permission"
+   ],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "req",
+     "label": "Required Courses",
+     "credits": 14,
+     "min_grade": "C",
+     "items": [
+      {
+       "course": "ENG T 111"
+      },
+      {
+       "course": "ENG T 185"
+      },
+      {
+       "course": "MECH 119"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-nc-mastercam-cert",
+   "name": "Numerical Control Programming Mastercam and Vericut",
+   "credential": "Certificate",
+   "code": "DDTMVC01",
+   "active": "",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "technical-design"
+   ],
+   "total": 17,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/technical-design/numerical-control-programming-mastercam-and-vericut-certificate",
+   "potential_prereqs": [
+    "The NC Programming Foundation Certificate, or industry experience with instructor permission"
+   ],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "req",
+     "label": "Required Courses",
+     "credits": 17,
+     "min_grade": "C",
+     "items": [
+      {
+       "course": "MFG T 113"
+      },
+      {
+       "course": "ENG T 193"
+      },
+      {
+       "course": "MFG T 107"
+      },
+      {
+       "course": "MFG T 108"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amt-nc-catia-cert",
+   "name": "Numerical Control Programming CATIA 3D Experience",
+   "credential": "Certificate",
+   "code": "DDTNCC01",
+   "active": "",
+   "area": "amtec",
+   "kind": "professional-technical",
+   "majors": [
+    "technical-design"
+   ],
+   "total": 12,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/technical-design/numerical-control-programming-catia-3d-experience-certificate",
+   "potential_prereqs": [
+    "The NC Programming Mastercam and Vericut Certificate, or industry experience with instructor permission"
+   ],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "req",
+     "label": "Required Courses",
+     "credits": 12,
+     "min_grade": "C",
+     "items": [
+      {
+       "course": "ENG T 195"
+      },
+      {
+       "course": "ENG T 196"
+      },
+      {
+       "course": "MFG T 109"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bio-ast",
+   "name": "Biology",
+   "credential": "AS-T Track 1 (Biology Concentration)",
+   "code": "LRST1AS AST1-BIOL",
+   "active": "W 2022",
+   "area": "science",
+   "kind": "transfer",
+   "majors": [
+    "biology"
+   ],
+   "total": 94.5,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/biology/biology-as-t",
+   "potential_prereqs": [
+    "ENGL 98, or placement into ENGL& 101",
+    "MATH 76, MATH 86, MATH 96, MATH& 141 and MATH& 142, or placement into MATH& 151",
+    "CHEM& 140, or placement into CHEM& 161",
+    "High school biology or BIOL& 100 before BIOL& 221"
+   ],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "success",
+     "label": "College Success",
+     "credits": 2,
+     "items": [
+      {
+       "one_of": [
+        "STEM 101",
+        "COLL 101"
+       ],
+       "credits": 2,
+       "hint": "STEM 101 strongly recommended"
+      }
+     ],
+     "note": "Mandatory for new degree-seeking students. May be waived for previous college coursework, and some programs are exempt."
+    },
+    {
+     "id": "comm",
+     "label": "Communication Skills",
+     "credits": 5,
+     "items": [
+      {
+       "course": "ENGL& 101"
+      }
+     ],
+     "note": "Only 5 units are required, but 10 are recommended. ENGL& 102 is recommended as the second course."
+    },
+    {
+     "id": "math",
+     "label": "Mathematics",
+     "credits": 15,
+     "items": [
+      {
+       "course": "MATH& 151"
+      },
+      {
+       "course": "MATH& 152"
+      },
+      {
+       "course": "MATH& 163"
+      }
+     ]
+    },
+    {
+     "id": "humss",
+     "label": "Humanities and Social Sciences",
+     "credits": 15,
+     "items": [
+      {
+       "slot": "HUM",
+       "label": "Humanities (DTA list)",
+       "credits": 5
+      },
+      {
+       "slot": "SS",
+       "label": "Social Science (DTA list)",
+       "credits": 5
+      },
+      {
+       "slot": "HUM-SS",
+       "label": "Humanities or Social Science (DTA list)",
+       "credits": 5
+      }
+     ],
+     "note": "Courses must come from 2 different disciplines. No more than 5 units from Humanities Performance (HP) or 100-level World Language (WL) courses. World Language is recommended: transfer schools require a total of 2-3 quarters of a World Language."
+    },
+    {
+     "id": "natsci",
+     "label": "Natural Science Courses",
+     "credits": 57.5,
+     "min_grade": "2.0",
+     "items": [
+      {
+       "course": "BIOL& 221"
+      },
+      {
+       "course": "BIOL& 222"
+      },
+      {
+       "course": "BIOL& 223"
+      },
+      {
+       "course": "CHEM& 161"
+      },
+      {
+       "course": "CHEM& 162"
+      },
+      {
+       "course": "CHEM& 163"
+      },
+      {
+       "course": "CHEM& 261"
+      },
+      {
+       "course": "CHEM& 262"
+      },
+      {
+       "course": "CHEM& 263"
+      },
+      {
+       "one_of": [
+        "BIOL 130",
+        "BOT 113",
+        "MATH& 264",
+        "PHYS& 114"
+       ],
+       "credits": 5
+      }
+     ],
+     "note": "BIOL& 221 may be taken after or with CHEM& 161. BIOL& 222 and 223 must come after CHEM& 161. CHEM& 261-263 run only Fall, Winter, Spring in sequence, so start in Fall. Do not split science sequences between colleges. All degrees also need one course from the EvCC Diversity course list (grade of D or better; it may also count toward a distribution area), a 2.0 cumulative GPA, and at least one-third of units earned at EvCC."
+    }
+   ]
+  },
+  {
+   "id": "chem-ast",
+   "name": "Chemistry",
+   "credential": "AS-T Track 1 (Chemistry Concentration)",
+   "code": "LRST1AS AST1-CHEM",
+   "active": "W 2023",
+   "area": "science",
+   "kind": "transfer",
+   "majors": [
+    "chemistry",
+    "biochemistry"
+   ],
+   "total": 93,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/chemistry/chemistry-as-t",
+   "potential_prereqs": [
+    "ENGL 98, or placement into ENGL& 101",
+    "MATH 76, MATH 86, MATH 96, MATH& 141 and MATH& 142, or placement into MATH& 151",
+    "CHEM& 140, or placement into CHEM& 161",
+    "High school biology or BIOL& 100 before BIOL& 221 (if choosing the biology options)"
+   ],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "success",
+     "label": "College Success",
+     "credits": 2,
+     "items": [
+      {
+       "one_of": [
+        "STEM 101",
+        "COLL 101"
+       ],
+       "credits": 2,
+       "hint": "STEM 101 strongly recommended"
+      }
+     ],
+     "note": "Mandatory for new degree-seeking students. May be waived for previous college coursework, and some programs are exempt."
+    },
+    {
+     "id": "comm",
+     "label": "Communication Skills",
+     "credits": 5,
+     "items": [
+      {
+       "course": "ENGL& 101"
+      }
+     ]
+    },
+    {
+     "id": "math",
+     "label": "Mathematics",
+     "credits": 15,
+     "items": [
+      {
+       "course": "MATH& 151"
+      },
+      {
+       "course": "MATH& 152"
+      },
+      {
+       "course": "MATH& 163"
+      }
+     ]
+    },
+    {
+     "id": "humss",
+     "label": "Humanities and Social Sciences",
+     "credits": 15,
+     "items": [
+      {
+       "slot": "HUM",
+       "label": "Humanities (DTA list)",
+       "credits": 5
+      },
+      {
+       "slot": "SS",
+       "label": "Social Science (DTA list)",
+       "credits": 5
+      },
+      {
+       "slot": "HUM-SS",
+       "label": "Humanities or Social Science (DTA list)",
+       "credits": 5
+      }
+     ],
+     "note": "Courses must come from 2 different disciplines. No more than 5 units from Humanities Performance (HP) or 100-level World Language (WL) courses. Recommended: ART 110, ART H 124, BUS& 101, CMST& 210, CMST& 220 and PSYC& 100."
+    },
+    {
+     "id": "natsci",
+     "label": "Natural Science Courses",
+     "credits": 51,
+     "min_grade": "2.0",
+     "items": [
+      {
+       "course": "CHEM& 161"
+      },
+      {
+       "course": "CHEM& 162"
+      },
+      {
+       "course": "CHEM& 163"
+      },
+      {
+       "course": "CHEM& 261"
+      },
+      {
+       "course": "CHEM& 262"
+      },
+      {
+       "course": "CHEM& 263"
+      },
+      {
+       "one_of": [
+        "PHYS& 241",
+        "BIOL& 221"
+       ],
+       "credits": 5.5,
+       "hint": "PHYS& 241 with lab PHYS& 231 (5.5), or BIOL& 221 (6)"
+      },
+      {
+       "one_of": [
+        "PHYS& 242",
+        "BIOL& 222"
+       ],
+       "credits": 5.5,
+       "hint": "PHYS& 242 with lab PHYS& 232 (5.5), or BIOL& 222 (6)"
+      },
+      {
+       "one_of": [
+        "PHYS& 243",
+        "BIOL& 223"
+       ],
+       "credits": 5.5,
+       "hint": "PHYS& 243 with lab PHYS& 233 (5.5), or BIOL& 223 (6)"
+      }
+     ],
+     "note": "51 units assumes the physics options; choosing the biology options makes it 52.5. CHEM& 261-263 run only Fall, Winter, Spring in sequence, so start in Fall. BIOL& 222 and 223 must come after CHEM& 161. Do not split science sequences between colleges."
+    },
+    {
+     "id": "elect",
+     "label": "Electives",
+     "credits": 5,
+     "items": [
+      {
+       "slot": "ELECT",
+       "label": "Any 100-level or higher course",
+       "credits": 5,
+       "hint": "MATH& 264 recommended"
+      }
+     ],
+     "note": "All degrees also need one course from the EvCC Diversity course list (grade of D or better; it may also count toward a distribution area), a 2.0 cumulative GPA, and at least one-third of units earned at EvCC."
+    }
+   ]
+  },
+  {
+   "id": "geol-ast",
+   "name": "Geology",
+   "credential": "AS-T Track 1 (Geology Concentration)",
+   "code": "LRST1AS AST1-GEOL",
+   "active": "W 2022",
+   "area": "science",
+   "kind": "transfer",
+   "majors": [
+    "geology",
+    "environmental-science"
+   ],
+   "total": 90,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/geology/geology-as-t",
+   "potential_prereqs": [
+    "ENGL 98, or placement into ENGL& 101",
+    "MATH 76, MATH 86, MATH 96, MATH& 141 and MATH& 142, or placement into MATH& 151",
+    "CHEM& 140, or placement into CHEM& 161"
+   ],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "success",
+     "label": "College Success",
+     "credits": 2,
+     "items": [
+      {
+       "one_of": [
+        "STEM 101",
+        "COLL 101"
+       ],
+       "credits": 2,
+       "hint": "STEM 101 strongly recommended"
+      }
+     ],
+     "note": "Mandatory for new degree-seeking students. May be waived for previous college coursework, and some programs are exempt."
+    },
+    {
+     "id": "comm",
+     "label": "Communication Skills",
+     "credits": 5,
+     "items": [
+      {
+       "course": "ENGL& 101"
+      }
+     ]
+    },
+    {
+     "id": "quant",
+     "label": "Quantitative Skills",
+     "credits": 10,
+     "items": [
+      {
+       "course": "MATH& 151"
+      },
+      {
+       "course": "MATH& 152"
+      }
+     ]
+    },
+    {
+     "id": "humss",
+     "label": "Humanities and Social Sciences",
+     "credits": 15,
+     "items": [
+      {
+       "slot": "HUM",
+       "label": "Humanities (DTA list)",
+       "credits": 5
+      },
+      {
+       "slot": "SS",
+       "label": "Social Science (DTA list)",
+       "credits": 5
+      },
+      {
+       "slot": "HUM-SS",
+       "label": "Humanities or Social Science (DTA list)",
+       "credits": 5
+      }
+     ],
+     "note": "Courses must come from 2 different disciplines. No more than 5 units from Humanities Performance (HP) or 100-level World Language (WL) courses. A World Language is not required for this degree, but some universities require 2-3 quarters for admission or graduation."
+    },
+    {
+     "id": "natsci",
+     "label": "Natural Science Courses",
+     "credits": 36.5,
+     "min_grade": "2.0",
+     "items": [
+      {
+       "course": "GEOL 102"
+      },
+      {
+       "course": "GEOL 104"
+      },
+      {
+       "course": "GEOL& 103"
+      },
+      {
+       "course": "CHEM& 161"
+      },
+      {
+       "course": "CHEM& 162"
+      },
+      {
+       "course": "CHEM& 163"
+      },
+      {
+       "one_of": [
+        "PHYS& 114",
+        "PHYS& 115",
+        "PHYS& 116",
+        "PHYS& 241",
+        "PHYS& 242",
+        "PHYS& 243"
+       ],
+       "credits": 5,
+       "hint": "5 units: PHYS& 114, 115 or 116, or an engineering physics lecture with its lab (PHYS& 241/231, 242/232 or 243/233, 5.5 units)"
+      }
+     ],
+     "note": "36.5 to 37 units, depending on the physics course. Do not split science sequences (for example PHYS& 114-116) between colleges."
+    },
+    {
+     "id": "elect",
+     "label": "Electives",
+     "credits": 21.5,
+     "items": [
+      {
+       "slot": "ELECT",
+       "label": "Electives from the program list",
+       "credits": 21.5,
+       "hint": "ATM S 101, CHEM& 140, CHEM& 261-263, CMST& 210, 220 or 230, CS& 131 or CS& 141, ECON 101, ENGL& 102 or ENGL& 235, ENVS& 100, MATH& 141, MATH& 142, MATH& 146, MATH& 264, MATH 260, MATH 261, MFG T 103 or MFG T 105, OCEA& 101, PHYS& 114-116, or PHYS& 241-243 with labs"
+      }
+     ],
+     "note": "Work with a program advisor to pick electives that fit the transfer school. CHEM& 261-263 run only Fall, Winter, Spring in sequence, so start in Fall. All degrees also need one course from the EvCC Diversity course list (grade of D or better; it may also count toward a distribution area), a 2.0 cumulative GPA, and at least one-third of units earned at EvCC."
+    }
+   ]
+  },
+  {
+   "id": "phys-ast",
+   "name": "Physics and Astronomy",
+   "credential": "AS-T Track 2 (Physics and Astronomy Concentration)",
+   "code": "PHST2AS AST2-PHYS",
+   "active": "W 2023",
+   "area": "science",
+   "kind": "transfer",
+   "majors": [
+    "physics",
+    "astronomy"
+   ],
+   "total": 90,
+   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/physics-and-astronomy/physics-and-astronomy-as-t",
+   "potential_prereqs": [
+    "ENGL 98, or placement into ENGL& 101",
+    "MATH& 144 or MATH& 142, or placement into MATH& 151",
+    "PHYS& 114, or placement into PHYS& 241",
+    "MFG T 103 before PHYS& 243 (PHYS& 233 lab)"
+   ],
+   "spec": {
+    "credits": 0,
+    "by": {}
+   },
+   "groups": [
+    {
+     "id": "success",
+     "label": "College Success",
+     "credits": 2,
+     "items": [
+      {
+       "one_of": [
+        "STEM 101",
+        "COLL 101"
+       ],
+       "credits": 2,
+       "hint": "STEM 101 strongly recommended"
+      }
+     ],
+     "note": "Mandatory for new degree-seeking students. May be waived for previous college coursework, and some programs are exempt."
+    },
+    {
+     "id": "comm",
+     "label": "Communication Skills",
+     "credits": 5,
+     "items": [
+      {
+       "course": "ENGL& 101"
+      }
+     ]
+    },
+    {
+     "id": "math",
+     "label": "Mathematics",
+     "credits": 15,
+     "min_grade": "2.0",
+     "items": [
+      {
+       "course": "MATH& 151"
+      },
+      {
+       "course": "MATH& 152"
+      },
+      {
+       "course": "MATH& 163"
+      }
+     ]
+    },
+    {
+     "id": "humss",
+     "label": "Humanities and Social Sciences",
+     "credits": 15,
+     "items": [
+      {
+       "slot": "HUM",
+       "label": "Humanities (DTA list)",
+       "credits": 5
+      },
+      {
+       "slot": "SS",
+       "label": "Social Science (DTA list)",
+       "credits": 5
+      },
+      {
+       "slot": "HUM-SS",
+       "label": "Humanities or Social Science (DTA list)",
+       "credits": 5
+      }
+     ],
+     "note": "Courses must come from 2 different disciplines. No more than 5 units from Humanities Performance (HP) or 100-level World Language (WL) courses."
+    },
+    {
+     "id": "phys",
+     "label": "Physics Courses",
+     "credits": 16.5,
+     "items": [
+      {
+       "course": "PHYS& 241"
+      },
+      {
+       "course": "PHYS& 242"
+      },
+      {
+       "course": "PHYS& 243"
+      }
+     ],
+     "note": "Each lecture is taken together with its lab (PHYS& 231, 232, 233)."
+    },
+    {
+     "id": "elect",
+     "label": "Elective Courses",
+     "credits": 31.5,
+     "items": [
+      {
+       "course": "PHYS& 114",
+       "hint": "If PHYS& 114 is not required (placement into PHYS& 241), the open electives grow to 29.5 units"
+      },
+      {
+       "course": "MFG T 103"
+      },
+      {
+       "slot": "ELECT",
+       "label": "Electives from the program list",
+       "credits": 24.5,
+       "hint": "ASTR& 115, PHYS& 115, PHYS& 116, CHEM& 140, CHEM& 161, CHEM& 162, CHEM& 163, ENGR& 204, ENGR& 224, MATH 260, MATH 261, CS& 131, CS& 141, CS 132, CS 143. At least one must be a natural science lab"
+      }
+     ],
+     "note": "At least 24.5 elective units (29.5 if PHYS& 114 is not required), and at least one must be a natural science lab. All degrees also need one course from the EvCC Diversity course list (grade of D or better; it may also count toward a distribution area), a 2.0 cumulative GPA, and at least one-third of units earned at EvCC."
+    }
+   ]
+  }
+ ],
+ "schools": [
+  {
+   "id": "cwu",
+   "name": "Central Washington University",
+   "campus": "Ellensburg",
+   "short": "CWU",
+   "type": "public",
+   "location": "Ellensburg, WA",
+   "website": "https://www.cwu.edu",
+   "general_notes": [
+    "CWU offers no ABET EAC-accredited engineering BS. Its accredited programs are Mechanical Engineering Technology (BS) and Electrical Engineering Technology (BS), both ABET ETAC. CWU also has a Physics BS-Engineering Specialization: ~3 years at CWU then ~2 years in WSU's ABET Mechanical Engineering program (dual degree).",
+    "Quarter system. Transfer: 2.0 minimum cumulative GPA, 2.5+ = guaranteed admission; at least 40 transferable quarter credits; max 135 transfer credits (105 lower-division). Priority dates: Fall 2026 Mar 1, 2026; Winter 2027 Nov 1, 2026; Spring 2027 Feb 1, 2027; Summer 2027 May 31, 2027; later applications space-available.",
+    "A WA DTA fulfills CWU general education and foreign-language requirements. CWU is listed (WSAC, Aug 2026) as accepting AS-T Track 2 but NOT the Engineering AS-T 2/MRP.",
+    "Engineering technology is a different credential from engineering (EAC); some PE-licensure and employer paths differ. Advise students choosing between MET/EET and an EAC engineering BS accordingly.",
+    "CS BS is offered in Ellensburg and at CWU-Des Moines.",
+    "CWU IT Management offers a BS-IT Management and a BAS-IT Management. Both can be finished 100% online or hybrid. CWU-Lynnwood (at Edmonds College) is the nearest center to EvCC.",
+    "CWU transfer priority dates (2026-27): Fall Mar 1, Winter Nov 1, Spring Feb 1, Summer May 31; rolling admission after that. Guaranteed transfer admission: associate degree with a 2.0 GPA, or 40 transferable credits with a 2.5.",
+    "Max 105 community-college credits transfer. Degree needs 180 total credits and 60 upper-division credits.",
+    "Course equivalencies: CWU Transfer Equivalency Site (TES). Contact itaminfo@cwu.edu, 509-963-2611."
+   ],
+   "abbr": "CWU",
+   "programs": []
+  },
+  {
+   "id": "clover-park",
+   "name": "Clover Park Technical College",
+   "campus": "Lakewood",
+   "short": "Clover Park TC",
+   "type": "public",
+   "kind": "bas-cc",
+   "location": "Lakewood, WA",
+   "website": "https://www.cptc.edu/",
+   "general_notes": [
+    "Submit the BAS-Cybersecurity application and the CPTC web admission form (apply.ctc.edu); response in about 2-4 weeks."
+   ],
+   "abbr": "CPTC",
+   "programs": []
+  }
+ ],
+ "advisor_notes": [
+  {
+   "text": "All four science AS-T degrees require a 2.0 (C) or higher in prerequisites, and the catalog says science sequences should not be split between colleges.",
+   "source": "EvCC catalog 2026-27",
+   "date": "2026-27",
+   "courses": []
+  },
+  {
+   "text": "Bio, Chem and Geology are AS-T Track 1. Physics and Astronomy is AS-T Track 2. None of the four is labeled MRP in the 2026-2027 catalog.",
+   "source": "EvCC catalog 2026-27",
+   "date": "2026-27",
+   "courses": []
+  },
+  {
+   "text": "CHEM& 261-263 (Organic) run only Fall, Winter, Spring in sequence. Bio and Chem students must start organic in Fall.",
+   "source": "EvCC catalog 2026-27",
+   "date": "2026-27",
+   "courses": [
+    "CHEM& 261"
+   ]
+  }
+ ]
+}
