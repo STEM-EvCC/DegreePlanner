@@ -704,8 +704,7 @@
    "blurb": "Work beside providers in clinics, handling both front-office tasks and hands-on patient care such as vitals, injections and blood draws. Washington requires a state Medical Assistant-Certified credential, earned after an accredited program and a national exam.",
    "credentials": [
     "ma-cert",
-    "ma-ata",
-    "ma-aast"
+    "ma-ata"
    ],
    "soc": [
     "31-9092"
@@ -2929,21 +2928,6 @@
    ],
    "offered_src": "dept course list 2021"
   },
-  "BUS& 101": {
-   "title": "Intro to Business",
-   "credits": "5",
-   "description": "An introduction to the American business system in a global, Internet-influenced economy, covering ethics and social responsibility, management, finance, human resources, entrepreneurship, and marketing.",
-   "prereq_text": "",
-   "prereq": {
-    "all": []
-   },
-   "placement": "",
-   "eligibility": [],
-   "min_grade": "",
-   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/bus-business-ccn/100/bus-101",
-   "year_used": "2026-2027",
-   "short": "Intro to Business"
-  },
   "MATH 86": {
    "title": "Essential Intermediate Algebra",
    "credits": "5",
@@ -4997,21 +4981,6 @@
    "year_used": "2026-2027",
    "short": "Intercultural Comm"
   },
-  "DRMA& 101": {
-   "title": "Introduction to the Theatre",
-   "credits": "5",
-   "description": "Survey of major theatre forms, styles and movements and the roles of practitioners and audiences.",
-   "prereq_text": "",
-   "prereq": {
-    "all": []
-   },
-   "placement": "",
-   "eligibility": [],
-   "min_grade": "",
-   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/drma-drama-ccn/100/drma-101",
-   "year_used": "2026-2027",
-   "short": "Intro Theatre"
-  },
   "EMS 151": {
    "title": "Emergency Med Tech Training",
    "credits": "13",
@@ -5050,37 +5019,6 @@
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/ems-emergency-services/100/ems-155",
    "year_used": "2026-2027",
    "short": "EMT (Sno Co Fire)"
-  },
-  "ENGL 103": {
-   "title": "The Critical Paper",
-   "credits": "5",
-   "description": "Writing critical analysis of culture and the arts, including film, music, art and popular culture.",
-   "prereq_text": "Eligibility for ENGL& 102",
-   "prereq": {
-    "all": []
-   },
-   "placement": "Eligibility for ENGL& 102",
-   "eligibility": [
-    "ENGL& 102"
-   ],
-   "min_grade": "",
-   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/engl-english/100/engl-103",
-   "year_used": "2026-2027"
-  },
-  "FILM 100": {
-   "title": "Introduction to Film",
-   "credits": "5",
-   "description": "Form, style and cultural content of American and international film, and how design, cinematography, editing and sound shape style.",
-   "prereq_text": "",
-   "prereq": {
-    "all": []
-   },
-   "placement": "",
-   "eligibility": [],
-   "min_grade": "",
-   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/film-film-cinema/100/film-100",
-   "year_used": "2026-2027",
-   "short": "Intro Film"
   },
   "GEOL 104": {
    "title": "Intro to Geol Science II",
@@ -5899,23 +5837,6 @@
    "year_used": "2026-2027",
    "short": "College Success (Health)"
   },
-  "HUM& 101": {
-   "title": "Introduction to the Humanities",
-   "credits": "5",
-   "description": "Interdisciplinary introduction to the humanities as a way to explore meaning, value and human experience, with emphasis on reading, critical thinking and writing.",
-   "prereq_text": "Eligibility for ENGL& 101",
-   "prereq": {
-    "all": []
-   },
-   "placement": "Eligibility for ENGL& 101",
-   "eligibility": [
-    "ENGL& 101"
-   ],
-   "min_grade": "",
-   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hum-humanities-ccn/100/hum-101",
-   "year_used": "2026-2027",
-   "short": "Intro Humanities"
-  },
   "MATH 138": {
    "title": "Applied College Algebra",
    "credits": "5",
@@ -6231,71 +6152,6 @@
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mc-medical-coding/200/mc-280",
    "year_used": "2026-2027",
    "short": "Coding Practicum"
-  },
-  "MUSC 110": {
-   "title": "World Music",
-   "credits": "5",
-   "description": "Survey of music from non-Western regions: history, performance practice, aural identification and musical exchange.",
-   "prereq_text": "Eligibility for ENGL& 101",
-   "prereq": {
-    "all": []
-   },
-   "placement": "Eligibility for ENGL& 101",
-   "eligibility": [
-    "ENGL& 101"
-   ],
-   "min_grade": "",
-   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/musc-music/100/musc-110",
-   "year_used": "2026-2027"
-  },
-  "MUSC 115": {
-   "title": "Popular Music In America",
-   "credits": "5",
-   "description": "Historical, social and stylistic survey of 20th-century American popular music.",
-   "prereq_text": "Eligibility for ENGL& 101",
-   "prereq": {
-    "all": []
-   },
-   "placement": "Eligibility for ENGL& 101",
-   "eligibility": [
-    "ENGL& 101"
-   ],
-   "min_grade": "",
-   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/musc-music/100/musc-115",
-   "year_used": "2026-2027",
-   "short": "American Pop Music"
-  },
-  "MUSC 116": {
-   "title": "Survey of Jazz",
-   "credits": "5",
-   "description": "Historical, social and stylistic development of jazz from its African roots to contemporary jazz.",
-   "prereq_text": "Eligibility for ENGL& 101",
-   "prereq": {
-    "all": []
-   },
-   "placement": "Eligibility for ENGL& 101",
-   "eligibility": [
-    "ENGL& 101"
-   ],
-   "min_grade": "",
-   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/musc-music/100/musc-116",
-   "year_used": "2026-2027"
-  },
-  "MUSC& 105": {
-   "title": "Music Appreciation",
-   "credits": "5",
-   "description": "Structure, form and historical development of western music for the listener.",
-   "prereq_text": "Eligibility for ENGL& 101",
-   "prereq": {
-    "all": []
-   },
-   "placement": "Eligibility for ENGL& 101",
-   "eligibility": [
-    "ENGL& 101"
-   ],
-   "min_grade": "",
-   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/musc-music-ccn/100/musc-105",
-   "year_used": "2026-2027"
   },
   "NURS 100": {
    "title": "Nursing Assistant",
@@ -9011,7 +8867,8 @@
         "MATH& 264",
         "PHYS& 114"
        ],
-       "credits": 5
+       "credits": 5,
+       "hint": "PHYS& 114 is the best pick for transfer: most BS Biology programs want two or three quarters of physics."
       }
      ],
      "note": "BIOL& 221 may be taken after or with CHEM& 161. BIOL& 222 and 223 must come after CHEM& 161. CHEM& 261-263 run only Fall, Winter, Spring in sequence, so start in Fall. Do not split science sequences between colleges. All degrees also need one course from the EvCC Diversity course list (grade of D or better; it may also count toward a distribution area), a 2.0 cumulative GPA, and at least one-third of units earned at EvCC."
@@ -9443,6 +9300,20 @@
       }
      ],
      "note": "At least 24.5 elective units (29.5 if PHYS& 114 is not required), and at least one must be a natural science lab. All degrees also need one course from the EvCC Diversity course list (grade of D or better; it may also count toward a distribution area), a 2.0 cumulative GPA, and at least one-third of units earned at EvCC."
+    },
+    {
+     "id": "to-total",
+     "label": "Additional credits to reach 90",
+     "credits": 5.0,
+     "items": [
+      {
+       "slot": "ELECT",
+       "label": "Additional college-level credits",
+       "credits": 5.0,
+       "hint": "The degree is 90 credits, but the catalog's listed blocks add to 85 and don't say where the other 5 come from. Choose with a physics advisor."
+      }
+     ],
+     "note": "The degree total is 90 credits. The catalog's requirement blocks add to 85; plan 5 more credits with an advisor."
     }
    ]
   },
@@ -10246,206 +10117,6 @@
        "label": "General electives (100-level or higher)",
        "credits": 15,
        "hint": "14 or 15 units, enough to reach 90; can be taken any time"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "ma-aast",
-   "name": "Medical Assistant",
-   "credential": "AAS-T",
-   "code": "MLAMAAAS",
-   "active": "Summer 2024",
-   "area": "health",
-   "kind": "professional-technical",
-   "majors": [
-    "medical-assistant",
-    "health-admin",
-    "health-informatics"
-   ],
-   "total": 99,
-   "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/degrees-and-certificates/medical-assisting/medical-assistant-aas-t",
-   "potential_prereqs": [
-    "Meet with a Medical Assisting faculty advisor and explore the program at EverettCC.edu/MA.",
-    "Complete the EvCC Self-Directed English Placement.",
-    "Start immunizations early; they take 8-9 months. HLTH 231 and 232 need immunizations before instructor permission, and all vaccines are required before Phase Four.",
-    "BLS: complete HLTH 109, or bring a BLS certificate from a community provider.",
-    "Submit the Medical Assisting Criminal History and Technical Standards e-form. Discuss any criminal history with a faculty advisor.",
-    "Earn a C (2.0) or higher in every course used for graduation. All courses must be done before HLTH 251 Clinical Practicum.",
-    "MATH 76 or TS 76 eligibility (placement) for BUS 130, or MATH/TS 76 or higher",
-    "ENGL 98, or placement into ENGL& 101 (HLTH 135, 136 and 150 need ENGL& 101 eligibility)",
-    "Additional AAS-T courses: ENGL& 102 needs ENGL& 101 (C or better); college math (MATH& 107, 141, 142, 144 or 151) needs MATH 86 or MATH 96 level preparation."
-   ],
-   "spec": {
-    "credits": 0,
-    "by": {}
-   },
-   "groups": [
-    {
-     "id": "p2",
-     "label": "Phase Two: Foundations",
-     "credits": 23,
-     "min_grade": "C",
-     "note": "The catalog heading says 21 units but the block also lists HP 101 (2 units).",
-     "items": [
-      {
-       "one_of": [
-        "BUS 130",
-        "MATH 76",
-        "TS 76"
-       ],
-       "credits": 5,
-       "hint": "Or a higher course from the Quantitative Skills list"
-      },
-      {
-       "course": "HP 101"
-      },
-      {
-       "one_of": [
-        "ENGL 98",
-        "TS 98",
-        "ENGL& 101"
-       ],
-       "credits": 5
-      },
-      {
-       "one_of": [
-        "HLTH 100",
-        "BIOL& 231"
-       ],
-       "credits": 5,
-       "hint": "Take HLTH 100 and HLTH 102 as a pair, or BIOL& 231 and BIOL& 232 as a pair"
-      },
-      {
-       "one_of": [
-        "HLTH 102",
-        "BIOL& 232"
-       ],
-       "credits": 5,
-       "hint": "Second course of the same pair"
-      },
-      {
-       "course": "HLTH 109"
-      }
-     ]
-    },
-    {
-     "id": "p3",
-     "label": "Phase Three: Framing the Pathway",
-     "credits": 33,
-     "min_grade": "C",
-     "note": "33 or 34 units. HLTH 130 needs HLTH 102 (or BIOL& 231 and 232). HLTH 135, 136 and 150 need ENGL& 101 eligibility. HLTH 135, 136, 150 and 205 may be taken with HLTH 100 or 102. HLTH 231 and 232 need immunizations before instructor permission.",
-     "items": [
-      {
-       "one_of": [
-        "HLTH 130",
-        "BIOL 105",
-        "ANTH& 206"
-       ],
-       "credits": 4,
-       "hint": "HLTH 130 is 4 credits; BIOL 105 or ANTH& 206 is 5. The catalog lists the ANTH& 206 option together with BIOL& 231 and 232."
-      },
-      {
-       "course": "HLTH 135"
-      },
-      {
-       "course": "HLTH 136"
-      },
-      {
-       "course": "HLTH 150"
-      },
-      {
-       "course": "HLTH 205"
-      },
-      {
-       "course": "HLTH 210"
-      },
-      {
-       "course": "HLTH 231"
-      },
-      {
-       "course": "HLTH 232"
-      }
-     ]
-    },
-    {
-     "id": "p4",
-     "label": "Phase Four: Finishing the Pathway",
-     "credits": 19,
-     "min_grade": "C",
-     "note": "HLTH 241, 242 and 243 are taken together. All vaccines are required before Phase Four. Completing Phase Four earns the Medical Assistant Certificate.",
-     "items": [
-      {
-       "course": "HLTH 241"
-      },
-      {
-       "course": "HLTH 242"
-      },
-      {
-       "course": "HLTH 243"
-      },
-      {
-       "course": "HLTH 251"
-      }
-     ]
-    },
-    {
-     "id": "aast",
-     "label": "Additional Requirements for the AAS-T",
-     "credits": 23,
-     "note": "May be taken at any time. Designed for transfer to CWU BAS Information Technology and Administrative Management (ITAM) or City University of Seattle BS Health Administration. Confirm units with your program advisor. EvCC also requires one Diversity course (grade of D or better) for any degree; it can double count in a distribution area.",
-     "items": [
-      {
-       "one_of": [
-        "ENGL& 102",
-        "ENGL 103"
-       ],
-       "credits": 5
-      },
-      {
-       "one_of": [
-        "MATH& 107",
-        "MATH& 141",
-        "MATH& 142",
-        "MATH& 144",
-        "MATH& 151"
-       ],
-       "credits": 5
-      },
-      {
-       "one_of": [
-        "CS& 131",
-        "PHIL& 120"
-       ],
-       "credits": 5,
-       "hint": "Computer Science or Logic"
-      },
-      {
-       "one_of": [
-        "BIOL& 100",
-        "CHEM& 121",
-        "CHEM& 161",
-        "GEOL 102",
-        "PHYS& 114",
-        "PHYS& 241"
-       ],
-       "credits": 5,
-       "hint": "CHEM& 161 is 5.5 units; PHYS& 241 (4) must be paired with lab PHYS& 231 (1.5)"
-      },
-      {
-       "one_of": [
-        "BUS& 101",
-        "DRMA& 101",
-        "FILM 100",
-        "HUM& 101",
-        "MUSC& 105",
-        "MUSC 110",
-        "MUSC 115",
-        "MUSC 116"
-       ],
-       "credits": 3,
-       "hint": "Or any CWU General Education course approved by an advisor"
       }
      ]
     }
@@ -17986,6 +17657,19 @@
    "source": "https://www.onetonline.org/link/localwages/31-9092.00?st=WA",
    "date": "2026-11-01",
    "courses": []
+  },
+  {
+   "text": "The Biology AS-T includes physics only as PHYS& 114, one of four choices, but most BS Biology programs want two or three quarters of physics (UW Seattle's BA needs none). Plan on PHYS& 114, 115 and 116, or the calculus series, and check each school's list.",
+   "source": "EvCC catalog 2026-27 and university Biology requirement pages",
+   "date": "2026-27",
+   "courses": [
+    "PHYS& 114",
+    "PHYS& 115",
+    "PHYS& 116"
+   ],
+   "majors": [
+    "biology"
+   ]
   }
  ]
 }

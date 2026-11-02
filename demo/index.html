@@ -1322,7 +1322,7 @@ function renderExplore(){
    {k:"health",t:"Health Careers",c:"--l-hlth",what:"Patient care and the business side of health care: medical assisting, phlebotomy, nursing assistant, EMT, billing and coding, and interpreting.",
     math:"MATH or TS 76 level (or BUS 130) for the Medical Assistant and Billing and Coding degrees. Short certificates need no college math. The Allied Health DTA needs one college-level math course.",
     leads:"Jobs right after EvCC with a certificate or an ATA, and BAS programs later. The Allied Health DTA prepares you to transfer toward programs like dental hygiene, sonography and health sciences.",
-    degrees:["allied-health-dta","ma-ata","ma-aast","mbc-ata","phleb-cert","na-cert","emt-cert","med-interp-cert","hrm-cert"], start:["HP 101","HLTH 100","HLTH 109","HCM 101"],
+    degrees:["allied-health-dta","ma-ata","mbc-ata","phleb-cert","na-cert","emt-cert","med-interp-cert","hrm-cert"], start:["HP 101","HLTH 100","HLTH 109","HCM 101"],
     acts:[["work",careersIn("health"),"See health career paths"],["transfer",((P("allied-health-dta")||{}).majors||[]),"See allied health transfer paths"]]},
    {k:"amtec",t:"Advanced Manufacturing",c:"--l-mfg",what:"Welding, precision machining, composites, mechatronics and CAD design at AMTEC. Hands-on, shop-based and job-ready.",
     math:"MATH 86 level, or ENG T 101 (Technical Problem Solving), for the ATA degrees. Most certificates need no college math.",
@@ -1339,7 +1339,6 @@ function renderExplore(){
     <li><b>Biology or chemistry?</b> Both AS-T degrees include a full year of general chemistry, a year of organic chemistry and Calculus I to 3. Biology adds the BIOL& 221-223 majors sequence; chemistry adds a physics or biology sequence.</li>
     <li><b>Pre-med, pre-dental or pre-vet?</b> These aren't majors. Most students choose Biology or Chemistry and add what each professional school asks for. Check each school's list early.</li>
     <li><b>Science sequences:</b> start CHEM& 161 as early as your math allows. Organic chemistry (CHEM& 261-263) starts in fall and runs fall, winter, spring. Don't split a sequence between colleges.</li>
-    <li><b>Medical Assistant certificate, ATA or AAS-T?</b> They share the core coursework. The ATA is built for work; the AAS-T is built to continue to a BAS.</li>
     <li><b>Not sure which trade?</b> The AMT degrees all start with MFG T 100 and ENG T 111, and include one course each from composites, machining, mechatronics and welding, so you try them all.</li>
    </ul><p class="rowt">From the EvCC 2026-27 catalog program pages. Talk with a program advisor before you register.</p></section>`;
   $$("[data-go]").forEach(b=>b.onclick=()=>{ const g=b.dataset.go, ms=b.dataset.ms.split(",").filter(m=>D.majors[m]); S.byGoal[g]=Object.assign({},S.byGoal[g]||{}, {majors:ms,major:ms[0],track:null,schools:[]}); setGoal(g) });

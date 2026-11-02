@@ -11,7 +11,7 @@ Live demo (once this branch is merged and Pages has updated): `https://stem-evcc
 | Sciences | Biology AS-T Track 1, Chemistry AS-T Track 1, Geology AS-T Track 1, Physics and Astronomy AS-T Track 2 | Biology at 9 schools; chemistry, biochemistry, physics, astronomy and geology at UW Seattle, UW Bothell, WWU, WSU Pullman, CWU, EWU; statewide AS-T Track 1 and 2 agreements |
 | Nursing | Associate in Nursing DTA/MRP (RN), Associate in Pre-Nursing DTA/MRP | Pre-licensure BSN: UW Seattle, WSU (Spokane, Tri-Cities), Seattle U, SPU, PLU, Northwest U. RN to BSN: UW Bothell, UW Tacoma, WWU, WSU. Statewide nursing agreements |
 | Allied health | DTA with Allied Health emphasis | Dental hygiene, sonography, respiratory care, public health, healthcare leadership, nutrition and exercise physiology (10 programs) |
-| Health careers | Medical Assistant (certificate, ATA, AAS-T), Medical Billing and Coding (ATA, 2 certificates), Phlebotomy, Nursing Assistant, EMT, Medical Interpreter (Spanish), Healthcare Risk Management | Career paths with certifications, BLS wages (WA, Seattle area, US), and BAS next steps at Bellevue, Edmonds, Seattle Central, Tacoma CC, LWTech, Skagit, Columbia Basin, CityU |
+| Health careers | Medical Assistant (certificate, ATA; AAS-T left out for now), Medical Billing and Coding (ATA, 2 certificates), Phlebotomy, Nursing Assistant, EMT, Medical Interpreter (Spanish), Healthcare Risk Management | Career paths with certifications, BLS wages (WA, Seattle area, US), and BAS next steps at Bellevue, Edmonds, Seattle Central, Tacoma CC, LWTech, Skagit, Columbia Basin, CityU |
 | Advanced Manufacturing | All 25 AMTEC programs, moved here from the live data | Unchanged from the live data |
 
 EvCC's 2026-27 catalog has no math degree or math emphasis, so math appears through the degrees above. Aviation Maintenance, Avionics and Fire Science are not included (EvCC doesn't list them under STEM).
@@ -27,13 +27,13 @@ Every university entry carries its sources and a `verified` status (see **Data &
 ## Questions for you
 
 ### Catalog questions (EvCC)
-1. **Physics and Astronomy AS-T**: the printed blocks add to 85 credits, but the page says 90.
+1. ~~**Physics and Astronomy AS-T**: the printed blocks add to 85 credits, but the page says 90.~~ **Decided:** the total is 90. The demo adds a 5-credit "Additional credits to reach 90" block, to plan with an advisor, until the catalog says where they come from.
 2. **Chemistry AS-T**: the 93 total assumes the physics choices. With BIOL& 221-223 instead it's 94.5.
 3. **PHYS& 116** lists PHYS& 114 as its prerequisite, not PHYS& 115. **PHYS& 115** lists MATH 138. Is MATH 138 current?
 4. **Geology AS-T** electives include MFG T 105 at 20 credits.
-5. **Biology AS-T** (page says "Active W 2022") has physics only as PHYS& 114, one of four choices. Most BS Biology programs want 2-3 quarters of physics. Should advisors push PHYS& 114-116?
-6. **Nursing DTA and Pre-Nursing DTA** pages say "Active Sp 2022". The Nursing DTA gives no admission criteria beyond acceptance and a non-credit application class. Can the Nursing office supply the current criteria (points, GPA, deadlines, tests)?
-7. **Medical Assistant AAS-T**: blocks add to 98, catalog says 99. The line "HLTH 130 or BIOL 105 or ANTH& 206 and BIOL& 231 and 232" is modeled as pick one of the first three. "BUS 130 or MATH/TS 76" has no credit value (counted as 5).
+5. ~~**Biology AS-T** physics~~ **Decided:** added an advisor note (plan on PHYS& 114-116 or the calculus series and check each school) and a hint on the PHYS& 114 choice.
+6. **Nursing admission criteria** (points, GPA, deadlines, tests): **Decided:** the Nursing office can supply them, but they stay out of the demo for now. The demo shows only what the catalog says.
+7. **Medical Assistant AAS-T**: blocks add to 98, catalog says 99. **Decided:** the AAS-T is left out of the demo for now (the certificate and ATA stay). Also unresolved for the certificate and ATA: The line "HLTH 130 or BIOL 105 or ANTH& 206 and BIOL& 231 and 232" is modeled as pick one of the first three. "BUS 130 or MATH/TS 76" has no credit value (counted as 5).
 8. **Medical Billing and Coding ATA**: no total-credits line (blocks add to 90). Its elective list names CL 105, which isn't in the 2026-27 course catalog.
 9. **EMT certificate** lists a 30-credit residency minimum and a Diversity requirement that can't apply to a 13-16 credit certificate.
 10. Should Billing and Coding list CPC, CPB and CBCS? Only AHIMA's CCA is named in the catalog.
