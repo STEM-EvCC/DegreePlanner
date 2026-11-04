@@ -264,6 +264,8 @@ button.stat:hover{border-color:var(--ink-3)}
 .cc .tt{font-size:.76rem;color:var(--ink-2);grid-column:1;line-height:1.25}
 .cc .meta{grid-column:1/-1;display:flex;gap:6px;align-items:center;margin-top:3px;min-height:0}
 .cc .meta:empty{display:none}
+.cc .labline{grid-column:1/-1;font-size:.74rem;color:var(--ink-2);line-height:1.25}
+.cc .labline b{font:700 .78rem var(--f-display);letter-spacing:.02em;color:var(--ink)}
 .cc .crd{font:500 .72rem var(--f-mono);color:var(--ink-3)}
 .cc .tick{grid-row:1/3;grid-column:2;width:26px;height:26px;border-radius:50%;border:2px solid var(--rule);background:var(--surface);display:grid;place-items:center;cursor:pointer;color:transparent;font-size:14px;line-height:1;padding:0}
 .cc .tick:hover{border-color:var(--ok)}
@@ -637,6 +639,9 @@ const slotName=s=>SLOTNAME[s.slot]||s.label;
 function slotList(p=prog()){ const a=[]; p.groups.forEach(g=>g.items.forEach(it=>{if(!it.course&&!it.one_of)a.push(it)})); return a }
 const slotDoneSet=(p=prog())=>new Set((S.doneSlots[p.id]||[]).filter(i=>i<slotList(p).length));
 function setSlotDone(i,on,p=prog()){ const s=slotDoneSet(p); on?s.add(i):s.delete(i); if(s.size)S.doneSlots[p.id]=[...s].sort((a,b)=>a-b); else delete S.doneSlots[p.id]; store.set("doneSlots",S.doneSlots) }
+const labOf=c=>{const l=C(c).lab||(/\+ Lab \(([^)]+)\)/.exec(C(c).title||"")||[])[1];return l&&D.courses[l]?l:null};
+const crLabel=c=>{const l=labOf(c);if(!l)return fmtCr(c);const lec=Math.round((crNum(c)-crNum(l))*10)/10;return lec+" + "+fmtCr(l)};
+const withLab=c=>labOf(c)?c+" + "+labOf(c):c;
 const fmtCr=c=>{const v=C(c).credits;return v==null?"":String(v)};
 const crNum=c=>{const v=parseFloat(String(C(c).credits).split("-").pop());return isNaN(v)?5:v};
 
@@ -828,6 +833,7 @@ function coursePanel(){
    ${moveSelect(c)}
    ${S.majors.length>1&&su&&su.majors.length?`<p style="font-size:.88rem">Needed for: <b>${su.majors.map(m=>esc(D.majors[m])).join(", ")}</b></p>`:""}
    <p style="font-size:.88rem"><b>${stLabel}.</b> ${S.done.has(c)?"":ready?'<span style="color:var(--ok);font-weight:600">You can take this now.</span>':""}</p>
+   ${labOf(c)?`<div class="note"><b>Lab: ${esc(labOf(c))}</b> ${esc(C(labOf(c)).title)} (${esc(fmtCr(labOf(c)))} credits) is a corequisite. Register for both in the same quarter; the plan shows them together as ${esc(crLabel(c))} = ${esc(fmtCr(c))} credits.${C(labOf(c)).prereq_text?" Lab prerequisite: "+esc(C(labOf(c)).prereq_text):""}</div>`:""}
    ${x.description?`<p style="font-size:.9rem;color:var(--ink-2)">${esc(x.description)}</p>`:""}
    <div><div class="sect-t">Prerequisites</div>${x.prereq_text?`<div class="prq">${esc(x.prereq_text)}</div>`:`<div class="empty">None listed.</div>`}
      ${pre.length?`<div class="chiprow" style="margin-top:8px">${[...new Set(pre.map(o=>o.course))].map(chip).join("")}</div>`:""}</div>
@@ -1091,9 +1097,9 @@ const FLAG=`<svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><
 function card(c,opts={}){ const ta=transferAll()[c]||[], st=statusMap()[c], d=S.done.has(c), w=opts.warn||[];
   const tags=ta.slice(0,3).map(t=>stag(t.s,t.cat)).join("")+(ta.length>3?`<span class="stag c-degree">+${ta.length-3}</span>`:"");
   return`<div class="cc${d?" done":""}${w.length?" warn":""}" data-code="${esc(c)}"${opts.drag?` data-drag="${esc(c)}"`:""} style="--lc:${laneColor(laneOf(c))}">
-   <button class="cd" data-opencourse="${esc(c)}" aria-label="${esc(c+" "+C(c).title+(ta.length?", "+ta.map(t=>t.s.short+": "+CAT[t.cat].l).join("; "):"")+(w.length?". "+w.join(". "):"")+". Show details")}">${esc(c)}</button><button class="tick" data-tick="${esc(c)}" aria-label="${d?"Mark "+esc(c)+" not completed":"Mark "+esc(c)+" completed"}" aria-pressed="${d}">✓</button>
-   <span class="tt">${esc(C(c).short||C(c).title)}</span>
-   <span class="meta"><span class="crd">${esc(fmtCr(c))} cr</span><span class="stags">${tags}</span>${st==="later"?`<span class="catpill c-degree" title="BS course you can take early">*</span>`:""}${opts.pinned?`<span class="pinned" title="You moved this class here">moved</span>`:""}</span>${w.length?`<span class="warnline">${esc(w.join(". "))}</span>`:""}</div>`}
+   <button class="cd" data-opencourse="${esc(c)}" aria-label="${esc(c+" "+C(c).title+(labOf(c)?", with lab "+labOf(c)+" in the same quarter":"")+(ta.length?", "+ta.map(t=>t.s.short+": "+CAT[t.cat].l).join("; "):"")+(w.length?". "+w.join(". "):"")+". Show details")}">${esc(c)}</button><button class="tick" data-tick="${esc(c)}" aria-label="${d?"Mark "+esc(c)+" not completed":"Mark "+esc(c)+" completed"}" aria-pressed="${d}">✓</button>
+   <span class="tt">${esc(labOf(c)?String(C(c).short||C(c).title).replace(/\s*\+\s*Lab.*$/i,""):(C(c).short||C(c).title))}</span>${labOf(c)?`<span class="labline">+ lab <b>${esc(labOf(c))}</b> in the same quarter</span>`:""}
+   <span class="meta"><span class="crd">${esc(crLabel(c))} cr</span><span class="stags">${tags}</span>${st==="later"?`<span class="catpill c-degree" title="BS course you can take early">*</span>`:""}${opts.pinned?`<span class="pinned" title="You moved this class here">moved</span>`:""}</span>${w.length?`<span class="warnline">${esc(w.join(". "))}</span>`:""}</div>`}
 const psOpt=(arr,v)=>arr.map(([k,l])=>`<option value="${esc(k)}"${String(k)===String(v)?" selected":""}>${esc(l)}</option>`).join("");
 function slotCard(sl,opts={}){ return`<div class="cc slot" style="--lc:var(--l-gen)"${sl.idx!=null?` data-drag="slot:${sl.idx}"`:""}><span class="cd">${esc(slotName(sl))}</span><span class="crd" style="grid-column:2">${sl.credits} cr</span><span class="tt">${esc(sl.label)}</span>${opts.pinned?`<span class="meta"><span class="pinned" title="You moved this here">moved</span></span>`:""}</div>`}
 function renderRoute(){
@@ -1232,13 +1238,14 @@ function startNewSchedule(){ S.done.clear(); store.set("done",[]); S.doneSlots={
 
 // Completed-classes picker. Works on a copy; nothing changes until Save.
 const normCode=x=>String(x).toUpperCase().replace(/[&\s]/g,"");
-function courseIndex(){ if(courseIndex.m)return courseIndex.m; const m={}; Object.keys(D.courses).forEach(c=>{if(!D.courses[c].hidden)m[normCode(c)]=c}); return courseIndex.m=m }
+function courseIndex(){ if(courseIndex.m)return courseIndex.m; const m={}; Object.keys(D.courses).forEach(c=>{m[normCode(c)]=c}); return courseIndex.m=m }
 // Find EvCC course numbers in transcript text. Lines that show a W, NC, F or 0.0 grade come back unchecked.
 function parseTranscript(text){ const idx=courseIndex(), found=new Map(), other=new Set();
   const re=/\b([A-Z]{1,5}(?: [A-Z]{1,2})?) ?&? ?(\d{2,3})(?!\d)/g;
   String(text||"").toUpperCase().replace(/ /g," ").split(/\r?\n/).forEach(line=>{ let m; re.lastIndex=0;
     while((m=re.exec(line))){ let code=idx[normCode(m[1]+m[2])];
       if(!code&&m[1].includes(" "))code=idx[normCode(m[1].split(" ").pop()+m[2])];
+      if(code&&D.courses[code].hidden)continue; // a lab such as PHYS& 231 goes with its lecture
       if(!code){ if(/^[A-Z]{2,5}$/.test(m[1])&&+m[2]>=100)other.add(m[0].replace(/\s+/g," ").trim()); continue }
       const rest=line.slice(m.index+m[0].length).replace(/\b[A-Z]{1,5}(?: [A-Z]{1,2})? ?&? ?\d{2,3}\b[\s\S]*/,"");
       const fail=/(^|\s)(W|NC|F|0\.0)(?=\s|$)/.test(rest), ip=/\bIN PROGRESS\b|(^|\s)IP(?=\s|$)/.test(rest);
@@ -1261,7 +1268,7 @@ function openDonePicker(){
       if(o.alt||!D.courses[o.course]||st.draft.has(o.course)||!reqSet.has(o.course))return; st.draft.add(o.course); st.auto.set(o.course,x); added.push(o.course); stack.push(o.course) }) } return added };
   const chip=c=>`<button type="button" class="pk" data-pk="${esc(c)}" aria-pressed="${st.draft.has(c)}" title="${esc(c+": "+C(c).title)}"><span class="dot" style="background:${laneColor(laneOf(c))}"></span><b>${esc(c)}</b><small>${esc(C(c).short||C(c).title)}</small></button>`;
   const list=()=>{ const q=st.q.trim().toUpperCase(), nq=normCode(q);
-    const pool=q?Object.keys(D.courses).filter(c=>!D.courses[c].hidden&&(normCode(c).includes(nq)||String(C(c).title||"").toUpperCase().includes(q)||String(C(c).short||"").toUpperCase().includes(q)))
+    const pool=q?Object.keys(D.courses).filter(c=>!D.courses[c].hidden&&(normCode(c).includes(nq)||(labOf(c)&&normCode(labOf(c)).includes(nq))||String(C(c).title||"").toUpperCase().includes(q)||String(C(c).short||"").toUpperCase().includes(q)))
       :[...new Set([...Object.keys(su),...st.draft])].filter(c=>D.courses[c]&&!D.courses[c].hidden);
     const groups=LANES.map(l=>[l,pool.filter(c=>laneOf(c)===l.id).sort((a,b)=>a.split(" ")[0].localeCompare(b.split(" ")[0])||num(a)-num(b))]).filter(g=>g[1].length);
     return`${st.note?`<div class="pk-note" role="status">${st.note}</div>`:""}
@@ -1365,7 +1372,7 @@ function checklistModel(){
       else if((car.next||[]).length)secs.push({part:"career",title:"Keep going later: BAS options",group:"Career: "+car.name,sub:"With an ATA. Confirm with each school.",items:car.next.map(n=>{const sc=D.schools.find(x=>x.id===n.school);return it(n.program+(sc?", "+sc.short:""),false,{note:n.note||"",plain:true})})}) } }
   // plan and notes
   if(S.routeOn)secs.push({part:"other",title:"Draft quarter plan",group:"Plan",sub:"Built from catalog prerequisites and typical offerings. Check the class schedule before registering.",
-    items:r.quarters.map(q=>it(`${TNAME[q.term]} ${q.year}: ${q.items.map(x=>x.c?x.c:(({HUM:"Humanities",SS:"Social Science",HUMSS:"Hum/Soc Sci",SCI:"Lab science",SPEC:"Specialization",ELEC:"Elective"}[x.slot.slot]||x.slot.label))).join(", ")}`,false,{cr:q.credits+" cr"}))});
+    items:r.quarters.map(q=>it(`${TNAME[q.term]} ${q.year}: ${q.items.map(x=>x.c?withLab(x.c):(({HUM:"Humanities",SS:"Social Science",HUMSS:"Hum/Soc Sci",SCI:"Lab science",SPEC:"Specialization",ELEC:"Elective"}[x.slot.slot]||x.slot.label))).join(", ")}`,false,{cr:q.credits+" cr"}))});
   if(S.advisor){const ns=D.advisor_notes.filter(noteApplies); if(ns.length)secs.push({part:"other",title:"Advising notes",group:"Advisor",items:ns.map(n=>it(n.text,false,{note:n.source+", "+n.date,plain:true}))})}
   const goal=S.goal==="work"?`Go to work in ${CAREER(S.major)?CAREER(S.major).name:D.majors[S.major]} with the ${p.name} ${p.credential}.${S.routeOn?` Starting ${TNAME[S.plan.start]} ${S.plan.year}.`:""}`:`${D.majors[S.major]} at ${selSchools().filter(x=>schoolProg(x)).map(x=>x.short).join(", ")}.${S.routeOn?` Starting ${TNAME[S.plan.start]} ${S.plan.year} in ${S.plan.math}.`:""}`;
   const parts=["evcc","uni","career","other"].filter(k=>secs.some(s=>s.part===k)).map((k,i)=>({k,n:i+1,title:PARTDEF[k].t,
