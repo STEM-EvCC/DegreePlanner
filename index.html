@@ -1671,7 +1671,7 @@ function renderData(){
    <div class="cards" style="margin:0">
     <div class="card"><h4>EvCC courses &amp; degrees</h4><dl class="kv"><dt>Catalog</dt><dd>${esc(D.meta.catalog_year)} (${Object.values(D.courses).filter(c=>!c.hidden).length} courses)</dd>
       <dt>Degrees</dt><dd>${D.programs.map(p=>`<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)}</a> <span class="rowt">${esc(p.code)}</span>`).join("<br>")}</dd>
-      <dt>Offerings</dt><dd>Department course list (2021), updated with Winter 2024 advising notes. Confirm against the class schedule each year.</dd></dl></div>
+      <dt>Offerings</dt><dd>Fall, Winter and Spring come from the 2026-27 EvCC class schedule (campus and online sections, not cancelled or off-site ones). Summer still comes from the department course list (2021). Confirm against the class schedule each year.</dd></dl></div>
     <div class="card"><h4>University requirements</h4><dl class="kv"><dt>Checked</dt><dd>${esc(D.meta.checked)}</dd><dt>Programs</dt><dd>${rows.length}: <span class="vbadge v-verified">${cnt("verified")} verified</span> <span class="vbadge v-partial">${cnt("partial")} partial</span>${cnt("unverified")?` <span class="vbadge v-unverified">${cnt("unverified")} unverified</span>`:""}</dd>
       <dt>Rule</dt><dd>"Verified" = admission requirements confirmed on a current official page. Course-to-course matches marked "confirm" still need a check in the university's equivalency tool.</dd></dl></div>
     ${sw?`<div class="card"><h4>Statewide agreements</h4><ul>${sw.general_notes.map(n=>`<li>${esc(n)}</li>`).join("")}</ul></div>`:""}

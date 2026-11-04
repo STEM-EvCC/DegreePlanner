@@ -112,8 +112,8 @@ rep('<p class="rowt" style="margin-top:6px">Certificates stack into the ATA. Pic
 rep('Everything the site shows comes from one shared file, <code>data.json</code> in <a href="https://github.com/STEM-EvCC/PathwaysData" target="_blank" rel="noopener">STEM-EvCC/PathwaysData</a>. The Pathways site reads the same file, so a fix there updates both.',
     'This demo reads its own file, <code>demo/data.json</code> in <a href="https://github.com/STEM-EvCC/DegreePlanner/tree/main/demo" target="_blank" rel="noopener">STEM-EvCC/DegreePlanner</a>, so nothing here changes the live planner or the Pathways site. When a program is approved, its entries move into the shared file in STEM-EvCC/PathwaysData.',
     "data intro")
-rep("<dt>Offerings</dt><dd>Department course list (2021), updated with Winter 2024 advising notes. Confirm against the class schedule each year.</dd>",
-    "<dt>Offerings</dt><dd>Quarters offered are shown only for courses carried over from the live data. Confirm against the class schedule.</dd>",
+rep("<dt>Offerings</dt><dd>Fall, Winter and Spring come from the 2026-27 EvCC class schedule (campus and online sections, not cancelled or off-site ones). Summer still comes from the department course list (2021). Confirm against the class schedule each year.</dd>",
+    "<dt>Offerings</dt><dd>Fall, Winter and Spring come from the 2026-27 EvCC class schedule (campus and online sections, not cancelled or off-site ones). Summer is shown only where the earlier data listed it. Confirm against the class schedule each year.</dd>",
     "offerings")
 rep("const sw=D.meta.statewide&&D.meta.statewide[0];", "const sws=D.meta.statewide||[];", "statewide all")
 rep('${sw?`<div class="card"><h4>Statewide agreements</h4><ul>${sw.general_notes.map(n=>`<li>${esc(n)}</li>`).join("")}</ul></div>`:""}',
