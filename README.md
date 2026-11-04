@@ -4,6 +4,14 @@ Engineering, Computer Science and Information Technology pathways at Everett Com
 
 A static site: `index.html` is the whole app. There is no server code and no database. Students' "completed" checkmarks are saved only in their own browser.
 
+## Building a schedule ("Plan my route")
+- **Add classes I've completed** opens a picker. Students tap the classes they've passed (marking MATH& 152 also checks MATH& 151, and so on up required single-path chains), mark finished gen ed and elective spots, or use their unofficial transcript: they choose the PDF or paste the text, and the page finds the EvCC course numbers. Lines that show a W, NC, F or 0.0 come back unchecked for the student to review.
+- **Drag and drop**: drag any class (or gen ed spot) to another quarter, to the "Later" column, or onto Completed. On a phone, press and hold, then drag. The planner fills everything else around the moved classes and flags a class placed before its prerequisites, in a quarter it isn't usually offered, or a quarter over the credit limit. The course panel has a "Quarter" menu that does the same thing from the keyboard.
+- **Start over** either undoes the moves or starts a new schedule (clears completed classes, moves, and the quarter, placement and credit settings; majors and universities stay).
+
+## Student data
+Nothing a student enters leaves their browser. A transcript is read in the page with pdf.js and is never uploaded or saved; only the course numbers the student confirms are kept, in that browser's local storage, the same as the completed checkmarks. Start over clears them. Scanned or photographed transcripts can't be read (there's no text in them), so those students use the pick list.
+
 ## Where the data lives
 
 All courses, degrees and transfer requirements come from the shared data repo, **[STEM-EvCC/PathwaysData](https://github.com/STEM-EvCC/PathwaysData)**. This site loads it when it opens:
@@ -32,5 +40,5 @@ Edit `data.json` in [PathwaysData](https://github.com/STEM-EvCC/PathwaysData), n
 ## External services the page uses
 - stem-evcc.github.io/PathwaysData (the shared data)
 - Google Fonts (typefaces)
-- cdnjs.cloudflare.com (the PDF library, loaded only when someone downloads a PDF)
+- cdnjs.cloudflare.com (the PDF libraries: jsPDF, loaded only when someone downloads a PDF, and pdf.js, loaded only when someone reads a transcript PDF)
 - cdn.jsdelivr.net (the QR code library, loaded on the checklist to draw a QR code for each university's requirements page)
