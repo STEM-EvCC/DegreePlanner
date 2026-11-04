@@ -280,6 +280,64 @@ button.stat:hover{border-color:var(--ink-3)}
 .endcard{border:2px dashed var(--ink-3);border-radius:var(--r);padding:12px;display:grid;gap:4px;background:var(--surface)}
 .endcard b{font:700 1.25rem/1.05 var(--f-display)}
 .endcard span{font-size:.8rem;color:var(--ink-2)}
+/* schedule tools: drag and drop, completed classes, start over */
+.routetools{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;padding-top:14px}
+.routetools .hint{font-size:.8rem;color:var(--ink-3);flex:1 1 260px}
+.cc[data-drag]{cursor:grab;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.cc.slot[data-drag]{cursor:grab}
+.cc.dragging{opacity:.35}
+.cc.ghost{position:fixed;z-index:40;pointer-events:none;margin:0;box-shadow:0 12px 30px rgba(0,0,0,.28);transform:rotate(-2deg);opacity:.96}
+body.dnd,body.dnd *{cursor:grabbing!important}
+.col[data-drop]{border-radius:var(--r);outline:2px dashed transparent;outline-offset:5px;transition:outline-color .12s,background .12s;min-height:72px}
+body.dnd .col[data-drop]{outline-color:var(--rule)}
+body.dnd .col.over{outline-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.col.latercol .col-h{border-bottom-style:dashed;border-bottom-color:var(--ink-3)}
+.dropnote{border:2px dashed var(--rule);border-radius:var(--r);padding:12px;font-size:.8rem;color:var(--ink-3);text-align:center;line-height:1.35}
+.cc.warn{border-color:color-mix(in srgb,var(--bad) 55%,var(--rule))}
+.cc .warnline{grid-column:1/-1;font-size:.72rem;line-height:1.3;color:var(--bad);font-weight:600}
+.cc .pinned{font:600 .64rem/1 var(--f-mono);color:var(--accent);letter-spacing:.05em;text-transform:uppercase}
+.col-h.overcap b span{color:var(--bad);font-weight:700}
+.movepick{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;font-size:.86rem}
+.movepick select{font:inherit;padding:5px 8px;border:1px solid var(--rule);border-radius:var(--r);background:var(--surface);color:var(--ink)}
+dialog.dlg{border:1px solid var(--rule);border-radius:12px;background:var(--surface);color:var(--ink);padding:0;width:min(660px,calc(100vw - 24px));max-height:min(88vh,780px);box-shadow:0 24px 60px rgba(0,0,0,.3)}
+dialog.dlg::backdrop{background:rgba(10,16,22,.45)}
+.dlg form{display:flex;flex-direction:column;max-height:min(88vh,780px)}
+.dlg-h{padding:18px 20px 12px;border-bottom:1px solid var(--rule)}
+.dlg-h h2{margin:0;font:700 1.45rem/1.1 var(--f-display)}
+.dlg-h p{margin:6px 0 0;font-size:.86rem;color:var(--ink-2)}
+.dlg-b{padding:14px 20px;overflow:auto;display:grid;gap:14px;align-content:start}
+.dlg-f{padding:12px 20px;border-top:1px solid var(--rule);display:flex;gap:8px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+.dlg-f .count{margin-right:auto;font-size:.86rem;color:var(--ink-2)}
+.seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--rule);border-radius:999px;padding:2px;gap:2px;margin-top:12px}
+.seg button{border:0;background:none;padding:7px 13px;border-radius:999px;font-weight:600;font-size:.85rem;cursor:pointer;color:var(--ink-2)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.pk-search,.pk-ta{width:100%;box-sizing:border-box;padding:9px 11px;border:1px solid var(--rule);border-radius:var(--r);background:var(--bg);color:var(--ink);font:inherit;font-size:.95rem}
+.pk-ta{min-height:110px;font:.84rem/1.4 var(--f-mono);resize:vertical;margin:8px 0}
+.pk-g{display:grid;gap:7px}
+.pk-g h3{margin:0;font:600 .7rem/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.pk-g .rowt{margin:0}
+.pk{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--rule);border-radius:999px;padding:5px 11px;min-height:34px;background:var(--surface);color:var(--ink);cursor:pointer;text-align:left}
+.pk b{font:700 .86rem/1.1 var(--f-display);letter-spacing:.02em;white-space:nowrap}
+.pk small{font-size:.74rem;color:var(--ink-2);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pk .dot{width:8px;height:8px;border-radius:50%;flex:none}
+.pk[aria-pressed="true"]{background:var(--ok);border-color:var(--ok);color:#fff}
+.pk[aria-pressed="true"] small{color:#fff;opacity:.9}
+.pk[aria-pressed="true"] .dot{background:#fff!important}
+.pk-note{font-size:.82rem;color:var(--ink-2);background:var(--surface-2);border-radius:var(--r);padding:8px 10px}
+.drop-file{border:2px dashed var(--rule);border-radius:var(--r);padding:18px;text-align:center;display:grid;gap:8px;justify-items:center}
+.drop-file.over{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 7%,transparent)}
+.drop-file .rowt{margin:0}
+.found{display:grid;gap:5px;max-height:260px;overflow:auto;border:1px solid var(--rule);border-radius:var(--r);padding:8px 10px}
+.found label{display:flex;gap:8px;align-items:baseline;font-size:.87rem}
+.found small{color:var(--ink-3)}
+.found label.flagged small{color:var(--bad)}
+.privacy{font-size:.78rem;color:var(--ink-3);margin:0}
+.bigchoice{display:grid;gap:3px;text-align:left;padding:12px 14px;width:100%}
+.bigchoice span{font-weight:400;font-size:.84rem;color:var(--ink-2)}
+@media (max-width:700px){
+  dialog.dlg{width:100vw;max-width:100vw;margin:auto 0 0;border-radius:14px 14px 0 0;max-height:92vh}
+  .dlg form{max-height:92vh}
+}
 @media (max-width:700px){
   .route{overflow:visible}
   .route-inner{grid-auto-flow:row;grid-auto-columns:auto;grid-template-columns:1fr;gap:18px;min-width:0}
@@ -403,7 +461,7 @@ table.sbs tr.grp.ex th{background:color-mix(in srgb,var(--warn) 14%,var(--surfac
   :root,:root:not([data-theme="light"]),:root[data-theme="dark"]{--bg:#fff;--surface:#fff;--surface-2:#EEF1F4;--ink:#15212C;--ink-2:#3C4954;--ink-3:#56626D;--rule:#C9D1D9;--accent:#0F5E86;--accent-ink:#fff;--ok:#1E7A4C;--warn:#8A5810;color-scheme:light}
   @page{margin:12mm}
   body{background:#fff!important}
-  header.top,#trip,nav.views,.ck-tools,.majbar,#footMeta,#dataLink,.scrim,.drawer,.toast{display:none!important}
+  header.top,#trip,nav.views,.ck-tools,.majbar,#footMeta,#dataLink,.scrim,.drawer,.toast,.routetools,dialog,.latercol,.dropnote{display:none!important}
   .wrap{max-width:none;padding:0}
   .ckdoc,.ckdoc .part,.ckdoc ul{display:block!important} /* grid fragments badly across printed pages */
   .ckdoc{border:0;padding:0;max-width:none}
@@ -463,7 +521,10 @@ const store={get(k,d){try{const v=localStorage.getItem("evccpath:"+k);return v==
 
 let D=null, DL=null;
 const S={who:{},ckLayout:"sep",majors:[],routeOn:false,hl:true,view:"map",drawer:false,track:null,schools:[],focus:"",canDL:false,program:"civil-mech",major:"mechanical",school:"uw-seattle",advisor:false,done:new Set(),sel:null,hover:null,ptab:"course",only:false,zoom:1,
-  plan:{start:"F",year:2027,math:"MATH& 151",chem:"CHEM& 161",engl:"ENGL& 101",phys:"PHYS& 241",cap:18,summer:false,later:false}};
+  doneSlots:{}, plan:null};
+// plan defaults; "pins" holds classes a student dragged to a quarter, per major and track
+const PLAN0={start:"F",year:2027,math:"MATH& 151",chem:"CHEM& 161",engl:"ENGL& 101",phys:"PHYS& 241",cap:18,summer:false,later:false,pins:{}};
+S.plan=JSON.parse(JSON.stringify(PLAN0));
 
 const LANES=[
  {id:"math",label:"Math",v:"--l-math"},{id:"phys",label:"Physics",v:"--l-phys"},{id:"chem",label:"Chemistry",v:"--l-chem"},
@@ -545,6 +606,33 @@ function placedOut(){ // courses treated as satisfied by placement
   if(P.chem==="CHEM& 161")s.add("CHEM& 140"); if(P.engl==="ENGL& 101")s.add("ENGL 98"); if(P.phys==="PHYS& 241")s.add("PHYS& 114");
   return s;
 }
+// Prerequisites a student must already have met, given the classes they finished. Used only for
+// scheduling (nothing here is shown as completed or counted as credit): single-path prerequisite
+// chains (MATH& 152 means MATH& 151 was met) and every math class below the highest one finished.
+const MATHL=["MATH 86","MATH 96","MATH& 141","MATH& 142","MATH& 151","MATH& 152","MATH& 163"];
+function metByDone(){
+  const s=new Set(S.done), st=[...S.done];
+  while(st.length){ const c=st.pop(); (C(c).prereq?.all||[]).forEach(g=>{ const any=g.any||[]; if(any.length!==1)return; const o=any[0];
+    if(o.alt||!D.courses[o.course]||s.has(o.course))return; s.add(o.course); st.push(o.course) }) }
+  const hi=Math.max(-1,...MATHL.map((c,i)=>S.done.has(c)?i:-1)); MATHL.slice(0,Math.max(0,hi)).forEach(c=>s.add(c)); if(hi>=MATHL.indexOf("MATH& 151"))s.add("MATH& 144");
+  return s;
+}
+/* quarters as keys like "F2027"; the year changes at Winter, as in the route */
+const TORD={W:0,Sp:1,Su:2,F:3};
+const tkey=(t,y)=>t+y;
+const tparse=k=>{const m=/^(F|W|Sp|Su)(\d{4})$/.exec(k||"");return m?{term:m[1],year:+m[2]}:null};
+const tord=k=>{const p=tparse(k);return p?p.year*4+TORD[p.term]:NaN};
+const tnext=(t,y)=>{const n=TERMS[(TERMS.indexOf(t)+1)%4];return[n,n==="W"?y+1:y]};
+const tlabel=k=>{const p=tparse(k);return p?TNAME[p.term]+" "+p.year:k};
+const pinKey=()=>S.major+"|"+S.program;
+const pinsNow=()=>(S.plan.pins||{})[pinKey()]||{};
+function setPin(k,v){ const all=S.plan.pins=S.plan.pins||{}, p=all[pinKey()]=all[pinKey()]||{}; if(v)p[k]=v; else delete p[k]; if(!Object.keys(p).length)delete all[pinKey()]; store.set("plan",S.plan) }
+/* general education and elective spots ("slots") in the current track, by position */
+const SLOTNAME={HUM:"Humanities",SS:"Social Science",HUMSS:"Hum / Soc Sci",SCI:"Lab science",SPEC:"Specialization",ELEC:"Elective"};
+const slotName=s=>SLOTNAME[s.slot]||s.label;
+function slotList(p=prog()){ const a=[]; p.groups.forEach(g=>g.items.forEach(it=>{if(!it.course&&!it.one_of)a.push(it)})); return a }
+const slotDoneSet=(p=prog())=>new Set((S.doneSlots[p.id]||[]).filter(i=>i<slotList(p).length));
+function setSlotDone(i,on,p=prog()){ const s=slotDoneSet(p); on?s.add(i):s.delete(i); if(s.size)S.doneSlots[p.id]=[...s].sort((a,b)=>a-b); else delete S.doneSlots[p.id]; store.set("doneSlots",S.doneSlots) }
 const fmtCr=c=>{const v=C(c).credits;return v==null?"":String(v)};
 const crNum=c=>{const v=parseFloat(String(C(c).credits).split("-").pop());return isNaN(v)?5:v};
 
@@ -701,7 +789,7 @@ function selectCourse(c){ if(c)rememberFocus(); const was=S.drawer; S.sel=c; if(
 function openDrawer(tab){rememberFocus();S.ptab=tab;S.drawer=true;renderPanel();focusDrawer()}
 function restoreFocus(){ const el=S.lastFocus&&document.querySelector(S.lastFocus); if(el)el.focus({preventScroll:true}); S.lastFocus=null }
 function closeDrawer(){S.drawer=false;S.sel=null;paintTrace();traceRoute();renderPanel();restoreFocus()}
-function toggleDone(c){S.done.has(c)?S.done.delete(c):S.done.add(c); store.set("done",[...S.done]); if(S.view==="map")paint(); else rerender(); renderPanel()}
+function toggleDone(c){S.done.has(c)?S.done.delete(c):(S.done.add(c),pinsNow()[c]&&setPin(c,null)); store.set("done",[...S.done]); if(S.view==="map")paint(); else rerender(); renderPanel()}
 
 /* ---------- panel ---------- */
 function renderPanel(){
@@ -715,13 +803,14 @@ function renderPanel(){
   if(S.ptab==="course")body.innerHTML=coursePanel(); else if(S.ptab==="degree")body.innerHTML=fb+degreePanel(); else body.innerHTML=fb+transferPanel();
   $$("[data-focus]",body).forEach(b=>b.onclick=()=>{S.focus=b.dataset.focus;S.school=S.focus;renderPanel()});
   $$("[data-fm]",body).forEach(b=>b.onclick=()=>setFocusMajor(b.dataset.fm));
-  wirePanel(body);
+  wirePanel(body); wireMoveSelect(body);
 }
 function chip(c){const d=S.done.has(c);return`<button class="chip${d?" done":""}" data-goto="${esc(c)}"><span class="dot" style="background:${laneColor(laneOf(c))}"></span>${esc(c)}${d?" ✓":""}</button>`}
 function coursePanel(){
   const c=S.sel; if(!c)return`<div class="ph"><div class="eyebrow">Tip</div><h2>Pick a course</h2></div>
     <div class="pb"><p>Click any course to see its prerequisites, what it unlocks, and which universities want it.</p>
     <p>Tick the circle on a course when you've finished it. Your route rebuilds around what's left.</p>
+    <p><button class="btn ghost" type="button" data-adddone>+ Add classes I've completed</button></p>
     ${S.done.size?`<p><b>${S.done.size}</b> course${S.done.size>1?"s":""} marked complete. <button class="linkish" data-clear>Clear all</button></p>`:""}
     ${S.advisor?advNotesBlock(D.advisor_notes.filter(noteApplies),"Advising notes for this path"):""}</div>`;
   const x=C(c), su=statusUnion()[c], st=su&&su.st, ta=transferUnion()[c]||[];
@@ -732,6 +821,7 @@ function coursePanel(){
   return`<div class="ph"><div class="eyebrow"><span class="dot" style="display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;background:${laneColor(laneOf(c))}"></span>${LANES.find(l=>l.id===laneOf(c)).label} · ${esc(fmtCr(c))} credits</div><h2>${esc(c)}</h2><h3>${esc(x.title)}</h3></div>
   <div class="pb">
    <div class="chiprow"><button class="btn${S.done.has(c)?" ghost":""}" data-done="${esc(c)}">${S.done.has(c)?"Completed ✓ (undo)":"Mark as completed"}</button></div>
+   ${moveSelect(c)}
    ${S.majors.length>1&&su&&su.majors.length?`<p style="font-size:.88rem">Needed for: <b>${su.majors.map(m=>esc(D.majors[m])).join(", ")}</b></p>`:""}
    <p style="font-size:.88rem"><b>${stLabel}.</b> ${S.done.has(c)?"":ready?'<span style="color:var(--ok);font-weight:600">You can take this now.</span>':""}</p>
    ${x.description?`<p style="font-size:.9rem;color:var(--ink-2)">${esc(x.description)}</p>`:""}
@@ -755,7 +845,7 @@ function advCourse(c){
 }
 function noteApplies(n){ if(n.schools&&!n.schools.some(x=>S.schools.some(id=>id===x||id.startsWith(x+"-")||(x==="wsu"&&id.startsWith("wsu")))))return false; if(n.majors&&!n.majors.includes(S.major))return false; return true}
 function advNotesBlock(notes,title){ if(!notes.length)return""; return`<div class="adv"><div class="sect-t">${esc(title)}</div>${notes.map(n=>`<div class="note">${esc(n.text)}<span class="src">${esc(n.source)} · ${esc(n.date)}</span></div>`).join("")}</div>`}
-function itemDone(it){ if(it.course)return S.done.has(it.course)?1:0; if(it.one_of)return it.one_of.some(c=>S.done.has(c))?1:0; return 0}
+function itemDone(it){ if(it.course)return S.done.has(it.course)?1:0; if(it.one_of)return it.one_of.some(c=>S.done.has(c))?1:0; const p=prog(),i=slotList(p).indexOf(it); return i>=0&&slotDoneSet(p).has(i)?1:0}
 function degreePanel(){
   const p=prog(); const sp=getSpec();
   let earned=0;
@@ -805,7 +895,8 @@ function advSchool(s,sp){
 function wirePanel(el){
   $$("[data-goto]",el).forEach(b=>b.onclick=()=>{ selectCourse(b.dataset.goto); if(S.view==="map")scrollToNode(b.dataset.goto); else scrollToCard(b.dataset.goto)});
   $$("[data-done]",el).forEach(b=>b.onclick=()=>toggleDone(b.dataset.done));
-  $$("[data-clear]",el).forEach(b=>b.onclick=()=>{S.done.clear();store.set("done",[]);paint();renderPanel()});
+  $$("[data-clear]",el).forEach(b=>b.onclick=()=>{S.done.clear();store.set("done",[]);refreshPlan()});
+  $$("[data-adddone]",el).forEach(b=>b.onclick=openDonePicker);
 }
 function scrollToCard(c){const el=$(`.cc[data-code="${CSS.escape(c)}"]`);if(el)el.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"})}
 function scrollToNode(c){const p=L&&L.pos[c],sc=$("#mapscroll");if(!p||!sc)return;sc.scrollTo({left:Math.max(0,p.x*S.zoom-sc.clientWidth/2),top:Math.max(0,p.y*S.zoom-sc.clientHeight/2),behavior:"smooth"})}
@@ -861,45 +952,71 @@ function neededForPlan(){
     if(os.length>1&&os.some(o=>o.length>1)){ if(os.some(o=>o.every(c=>need.has(c)||S.done.has(c))))return; const sc=o=>o.filter(c=>!need.has(c)&&!S.done.has(c)).length; os.slice().sort((a,b)=>sc(a)-sc(b))[0].forEach(c=>need.add(c)) }
     else if(os.length>1){ if(!cs.some(c=>need.has(c)))need.add(pick(cs)) } else cs.forEach(c=>need.add(c)) }));
   // pull in prerequisites not covered by placement
-  const placed=placedOut(); let changed=true;
-  while(changed){changed=false;[...need].forEach(c=>{(C(c).prereq?.all||[]).forEach(g=>{const opts=(g.any||[]).filter(o=>D.courses[o.course]);if(!opts.length)return;
-    if(opts.some(o=>need.has(o.course)||placed.has(o.course)||S.done.has(o.course)))return;
+  const placed=placedOut(), met=metByDone(); let changed=true;
+  while(changed){changed=false;[...need].forEach(c=>{ if(met.has(c))return; (C(c).prereq?.all||[]).forEach(g=>{const opts=(g.any||[]).filter(o=>D.courses[o.course]);if(!opts.length)return;
+    if(opts.some(o=>need.has(o.course)||placed.has(o.course)||met.has(o.course)))return;
     // a group with a non-course alternative (placement) that we've marked placed is satisfied
     const first=opts.find(o=>!C(o.course).hidden)||opts[0]; need.add(first.course); changed=true})})}
   placed.forEach(c=>need.delete(c));
-  return{need,slots,placed};
+  return{need,slots,placed,met};
 }
 function buildPlan(){
-  const {need,slots,placed}=neededForPlan(); const P=S.plan;
-  const done=new Set([...S.done,...placed]); const todo=[...need].filter(c=>!done.has(c));
+  const {need,slots,placed,met}=neededForPlan(); const P=S.plan;
+  // prerequisites count as met for anything finished, placed out of, or implied by finished classes;
+  // a required class stays on the plan until the student marks it done
+  const done=new Set([...S.done,...placed,...met]); const todo=[...need].filter(c=>!S.done.has(c)&&!placed.has(c));
   // critical path length
   const memo={}; const depth=c=>{if(memo[c]!=null)return memo[c];memo[c]=0;const kids=(CHILD[c]||[]).filter(k=>todo.includes(k));memo[c]=kids.length?1+Math.max(...kids.map(depth)):0;return memo[c]};
-  const quarters=[]; let term=TERMS.indexOf(P.start), year=P.year, guard=0; const left=new Set(todo); const slotQ=slots.map(s=>({...s}));
+  // classes the student dragged to a quarter
+  const startOrd=tord(tkey(P.start,P.year)), sdone=slotDoneSet(), pinC={}, pinS={};
+  Object.entries(pinsNow()).forEach(([k,v])=>{ if(!(tord(v)>=startOrd))return;
+    if(k.startsWith("slot:")){const i=+k.slice(5); if(slots[i]&&!sdone.has(i))pinS[i]=v} else if(todo.includes(k))pinC[k]=v });
+  const pinOrds=[...Object.values(pinC),...Object.values(pinS)].map(tord), maxPin=pinOrds.length?Math.max(...pinOrds):-Infinity;
+  const quarters=[]; let term=TERMS.indexOf(P.start), year=P.year, guard=0; const left=new Set(todo);
+  const slotQ=slots.map((s,i)=>({...s,idx:i})).filter(s=>!sdone.has(s.idx)&&!pinS[s.idx]);
   const offered=(c,t)=>{const o=C(c).offered;return !o||!o.length||o.includes(t)};
-  while((left.size||slotQ.length)&&guard<24){ guard++;
-    const t=TERMS[term]; if(t==="Su"&&!P.summer){term=(term+1)%4;continue}
-    const cap=t==="Su"?Math.min(P.cap,10):P.cap; const q={term:t,year,items:[],credits:0};
+  const adv=()=>{term=(term+1)%4; if(TERMS[term]==="W")year++};
+  while((left.size||slotQ.length||tord(tkey(TERMS[term],year))<=maxPin)&&guard<28){ guard++;
+    const t=TERMS[term], k=tkey(t,year), o=tord(k);
+    const pc=Object.keys(pinC).filter(c=>pinC[c]===k), ps=Object.keys(pinS).filter(i=>pinS[i]===k).map(Number);
+    if(t==="Su"&&!P.summer&&!pc.length&&!ps.length){adv();continue}
+    const cap=t==="Su"?Math.min(P.cap,10):P.cap; const q={term:t,year,key:k,items:[],credits:0};
     const inQ=new Set(); const FIRST=new Set(["STEM 101","COLL 101","ENGL 98","ENGL& 101"]);
+    pc.forEach(c=>{q.items.push({c,pinned:true});q.credits+=crNum(c);inQ.add(c);left.delete(c)});
+    ps.forEach(i=>{q.items.push({slot:{...slots[i],idx:i},pinned:true});q.credits+=slots[i].credits});
     const scarce=c=>{const o=C(c).offered;return o&&o.filter(x=>x!=="Su").length<=2?0.75:0};
     const pri=c=>FIRST.has(c)?100:depth(c)+scarce(c);
     const addCourses=minPri=>{let added=true;while(added){added=false;
-      const cand=[...left].filter(c=>offered(c,t)&&prereqMet(c,done,inQ)&&!inQ.has(c)&&pri(c)>=minPri).sort((a,b)=>pri(b)-pri(a)||crNum(b)-crNum(a));
+      const cand=[...left].filter(c=>!pinC[c]&&offered(c,t)&&prereqMet(c,done,inQ)&&!inQ.has(c)&&pri(c)>=minPri).sort((a,b)=>pri(b)-pri(a)||crNum(b)-crNum(a));
       for(const c of cand){ if(q.credits+crNum(c)<=cap+0.6){q.items.push({c});q.credits+=crNum(c);inQ.add(c);left.delete(c);added=true;break} } }};
     const addSlot=()=>{ if(slotQ.length&&q.credits+slotQ[0].credits<=cap+0.6){const s=slotQ.shift();q.items.push({slot:s});q.credits+=s.credits;return true} return false};
     addCourses(1); addSlot(); addCourses(0); while(q.items.filter(i=>i.slot).length<2&&addSlot());
     inQ.forEach(c=>done.add(c));
-    if(q.items.length)quarters.push(q);
-    term=(term+1)%4; if(TERMS[term]==="W")year++;
+    if(q.items.length||o<maxPin)quarters.push(q);
+    adv();
   }
-  return{quarters,unplaced:[...left],placed};
+  return{quarters,unplaced:[...left],placed,met};
 }
+// what a class on the plan still needs before the quarter it sits in
+function missingPre(code,have,same){ const out=[];
+  (C(code).eligibility||[]).forEach(e=>{ if(D.courses[e]&&!have.has(e)&&!prereqMet(e,have,null))out.push(e) });
+  (C(code).prereq?.all||[]).forEach(g=>{ const opts=(g.any||[]).filter(o=>D.courses[o.course]&&!o.alt); if(!opts.length)return;
+    if((g.any||[]).some(o=>D.courses[o.course]&&(have.has(o.course)||(o.concurrent&&same&&same.has(o.course)))))return;
+    out.push(opts.map(o=>o.course).join(" or ")) });
+  return out }
+function planWarnings(r){ const have=new Set([...S.done,...r.placed,...r.met]);
+  r.quarters.forEach(q=>{ const same=new Set(q.items.filter(i=>i.c).map(i=>i.c));
+    q.items.forEach(it=>{ if(!it.c)return; const w=[], m=missingPre(it.c,have,same); if(m.length)w.push("Needs "+m.join(", ")+" first");
+      const of=C(it.c).offered; if(of&&of.length&&!of.includes(q.term))w.push("Not usually offered in "+TNAME[q.term]); it.warn=w });
+    q.over=q.credits>(q.term==="Su"?Math.min(S.plan.cap,10):S.plan.cap)+0.6;
+    same.forEach(c=>have.add(c)) }) }
 const MONTHS=["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"];
 function deadlineTerm(txt){ const t=String(txt||"").toLowerCase(); const re=/\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\b/g; let m,pick=null;
   while((m=re.exec(t))){ const before=t.slice(Math.max(0,m.index-20),m.index); if(/open/.test(before))continue; pick=m[1]; break }
   if(!pick)return null; const i=MONTHS.indexOf(pick); return i<3?"W":i<6?"Sp":i<9?"Su":"F"}
 function ring(pct,label,size=58){const r=(size-8)/2,c=2*Math.PI*r;return`<svg class="ring" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" aria-hidden="true"><circle class="bgc" cx="${size/2}" cy="${size/2}" r="${r}"/><circle class="fg" cx="${size/2}" cy="${size/2}" r="${r}" stroke-dasharray="${c}" stroke-dashoffset="${c*(1-pct/100)}" transform="rotate(-90 ${size/2} ${size/2})"/><text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle">${esc(label)}</text></svg>`}
 function degreeProgress(){ const p=prog(),sp=getSpec(); let earned=0;
-  p.groups.forEach(g=>g.items.forEach(it=>{ if(itemDone(it))earned+=it.credits||(it.course?crNum(it.course):crNum(it.one_of[0])) }));
+  p.groups.forEach(g=>g.items.forEach(it=>{ if(itemDone(it))earned+=it.credits??(it.course?crNum(it.course):it.one_of?crNum(it.one_of[0]):5) }));
   if(!sp.none){(sp.courses||[]).forEach(c=>{if(S.done.has(c))earned+=crNum(c)});(sp.one_of||[]).forEach(a=>{if(a.some(c=>S.done.has(c)))earned+=crNum(a[0])});if(sp.choose)sp.choose.from.filter(c=>S.done.has(c)).slice(0,sp.choose.pick).forEach(c=>earned+=crNum(c))}
   return{earned,total:p.total,pct:Math.min(100,Math.round(earned/p.total*100))} }
 function uniProgress(sch=school()){ const sp=schoolProg(sch); if(!sp)return null; const rs=sp.requirements.filter(r=>(r.category==="admission"||r.category==="pre-transfer")&&r.courses.some(c=>D.courses[c]));
@@ -964,19 +1081,24 @@ function renderTrip(){
 const uniUrl=(s,sp)=>(sp&&sp.dept_url)||s.website||"";
 const uniLink=(s,sp,cls="")=>{const u=uniUrl(s,sp);return u?`<a class="unilink ${cls}" href="${esc(u)}" target="_blank" rel="noopener" title="Open ${esc(s.short)}'s transfer page">${esc(s.short)}<span aria-hidden="true"> ↗</span></a>`:esc(s.short)};
 const FLAG=`<svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M2 1v14" stroke="currentColor" stroke-width="2"/><path d="M3 2h9l-2.5 3.5L12 9H3z" fill="currentColor"/></svg>`;
-function card(c,opts={}){ const ta=transferAll()[c]||[], st=statusMap()[c], d=S.done.has(c);
+function card(c,opts={}){ const ta=transferAll()[c]||[], st=statusMap()[c], d=S.done.has(c), w=opts.warn||[];
   const tags=ta.slice(0,3).map(t=>stag(t.s,t.cat)).join("")+(ta.length>3?`<span class="stag c-degree">+${ta.length-3}</span>`:"");
-  return`<div class="cc${d?" done":""}" data-code="${esc(c)}" style="--lc:${laneColor(laneOf(c))}">
-   <button class="cd" data-opencourse="${esc(c)}" aria-label="${esc(c+" "+C(c).title+(ta.length?", "+ta.map(t=>t.s.short+": "+CAT[t.cat].l).join("; "):"")+". Show details")}">${esc(c)}</button><button class="tick" data-tick="${esc(c)}" aria-label="${d?"Mark "+esc(c)+" not completed":"Mark "+esc(c)+" completed"}" aria-pressed="${d}">✓</button>
+  return`<div class="cc${d?" done":""}${w.length?" warn":""}" data-code="${esc(c)}"${opts.drag?` data-drag="${esc(c)}"`:""} style="--lc:${laneColor(laneOf(c))}">
+   <button class="cd" data-opencourse="${esc(c)}" aria-label="${esc(c+" "+C(c).title+(ta.length?", "+ta.map(t=>t.s.short+": "+CAT[t.cat].l).join("; "):"")+(w.length?". "+w.join(". "):"")+". Show details")}">${esc(c)}</button><button class="tick" data-tick="${esc(c)}" aria-label="${d?"Mark "+esc(c)+" not completed":"Mark "+esc(c)+" completed"}" aria-pressed="${d}">✓</button>
    <span class="tt">${esc(C(c).short||C(c).title)}</span>
-   <span class="meta"><span class="crd">${esc(fmtCr(c))} cr</span><span class="stags">${tags}</span>${st==="later"?`<span class="catpill c-degree" title="BS course you can take early">*</span>`:""}</span></div>`}
+   <span class="meta"><span class="crd">${esc(fmtCr(c))} cr</span><span class="stags">${tags}</span>${st==="later"?`<span class="catpill c-degree" title="BS course you can take early">*</span>`:""}${opts.pinned?`<span class="pinned" title="You moved this class here">moved</span>`:""}</span>${w.length?`<span class="warnline">${esc(w.join(". "))}</span>`:""}</div>`}
+function slotCard(sl,opts={}){ return`<div class="cc slot" style="--lc:var(--l-gen)"${sl.idx!=null?` data-drag="slot:${sl.idx}"`:""}><span class="cd">${esc(slotName(sl))}</span><span class="crd" style="grid-column:2">${sl.credits} cr</span><span class="tt">${esc(sl.label)}</span>${opts.pinned?`<span class="meta"><span class="pinned" title="You moved this here">moved</span></span>`:""}</div>`}
 function renderRoute(){
-  const r=buildPlan(), dp=degreeProgress(), sl=selSchools().filter(x=>schoolProg(x));
+  const r=buildPlan(), dp=degreeProgress(), sl=selSchools().filter(x=>schoolProg(x)); planWarnings(r); S.lastPlan=r;
   const last=r.quarters[r.quarters.length-1];
   // application flags, one per school on the list
   const flags={}; sl.forEach(s=>{const sp=schoolProg(s); if(!sp)return; const dt=deadlineTerm(sp.admission?.deadlines); const want=dt==="Su"&&!S.plan.summer?"Sp":dt; let q=-1;
     for(let i=r.quarters.length-1;i>=0;i--){ if(!want||r.quarters[i].term===want){q=i;break} } if(q<0)q=r.quarters.length-1; (flags[q]=flags[q]||[]).push({s,sp}) });
   const doneList=[...S.done].filter(c=>D.courses[c]);
+  const sls=slotList(), sdone=[...slotDoneSet()].map(i=>({...sls[i],credits:sls[i].credits??5,idx:i}));
+  const doneCr=doneList.reduce((a,c)=>a+crNum(c),0)+sdone.reduce((a,x)=>a+x.credits,0);
+  let [lt,ly]=last?tnext(last.term,last.year):[S.plan.start,S.plan.year]; if(lt==="Su"&&!S.plan.summer)[lt,ly]=tnext(lt,ly);
+  const nPins=Object.keys(pinsNow()).length;
   const app=$("#app");
   app.innerHTML=`<h2 class="sr-only">My route</h2>${majorBar("Route for:")}<div class="summary">
     <button class="stat" data-open="degree">${ring(dp.pct,dp.pct+"%")}<span><span class="lbl">EvCC degree</span><br><b>${dp.earned}</b> <span class="lbl">of ${dp.total} credits done</span></span></button>
@@ -984,14 +1106,17 @@ function renderRoute(){
     <div class="stat"><span class="big">${r.quarters.length}</span><span class="lbl">quarters to go<br>${last?`finish ${TNAME[last.term]} ${last.year}`:"all done"}</span></div>
 
    </div>
+   <div class="routetools"><button class="btn" type="button" data-adddone>+ Add classes I've completed</button><button class="btn ghost" type="button" id="startOver">Start over</button>${nPins?`<button class="linkish" type="button" id="undoMoves">Undo ${nPins} move${nPins>1?"s":""}</button>`:""}
+     <span class="hint">Drag a class to another quarter to rearrange your plan, or onto Completed when you finish it. On a phone, press and hold a class, then drag.</span></div>
    <div class="routebar"><div class="legend">${LANES.filter(l=>l.id!=="bio"||S.major==="bioengineering"||S.major==="chemical").map(l=>`<span class="k"><span class="sw" style="border-color:${laneColor(l.id)};background:${laneColor(l.id)}"></span>${l.label}</span>`).join("")}
      ${sl.length?`<span class="k"><span class="stag c-admission">${esc(sl[0].abbr)}</span>Needed to apply</span><span class="k"><span class="stag c-pre-transfer">${esc(sl[0].abbr)}</span>Before transfer</span><span class="k"><span class="stag c-degree">${esc(sl[0].abbr)}</span>Counts toward BS</span>`:""}</div>
      <label class="chk"><input type="checkbox" id="allLines"${S.allLines?" checked":""}> Show all prerequisite lines</label></div>
    <div class="route" id="route"><div class="route-inner" id="routeInner">
-    ${doneList.length?`<div class="col donecol"><div class="col-h"><span class="yr">Already done</span><b>Completed<span>${doneList.reduce((a,c)=>a+crNum(c),0)} cr</span></b></div>${doneList.map(c=>card(c)).join("")}</div>`:""}
-    ${r.quarters.map((q,i)=>`<div class="col"><div class="col-h"><span class="yr">${q.year} · Quarter ${i+1}</span><b>${TNAME[q.term]}<span>${q.credits} cr</span></b></div>
-      ${q.items.map(it=>it.c?card(it.c):`<div class="cc slot" style="--lc:var(--l-gen)"><span class="cd">${esc(({HUM:"Humanities",SS:"Social Science",HUMSS:"Hum / Soc Sci",SCI:"Lab science",SPEC:"Specialization",ELEC:"Elective"}[it.slot.slot]||it.slot.label))}</span><span class="crd" style="grid-column:2">${it.slot.credits} cr</span><span class="tt">${esc(it.slot.label)}</span></div>`).join("")}
+    <div class="col donecol" data-drop="done"><div class="col-h"><span class="yr">Already done</span><b>Completed<span>${doneCr} cr</span></b></div>${doneList.map(c=>card(c,{drag:true})).join("")}${sdone.map(x=>slotCard(x)).join("")}${doneList.length||sdone.length?"":`<div class="dropnote">Nothing yet. Use <b>Add classes I've completed</b>, or drag a class here when you finish it.</div>`}</div>
+    ${r.quarters.map((q,i)=>`<div class="col" data-drop="${q.key}"><div class="col-h${q.over?" overcap":""}"${q.over?` title="More than your ${S.plan.cap}-credit limit"`:""}><span class="yr">${q.year} · Quarter ${i+1}</span><b>${TNAME[q.term]}<span>${q.credits} cr${q.over?" (over limit)":""}</span></b></div>
+      ${q.items.map(it=>it.c?card(it.c,{drag:true,pinned:it.pinned,warn:it.warn}):slotCard(it.slot,{pinned:it.pinned})).join("")}${q.items.length?"":`<div class="dropnote">Drop classes here</div>`}
       ${(flags[i]||[]).map(f=>`<div class="flag">${FLAG}<span><b>Apply to ${esc(f.s.short)}</b>${esc(f.sp.admission?.deadlines||"Check the deadline")}</span></div>`).join("")}</div>`).join("")}
+    <div class="col latercol" data-drop="${tkey(lt,ly)}"><div class="col-h"><span class="yr">${ly} · Later</span><b>${TNAME[lt]}<span>0 cr</span></b></div><div class="dropnote">Drag a class here to take it in a later quarter</div></div>
     <div class="col endcol"><div class="col-h"><span class="yr">Next stop</span><b>${S.goal==="work"?"Work":"Transfer"}</b></div>${S.goal==="work"&&CAREER(S.major)?`<div class="endcard"><b>${esc(CAREER(S.major).name)}</b><span>Certifications along the way: ${esc(CAREER(S.major).certs.map(c=>c.name).join(", "))}</span><button class="linkish" data-gocareers style="font-size:.85rem">See career path →</button></div>`:""}${sl.map(s=>{const sp=schoolProg(s);return`<div class="endcard"><b>${uniLink(s,sp)}</b><span>${esc(sp?sp.degree:D.majors[S.major])}</span>${sp?.admission?.start_terms?`<span>Starts: ${esc(sp.admission.start_terms)}</span>`:""}<button class="linkish" data-open="transfer" data-sf="${s.id}" style="font-size:.85rem">See requirements →</button></div>`}).join("")}</div>
     <svg class="route-svg" id="routeSvg"></svg>
    </div></div>
@@ -1000,12 +1125,14 @@ function renderRoute(){
    <p class="rowt" style="margin-top:10px">This route is a draft built from catalog prerequisites and typical course offerings. Check the quarterly class schedule and meet with an advisor before registering.</p>`;
   $$(".cc[data-code]",app).forEach(el=>{const c=el.dataset.code;
     el.onclick=e=>{ if(e.target.closest("[data-tick]"))return; selectCourse(S.sel===c&&S.drawer?null:c)};
-    el.onmouseenter=()=>{S.hover=c;traceRoute()}; el.onmouseleave=()=>{S.hover=null;traceRoute()}});
+    el.onmouseenter=()=>{if(DRAG.s)return;S.hover=c;traceRoute()}; el.onmouseleave=()=>{if(DRAG.s)return;S.hover=null;traceRoute()}});
   $$("[data-tick]",app).forEach(b=>b.onclick=e=>{e.stopPropagation();toggleDone(b.dataset.tick)});
   $$("[data-gocareers]",app).forEach(b=>b.onclick=()=>setView("careers"));
   $$("[data-open]",app).forEach(b=>b.onclick=()=>{if(b.dataset.sf){S.focus=b.dataset.sf;S.school=S.focus}openDrawer(b.dataset.open)});
+  $$("[data-adddone]",app).forEach(b=>b.onclick=openDonePicker);
+  $("#startOver").onclick=openStartOver; if($("#undoMoves"))$("#undoMoves").onclick=undoMoves;
   $("#allLines").onchange=e=>{S.allLines=e.target.checked;traceRoute()}; wireMajorBar(app);
-  traceRoute();
+  dndBind(app); traceRoute();
 }
 function traceRoute(){
   const inner=$("#routeInner"), svg=$("#routeSvg"); if(!inner||!svg)return;
@@ -1022,6 +1149,157 @@ function traceRoute(){
     if(f&&(c===f||A.has(c))&&A.has(a))path(a,c,"anc"); else if(f&&(a===f||Ds.has(a))&&Ds.has(c))path(a,c,"desc"); else if(S.allLines)path(a,c,"all") }));
   svg.innerHTML=out;
 }
+
+/* ---------- drag and drop on the route ---------- */
+// Pointer events cover mouse, pen and touch. Touch needs a press and hold first so a normal swipe still scrolls.
+const DRAG={s:null,end:0};
+function dndBind(root){ $$(".cc[data-drag]",root).forEach(el=>el.addEventListener("pointerdown",e=>{
+  if(e.pointerType==="mouse"&&e.button!==0)return; if(e.target.closest(".tick"))return; dndCancel();
+  const d=DRAG.s={el,key:el.dataset.drag,from:el.closest("[data-drop]")?.dataset.drop,id:e.pointerId,x0:e.clientX,y0:e.clientY,x:e.clientX,y:e.clientY,touch:e.pointerType!=="mouse",active:false};
+  if(d.touch)d.timer=setTimeout(()=>{if(DRAG.s===d&&!d.active)dndStart()},380) })) }
+function dndStart(){ const d=DRAG.s; if(!d)return; const r=d.el.getBoundingClientRect(); d.dx=d.x0-r.left; d.dy=d.y0-r.top;
+  const g=d.el.cloneNode(true); g.classList.add("ghost"); g.classList.remove("sel","anc","desc","dim","dragging"); g.removeAttribute("data-code"); g.removeAttribute("data-drag"); g.setAttribute("aria-hidden","true"); g.style.width=r.width+"px";
+  document.body.appendChild(g); d.g=g; d.active=true; d.el.classList.add("dragging"); document.body.classList.add("dnd");
+  try{if(d.touch&&navigator.vibrate)navigator.vibrate(12)}catch(e){}
+  if(S.hover){S.hover=null;traceRoute()} dndMove(); d.raf=requestAnimationFrame(dndTick) }
+function dndMove(){ const d=DRAG.s; if(!d||!d.g)return; d.g.style.left=(d.x-d.dx)+"px"; d.g.style.top=(d.y-d.dy)+"px";
+  const t=document.elementFromPoint(d.x,d.y), col=t&&t.closest("#routeInner [data-drop]");
+  if(col!==d.over){ if(d.over)d.over.classList.remove("over"); d.over=col; if(col)col.classList.add("over") } }
+function dndTick(){ const d=DRAG.s; if(!d||!d.active)return; const rt=$("#route"), E=56;
+  if(rt&&rt.scrollWidth>rt.clientWidth){const b=rt.getBoundingClientRect(); if(d.x<b.left+E)rt.scrollLeft-=14; else if(d.x>b.right-E)rt.scrollLeft+=14}
+  if(d.y<E)window.scrollBy(0,-14); else if(d.y>window.innerHeight-E)window.scrollBy(0,14);
+  dndMove(); d.raf=requestAnimationFrame(dndTick) }
+function dndCancel(){ const d=DRAG.s; if(!d)return; clearTimeout(d.timer); cancelAnimationFrame(d.raf); if(d.g)d.g.remove(); d.el.classList.remove("dragging"); if(d.over)d.over.classList.remove("over");
+  document.body.classList.remove("dnd"); if(d.active)DRAG.end=Date.now(); DRAG.s=null }
+function dndInit(){
+  document.addEventListener("pointermove",e=>{ const d=DRAG.s; if(!d||e.pointerId!==d.id)return; d.x=e.clientX; d.y=e.clientY;
+    if(!d.active){ const dist=Math.hypot(d.x-d.x0,d.y-d.y0); if(d.touch){if(dist>10)dndCancel()} else if(dist>6)dndStart(); return }
+    e.preventDefault(); dndMove() });
+  document.addEventListener("pointerup",e=>{ const d=DRAG.s; if(!d||e.pointerId!==d.id)return; const key=d.key,from=d.from,to=d.active&&d.over?d.over.dataset.drop:null; dndCancel(); if(to)moveItem(key,from,to) });
+  document.addEventListener("pointercancel",e=>{ if(DRAG.s&&e.pointerId===DRAG.s.id)dndCancel() });
+  document.addEventListener("touchmove",e=>{ if(DRAG.s&&DRAG.s.active)e.preventDefault() },{passive:false});
+  document.addEventListener("contextmenu",e=>{ if(DRAG.s)e.preventDefault() });
+  document.addEventListener("click",e=>{ if(Date.now()-DRAG.end<400){e.preventDefault();e.stopPropagation()} },true);
+  document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&DRAG.s)dndCancel() });
+}
+// one move: a class (or a gen ed spot "slot:N") from one column to another
+function moveItem(key,from,to){ if(!to||to===from)return; const isSlot=key.startsWith("slot:"), i=isSlot?+key.slice(5):-1;
+  const name=isSlot?(slotList()[i]?slotName(slotList()[i]):"Gen ed"):key;
+  if(to==="done"){ if(isSlot)setSlotDone(i,true); else {S.done.add(key);store.set("done",[...S.done])} setPin(key,null); refreshPlan(); toast(name+" marked completed"); return }
+  if(from==="done"){ if(isSlot)setSlotDone(i,false); else {S.done.delete(key);store.set("done",[...S.done])} }
+  setPin(key,to); refreshPlan();
+  const q=(S.lastPlan?.quarters||[]).find(x=>x.key===to), it=q&&q.items.find(x=>isSlot?x.slot&&x.slot.idx===i:x.c===key);
+  toast(it&&it.warn&&it.warn.length?`Moved ${name} to ${tlabel(to)}. ${it.warn[0]}.`:`Moved ${name} to ${tlabel(to)}`) }
+function refreshPlan(){ rerender(); if(S.drawer)renderPanel() }
+function undoMoves(){ const all=S.plan.pins||{}; delete all[pinKey()]; store.set("plan",S.plan); refreshPlan(); toast("Moves undone") }
+// keyboard and screen reader alternative to dragging, shown in the course panel
+function moveSelect(c){ const r=S.lastPlan; if(S.view!=="route"||!r)return""; const q=r.quarters.find(x=>x.items.some(it=>it.c===c));
+  if(!q&&!S.done.has(c))return""; const cur=S.done.has(c)?"done":q.key; const pinned=q&&q.items.find(it=>it.c===c).pinned;
+  const last=r.quarters[r.quarters.length-1]; let [lt,ly]=last?tnext(last.term,last.year):[S.plan.start,S.plan.year]; if(lt==="Su"&&!S.plan.summer)[lt,ly]=tnext(lt,ly);
+  const opts=[...r.quarters.map((x,i)=>[x.key,`${TNAME[x.term]} ${x.year} (quarter ${i+1})`]),[tkey(lt,ly),`${TNAME[lt]} ${ly} (later)`],["done","Completed"]];
+  return`<div class="movepick"><label for="moveTo"><b>Quarter</b></label><select id="moveTo" data-from="${esc(cur)}">${opts.map(([k,l])=>`<option value="${esc(k)}"${k===cur?" selected":""}>${esc(l)}</option>`).join("")}${pinned?`<option value="auto">Let the planner choose</option>`:""}</select></div>` }
+function wireMoveSelect(el){ const m=$("#moveTo",el); if(!m)return; m.onchange=()=>{ const c=S.sel; if(m.value==="auto"){setPin(c,null);refreshPlan();toast("The planner will place "+c);return} moveItem(c,m.dataset.from,m.value) } }
+
+/* ---------- dialogs: start over, completed classes ---------- */
+function dlg(){ let d=$("#dlg"); if(!d){ d=document.createElement("dialog"); d.id="dlg"; d.className="dlg"; document.body.appendChild(d); d.addEventListener("click",e=>{if(e.target===d)d.close("cancel")}) } return d }
+function openStartOver(){ const d=dlg(), n=Object.keys(pinsNow()).length;
+  d.setAttribute("aria-labelledby","soT");
+  d.innerHTML=`<form method="dialog"><div class="dlg-h"><h2 id="soT">Start over?</h2><p>Your majors and universities stay as they are.</p></div>
+   <div class="dlg-b">${n?`<button class="btn ghost bigchoice" value="moves"><b>Undo my moves</b><span>Put the ${n} class${n>1?"es":""} you moved back where the planner placed ${n>1?"them":"it"}. Keeps your completed classes.</span></button>`:""}
+    <button class="btn ghost bigchoice" value="all"><b>Start a new schedule</b><span>Clears completed classes, moved classes, and the starting quarter, placement and credit settings on this device.</span></button></div>
+   <div class="dlg-f"><button class="btn ghost" value="cancel">Cancel</button></div></form>`;
+  d.onclose=()=>{ if(d.returnValue==="moves")undoMoves(); else if(d.returnValue==="all")startNewSchedule() };
+  d.returnValue=""; d.showModal() }
+function startNewSchedule(){ S.done.clear(); store.set("done",[]); S.doneSlots={}; store.set("doneSlots",{});
+  const fresh=JSON.parse(JSON.stringify(PLAN0)); Object.keys(S.plan).forEach(k=>delete S.plan[k]); Object.assign(S.plan,fresh); store.set("plan",S.plan);
+  if(S.drawer)closeDrawer(); renderTrip(); rerender(); window.scrollTo({top:0,behavior:"smooth"}); toast("New schedule started") }
+
+// Completed-classes picker. Works on a copy; nothing changes until Save.
+const normCode=x=>String(x).toUpperCase().replace(/[&\s]/g,"");
+function courseIndex(){ if(courseIndex.m)return courseIndex.m; const m={}; Object.keys(D.courses).forEach(c=>{if(!D.courses[c].hidden)m[normCode(c)]=c}); return courseIndex.m=m }
+// Find EvCC course numbers in transcript text. Lines that show a W, NC, F or 0.0 grade come back unchecked.
+function parseTranscript(text){ const idx=courseIndex(), found=new Map(), other=new Set();
+  const re=/\b([A-Z]{1,5}(?: [A-Z]{1,2})?) ?&? ?(\d{2,3})(?!\d)/g;
+  String(text||"").toUpperCase().replace(/ /g," ").split(/\r?\n/).forEach(line=>{ let m; re.lastIndex=0;
+    while((m=re.exec(line))){ let code=idx[normCode(m[1]+m[2])];
+      if(!code&&m[1].includes(" "))code=idx[normCode(m[1].split(" ").pop()+m[2])];
+      if(!code){ if(/^[A-Z]{2,5}$/.test(m[1])&&+m[2]>=100)other.add(m[0].replace(/\s+/g," ").trim()); continue }
+      const rest=line.slice(m.index+m[0].length).replace(/\b[A-Z]{1,5}(?: [A-Z]{1,2})? ?&? ?\d{2,3}\b[\s\S]*/,"");
+      const fail=/(^|\s)(W|NC|F|0\.0)(?=\s|$)/.test(rest), ip=/\bIN PROGRESS\b|(^|\s)IP(?=\s|$)/.test(rest);
+      const prev=found.get(code); if(!prev)found.set(code,{fail,ip}); else{ if(!fail)prev.fail=false; if(!ip)prev.ip=false } } });
+  return{found,other:[...other]} }
+const PDFJS="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";
+async function pdfText(file){ await loadScript(PDFJS); const lib=window.pdfjsLib; lib.GlobalWorkerOptions.workerSrc=PDFJS.replace("pdf.min.js","pdf.worker.min.js");
+  const pdf=await lib.getDocument({data:new Uint8Array(await file.arrayBuffer())}).promise; const lines=[];
+  for(let n=1;n<=pdf.numPages;n++){ const tc=await (await pdf.getPage(n)).getTextContent(); const rows=[];
+    tc.items.forEach(it=>{ if(!it.str||!it.str.trim())return; const y=it.transform[5], x=it.transform[4]; let r=rows.find(r=>Math.abs(r.y-y)<3); if(!r)rows.push(r={y,parts:[]}); r.parts.push({x,s:it.str}) });
+    rows.sort((a,b)=>b.y-a.y).forEach(r=>lines.push(r.parts.sort((a,b)=>a.x-b.x).map(p=>p.s).join(" ").replace(/\s+/g," "))) }
+  try{pdf.destroy()}catch(e){} return lines.join("\n") }
+function openDonePicker(){
+  const d=dlg(), p=prog(), sls=slotList(p);
+  const st={draft:new Set(S.done), slots:slotDoneSet(p), auto:new Map(), note:"", tab:"pick", q:"", scan:null};
+  const su=statusUnion(); const reqSet=new Set(Object.keys(su).filter(c=>su[c].st!=="prereq"));
+  const num=c=>parseFloat((c.match(/\d+/)||[0])[0]);
+  // marking a class also marks the required classes that must come before it (single-path chains only)
+  const cascade=c=>{ const added=[], stack=[c]; while(stack.length){ const x=stack.pop(); (C(x).prereq?.all||[]).forEach(g=>{ const any=g.any||[]; if(any.length!==1)return; const o=any[0];
+      if(o.alt||!D.courses[o.course]||st.draft.has(o.course)||!reqSet.has(o.course))return; st.draft.add(o.course); st.auto.set(o.course,x); added.push(o.course); stack.push(o.course) }) } return added };
+  const chip=c=>`<button type="button" class="pk" data-pk="${esc(c)}" aria-pressed="${st.draft.has(c)}" title="${esc(c+": "+C(c).title)}"><span class="dot" style="background:${laneColor(laneOf(c))}"></span><b>${esc(c)}</b><small>${esc(C(c).short||C(c).title)}</small></button>`;
+  const list=()=>{ const q=st.q.trim().toUpperCase(), nq=normCode(q);
+    const pool=q?Object.keys(D.courses).filter(c=>!D.courses[c].hidden&&(normCode(c).includes(nq)||String(C(c).title||"").toUpperCase().includes(q)||String(C(c).short||"").toUpperCase().includes(q)))
+      :[...new Set([...Object.keys(su),...st.draft])].filter(c=>D.courses[c]&&!D.courses[c].hidden);
+    const groups=LANES.map(l=>[l,pool.filter(c=>laneOf(c)===l.id).sort((a,b)=>a.split(" ")[0].localeCompare(b.split(" ")[0])||num(a)-num(b))]).filter(g=>g[1].length);
+    return`${st.note?`<div class="pk-note" role="status">${st.note}</div>`:""}
+     ${groups.map(([l,cs])=>`<div class="pk-g"><h3>${esc(l.label)}</h3><div class="chiprow">${cs.map(chip).join("")}</div></div>`).join("")||`<p class="rowt" style="margin:0">No classes match "${esc(st.q)}". This list has the classes in EvCC's Engineering, Computer Science, IT and Advanced Manufacturing programs.</p>`}
+     ${!q&&sls.length?`<div class="pk-g"><h3>General education and electives</h3><p class="rowt">Finished one of these? Tap it so your plan stops saving a spot for it.</p><div class="chiprow">${sls.map((x,i)=>`<button type="button" class="pk" data-ps="${i}" aria-pressed="${st.slots.has(i)}" title="${esc(x.label)}"><span class="dot" style="background:var(--l-gen)"></span><b>${esc(slotName(x))}</b><small>${esc(x.label)}</small></button>`).join("")}</div></div>`:""}` };
+  const scanView=()=>{ const sc=st.scan; if(!sc)return""; if(sc.busy)return`<p class="pk-note" role="status">Reading your transcript…</p>`; if(sc.err)return`<p class="warnbox" role="alert">${esc(sc.err)}</p>`;
+    const items=[...sc.found.entries()];
+    if(!items.length)return`<p class="warnbox" role="status">No EvCC course numbers from these programs were found. If your transcript is a scan or a photo, the page can't read it; paste the text or pick your classes from the list instead.</p>`;
+    return`<p style="margin:0;font-size:.9rem" role="status"><b>Found ${items.length} class${items.length>1?"es":""}</b> from these programs. Uncheck any you didn't pass.</p>
+     <div class="found">${items.map(([c,v])=>`<label class="${v.fail?"flagged":""}"><input type="checkbox" data-fc="${esc(c)}"${v.fail?"":" checked"}><span><b>${esc(c)}</b> ${esc(C(c).title)} ${v.fail?`<small>(shows a W, NC, F or 0.0, so it's unchecked)</small>`:v.ip?`<small>(in progress)</small>`:""}${st.draft.has(c)?` <small>already on your list</small>`:""}</span></label>`).join("")}</div>
+     ${sc.other.length?`<p class="rowt" style="margin:0">Also found ${sc.other.length} other class${sc.other.length>1?"es":""} this planner doesn't track (like ${esc(sc.other.slice(0,3).join(", "))}). Mark finished gen eds under <b>General education and electives</b> in the list.</p>`:""}
+     <div><button type="button" class="btn" id="pkAddFound">Add checked classes</button></div>` };
+  const body=()=>st.tab==="pick"
+    ?`<input type="search" class="pk-search" id="pkQ" value="${esc(st.q)}" placeholder="Search, like MATH 151 or Calculus" aria-label="Search classes" autocomplete="off"><div id="pkList" style="display:grid;gap:14px">${list()}</div>`
+    :`<div class="drop-file" id="pkDrop"><b>Use your unofficial transcript</b><p class="rowt">Choose the PDF (or a text file) from ctcLink, or drop it here. The page finds the course numbers for you.</p>
+       <label class="btn">Choose file<input type="file" id="pkFile" accept=".pdf,.txt,application/pdf,text/plain" class="sr-only"></label></div>
+      <details class="more"><summary>Or paste the text</summary><textarea class="pk-ta" id="pkTa" placeholder="Paste your transcript, or any list like MATH& 151, CHEM& 161, ENGL& 101"></textarea><button type="button" class="btn ghost" id="pkParse">Find my classes</button></details>
+      <div id="pkFound" style="display:grid;gap:10px">${scanView()}</div>
+      <p class="privacy"><b>Private.</b> Your transcript is read inside this browser. It is never uploaded or saved, and the page forgets it when this window closes. Only the classes you add are kept, on this device, until you press Start over.</p>`;
+  const count=()=>{ const n=st.draft.size, g=st.slots.size; return`${n} class${n===1?"":"es"}${g?` and ${g} gen ed spot${g>1?"s":""}`:""} marked completed` };
+  const paint=()=>{ $$("[data-tab]",d).forEach(b=>b.setAttribute("aria-pressed",b.dataset.tab===st.tab)); $("#pkBody",d).innerHTML=body(); $("#pkCount",d).textContent=count(); wire() };
+  const paintList=()=>{ const l=$("#pkList",d); if(l){l.innerHTML=list();wireList()} $("#pkCount",d).textContent=count() };
+  const wireList=()=>{
+    $$("[data-pk]",d).forEach(b=>b.onclick=()=>{ const c=b.dataset.pk;
+      if(st.draft.has(c)){ st.draft.delete(c); st.auto.delete(c); st.note="" }
+      else{ st.draft.add(c); const a=cascade(c); st.note=a.length?`Also checked ${a.map(esc).join(", ")}, since ${a.length>1?"they come":"it comes"} before ${esc(c)}. <button type="button" class="linkish" data-undoauto="${esc(a.join("|"))}">Undo</button>`:"" }
+      paintList(); const nb=$(`[data-pk="${CSS.escape(c)}"]`,d); if(nb)nb.focus({preventScroll:true}) });
+    $$("[data-ps]",d).forEach(b=>b.onclick=()=>{ const i=+b.dataset.ps; st.slots.has(i)?st.slots.delete(i):st.slots.add(i); st.note=""; paintList(); const nb=$(`[data-ps="${i}"]`,d); if(nb)nb.focus({preventScroll:true}) });
+    $$("[data-undoauto]",d).forEach(b=>b.onclick=()=>{ b.dataset.undoauto.split("|").forEach(c=>{st.draft.delete(c);st.auto.delete(c)}); st.note=""; paintList() }) };
+  const runScan=async getText=>{ st.scan={busy:true}; $("#pkFound",d).innerHTML=scanView();
+    try{ const t=await getText(); st.scan=parseTranscript(t) }catch(e){ st.scan={err:"That file couldn't be read. If it's a PDF, try downloading it again, or paste the text instead."} }
+    if(st.tab==="upload"){ $("#pkFound",d).innerHTML=scanView(); wireFound() } };
+  const fromFile=f=>{ if(!f)return; const isPdf=/pdf$/i.test(f.type)||/\.pdf$/i.test(f.name); runScan(()=>isPdf?pdfText(f):f.text()) };
+  const wireFound=()=>{ const b=$("#pkAddFound",d); if(!b)return; b.onclick=()=>{ const add=$$("[data-fc]",d).filter(x=>x.checked).map(x=>x.dataset.fc); add.forEach(c=>st.draft.add(c));
+      st.scan=null; st.tab="pick"; st.q=""; st.note=add.length?`Added ${add.length} class${add.length>1?"es":""} from your transcript. Check the list, then press Save.`:""; paint() } };
+  const wire=()=>{
+    if(st.tab==="pick"){ const q=$("#pkQ",d); q.oninput=()=>{st.q=q.value;st.note="";paintList()}; q.onkeydown=e=>{if(e.key==="Enter")e.preventDefault()}; wireList() }
+    else{ const f=$("#pkFile",d), dz=$("#pkDrop",d); f.onchange=()=>{fromFile(f.files[0]);f.value=""};
+      dz.ondragover=e=>{e.preventDefault();dz.classList.add("over")}; dz.ondragleave=()=>dz.classList.remove("over");
+      dz.ondrop=e=>{e.preventDefault();dz.classList.remove("over");fromFile(e.dataTransfer.files[0])};
+      $("#pkParse",d).onclick=()=>{const t=$("#pkTa",d).value; runScan(async()=>t)}; wireFound() } };
+  d.setAttribute("aria-labelledby","pkT");
+  d.innerHTML=`<form method="dialog"><div class="dlg-h"><h2 id="pkT">Classes you've completed</h2><p>Your plan starts from what's left. Tap the classes you've passed, or let the page read your transcript.</p>
+    <div class="seg" role="group" aria-label="How to add classes"><button type="button" data-tab="pick">Pick from a list</button><button type="button" data-tab="upload">Use my transcript</button></div></div>
+    <div class="dlg-b" id="pkBody"></div>
+    <div class="dlg-f"><span class="count" id="pkCount" aria-live="polite"></span><button class="btn ghost" value="cancel">Cancel</button><button class="btn" value="save">Save</button></div></form>`;
+  $$("[data-tab]",d).forEach(b=>b.onclick=()=>{st.tab=b.dataset.tab;st.note="";paint()});
+  d.onclose=()=>{ const ok=d.returnValue==="save"; st.scan=null; d.innerHTML=""; if(!ok)return;
+    const added=[...st.draft].filter(c=>!S.done.has(c)).length, removed=[...S.done].filter(c=>!st.draft.has(c)).length;
+    S.done=new Set(st.draft); store.set("done",[...S.done]); S.done.forEach(c=>{ if(pinsNow()[c])setPin(c,null) });
+    S.doneSlots[p.id]=[...st.slots].sort((a,b)=>a-b); if(!st.slots.size)delete S.doneSlots[p.id]; store.set("doneSlots",S.doneSlots);
+    [...st.slots].forEach(i=>{ if(pinsNow()["slot:"+i])setPin("slot:"+i,null) });
+    refreshPlan(); toast(added||removed?`Saved. ${S.done.size} completed class${S.done.size===1?"":"es"}.`:"Saved") };
+  d.returnValue=""; paint(); d.showModal(); const q=$("#pkQ",d); if(q&&window.innerWidth>700)q.focus() }
 
 /* ---------- checklist ---------- */
 const FIT={in:"In your EvCC degree",choice:"Fits an EvCC choice",extra:"Not in your EvCC degree"};
@@ -1407,7 +1685,7 @@ async function boot(){
   if(sel&&D.majors[sel.major]){S.major=sel.major;S.majors=(sel.majors||[sel.major]).filter(m=>D.majors[m]&&(S.goal==="work"?!!CAREER(m):!CAREER(m)));if(!S.majors.length)S.majors=[S.goal==="work"?"it-support":"mechanical"];if(!S.majors.includes(S.major))S.major=S.majors[0];S.schools=(sel.schools||[sel.school]).filter(id=>D.schools.find(s=>s.id===id));S.track=sel.track||null}
   S.routeOn=!!store.get("routeOn",false); $("#routeToggle").checked=S.routeOn; applyRouteToggle(false);
   $("#routeToggle").onchange=e=>{S.routeOn=e.target.checked;store.set("routeOn",S.routeOn);applyRouteToggle(true)};
-  S.done=new Set(store.get("done",[])); S.who=store.get("who",{})||{}; S.advisor=false; S.listView=!!store.get("listView",false); S.ckLayout=store.get("ckLayout","sep")==="sbs"?"sbs":"sep"; Object.assign(S.plan,store.get("plan",{}));
+  S.done=new Set(store.get("done",[])); S.who=store.get("who",{})||{}; S.advisor=false; S.listView=!!store.get("listView",false); S.ckLayout=store.get("ckLayout","sep")==="sbs"?"sbs":"sep"; Object.assign(S.plan,store.get("plan",{})); if(!S.plan.pins||typeof S.plan.pins!=="object")S.plan.pins={}; S.doneSlots=store.get("doneSlots",{})||{}; dndInit();
   autoTrack(); fixSchool();
   document.addEventListener("click",e=>{const up=$("#uniPick");if(up&&up.open&&!up.contains(e.target)){up.open=false;S.uniOpen=false}});
   (window.claude&&window.claude.use?window.claude.use("downloads"):Promise.resolve(null)).then(dl=>{DL=dl;S.canDL=!!dl||!window.claude;if(S.view==="checklist")renderChecklist()}).catch(()=>{});
