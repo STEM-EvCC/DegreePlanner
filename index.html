@@ -281,6 +281,10 @@ button.stat:hover{border-color:var(--ink-3)}
 .endcard b{font:700 1.25rem/1.05 var(--f-display)}
 .endcard span{font-size:.8rem;color:var(--ink-2)}
 /* schedule tools: drag and drop, completed classes, start over */
+.plansets{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;background:var(--surface);border:1px solid var(--rule);border-radius:var(--r);padding:10px 14px;margin-top:14px}
+.plansets .ps{display:inline-flex;gap:8px;align-items:center;font-weight:600;font-size:.88rem}
+.plansets select{font:inherit;font-weight:500;padding:5px 8px;border:1px solid var(--rule);border-radius:var(--r);background:var(--bg);color:var(--ink)}
+.plansets .hint{font-size:.8rem;color:var(--ink-3);flex:1 1 220px}
 .routetools{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;padding-top:14px}
 .routetools .hint{font-size:.8rem;color:var(--ink-3);flex:1 1 260px}
 .cc[data-drag]{cursor:grab;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
@@ -461,7 +465,7 @@ table.sbs tr.grp.ex th{background:color-mix(in srgb,var(--warn) 14%,var(--surfac
   :root,:root:not([data-theme="light"]),:root[data-theme="dark"]{--bg:#fff;--surface:#fff;--surface-2:#EEF1F4;--ink:#15212C;--ink-2:#3C4954;--ink-3:#56626D;--rule:#C9D1D9;--accent:#0F5E86;--accent-ink:#fff;--ok:#1E7A4C;--warn:#8A5810;color-scheme:light}
   @page{margin:12mm}
   body{background:#fff!important}
-  header.top,#trip,nav.views,.ck-tools,.majbar,#footMeta,#dataLink,.scrim,.drawer,.toast,.routetools,dialog,.latercol,.dropnote{display:none!important}
+  header.top,#trip,nav.views,.ck-tools,.majbar,#footMeta,#dataLink,.scrim,.drawer,.toast,.routetools,.plansets,dialog,.latercol,.dropnote{display:none!important}
   .wrap{max-width:none;padding:0}
   .ckdoc,.ckdoc .part,.ckdoc ul{display:block!important} /* grid fragments badly across printed pages */
   .ckdoc{border:0;padding:0;max-width:none}
@@ -975,23 +979,27 @@ function buildPlan(){
   const quarters=[]; let term=TERMS.indexOf(P.start), year=P.year, guard=0; const left=new Set(todo);
   const slotQ=slots.map((s,i)=>({...s,idx:i})).filter(s=>!sdone.has(s.idx)&&!pinS[s.idx]);
   const offered=(c,t)=>{const o=C(c).offered;return !o||!o.length||o.includes(t)};
-  const adv=()=>{term=(term+1)%4; if(TERMS[term]==="W")year++};
+  const adv=()=>{term=(term+1)%4; if(TERMS[term]==="W")year++}; let prevQ=new Set();
   while((left.size||slotQ.length||tord(tkey(TERMS[term],year))<=maxPin)&&guard<28){ guard++;
     const t=TERMS[term], k=tkey(t,year), o=tord(k);
     const pc=Object.keys(pinC).filter(c=>pinC[c]===k), ps=Object.keys(pinS).filter(i=>pinS[i]===k).map(Number);
-    if(t==="Su"&&!P.summer&&!pc.length&&!ps.length){adv();continue}
+    if(t==="Su"&&!P.summer&&o!==startOrd&&!pc.length&&!ps.length){adv();continue}
     const cap=t==="Su"?Math.min(P.cap,10):P.cap; const q={term:t,year,key:k,items:[],credits:0};
     const inQ=new Set(); const FIRST=new Set(["STEM 101","COLL 101","ENGL 98","ENGL& 101"]);
     pc.forEach(c=>{q.items.push({c,pinned:true});q.credits+=crNum(c);inQ.add(c);left.delete(c)});
     ps.forEach(i=>{q.items.push({slot:{...slots[i],idx:i},pinned:true});q.credits+=slots[i].credits});
-    const scarce=c=>{const o=C(c).offered;return o&&o.filter(x=>x!=="Su").length<=2?0.75:0};
-    const pri=c=>FIRST.has(c)?100:depth(c)+scarce(c);
+    // skipping a class that isn't offered again for a while costs more: weigh the wait until its next offering
+    const wait=c=>{const o=C(c).offered; if(!o||!o.length)return 0; let k=0,i=TERMS.indexOf(t); for(let n=0;n<8;n++){i=(i+1)%4; if(TERMS[i]==="Su"&&!P.summer)continue; k++; if(o.includes(TERMS[i]))break} return k};
+    const scarce=c=>{const w=wait(c);return w>=3?(w-1)*1.2:w===2?0.75:0};
+    // keep a series together (PHYS& 242 last quarter, PHYS& 243 now) so a student stays with the same group
+    const subj=c=>c.replace(/\s*\d.*$/,""); const series=c=>preEdges(c).some(o=>prevQ.has(o.course)&&subj(o.course)===subj(c))?1.5:0;
+    const pri=c=>FIRST.has(c)?100:depth(c)+scarce(c)+series(c);
     const addCourses=minPri=>{let added=true;while(added){added=false;
       const cand=[...left].filter(c=>!pinC[c]&&offered(c,t)&&prereqMet(c,done,inQ)&&!inQ.has(c)&&pri(c)>=minPri).sort((a,b)=>pri(b)-pri(a)||crNum(b)-crNum(a));
       for(const c of cand){ if(q.credits+crNum(c)<=cap+0.6){q.items.push({c});q.credits+=crNum(c);inQ.add(c);left.delete(c);added=true;break} } }};
     const addSlot=()=>{ if(slotQ.length&&q.credits+slotQ[0].credits<=cap+0.6){const s=slotQ.shift();q.items.push({slot:s});q.credits+=s.credits;return true} return false};
     addCourses(1); addSlot(); addCourses(0); while(q.items.filter(i=>i.slot).length<2&&addSlot());
-    inQ.forEach(c=>done.add(c));
+    inQ.forEach(c=>done.add(c)); prevQ=new Set(inQ);
     if(q.items.length||o<maxPin)quarters.push(q);
     adv();
   }
@@ -1056,15 +1064,14 @@ function renderTrip(){
    ${S.goal==="work"?`<p class="rowt" style="margin:8px 6px 0;font-size:.8rem">Most engineering and computer science jobs need a BS, which means transferring. Choose "transfer and study" for those.</p>`:""}<button class="btn done" type="button" id="majDone">Done</button></div></details>${S.goal==="work"?"":` <span class="w">at</span> <details class="unipick" id="uniPick"${S.uniOpen?" open":""}><summary><span class="sr-only">Universities: </span>${esc(uniPhrase())}</summary><div class="unipop" role="group" aria-label="Choose universities">
    <div class="gl">Offers ${S.majors.length>1?"at least one of your majors":esc(D.majors[S.major])}</div>${offer.map(s=>`<label><input type="checkbox" data-uni="${s.id}"${S.schools.includes(s.id)?" checked":""}><span>${esc(s.short)}</span><small>${esc(s.type==="private"?"private":"public")}</small></label>`).join("")}
    ${rest.length?`<div class="gl">Doesn't list this major</div>${rest.map(s=>`<label style="opacity:.6"><input type="checkbox" data-uni="${s.id}" disabled><span>${esc(s.short)}</span><small></small></label>`).join("")}`:""}
-   <button class="btn done" type="button" id="uniDone">Done</button></div></details>`}${S.routeOn?`<span class="w">, starting</span> <select id="tStart" aria-label="First quarter">${opt([["F","Fall"],["W","Winter"],["Sp","Spring"]],P.start)}</select> <select id="tYear" aria-label="First year">${opt([[2026,"2026"],[2027,"2027"],[2028,"2028"]],P.year)}</select> <span class="w">with math at</span> <select id="tMath" aria-label="Math placement">${opt([["MATH 86","Math 86"],["MATH 96","Math 96"],["MATH& 141","Precalculus I"],["MATH& 142","Precalculus II"],["MATH& 151","Calculus I"],["MATH& 152","Calculus II"],["MATH& 163","Calculus 3"]],P.math)}</select>`:""}<span class="w">.</span></div>
+   <button class="btn done" type="button" id="uniDone">Done</button></div></details>`}${S.routeOn?`<span class="w">, starting</span> <select id="tStart" aria-label="First quarter">${opt([["F","Fall"],["W","Winter"],["Sp","Spring"],["Su","Summer"]],P.start)}</select> <select id="tYear" aria-label="First year">${opt([[2026,"2026"],[2027,"2027"],[2028,"2028"]],P.year)}</select> <span class="w">with math at</span> <select id="tMath" aria-label="Math placement">${opt([["MATH 86","Math 86"],["MATH 96","Math 96"],["MATH& 141","Precalculus I"],["MATH& 142","Precalculus II"],["MATH& 151","Calculus I"],["MATH& 152","Calculus II"],["MATH& 163","Calculus 3"]],P.math)}</select>`:""}<span class="w">.</span></div>
    <div class="trip-meta"><span class="tag">EvCC degree${trackList.length>1?"s":""}</span><span>${trackList.map(p=>`<b>${esc(p.name)}</b> ${esc(p.credential)} · ${p.total} cr${S.advisor?" · "+esc(p.code):""}`).join(" &nbsp;|&nbsp; ")}</span>
     <details class="more" id="moreOpts"${S.moreOpen?" open":""}><summary>More options</summary><div class="more-grid">
      ${tracks.length>1||S.advisor?`<div class="pick"><label for="tTrack">EvCC degree track${S.majors.length>1?" for "+esc(D.majors[S.major]):""}</label><select id="tTrack">${opt(D.programs.filter(p=>tracks.includes(p)||S.advisor&&p.id==="general").map(p=>[p.id,p.name+" ("+p.total+" cr)"]),S.program)}</select></div>`:""}
      ${S.routeOn?`<div class="pick"><label for="pChem">Chemistry</label><select id="pChem">${opt([["CHEM& 140","Start with CHEM& 140"],["CHEM& 161","Place into CHEM& 161"]],P.chem)}</select></div>
      <div class="pick"><label for="pEngl">English</label><select id="pEngl">${opt([["ENGL 98","Start with ENGL 98"],["ENGL& 101","Place into ENGL& 101"]],P.engl)}</select></div>
      <div class="pick"><label for="pPhys">Physics</label><select id="pPhys">${opt([["PHYS& 114","Start with PHYS& 114"],["PHYS& 241","Place into PHYS& 241"]],P.phys)}</select></div>
-     <div class="pick"><label for="pCap">Credits per quarter</label><select id="pCap">${opt([[10,"Up to 10 (part-time)"],[12,"Up to 12"],[15,"Up to 15"],[16,"Up to 16"],[18,"Up to 18"],[20,"Up to 20"]],P.cap)}</select></div>
-     <div class="pick" style="display:grid;gap:8px;align-content:end"><label class="chk"><input type="checkbox" id="pSum"${P.summer?" checked":""}> Take summer classes</label><label class="chk"><input type="checkbox" id="pLater"${P.later?" checked":""}> Add junior-year (*) courses</label></div>`:`<p class="rowt" style="margin:0;align-self:center">Turn on <b>Plan my route</b> for placement and credit-load options.</p>`}
+     <div class="pick" style="display:grid;gap:8px;align-content:end"><label class="chk"><input type="checkbox" id="pLater"${P.later?" checked":""}> Add junior-year (*) courses</label></div>`:`<p class="rowt" style="margin:0;align-self:center">Turn on <b>Plan my route</b> for placement and credit-load options.</p>`}
     </div></details></div>`;
   const after=()=>{save();store.set("plan",P);renderTrip();rerender();if(S.drawer)renderPanel()};
   $$("[data-maj]").forEach(b=>b.onchange=()=>{S.majOpen=true;toggleMajor(b.dataset.maj)});
@@ -1074,7 +1081,7 @@ function renderTrip(){
   if($("#uniDone")){$("#uniDone").onclick=()=>{S.uniOpen=false;$("#uniPick").open=false}; $("#uniPick").ontoggle=e=>{S.uniOpen=e.target.open}}
   $("#tGoal").onchange=e=>setGoal(e.target.value);
   const bind=(id,k,num)=>{const el=$("#"+id);if(el)el.onchange=e=>{P[k]=e.target.type==="checkbox"?e.target.checked:(num?+e.target.value:e.target.value);after()}};
-  bind("tStart","start");bind("tYear","year",1);bind("tMath","math");bind("pChem","chem");bind("pEngl","engl");bind("pPhys","phys");bind("pCap","cap",1);bind("pSum","summer");bind("pLater","later");
+  bind("tStart","start");bind("tYear","year",1);bind("tMath","math");bind("pChem","chem");bind("pEngl","engl");bind("pPhys","phys");bind("pLater","later");
   const tt=$("#tTrack"); if(tt)tt.onchange=e=>{S.track=e.target.value;S.program=S.track;after()};
   $("#moreOpts").ontoggle=e=>{S.moreOpen=e.target.open};
 }
@@ -1087,6 +1094,7 @@ function card(c,opts={}){ const ta=transferAll()[c]||[], st=statusMap()[c], d=S.
    <button class="cd" data-opencourse="${esc(c)}" aria-label="${esc(c+" "+C(c).title+(ta.length?", "+ta.map(t=>t.s.short+": "+CAT[t.cat].l).join("; "):"")+(w.length?". "+w.join(". "):"")+". Show details")}">${esc(c)}</button><button class="tick" data-tick="${esc(c)}" aria-label="${d?"Mark "+esc(c)+" not completed":"Mark "+esc(c)+" completed"}" aria-pressed="${d}">✓</button>
    <span class="tt">${esc(C(c).short||C(c).title)}</span>
    <span class="meta"><span class="crd">${esc(fmtCr(c))} cr</span><span class="stags">${tags}</span>${st==="later"?`<span class="catpill c-degree" title="BS course you can take early">*</span>`:""}${opts.pinned?`<span class="pinned" title="You moved this class here">moved</span>`:""}</span>${w.length?`<span class="warnline">${esc(w.join(". "))}</span>`:""}</div>`}
+const psOpt=(arr,v)=>arr.map(([k,l])=>`<option value="${esc(k)}"${String(k)===String(v)?" selected":""}>${esc(l)}</option>`).join("");
 function slotCard(sl,opts={}){ return`<div class="cc slot" style="--lc:var(--l-gen)"${sl.idx!=null?` data-drag="slot:${sl.idx}"`:""}><span class="cd">${esc(slotName(sl))}</span><span class="crd" style="grid-column:2">${sl.credits} cr</span><span class="tt">${esc(sl.label)}</span>${opts.pinned?`<span class="meta"><span class="pinned" title="You moved this here">moved</span></span>`:""}</div>`}
 function renderRoute(){
   const r=buildPlan(), dp=degreeProgress(), sl=selSchools().filter(x=>schoolProg(x)); planWarnings(r); S.lastPlan=r;
@@ -1106,6 +1114,11 @@ function renderRoute(){
     <div class="stat"><span class="big">${r.quarters.length}</span><span class="lbl">quarters to go<br>${last?`finish ${TNAME[last.term]} ${last.year}`:"all done"}</span></div>
 
    </div>
+   <div class="plansets" role="group" aria-label="Schedule settings">
+     <label class="ps"><span>Start</span><select id="rsStart" aria-label="First quarter">${psOpt([["F","Fall"],["W","Winter"],["Sp","Spring"],["Su","Summer"]],S.plan.start)}</select><select id="rsYear" aria-label="First year">${psOpt([[2026,"2026"],[2027,"2027"],[2028,"2028"]],S.plan.year)}</select></label>
+     <label class="switch"><input type="checkbox" id="rsSum"${S.plan.summer?" checked":""}> Summer classes</label>
+     <label class="ps"><span>Credits per quarter</span><select id="rsCap">${psOpt([[10,"Up to 10 (part-time)"],[12,"Up to 12"],[15,"Up to 15"],[16,"Up to 16"],[18,"Up to 18"],[20,"Up to 20"]],S.plan.cap)}</select></label>
+     ${!S.plan.summer?`<span class="hint">Summer is off. Turn it on to add summer quarters (up to 10 credits each).</span>`:`<span class="hint">Summer quarters are capped at 10 credits.</span>`}</div>
    <div class="routetools"><button class="btn" type="button" data-adddone>+ Add classes I've completed</button><button class="btn ghost" type="button" id="startOver">Start over</button>${nPins?`<button class="linkish" type="button" id="undoMoves">Undo ${nPins} move${nPins>1?"s":""}</button>`:""}
      <span class="hint">Drag a class to another quarter to rearrange your plan, or onto Completed when you finish it. On a phone, press and hold a class, then drag.</span></div>
    <div class="routebar"><div class="legend">${LANES.filter(l=>l.id!=="bio"||S.major==="bioengineering"||S.major==="chemical").map(l=>`<span class="k"><span class="sw" style="border-color:${laneColor(l.id)};background:${laneColor(l.id)}"></span>${l.label}</span>`).join("")}
@@ -1130,6 +1143,9 @@ function renderRoute(){
   $$("[data-gocareers]",app).forEach(b=>b.onclick=()=>setView("careers"));
   $$("[data-open]",app).forEach(b=>b.onclick=()=>{if(b.dataset.sf){S.focus=b.dataset.sf;S.school=S.focus}openDrawer(b.dataset.open)});
   $$("[data-adddone]",app).forEach(b=>b.onclick=openDonePicker);
+  const setP=(k,v)=>{S.plan[k]=v;store.set("plan",S.plan);renderTrip();rerender();if(S.drawer)renderPanel()};
+  $("#rsStart").onchange=e=>setP("start",e.target.value); $("#rsYear").onchange=e=>setP("year",+e.target.value);
+  $("#rsSum").onchange=e=>{setP("summer",e.target.checked);toast(e.target.checked?"Summer quarters added":"Summer quarters removed")}; $("#rsCap").onchange=e=>setP("cap",+e.target.value);
   $("#startOver").onclick=openStartOver; if($("#undoMoves"))$("#undoMoves").onclick=undoMoves;
   $("#allLines").onchange=e=>{S.allLines=e.target.checked;traceRoute()}; wireMajorBar(app);
   dndBind(app); traceRoute();
