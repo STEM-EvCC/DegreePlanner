@@ -1791,7 +1791,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/stem-science-tech-engr-and-math/100/stem-101",
    "year_used": "2026-2027",
-   "short": "College Success in STEM"
+   "short": "College Success in STEM",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "STEM 102": {
    "title": "Equity in STEM",
@@ -1806,7 +1812,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/stem-science-tech-engr-and-math/100/stem-102",
    "year_used": "2026-2027",
-   "short": "Equity in STEM"
+   "short": "Equity in STEM",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "COLL 101": {
    "title": "College Success",
@@ -1821,7 +1833,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/coll-college-success/100/coll-101",
    "year_used": "2026-2027",
-   "short": "College Success"
+   "short": "College Success",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "ENGL 98": {
    "title": "Intro to College Writing",
@@ -1845,7 +1863,13 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/engl-english/90/engl-98",
    "year_used": "2026-2027",
-   "short": "Pre-college English"
+   "short": "Pre-college English",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "ENGL& 101": {
    "title": "English Composition I",
@@ -1875,7 +1899,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "ENGL& 235": {
    "title": "Technical Writing and Research",
@@ -1906,7 +1930,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "MATH& 141": {
    "title": "Precalc I: College Algebra",
@@ -1937,7 +1961,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "MATH& 142": {
    "title": "Precalculus II: Trig",
@@ -1968,7 +1992,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "MATH& 144": {
    "title": "Pre-Calc I & II: Review",
@@ -2021,7 +2045,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "MATH& 152": {
    "title": "Calculus II",
@@ -2051,7 +2075,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "MATH& 163": {
    "title": "Calculus 3",
@@ -2081,7 +2105,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "MATH& 264": {
    "title": "Calculus 4",
@@ -2112,7 +2136,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "MATH 260": {
    "title": "Linear Algebra",
@@ -2143,7 +2167,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "MATH 261": {
    "title": "Differential Equations",
@@ -2178,7 +2202,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "CHEM& 140": {
    "title": "General Chem Prep W/Lab",
@@ -2203,7 +2227,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "CHEM& 161": {
    "title": "General Chemistry I with Lab",
@@ -2243,7 +2267,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "CHEM& 162": {
    "title": "General Chemistry II with Lab",
@@ -2274,7 +2298,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "CHEM& 163": {
    "title": "General Chemistry III with Lab",
@@ -2305,7 +2329,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "CHEM& 261": {
    "title": "Organic Chem W/Lab I",
@@ -2338,10 +2362,9 @@
    "year_used": "2026-2027",
    "short": "Organic Chem I",
    "offered": [
-    "F",
-    "W"
+    "F"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule"
   },
   "CHEM& 262": {
    "title": "Organic Chemistry II with Lab",
@@ -2367,10 +2390,9 @@
    "year_used": "2026-2027",
    "short": "Organic Chem II",
    "offered": [
-    "W",
-    "Sp"
+    "W"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule"
   },
   "CHEM& 263": {
    "title": "Organic Chemistry III with Lab",
@@ -2399,7 +2421,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "BIOL& 221": {
    "title": "Majors Ecology/Evolution",
@@ -2428,7 +2450,7 @@
     "F",
     "W"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule"
   },
   "BIOL& 222": {
    "title": "Majors Cell/Molecular",
@@ -2465,7 +2487,7 @@
     "W",
     "Sp"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule"
   },
   "BIOL& 223": {
    "title": "Majors Organismal Physiology",
@@ -2502,7 +2524,7 @@
     "F",
     "Sp"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule"
   },
   "PHYS& 114": {
    "title": "General Physics I",
@@ -2538,7 +2560,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "PHYS& 241": {
    "title": "Engineering Physics I + Lab (PHYS& 231)",
@@ -2575,9 +2597,9 @@
    "short": "Engr Physics I + Lab",
    "offered": [
     "F",
-    "W"
+    "Sp"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule"
   },
   "PHYS& 231": {
    "title": "Engineering Physics I Lab",
@@ -2594,9 +2616,9 @@
    "year_used": "2026-2027",
    "offered": [
     "F",
-    "W"
+    "Sp"
    ],
-   "offered_src": "dept course list 2021",
+   "offered_src": "2026-27 class schedule",
    "hidden": true
   },
   "PHYS& 242": {
@@ -2631,10 +2653,11 @@
    "year_used": "2026-2027",
    "short": "Engr Physics II + Lab",
    "offered": [
+    "F",
     "W",
     "Sp"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule"
   },
   "PHYS& 232": {
    "title": "Engineering Physics II Lab",
@@ -2650,10 +2673,11 @@
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/phys-physics-ccn/200/phys-232",
    "year_used": "2026-2027",
    "offered": [
+    "F",
     "W",
     "Sp"
    ],
-   "offered_src": "dept course list 2021",
+   "offered_src": "2026-27 class schedule",
    "hidden": true
   },
   "PHYS& 243": {
@@ -2700,10 +2724,10 @@
    "year_used": "2026-2027",
    "short": "Engr Physics III + Lab",
    "offered": [
-    "F",
+    "W",
     "Sp"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule"
   },
   "PHYS& 233": {
    "title": "Engineering Physics III Lab",
@@ -2732,10 +2756,10 @@
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/phys-physics-ccn/200/phys-233",
    "year_used": "2026-2027",
    "offered": [
-    "F",
+    "W",
     "Sp"
    ],
-   "offered_src": "dept course list 2021",
+   "offered_src": "2026-27 class schedule",
    "hidden": true
   },
   "MFG T 103": {
@@ -2751,7 +2775,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mfg-t-manufacturing-technology/100/mfg-t-103",
    "year_used": "2026-2027",
-   "short": "Needed for PHYS& 243 lab"
+   "short": "Needed for PHYS& 243 lab",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "ENGR 111": {
    "title": "Intro Engr I: Model/Analysis",
@@ -2775,7 +2805,7 @@
     "W",
     "Sp"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule"
   },
   "ENGR& 114": {
    "title": "Engineering Graphics",
@@ -2804,7 +2834,7 @@
     "W",
     "Su"
    ],
-   "offered_src": "advising notes W2024"
+   "offered_src": "2026-27 class schedule; summer from advising notes W2024"
   },
   "ENGR 121": {
    "title": "Intro to Engineering 2: Design",
@@ -2856,7 +2886,7 @@
     "W",
     "Sp"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule"
   },
   "CS& 131": {
    "title": "Computer Science I C++",
@@ -2891,7 +2921,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "CS& 141": {
    "title": "Computer Science I Java",
@@ -2926,7 +2956,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "MATH 86": {
    "title": "Essential Intermediate Algebra",
@@ -2950,7 +2980,13 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/math-mathematics/80/math-86",
    "year_used": "2026-2027",
-   "short": "Essential Int. Algebra"
+   "short": "Essential Int. Algebra",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MATH 96": {
    "title": "Intermediate Algebra for Precalculus",
@@ -2974,7 +3010,13 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/math-mathematics/90/math-96",
    "year_used": "2026-2027",
-   "short": "Int. Algebra for Precalc"
+   "short": "Int. Algebra for Precalc",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "CS 110": {
    "title": "Intro to Computer Science",
@@ -2998,7 +3040,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "ENGL& 102": {
    "title": "Composition II",
@@ -3028,7 +3070,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "MATH& 107": {
    "title": "Math In Society",
@@ -3056,7 +3098,13 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/math-mathematics-ccn/100/math-107",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MATH& 146": {
    "title": "Intro to Statistics",
@@ -3086,7 +3134,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "MATH 102": {
    "title": "Algebra for Math in Society",
@@ -3100,7 +3148,13 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/math-mathematics/100/math-102",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "TS 86": {
    "title": "Intermediate Algebra",
@@ -3114,7 +3168,13 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/ts-transitional-studies/80/ts-86",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "TS 98": {
    "title": "Intro/College Essays",
@@ -3128,7 +3188,13 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/ts-transitional-studies/90/ts-98",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "PHIL& 120": {
    "title": "Symbolic Logic",
@@ -3144,7 +3210,13 @@
    ],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/phil-philosophy-ccn/100/phil-120",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "BUS 110": {
    "title": "Business Communications",
@@ -3161,7 +3233,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/bus-business/100/bus-110",
    "year_used": "2026-2027",
-   "menu": true
+   "menu": true,
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "BUS 165": {
    "title": "Found of Leadership & Service",
@@ -3176,7 +3254,12 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/bus-business/100/bus-165",
    "year_used": "2026-2027",
-   "menu": true
+   "menu": true,
+   "offered": [
+    "F",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "CMST& 210": {
    "title": "Interpersonal Communication",
@@ -3193,7 +3276,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/cmst-communication-studies-ccn/200/cmst-210",
    "year_used": "2026-2027",
-   "menu": true
+   "menu": true,
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "CMST& 230": {
    "title": "Small Group Communication",
@@ -3210,7 +3299,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/cmst-communication-studies-ccn/200/cmst-230",
    "year_used": "2026-2027",
-   "menu": true
+   "menu": true,
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "CL 101": {
    "title": "Intro to Computer Applications",
@@ -3224,7 +3319,13 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/cl-computer-literacy/100/cl-101",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "BIOL& 100": {
    "title": "Survey of Biology",
@@ -3248,7 +3349,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021",
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021",
    "menu": true
   },
   "CHEM& 121": {
@@ -3273,7 +3374,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021"
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021"
   },
   "GEOL 102": {
    "title": "Intro to Geological Science I",
@@ -3291,7 +3392,11 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/geol-geology/100/geol-102",
    "year_used": "2026-2027",
-   "menu": true
+   "menu": true,
+   "offered": [
+    "F"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "NUTR& 101": {
    "title": "Nutrition",
@@ -3315,7 +3420,7 @@
     "Sp",
     "Su"
    ],
-   "offered_src": "dept course list 2021",
+   "offered_src": "2026-27 class schedule; summer from dept course list 2021",
    "menu": true
   },
   "BIOL& 232": {
@@ -3355,7 +3460,13 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/biol-biology-ccn/200/biol-232",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MFG T 100": {
    "title": "Success & Safety",
@@ -3369,7 +3480,13 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mfg-t-manufacturing-technology/100/mfg-t-100",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MFG T 101": {
    "title": "Introduction to Machining",
@@ -3392,7 +3509,13 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mfg-t-manufacturing-technology/100/mfg-t-101",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MFG T 104": {
    "title": "Machine Operator 1",
@@ -3406,7 +3529,12 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mfg-t-manufacturing-technology/100/mfg-t-104",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MFG T 105": {
    "title": "Machine Operator 2",
@@ -3429,7 +3557,11 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mfg-t-manufacturing-technology/100/mfg-t-105",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MFG T 107": {
    "title": "Machining with Mastercam",
@@ -3533,7 +3665,11 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mfg-t-manufacturing-technology/100/mfg-t-113",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MFG T 117": {
    "title": "Blueprint Reading & Schematics",
@@ -3547,7 +3683,12 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mfg-t-manufacturing-technology/100/mfg-t-117",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MFG T 229": {
    "title": "Manufacturing Team Project",
@@ -3561,7 +3702,12 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mfg-t-manufacturing-technology/200/mfg-t-229",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MFG T 230": {
    "title": "Mfg Team Project Aerospace",
@@ -3602,7 +3748,11 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/100/eng-t-100",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "ENG T 101": {
    "title": "Technical Problem Solving",
@@ -3666,7 +3816,12 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/100/eng-t-108",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "ENG T 111": {
    "title": "Intro Engineering Tech Design",
@@ -3680,7 +3835,13 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/100/eng-t-111",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "ENG T 185": {
    "title": "Intro to Catia 3DE",
@@ -3707,7 +3868,11 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/100/eng-t-185",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "ENG T 193": {
    "title": "Intermediate CAD W/ Catia 3DE",
@@ -3730,7 +3895,12 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/100/eng-t-193",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "ENG T 194": {
    "title": "Tool Design and Product",
@@ -3776,7 +3946,11 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/100/eng-t-195",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "ENG T 196": {
    "title": "Adv Workbenches with Catia 3DE",
@@ -3822,7 +3996,11 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/200/eng-t-203",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "ENG T 204": {
    "title": "Drafting Using CAD",
@@ -3853,7 +4031,11 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/200/eng-t-204",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "ENG T 205": {
    "title": "Precision, Fits, w/ GD&T",
@@ -3876,7 +4058,11 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/200/eng-t-205",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "ENG T 217": {
    "title": "CAD Design Project",
@@ -3907,7 +4093,11 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/200/eng-t-217",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "ENG T 230": {
    "title": "Mfg Materials and Processes",
@@ -3948,7 +4138,11 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/eng-t-engineering-technology/200/eng-t-259",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "CT 101": {
    "title": "Intro to Composites",
@@ -3962,7 +4156,13 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/ct-composites-technology/100/ct-101",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "CT 102": {
    "title": "Composite Technology 1",
@@ -3976,7 +4176,12 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/ct-composites-technology/100/ct-102",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "CT 145": {
    "title": "Composite Special Projects",
@@ -4026,7 +4231,11 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/ct-composites-technology/200/ct-203",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MECH 118": {
    "title": "Predictive Maintenance",
@@ -4049,7 +4258,12 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mech-mechatronics/100/mech-118",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MECH 119": {
    "title": "Introduction to Robotics",
@@ -4063,7 +4277,13 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mech-mechatronics/100/mech-119",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MECH 120": {
    "title": "Electrical Components",
@@ -4077,7 +4297,11 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mech-mechatronics/100/mech-120",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MECH 121": {
    "title": "Mechanical Components",
@@ -4091,7 +4315,12 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mech-mechatronics/100/mech-121",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MECH 122": {
    "title": "Elec-Pneumatic Ctrl Circuits",
@@ -4105,7 +4334,12 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mech-mechatronics/100/mech-122",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MECH 123": {
    "title": "Digital Fundamentals",
@@ -4128,7 +4362,11 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mech-mechatronics/100/mech-123",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MECH 124": {
    "title": "Controls and Instrumentation",
@@ -4151,7 +4389,11 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mech-mechatronics/100/mech-124",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MECH 219": {
    "title": "Industrial Robotics",
@@ -4188,7 +4430,13 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mech-mechatronics/200/mech-295",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MECH 296": {
    "title": "Mechatronics Internship 2",
@@ -4202,7 +4450,13 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mech-mechatronics/200/mech-296",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "WELD 101": {
    "title": "Introduction to Welding",
@@ -4225,7 +4479,13 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-101",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "WELD 105": {
    "title": "Intro to Fabrication Planning",
@@ -4239,7 +4499,13 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-105",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "WELD 106": {
    "title": "Intro Fabrication Document",
@@ -4253,7 +4519,13 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-106",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "WELD 111": {
    "title": "Basic Layout",
@@ -4267,7 +4539,13 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-111",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "WELD 150": {
    "title": "Blueprint Reading for Industry",
@@ -4281,7 +4559,12 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-150",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "WELD 151": {
    "title": "Carbon Steel Metallurgy",
@@ -4295,7 +4578,11 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-151",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "WELD 152": {
    "title": "Weld Base Mtrls and Processes",
@@ -4309,7 +4596,11 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-152",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "WELD 153": {
    "title": "Non-ferrous Metallurgy",
@@ -4323,7 +4614,11 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-153",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "WELD 160": {
    "title": "Intro Weld Nondestructive Test",
@@ -4337,7 +4632,12 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-160",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "WELD 191": {
    "title": "Basic Arc Welding",
@@ -4351,7 +4651,13 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-191",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "WELD 193": {
    "title": "Basic Pipe Welding",
@@ -4365,7 +4671,13 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-193",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "WELD 194": {
    "title": "Gas Tungsten Arc Welding",
@@ -4379,7 +4691,13 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-194",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "WELD 195": {
    "title": "Gas Metal Arc Welding",
@@ -4393,7 +4711,13 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/100/weld-195",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "WELD 211": {
    "title": "Sheet Metal Fabrication",
@@ -4407,7 +4731,11 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/200/weld-211",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "WELD 214": {
    "title": "Pressbrake/Sub Arc Weld",
@@ -4456,7 +4784,12 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/200/weld-216",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "WELD 217": {
    "title": "Aerospace Sheet Metal Fab",
@@ -4484,7 +4817,12 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/200/weld-225",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "WELD 231": {
    "title": "Welding Capstone",
@@ -4539,7 +4877,11 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/200/weld-231",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "WELD 285": {
    "title": "CNC Plasma/Waterjet Cutting",
@@ -4581,7 +4923,13 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/weld-welding-and-fabrication/200/weld-295",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "ANTH& 206": {
    "title": "Cultural Anthropology",
@@ -4605,7 +4953,13 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/anth-anthropology-ccn/200/anth-206",
    "year_used": "2026-2027",
-   "short": "Cultural Anthro"
+   "short": "Cultural Anthro",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "BIOL 105": {
    "title": "Disease In Modern Society",
@@ -4623,7 +4977,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/biol-biology/100/biol-105",
    "year_used": "2026-2027",
-   "short": "Disease & Society"
+   "short": "Disease & Society",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "BIOL 130": {
    "title": "Marine Biology Pacific NW",
@@ -4641,7 +5001,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/biol-biology/100/biol-130",
    "year_used": "2026-2027",
-   "short": "Marine Biology"
+   "short": "Marine Biology",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "BIOL& 211": {
    "title": "Majors Cellular",
@@ -4682,7 +5048,13 @@
    ],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/biol-biology-ccn/200/biol-211",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "BIOL& 231": {
    "title": "Human Anatomy",
@@ -4745,7 +5117,13 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/biol-biology-ccn/200/biol-231",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "BIOL& 260": {
    "title": "Microbiology",
@@ -4808,7 +5186,13 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/biol-biology-ccn/200/biol-260",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "BOT 113": {
    "title": "Plants of the Pacific NW",
@@ -4826,7 +5210,11 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/bot-botany/100/bot-113",
    "year_used": "2026-2027",
-   "short": "PNW Plants"
+   "short": "PNW Plants",
+   "offered": [
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "BT 219": {
    "title": "Intro to MS Word",
@@ -4840,7 +5228,11 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/bt-business-technology/200/bt-219",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "BT 242": {
    "title": "Excel",
@@ -4863,7 +5255,13 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/bt-business-technology/200/bt-242",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "BUS 130": {
    "title": "Business Computations",
@@ -4880,7 +5278,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/bus-business/100/bus-130",
    "year_used": "2026-2027",
-   "short": "Business Math"
+   "short": "Business Math",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "CHEM& 131": {
    "title": "Intro to Organic/Biochem",
@@ -4918,7 +5322,13 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/chem-chemistry-ccn/100/chem-131",
    "year_used": "2026-2027",
-   "short": "Organic/Biochem"
+   "short": "Organic/Biochem",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "CL 103": {
    "title": "Word Processing",
@@ -4932,7 +5342,13 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/cl-computer-literacy/100/cl-103",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "CL 104": {
    "title": "Spreadsheets",
@@ -4946,7 +5362,13 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/cl-computer-literacy/100/cl-104",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "CMST& 220": {
    "title": "Public Speaking",
@@ -4962,7 +5384,13 @@
    ],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/cmst-communication-studies-ccn/200/cmst-220",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "CMST& 240": {
    "title": "Intercultural Communication",
@@ -4979,7 +5407,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/cmst-communication-studies-ccn/200/cmst-240",
    "year_used": "2026-2027",
-   "short": "Intercultural Comm"
+   "short": "Intercultural Comm",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "EMS 151": {
    "title": "Emergency Med Tech Training",
@@ -5003,7 +5437,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/ems-emergency-services/100/ems-151",
    "year_used": "2026-2027",
-   "short": "EMT Training"
+   "short": "EMT Training",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "EMS 155": {
    "title": "Emergency Medical Technician - Snohomish County Emphasis",
@@ -5036,7 +5476,11 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/geol-geology/100/geol-104",
    "year_used": "2026-2027",
-   "short": "Geol Science II"
+   "short": "Geol Science II",
+   "offered": [
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "GEOL& 103": {
    "title": "Historical Geology",
@@ -5053,7 +5497,11 @@
    ],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/geol-geology-ccn/100/geol-103",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HCM 101": {
    "title": "Intro to Healthcare Careers",
@@ -5068,7 +5516,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hcm-healthcare-management/100/hcm-101",
    "year_used": "2026-2027",
-   "short": "Healthcare Careers"
+   "short": "Healthcare Careers",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HCM 103": {
    "title": "Intro to Admin Medical Office",
@@ -5207,7 +5661,12 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hcm-healthcare-management/100/hcm-180",
    "year_used": "2026-2027",
-   "short": "Medical Insurance"
+   "short": "Medical Insurance",
+   "offered": [
+    "F",
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HCM 181": {
    "title": "Law/Ethics Healthcare Occup",
@@ -5222,7 +5681,12 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hcm-healthcare-management/100/hcm-181",
    "year_used": "2026-2027",
-   "short": "Healthcare Law/Ethics"
+   "short": "Healthcare Law/Ethics",
+   "offered": [
+    "F",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HCM 182": {
    "title": "Medical Reception",
@@ -5236,7 +5700,12 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hcm-healthcare-management/100/hcm-182",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HCM 187": {
    "title": "Electronic Health Records",
@@ -5289,7 +5758,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hcm-healthcare-management/200/hcm-206",
    "year_used": "2026-2027",
-   "short": "Risk Mgmt Intro"
+   "short": "Risk Mgmt Intro",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HCM 207": {
    "title": "Law/Healthcare/Patient Safety",
@@ -5306,7 +5781,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hcm-healthcare-management/200/hcm-207",
    "year_used": "2026-2027",
-   "short": "Patient Safety Law"
+   "short": "Patient Safety Law",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HCM 208": {
    "title": "Healthcare Risk Mgmt/Liability",
@@ -5323,7 +5804,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hcm-healthcare-management/200/hcm-208",
    "year_used": "2026-2027",
-   "short": "Risk Mgmt Liability"
+   "short": "Risk Mgmt Liability",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HLTH 100": {
    "title": "Medical Terminology",
@@ -5340,7 +5827,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hlth-health-science/100/hlth-100",
    "year_used": "2026-2027",
-   "short": "Medical Terminology"
+   "short": "Medical Terminology",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HLTH 102": {
    "title": "Applied A & P",
@@ -5356,7 +5849,13 @@
    ],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hlth-health-science/100/hlth-102",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HLTH 109": {
    "title": "First Aid & Basic Life Support",
@@ -5371,7 +5870,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hlth-health-science/100/hlth-109",
    "year_used": "2026-2027",
-   "short": "First Aid & BLS"
+   "short": "First Aid & BLS",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HLTH 130": {
    "title": "Disease & Pathology",
@@ -5411,7 +5916,13 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hlth-health-science/100/hlth-130",
    "year_used": "2026-2027",
-   "short": "Disease & Pathology"
+   "short": "Disease & Pathology",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HLTH 135": {
    "title": "Admin Skills: Office Management",
@@ -5441,7 +5952,11 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hlth-health-science/100/hlth-135",
    "year_used": "2026-2027",
-   "short": "MA Office Mgmt"
+   "short": "MA Office Mgmt",
+   "offered": [
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HLTH 136": {
    "title": "Admin Skills: Practice Finance",
@@ -5471,7 +5986,12 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hlth-health-science/100/hlth-136",
    "year_used": "2026-2027",
-   "short": "MA Practice Finance"
+   "short": "MA Practice Finance",
+   "offered": [
+    "F",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HLTH 150": {
    "title": "Intercultural Comm in Hlthcare",
@@ -5489,7 +6009,11 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hlth-health-science/100/hlth-150",
    "year_used": "2026-2027",
-   "short": "Intercultural Comm"
+   "short": "Intercultural Comm",
+   "offered": [
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HLTH 160": {
    "title": "Medical Interpreting-Spanish",
@@ -5553,7 +6077,11 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hlth-health-science/200/hlth-205",
    "year_used": "2026-2027",
-   "short": "Medical Law & Ethics"
+   "short": "Medical Law & Ethics",
+   "offered": [
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HLTH 210": {
    "title": "Principles of Pharmacology",
@@ -5593,7 +6121,12 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hlth-health-science/200/hlth-210",
    "year_used": "2026-2027",
-   "short": "Pharmacology"
+   "short": "Pharmacology",
+   "offered": [
+    "F",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HLTH 220": {
    "title": "Phlebotomy Tech Training",
@@ -5654,7 +6187,12 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hlth-health-science/200/hlth-231",
    "year_used": "2026-2027",
-   "short": "MA Surgical Skills"
+   "short": "MA Surgical Skills",
+   "offered": [
+    "F",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HLTH 232": {
    "title": "Clinical Laboratory Skills",
@@ -5685,7 +6223,11 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hlth-health-science/200/hlth-232",
    "year_used": "2026-2027",
-   "short": "MA Lab Skills"
+   "short": "MA Lab Skills",
+   "offered": [
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HLTH 241": {
    "title": "Medication Administration",
@@ -5717,7 +6259,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hlth-health-science/200/hlth-241",
    "year_used": "2026-2027",
-   "short": "Medication Admin"
+   "short": "Medication Admin",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HLTH 242": {
    "title": "Principles of Phlebotomy",
@@ -5749,7 +6297,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hlth-health-science/200/hlth-242",
    "year_used": "2026-2027",
-   "short": "MA Phlebotomy"
+   "short": "MA Phlebotomy",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HLTH 243": {
    "title": "Clinical Skills - Ambulatory",
@@ -5781,7 +6335,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hlth-health-science/200/hlth-243",
    "year_used": "2026-2027",
-   "short": "MA Ambulatory Skills"
+   "short": "MA Ambulatory Skills",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HLTH 251": {
    "title": "Clinical Practicum",
@@ -5820,7 +6380,12 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hlth-health-science/200/hlth-251",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "HP 101": {
    "title": "Coll Success for Health Prof",
@@ -5835,7 +6400,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/hp-health-professions/100/hp-101",
    "year_used": "2026-2027",
-   "short": "College Success (Health)"
+   "short": "College Success (Health)",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MATH 138": {
    "title": "Applied College Algebra",
@@ -5859,7 +6430,13 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/math-mathematics/100/math-138",
    "year_used": "2026-2027",
-   "short": "Applied College Alg"
+   "short": "Applied College Alg",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MATH 76": {
    "title": "Mathematical Literacy",
@@ -5874,7 +6451,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/math-mathematics/70/math-76",
    "year_used": "2026-2027",
-   "short": "Math Literacy"
+   "short": "Math Literacy",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MC 103": {
    "title": "Intro to Admin Med Office",
@@ -5889,7 +6472,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mc-medical-coding/100/mc-103",
    "year_used": "2026-2027",
-   "short": "Intro Med Office"
+   "short": "Intro Med Office",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MC 118": {
    "title": "Health Info/Delivery Systems",
@@ -5917,7 +6506,12 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mc-medical-coding/100/mc-118",
    "year_used": "2026-2027",
-   "short": "Health Info Systems"
+   "short": "Health Info Systems",
+   "offered": [
+    "F",
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MC 120": {
    "title": "Applied Medical Terminology",
@@ -5932,7 +6526,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mc-medical-coding/100/mc-120",
    "year_used": "2026-2027",
-   "short": "Medical Terminology"
+   "short": "Medical Terminology",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MC 137": {
    "title": "Structure/Function Human Body",
@@ -5947,7 +6547,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mc-medical-coding/100/mc-137",
    "year_used": "2026-2027",
-   "short": "Human Body"
+   "short": "Human Body",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MC 143": {
    "title": "Pathophysiology & Pharmacology",
@@ -5983,7 +6589,13 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mc-medical-coding/100/mc-143",
    "year_used": "2026-2027",
-   "short": "Pathophys & Pharm"
+   "short": "Pathophys & Pharm",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MC 147": {
    "title": "Intro to Diagnosis Coding",
@@ -6011,7 +6623,13 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mc-medical-coding/100/mc-147",
    "year_used": "2026-2027",
-   "short": "Diagnosis Coding I"
+   "short": "Diagnosis Coding I",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MC 151": {
    "title": "Intro to Procedure Coding",
@@ -6039,7 +6657,13 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mc-medical-coding/100/mc-151",
    "year_used": "2026-2027",
-   "short": "Procedure Coding I"
+   "short": "Procedure Coding I",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MC 218": {
    "title": "Hlthcare Reimbur/Legal Compli",
@@ -6063,7 +6687,12 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mc-medical-coding/200/mc-218",
    "year_used": "2026-2027",
-   "short": "Reimbursement & Compliance"
+   "short": "Reimbursement & Compliance",
+   "offered": [
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MC 247": {
    "title": "Advanced Diagnosis Coding",
@@ -6087,7 +6716,13 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mc-medical-coding/200/mc-247",
    "year_used": "2026-2027",
-   "short": "Diagnosis Coding II"
+   "short": "Diagnosis Coding II",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MC 251": {
    "title": "Advanced Procedure Coding",
@@ -6111,7 +6746,13 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mc-medical-coding/200/mc-251",
    "year_used": "2026-2027",
-   "short": "Procedure Coding II"
+   "short": "Procedure Coding II",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "MC 280": {
    "title": "Prof Practice Experience",
@@ -6151,7 +6792,12 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/mc-medical-coding/200/mc-280",
    "year_used": "2026-2027",
-   "short": "Coding Practicum"
+   "short": "Coding Practicum",
+   "offered": [
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "NURS 100": {
    "title": "Nursing Assistant",
@@ -6174,7 +6820,12 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/nurs-nursing/100/nurs-100",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "NURS 110": {
    "title": "Nursing Therapeutics I",
@@ -6198,7 +6849,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/nurs-nursing/100/nurs-110",
    "year_used": "2026-2027",
-   "short": "Nursing I"
+   "short": "Nursing I",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "NURS 120": {
    "title": "Nursing Therapeutics II",
@@ -6238,7 +6895,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/nurs-nursing/100/nurs-120",
    "year_used": "2026-2027",
-   "short": "Nursing II"
+   "short": "Nursing II",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "NURS 130": {
    "title": "Nursing Therapeutics III",
@@ -6270,7 +6933,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/nurs-nursing/100/nurs-130",
    "year_used": "2026-2027",
-   "short": "Nursing III"
+   "short": "Nursing III",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "NURS 210": {
    "title": "Nursing Therapeutics IV",
@@ -6310,7 +6979,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/nurs-nursing/200/nurs-210",
    "year_used": "2026-2027",
-   "short": "Nursing IV"
+   "short": "Nursing IV",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "NURS 220": {
    "title": "Nursing Therapeutics V",
@@ -6350,7 +7025,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/nurs-nursing/200/nurs-220",
    "year_used": "2026-2027",
-   "short": "Nursing V"
+   "short": "Nursing V",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "NURS 230": {
    "title": "Nurs/Thera VI-Transition",
@@ -6390,7 +7071,12 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/nurs-nursing/200/nurs-230",
    "year_used": "2026-2027",
-   "short": "Nursing VI"
+   "short": "Nursing VI",
+   "offered": [
+    "F",
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "NUTR 126": {
    "title": "Nutrition in Healthcare I",
@@ -6430,7 +7116,13 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/nutr-nutrition/100/nutr-126",
    "year_used": "2026-2027",
-   "short": "Nutrition in HC I"
+   "short": "Nutrition in HC I",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "NUTR 136": {
    "title": "Nutrition in Healthcare II",
@@ -6462,7 +7154,13 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/nutr-nutrition/100/nutr-136",
    "year_used": "2026-2027",
-   "short": "Nutrition in HC II"
+   "short": "Nutrition in HC II",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "NUTR 216": {
    "title": "Nutrition in Healthcare III",
@@ -6502,7 +7200,13 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/nutr-nutrition/200/nutr-216",
    "year_used": "2026-2027",
-   "short": "Nutrition in HC III"
+   "short": "Nutrition in HC III",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "NUTR 226": {
    "title": "Nutrition in Healthcare IV",
@@ -6542,7 +7246,13 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/nutr-nutrition/200/nutr-226",
    "year_used": "2026-2027",
-   "short": "Nutrition in HC IV"
+   "short": "Nutrition in HC IV",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "PHIL 110": {
    "title": "Social Ethics",
@@ -6556,7 +7266,11 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/phil-philosophy/100/phil-110",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "PHIL 114": {
    "title": "Ethics & Policy Healthcare I",
@@ -6580,7 +7294,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/phil-philosophy/100/phil-114",
    "year_used": "2026-2027",
-   "short": "Healthcare Ethics I"
+   "short": "Healthcare Ethics I",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "PHIL 214": {
    "title": "Ethics/Policy Healthcare II",
@@ -6620,7 +7340,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/phil-philosophy/200/phil-214",
    "year_used": "2026-2027",
-   "short": "Healthcare Ethics II"
+   "short": "Healthcare Ethics II",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "PHIL 215": {
    "title": "Ethics",
@@ -6636,7 +7362,12 @@
    ],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/phil-philosophy/200/phil-215",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "PHIL 234": {
    "title": "Ethics/Policy Healthcare III",
@@ -6676,7 +7407,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/phil-philosophy/200/phil-234",
    "year_used": "2026-2027",
-   "short": "Healthcare Ethics III"
+   "short": "Healthcare Ethics III",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "PHIL 267": {
    "title": "Philosophy of Religion",
@@ -6706,7 +7443,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/phil-philosophy-ccn/100/phil-101",
    "year_used": "2026-2027",
-   "short": "Intro Philosophy"
+   "short": "Intro Philosophy",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "PHIL& 115": {
    "title": "Critical Thinking",
@@ -6720,7 +7463,12 @@
    "eligibility": [],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/phil-philosophy-ccn/100/phil-115",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "PHYS& 115": {
    "title": "General Physics II",
@@ -6759,7 +7507,11 @@
    "eligibility": [],
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/phys-physics-ccn/100/phys-115",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "W"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "PHYS& 116": {
    "title": "General Physics III",
@@ -6795,7 +7547,11 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/phys-physics-ccn/100/phys-116",
    "year_used": "2026-2027",
-   "short": "Gen Physics III"
+   "short": "Gen Physics III",
+   "offered": [
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "PSYC 125": {
    "title": "Psychosocial Issues I",
@@ -6835,7 +7591,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/psyc-psychology/100/psyc-125",
    "year_used": "2026-2027",
-   "short": "Psychosocial I"
+   "short": "Psychosocial I",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "PSYC 215": {
    "title": "Psychosocial Issues II",
@@ -6867,7 +7629,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/psyc-psychology/200/psyc-215",
    "year_used": "2026-2027",
-   "short": "Psychosocial II"
+   "short": "Psychosocial II",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "PSYC 225": {
    "title": "Psychosocial Issues III",
@@ -6907,7 +7675,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/psyc-psychology/200/psyc-225",
    "year_used": "2026-2027",
-   "short": "Psychosocial III"
+   "short": "Psychosocial III",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "PSYC 235": {
    "title": "Psychosocial Issues IV",
@@ -6939,7 +7713,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/psyc-psychology/200/psyc-235",
    "year_used": "2026-2027",
-   "short": "Psychosocial IV"
+   "short": "Psychosocial IV",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "PSYC& 100": {
    "title": "General Psychology",
@@ -6955,7 +7735,13 @@
    ],
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/psyc-psychology-ccn/100/psyc-100",
-   "year_used": "2026-2027"
+   "year_used": "2026-2027",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "PSYC& 200": {
    "title": "Lifespan Psychology",
@@ -6981,7 +7767,13 @@
    "min_grade": "C",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/psyc-psychology-ccn/200/psyc-200",
    "year_used": "2026-2027",
-   "short": "Lifespan Psych"
+   "short": "Lifespan Psych",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "SOC& 101": {
    "title": "Introduction to Sociology",
@@ -6998,7 +7790,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/soc-sociology-ccn/100/soc-101",
    "year_used": "2026-2027",
-   "short": "Intro Sociology"
+   "short": "Intro Sociology",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   },
   "TS 76": {
    "title": "Mathematical Literacy",
@@ -7013,7 +7811,13 @@
    "min_grade": "",
    "url": "https://everettcc.smartcatalogiq.com/en/2026-2027/catalog/courses/ts-transitional-studies/70/ts-76",
    "year_used": "2026-2027",
-   "short": "Math Literacy (TS)"
+   "short": "Math Literacy (TS)",
+   "offered": [
+    "F",
+    "W",
+    "Sp"
+   ],
+   "offered_src": "2026-27 class schedule"
   }
  },
  "programs": [
