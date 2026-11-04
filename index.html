@@ -432,7 +432,7 @@ table.sbs tr.grp.ex th{background:color-mix(in srgb,var(--warn) 14%,var(--surfac
   <header class="top">
     <div class="brand">
       <h1>Degree Planner <span class="proto">Prototype</span></h1>
-      <div class="sub">Everett Community College · Engineering, Computer Science, IT &amp; Advanced Manufacturing courses, prerequisites and transfer requirements</div>
+      <div class="sub">Everett Community College · Engineering, Computer Science &amp; IT courses, prerequisites and transfer requirements</div>
     </div>
     <div class="top-right">
       <label class="switch" title="Build a quarter-by-quarter plan for one major"><input type="checkbox" id="routeToggle"> Plan my route</label>
@@ -932,7 +932,7 @@ function renderTrip(){
   const GL={"civil-mech":"Engineering · Civil & Mechanical MRP","comp-ee":"Engineering · Computer & Electrical MRP","bio-chem":"Engineering · Bioengineering & Chemical MRP","general":"Engineering · General AS-T","cs-dta":"Computer Science · CS DTA/MRP","it-aast":"Information Technology · IT AAS-T / ATA"};
   const groups=S.goal==="work"?[["IT career paths",majorsAll().filter(m=>CAREER(m).area==="it")],["Advanced Manufacturing career paths",majorsAll().filter(m=>CAREER(m).area==="amtec")]].filter(g=>g[1].length):D.programs.map(p=>[GL[p.id]||p.name,majorsAll().filter(m=>tracksFor(m)[0].id===p.id)]).filter(g=>g[1].length);
   const goalSel=`<select id="tGoal" aria-label="Your goal">${opt([["transfer","transfer and study"],["work","go to work in"],["explore","explore my options"]],S.goal)}</select>`;
-  if(S.goal==="explore"){ $("#trip").innerHTML=`<div class="sentence" role="group" aria-label="Your goal"><span class="w">I want to</span> ${goalSel}<span class="w">.</span></div><div class="trip-meta">Not sure yet? Compare Engineering, Computer Science, IT and Advanced Manufacturing below, then pick a goal.</div>`; $("#tGoal").onchange=e=>setGoal(e.target.value); return }
+  if(S.goal==="explore"){ $("#trip").innerHTML=`<div class="sentence" role="group" aria-label="Your goal"><span class="w">I want to</span> ${goalSel}<span class="w">.</span></div><div class="trip-meta">Not sure yet? Compare Engineering, Computer Science and IT below, then pick a goal.</div>`; $("#tGoal").onchange=e=>setGoal(e.target.value); return }
   const trackList=[...new Set(S.majors.map(m=>progFor(m)))];
   $("#trip").innerHTML=`<div class="sentence" role="group" aria-label="Your goal"><span class="w">I want to</span> ${goalSel} <details class="unipick" id="majPick"${S.majOpen?" open":""}><summary><span class="sr-only">${S.goal==="work"?"Career paths":"Majors"}: </span>${esc(majPhrase())}</summary><div class="unipop" role="group" aria-label="Choose majors">
    ${groups.map(([l,ms])=>`<div class="gl">${esc(l)}</div>${ms.map(m=>`<label><input type="checkbox" data-maj="${m}"${S.majors.includes(m)?" checked":""}><span>${esc(D.majors[m])}</span><small>${S.goal==="work"?"":(n=>n+(n===1?" school":" schools"))(D.schools.filter(s=>schoolProg(s,m)).length)}</small></label>`).join("")}`).join("")}
@@ -1308,13 +1308,8 @@ function renderExplore(){
     math:"Math 86 level for the ATA; precalculus or statistics (MATH& 107, 141 or 146) for the AAS-T.",
     leads:"Jobs right after EvCC with a certificate or the ATA, or a BAS or BS later (BAS programs at CWU, Bellevue College and others).",
     degrees:["it-ata","it-aast","it-cert-support","it-cert-networking","it-cert-sysadmin","it-cert-cyber"], start:["STEM 101","STEM 103","IT 161"],
-    acts:[["work",(D.careers||[]).filter(c=>c.area==="it").map(c=>c.id),"See IT career paths"],["transfer",["information-technology","cybersecurity","it-management"],"See IT BAS and BS options"]]},
-   {k:"amtec",t:"Advanced Manufacturing",c:"--l-mfg",what:"Welding, precision machining, composites, mechatronics and CAD design at AMTEC. Hands-on, shop-based and job-ready.",
-    math:"MATH 86 level, or ENG T 101 (Technical Problem Solving), for the ATA degrees. Most certificates need no college math.",
-    leads:"Jobs right after EvCC with a certificate or an ATA. The ATA degrees also connect to BAS programs at CWU and Clover Park Technical College.",
-    degrees:["amt-weld-ata","amt-machining-ata","amt-composites-ata","amt-mechatronics-ata","amt-cad-ata"], start:["MFG T 100","ENG T 111","WELD 101","MECH 119"],
-    acts:[["work",(D.careers||[]).filter(c=>c.area==="amtec").map(c=>c.id),"See advanced manufacturing career paths"]]}];
-  $("#app").innerHTML=`<h2 class="sr-only">Explore</h2><div class="xgrid">${cards.map(x=>`<section class="xcard" style="--xc:var(${x.c})" aria-labelledby="x-${x.k}"><h3 id="x-${x.k}">${x.t}</h3><p>${esc(x.what)}</p>
+    acts:[["work",(D.careers||[]).filter(c=>c.area==="it").map(c=>c.id),"See IT career paths"],["transfer",["information-technology","cybersecurity","it-management"],"See IT BAS and BS options"]]}];
+  $("#app").innerHTML=`<h2 class="sr-only">Explore</h2><div class="xgrid">${cards.filter(x=>x.degrees.some(P)).map(x=>`<section class="xcard" style="--xc:var(${x.c})" aria-labelledby="x-${x.k}"><h3 id="x-${x.k}">${x.t}</h3><p>${esc(x.what)}</p>
      <dl><dt>Math</dt><dd>${esc(x.math)}</dd><dt>Leads to</dt><dd>${esc(x.leads)}</dd>
      <dt>At EvCC</dt><dd>${x.degrees.map(P).filter(Boolean).map(p=>`${esc(p.name)} ${esc(p.credential)} <span class="rowt">(${p.total} cr)</span>`).join("<br>")}</dd>
      <dt>Start with</dt><dd><div class="chiprow">${x.start.filter(c=>D.courses[c]).map(chip).join("")}</div></dd></dl>
@@ -1324,9 +1319,8 @@ function renderExplore(){
     <li><b>Still deciding whether STEM is for you?</b> Take STEM 102. It's a good way to explore STEM fields, and it meets the same engineering degree requirement as ENGR 111.</li>
     <li><b>CS or engineering?</b> If you're drawn to hardware or robots, look at Computer or Electrical Engineering. ENGR 121 also counts toward the CS degree in place of STEM 103.</li>
     <li><b>Any STEM path:</b> take a math class every quarter. Your math placement sets how long the degree takes.</li>
-    <li><b>Not sure which trade?</b> The AMT degrees all start with MFG T 100 and ENG T 111, and include one course each from composites, machining, mechatronics and welding, so you try them all.</li>
     <li><b>Going to work vs. transferring in IT:</b> the ATA and certificates lead straight to jobs; the AAS-T is built for transfer, and both can lead to a BAS later.</li>
-   </ul><p class="rowt">From EvCC's STEM and IT advising guides and the AMTEC program pages in the catalog. Talk with a program advisor before you register.</p></section>`;
+   </ul><p class="rowt">From EvCC's STEM and IT advising guides. Talk with a program advisor before you register.</p></section>`;
   $$("[data-go]").forEach(b=>b.onclick=()=>{ const g=b.dataset.go, ms=b.dataset.ms.split(",").filter(m=>D.majors[m]); S.byGoal[g]=Object.assign({},S.byGoal[g]||{}, {majors:ms,major:ms[0],track:null,schools:(S.byGoal[g]&&S.byGoal[g].schools)||[]}); setGoal(g) });
   $$("[data-goto]",$("#app")).forEach(b=>b.onclick=()=>selectCourse(b.dataset.goto));
 }
@@ -1354,7 +1348,7 @@ function renderCareers(){
      <div><div class="sect-t">Ways to get there at EvCC</div><div class="ladder">${ladder.map((pp,i)=>`${i?'<span class="arr" aria-hidden="true">→</span>':""}<button class="step" data-car="${car.id}" data-track="${pp.id}" aria-pressed="${pp===cur&&car.id===S.major}"><b>${esc(pp.name)}</b><small>${esc(pp.credential)} · ${pp.total} credits${pct(pp)?" · "+pct(pp)+"% done":""}</small></button>`).join("")}<span class="arr" aria-hidden="true">→</span><div class="step later"><b>${car.area==="it"?"BAS or BS later":"BAS later"}</b><small>Options below</small></div></div>
       <p class="rowt" style="margin-top:6px">Certificates stack into the ATA. Pick a step to see its courses on the map, route and checklist.</p>
       ${alt?`<div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center"><span class="rowt">Planning to transfer instead?</span><button class="step" style="flex:0 1 260px" data-car="${car.id}" data-track="${alt.id}" aria-pressed="${alt===cur&&car.id===S.major}"><b>${esc(alt.name)}</b><small>${esc(alt.credential)} · ${alt.total} credits · built for transfer</small></button></div>`:""}</div>
-     <div class="cgrid">${car.certs.length?`<div><h4>Industry certifications</h4><ul class="reqlist">${car.certs.map(ct=>`<li><span class="ck${ct.courses.every(c=>S.done.has(c))?" y":""}">${ct.courses.every(c=>S.done.has(c))?"✓":""}</span><span><b>${esc(ct.name)}</b><div class="chiprow" style="margin-top:4px">${ct.courses.map(chip).join("")}</div>${ct.note?`<div class="rowt">${esc(ct.note)}</div>`:""}</span><span class="cr-sm">${ct.voucher?"voucher":""}</span></li>`).join("")}</ul></div>`:""}
+     <div class="cgrid">${car.certs.length?`<div><h4>Industry certifications</h4><ul class="reqlist">${car.certs.map(ct=>`<li><span class="ck${ct.courses.length&&ct.courses.every(c=>S.done.has(c))?" y":""}">${ct.courses.length&&ct.courses.every(c=>S.done.has(c))?"✓":""}</span><span><b>${esc(ct.name)}</b><div class="chiprow" style="margin-top:4px">${ct.courses.map(chip).join("")}</div>${ct.note?`<div class="rowt">${esc(ct.note)}</div>`:""}</span><span class="cr-sm">${ct.voucher?"voucher":""}</span></li>`).join("")}</ul></div>`:""}
       <div><h4>Pay</h4>${car.soc.map(sc=>payBlock(occ(sc))).join("")||'<p class="rowt">Pay data is being added.</p>'}</div>
       <div><h4>Typical job titles</h4>${titles.length?`<ul style="margin:0;padding-left:18px;font-size:.9rem">${titles.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>`:'<p class="rowt">Coming soon.</p>'}</div></div>
      ${car.area==="it"?`<details class="more"><summary>Keep going later: BAS and BS options (${(D.it_entry||[]).length})</summary><div class="cmp-wrap" style="margin-top:8px;max-height:none"><table class="cmp" style="text-align:left"><thead><tr><th class="rowh" scope="col">Program</th><th scope="col" style="text-align:left">With the ATA</th><th scope="col" style="text-align:left">With the AAS-T</th></tr></thead><tbody>
@@ -1393,7 +1387,7 @@ function fixSchool(){ if(S.goal!=="transfer"){S.schools=[];S.focus="";S.school="
 function save(){ S.byGoal[S.goal]={majors:S.majors.slice(),major:S.major,schools:S.schools.slice(),track:S.track}; store.set("goal",S.goal); store.set("byGoal",S.byGoal); store.set("sel",{majors:S.majors,major:S.major,schools:S.schools,track:S.track}) }
 const GOAL_VIEWS={transfer:["route","map","compare","checklist"],work:["route","map","careers","checklist"],explore:["explore"]};
 function setGoal(g){ save(); S.goal=g; const b=S.byGoal[g]||(g==="work"?{majors:["it-support"],major:"it-support",schools:[],track:null}:{majors:["mechanical"],major:"mechanical",schools:["uw-seattle"],track:null});
-  if(g!=="explore"){S.majors=b.majors.filter(m=>D.majors[m]);S.major=S.majors.includes(b.major)?b.major:S.majors[0];S.schools=(b.schools||[]).slice();S.track=b.track||null;autoTrack();fixSchool()}
+  if(g!=="explore"){S.majors=b.majors.filter(m=>D.majors[m]&&(g==="work"?!!CAREER(m):!CAREER(m)));if(!S.majors.length)S.majors=[g==="work"?"it-support":"mechanical"];S.major=S.majors.includes(b.major)?b.major:S.majors[0];S.schools=(b.schools||[]).slice();S.track=b.track||null;autoTrack();fixSchool()}
   save(); renderTrip(); applyGoal(true) }
 function applyGoal(go){ const vs=GOAL_VIEWS[S.goal]; $$("nav.views button").forEach(b=>{const v=b.dataset.view; b.hidden=!vs.includes(v)||(v==="route"&&!S.routeOn)}); $(".top-right").hidden=S.goal==="explore";
   if(go||!vs.includes(S.view))setView(S.goal==="explore"?"explore":(S.routeOn?"route":"map")) }
