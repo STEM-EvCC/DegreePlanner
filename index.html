@@ -91,6 +91,9 @@ select{width:100%;padding:8px 10px;border-radius:var(--r);border:1px solid var(-
 .tools{display:flex;gap:6px;align-items:center}
 .iconbtn{border:1px solid var(--rule);background:var(--surface);border-radius:var(--r);min-width:32px;height:32px;padding:0 8px;cursor:pointer;font-weight:600;font-size:.85rem}
 .iconbtn[aria-pressed="true"]{background:var(--surface-2);border-color:var(--ink-3)}
+.mapview{display:inline-flex;border:1px solid var(--rule);border-radius:var(--r);padding:2px;gap:2px;background:var(--surface);vertical-align:middle}
+.mapview button{border:0;background:none;border-radius:4px;height:26px;padding:0 12px;font-weight:600;font-size:.85rem;color:var(--ink-2);cursor:pointer}
+.mapview button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
 .mapscroll{overflow:auto;max-height:78vh;-webkit-overflow-scrolling:touch}
 .mapcap{font-size:.8rem;color:var(--ink-3);padding:8px 12px;border-top:1px solid var(--rule)}
 
@@ -682,6 +685,7 @@ function computeLayout(){
 
 /* ---------- rendering: map ---------- */
 function wrapTitle(t,max=22){const w=String(t).split(/\s+/);const lines=[""];w.forEach(x=>{const cur=lines[lines.length-1];if((cur+" "+x).trim().length>max&&cur)lines.push(x);else lines[lines.length-1]=(cur+" "+x).trim()});if(lines.length>2){lines.length=2;lines[1]=lines[1].replace(/\s*\S*$/,"")+"…"}return lines}
+function setListView(v){ S.listView=v; store.set("listView",v); renderMap() }
 function renderMap(){
   const app=$("#app");
   app.innerHTML=`<h2 class="sr-only">Course map</h2><div class="layout">
@@ -689,9 +693,9 @@ function renderMap(){
     <div class="maptools">
       <div class="legend" id="legend"></div>
       <div class="tools">
-        <button class="iconbtn" id="listBtn" aria-pressed="${!!S.listView}" title="Show the courses as a table">List</button>
-        <button class="iconbtn" id="onlyBtn" aria-pressed="${S.hl}" title="Grey out courses your chosen majors don't need">Grey out others</button>
-        <button class="iconbtn" id="zOut" aria-label="Zoom out">−</button><button class="iconbtn" id="zIn" aria-label="Zoom in">+</button>
+        <span class="mapview" role="group" aria-label="Show courses as"><button type="button" data-mv="map" aria-pressed="${!S.listView}">Map</button><button type="button" data-mv="list" aria-pressed="${!!S.listView}">List</button></span>
+        <button class="iconbtn" id="onlyBtn" aria-pressed="${S.hl}" title="Grey out courses your chosen majors don't need"${S.listView?" hidden":""}>Grey out others</button>
+        <span id="zoomBtns"${S.listView?" hidden":""}><button class="iconbtn" id="zOut" aria-label="Zoom out">−</button> <button class="iconbtn" id="zIn" aria-label="Zoom in">+</button></span>
       </div>
     </div>
     <div class="mapscroll" id="mapscroll"${S.listView?" hidden":""}></div><div id="maplist"${S.listView?"":" hidden"}></div>
@@ -699,7 +703,7 @@ function renderMap(){
    </div>
   </div>`;
   drawSVG(); renderLegend(); if(S.listView)renderList();
-  $("#listBtn").onclick=()=>{S.listView=!S.listView;store.set("listView",S.listView);$("#listBtn").setAttribute("aria-pressed",S.listView);$("#mapscroll").hidden=S.listView;$("#maplist").hidden=!S.listView;if(S.listView)renderList()};
+  $$("[data-mv]").forEach(b=>b.onclick=()=>setListView(b.dataset.mv==="list"));
   $("#onlyBtn").onclick=()=>{S.hl=!S.hl;$("#onlyBtn").setAttribute("aria-pressed",S.hl);paint()};
   $("#zIn").onclick=()=>{S.zoom=Math.min(1.6,S.zoom+.15);sizeSVG()}; $("#zOut").onclick=()=>{S.zoom=Math.max(.5,S.zoom-.15);sizeSVG()};
 }
