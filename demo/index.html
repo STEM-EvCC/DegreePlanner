@@ -466,6 +466,59 @@ table.sbs tr.grp.ex th{background:color-mix(in srgb,var(--warn) 14%,var(--surfac
 .qrstrip{display:grid;gap:8px}
 .qrcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
 @media (max-width:560px){.unicard .qrcard.inline{float:none;margin:0 0 8px;flex-direction:row;align-items:center;text-align:left;max-width:none}.qrcard .qr{width:88px;height:88px}}
+/* transfer map */
+.tm{display:grid;gap:10px;padding-block:14px 30px}
+.tm-head{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between}
+.tm-sum{margin:0;font-size:.95rem;color:var(--ink-2)}.tm-sum b{color:var(--ink)}
+.tm-tools{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:.85rem}
+.tm-tools select{border:1px solid var(--rule);background:var(--surface);border-radius:var(--r);padding:5px 8px}
+.tm-tools label{display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+.tm-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,360px);gap:12px;align-items:start}
+.tm-mapbox{position:relative;isolation:isolate}
+.tm-map{height:clamp(360px,64vh,580px);border:1px solid var(--rule);border-radius:var(--r);background:var(--surface-2);overflow:hidden}
+.tm-map .leaflet-container,.tm-map.leaflet-container{font:inherit;background:var(--surface-2)}
+.tm-map .leaflet-tile-pane{filter:saturate(.4) brightness(1.03)}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .tm-map .leaflet-tile-pane{filter:invert(.92) hue-rotate(180deg) saturate(.35) brightness(.95)} }
+:root[data-theme="dark"] .tm-map .leaflet-tile-pane{filter:invert(.92) hue-rotate(180deg) saturate(.35) brightness(.95)}
+.tm-map .leaflet-bar a{background:var(--surface);color:var(--ink);border-color:var(--rule)}
+.tm-map .leaflet-control-attribution{background:color-mix(in srgb,var(--surface) 85%,transparent);color:var(--ink-3);font-size:.68rem}
+.tm-map .leaflet-control-attribution a{color:var(--accent)}
+.tm-zoom{position:absolute;top:10px;right:10px;z-index:800;display:flex;gap:6px}
+.tm-zoom .btn{padding:5px 9px;font-size:.78rem;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.tm-ic{background:none;border:0}
+.tm-ic:focus{outline:none}.tm-ic:focus-visible .tm-pin,.tm-ic:focus-visible .tm-cl{outline:3px solid var(--focus);outline-offset:2px}
+.tm-pin{display:flex;align-items:center;justify-content:center;width:100%;height:100%;border-radius:12px;font:700 11px/1 var(--f-mono);letter-spacing:.02em;white-space:nowrap;background:var(--surface);color:var(--accent);border:2px solid var(--accent);box-shadow:0 1px 3px rgba(0,0,0,.35);cursor:pointer}
+.tm-pin.on{background:var(--accent);color:var(--accent-ink)}
+.tm-pin.off{background:var(--surface-2);color:var(--ink-3);border:1.5px dashed var(--ink-3);box-shadow:none}
+.tm-pin.home{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tm-pin.sel{outline:3px solid var(--focus);outline-offset:1px}
+.tm-cl{display:flex;align-items:center;justify-content:center;width:100%;height:100%;border-radius:999px;background:var(--surface);color:var(--ink);border:2px solid var(--accent);font:700 12px/1 var(--f-mono);box-shadow:0 1px 4px rgba(0,0,0,.35);cursor:pointer;white-space:nowrap}
+.tm-cl.on{background:color-mix(in srgb,var(--accent) 24%,var(--surface));border-width:3px}
+.tm-cl.off{border:1.5px dashed var(--ink-3);color:var(--ink-3);box-shadow:none}
+.tm-cl.home{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tm-mini{display:inline-flex;width:auto;min-width:46px;height:22px;padding:0 6px;box-shadow:none;cursor:inherit}
+.tm-mini-cl{display:inline-flex;width:24px;height:24px;box-shadow:none;cursor:inherit}
+.tm-fail{margin:12px}
+.tm-side{background:var(--surface);border:1px solid var(--rule);border-radius:var(--r);padding:12px;max-height:clamp(360px,64vh,580px);overflow:auto}
+.tm-list{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:2px}
+.tm-item{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;width:100%;text-align:left;background:none;border:1px solid transparent;border-radius:var(--r);padding:6px 8px;cursor:pointer}
+.tm-item:hover{background:var(--surface-2)}
+.tm-item[aria-current="true"]{border-color:var(--focus);background:var(--surface-2)}
+.tm-item b{display:block;font-size:.9rem;line-height:1.25}
+.tm-item small{display:block;font-size:.75rem;color:var(--ink-3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tm-item .tm-mi{font:500 .75rem/1 var(--f-mono);color:var(--ink-3);white-space:nowrap}
+.tm-item.off b{color:var(--ink-3);font-weight:500}
+.tm-det{display:grid;gap:6px}
+.tm-det h3{font:700 1.45rem/1.1 var(--f-display);letter-spacing:.01em;margin:2px 0 0}
+.tm-det h3:focus{outline:none}
+.tm-eye{font:600 .7rem/1.2 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.tm-prog{border-top:1px solid var(--rule);padding-top:10px;margin-top:6px;display:grid;gap:5px;font-size:.88rem}
+.tm-prog p{margin:0}
+.tm-prog .kv{margin:0}
+.tm-acts{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+.tm-legend{gap:6px 16px}.tm-legend .k{display:inline-flex;gap:6px;align-items:center}
+@media (max-width:860px){ .tm-grid{grid-template-columns:1fr} .tm-side{max-height:none} .tm-map{height:min(62vh,440px)} }
+@media print{ .tm-mapbox,.tm-tools{display:none} .tm-grid{grid-template-columns:1fr} .tm-side{max-height:none;border:0} }
 @media print{
   :root,:root:not([data-theme="light"]),:root[data-theme="dark"]{--bg:#fff;--surface:#fff;--surface-2:#EEF1F4;--ink:#15212C;--ink-2:#3C4954;--ink-3:#56626D;--rule:#C9D1D9;--accent:#0F5E86;--accent-ink:#fff;--ok:#1E7A4C;--warn:#8A5810;color-scheme:light}
   @page{margin:12mm}
@@ -513,6 +566,7 @@ table.sbs tr.grp.ex th{background:color-mix(in srgb,var(--warn) 14%,var(--surfac
     <button data-view="map" aria-current="page">Course map</button>
     <button data-view="compare">Compare universities</button>
     <button data-view="careers" hidden>Career paths</button>
+    <button data-view="tmap">Transfer map</button>
     <button data-view="checklist">Checklist</button>
     <button data-view="explore" hidden>Explore</button>
   </nav>
@@ -1693,6 +1747,139 @@ function renderCareers(){
   $$("[data-goto]",app).forEach(b=>b.onclick=()=>selectCourse(b.dataset.goto));
 }
 
+/* ---------- transfer map ---------- */
+/* Main-campus points, close to a city block. A school in the data can override its point with "lat" and "lng". */
+const CAMPUS={"evcc":[47.9998,-122.2068],"wsu-everett":[47.9962,-122.2027],"uw-seattle":[47.6553,-122.3035],"uw-bothell":[47.7589,-122.1906],"cascadia":[47.7614,-122.1931],
+ "uw-tacoma":[47.2454,-122.4383],"wwu":[48.7343,-122.4867],"whatcom":[48.7935,-122.4880],"seattle-u":[47.6101,-122.3172],"spu":[47.6496,-122.3615],
+ "seattle-central":[47.6164,-122.3216],"north-seattle":[47.6989,-122.3324],"cityu":[47.6181,-122.3462],"shoreline":[47.7464,-122.3567],"edmonds":[47.8168,-122.3303],
+ "bellevue-college":[47.5852,-122.1478],"lwtech":[47.7046,-122.1663],"northwest-u":[47.6618,-122.1958],"renton-tc":[47.4888,-122.1806],"skagit":[48.4381,-122.3108],
+ "olympic":[47.5733,-122.6302],"wsu-bremerton":[47.5752,-122.6278],"saint-martins":[47.0410,-122.7958],"plu":[47.1453,-122.4440],"tacoma-cc":[47.2454,-122.5277],
+ "clover-park":[47.1738,-122.5144],"wsu-vancouver":[45.7336,-122.6363],"cwu":[47.0034,-120.5398],"wsu-tri-cities":[46.3283,-119.2650],"columbia-basin":[46.2584,-119.1196],
+ "wsu-pullman":[46.7319,-117.1542],"wsu-spokane":[47.6614,-117.4058],"gonzaga":[47.6670,-117.4022],"ewu":[47.4907,-117.5847]};
+const EVCC={id:"evcc",name:"Everett Community College",campus:"Everett",short:"EvCC",abbr:"EvCC",type:"public",location:"Everett, WA",programs:[]};
+const TM_VIEWS={near:[[47.0,-122.85],[48.85,-121.85]],all:[[45.6,-124.7],[49.0,-116.95]]};
+const LEAF="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/", MCL="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/";
+function loadCss(href){ if(!document.querySelector(`link[href="${href}"]`)){const l=document.createElement("link");l.rel="stylesheet";l.href=href;document.head.appendChild(l)} }
+let LEAFP=null; const leafLib=()=>LEAFP||(LEAFP=(loadCss(LEAF+"leaflet.css"),loadCss(MCL+"MarkerCluster.css"),loadScript(LEAF+"leaflet.js")).then(()=>loadScript(MCL+"leaflet.markercluster.js")).then(()=>{if(!window.L||!window.L.markerClusterGroup)throw new Error("map");return window.L}).catch(e=>{LEAFP=null;throw e}));
+const TM={map:null,el:null,cl:null,key:"",mk:{},rows:[]};
+const schoolById=id=>D.schools.find(s=>s.id===id)||(id==="evcc"?EVCC:null);
+const geoOf=s=>s?(s.lat!=null&&s.lng!=null?[+s.lat,+s.lng]:CAMPUS[s.id]||null):null;
+function milesTo(p){ if(!p)return null; const r=x=>x*Math.PI/180,a=CAMPUS.evcc,dl=r(p[0]-a[0]),dn=r(p[1]-a[1]),h=Math.sin(dl/2)**2+Math.cos(r(a[0]))*Math.cos(r(p[0]))*Math.sin(dn/2)**2; return 2*3958.8*Math.asin(Math.sqrt(h)) }
+const goalName=m=>CAREER(m)?CAREER(m).name:(D.majors[m]||m);
+const schoolTitle=s=>s.name+(s.campus&&D.schools.filter(x=>x.name===s.name).length>1?", "+s.campus:"");
+// every school with a program for the student's majors (transfer) or a next step after their career path (work)
+function tmRows(){
+  const rows=new Map(), add=(s,it)=>{ if(!s)return; const r=rows.get(s.id)||{s,items:[],match:true}; const old=r.items.find(x=>x.label===it.label);
+    if(old){ if(!old.majors.includes(it.major))old.majors.push(it.major) } else r.items.push(Object.assign({majors:[it.major]},it)); rows.set(s.id,r) };
+  if(S.goal==="work"){
+    S.majors.map(CAREER).filter(Boolean).forEach(car=>{
+      (car.next||[]).forEach(n=>add(schoolById(n.school),{major:car.id,label:n.program,url:n.url,note:n.note}));
+      if(car.area==="it")(D.it_entry||[]).forEach(e=>{ const m=/^([a-z-]+(?: \/ [a-z-]+)*) (.+)$/.exec(e.program||""); if(!m)return; const label=m[2].replace(/^app-dev BAS$/,"BAS in application development");
+        m[1].split(" / ").forEach(id=>{const s=schoolById(id); add(s,{major:car.id,label,url:s&&s.website,note:"With the IT ATA: "+e.ata+". With the IT AAS-T: "+e.aas_t+"."})}) }) });
+  } else {
+    D.schools.forEach(s=>S.majors.forEach(m=>{ const sp=schoolProg(s,m); if(sp)add(s,{major:m,label:sp.degree,url:uniUrl(s,sp),adm:sp.admission||{}}) }));
+    if(S.tmAll)D.schools.forEach(s=>{ if(s.programs.length&&!rows.has(s.id))rows.set(s.id,{s,items:[],match:false}) });
+  }
+  return [...rows.values()].filter(r=>!S.tmType||S.tmType==="all"||r.s.type===S.tmType).map(r=>{ const pt=geoOf(r.s); return Object.assign(r,{pt,mi:milesTo(pt),on:S.goal!=="work"&&S.schools.includes(r.s.id)}) })
+    .sort((a,b)=>(b.match-a.match)||((a.mi??1e9)-(b.mi??1e9))||a.s.short.localeCompare(b.s.short));
+}
+const tmCls=r=>(r.s.id==="evcc"?" home":r.on?" on":r.match?"":" off")+(S.tmSel===r.s.id?" sel":"");
+const tmLabel=r=>(r.on?"★ ":"")+(r.s.abbr||r.s.short);
+const tmMiles=r=>r.s.id==="evcc"?"here":r.mi==null?"":r.mi<1?"<1 mi":Math.round(r.mi)+" mi";
+function tmAbout(r){ if(r.s.id==="evcc")return"You're here: this program is at EvCC."; if(r.mi==null)return""; if(r.mi<1)return"Next door to EvCC."; return`About ${Math.round(r.mi)} miles from EvCC (straight line).` }
+function renderTmap(){
+  const app=$("#app"), work=S.goal==="work";
+  if(!$("#tmWrap")){
+    app.innerHTML=`<h2 class="sr-only">${work?"Next steps map":"Transfer map"}</h2><div class="tm" id="tmWrap">
+     <div class="tm-head"><p class="tm-sum" id="tmSum" aria-live="polite"></p><div class="tm-tools">
+      <label>Show <select id="tmType" aria-label="Kind of school"><option value="all">public and private schools</option><option value="public">public schools only</option><option value="private">private schools only</option></select></label>
+      ${work?"":`<label><input type="checkbox" id="tmAll"> Show every school in the planner</label>`}</div></div>
+     <div class="tm-grid"><div class="tm-mapbox"><div class="tm-map" id="tmMap" role="region" aria-label="Map of schools in Washington. The list next to it has the same schools."></div>
+       <div class="tm-zoom" role="group" aria-label="Map area"><button class="btn ghost" type="button" data-tz="near">Puget Sound</button><button class="btn ghost" type="button" data-tz="all">All of Washington</button></div></div>
+      <aside class="tm-side" id="tmSide" aria-label="Schools"></aside></div>
+     <div class="legend tm-legend" id="tmLegend"></div>
+     <p class="rowt">${work?"BAS and BS programs that EvCC's catalog or the school itself lists for this path. Several run online, so check each note. ":"Requirements, deadlines and GPA come from each school's own pages. Compare universities and the Checklist show the courses. "}Pins sit on each main campus; miles are straight-line distances from EvCC's Everett campus.</p></div>`;
+    $("#tmType").value=S.tmType||"all"; $("#tmType").onchange=e=>{S.tmType=e.target.value;store.set("tmType",S.tmType);tmRefresh()};
+    if($("#tmAll")){ $("#tmAll").checked=!!S.tmAll; $("#tmAll").onchange=e=>{S.tmAll=e.target.checked;store.set("tmAll",S.tmAll);tmRefresh()} }
+    $$("[data-tz]",app).forEach(b=>b.onclick=()=>{ if(TM.map)TM.map.flyToBounds(TM_VIEWS[b.dataset.tz],{padding:[20,20],duration:.6}) });
+  }
+  tmRefresh();
+}
+function tmRefresh(){
+  const rows=TM.rows=tmRows(), work=S.goal==="work", n=rows.filter(r=>r.match).length, on=rows.filter(r=>r.on).length;
+  if(S.tmSel&&!rows.some(r=>r.s.id===S.tmSel))S.tmSel="";
+  const what=work?esc(majPhrase()):S.majors.length>1?"at least one of your majors":esc(D.majors[S.major]);
+  $("#tmSum").innerHTML=n?(work?`<b>${n} ${n===1?"school":"schools"}</b> offer a next step after ${what}.`:`<b>${n} ${n===1?"school offers":"schools offer"}</b> ${what}.${on?` <b>★ ${on}</b> on your list.`:""}`)
+    :`No schools in the data list ${what}${S.tmType&&S.tmType!=="all"?" with this filter":""} yet.`;
+  $("#tmLegend").innerHTML=`<span class="k"><span class="tm-pin tm-mini home">EvCC</span>You start here</span>${work?"":`<span class="k"><span class="tm-pin tm-mini on">★ UWS</span>On your list</span>`}<span class="k"><span class="tm-pin tm-mini">WWU</span>${work?"Offers a next step":"Offers your major"}</span>${S.tmAll&&!work?`<span class="k"><span class="tm-pin tm-mini off">GU</span>Doesn't list your major</span>`:""}<span class="k"><span class="tm-cl tm-mini-cl">3</span>Schools close together: click or zoom in</span>`;
+  tmSide(); tmDraw();
+}
+function tmSide(focus){
+  const side=$("#tmSide"); if(!side)return; const rows=TM.rows, work=S.goal==="work", r=rows.find(x=>x.s.id===S.tmSel);
+  if(r){ const s=r.s;
+    side.innerHTML=`<div class="tm-det"><div><button class="linkish" type="button" id="tmBack">← All schools</button></div>
+     <div class="tm-eye">${esc([s.location,s.type==="private"?"Private":"Public"].filter(Boolean).join(" · "))}</div>
+     <h3 id="tmDetH" tabindex="-1">${esc(schoolTitle(s))}</h3><p class="rowt" style="font-size:.82rem">${esc(tmAbout(r))}</p>
+     ${r.items.map(it=>{const a=it.adm||{}; return`<div class="tm-prog"><b>${esc(it.label)}</b>${S.majors.length>1||work?`<div class="rowt">For ${esc(it.majors.map(goalName).join(", "))}</div>`:""}
+       ${a.model||a.deadlines||a.min_gpa||a.start_terms?`<dl class="kv">${a.model?`<dt>Admission</dt><dd>${esc(a.model)}</dd>`:""}${a.deadlines?`<dt>Deadline</dt><dd>${esc(a.deadlines)}</dd>`:""}${a.start_terms?`<dt>Starts</dt><dd>${esc(a.start_terms)}</dd>`:""}${a.min_gpa?`<dt>GPA</dt><dd>${esc(a.min_gpa)}</dd>`:""}</dl>`:""}
+       ${it.note?`<p>${esc(it.note)}</p>`:""}<div class="tm-acts">${it.url?`<a href="${esc(it.url)}" target="_blank" rel="noopener">Program page ↗</a>`:""}${work?"":`<button class="linkish" type="button" data-tmcmp="${esc(it.majors[0])}">Compare courses →</button>`}</div></div>`}).join("")}
+     ${r.match?"":`<p class="empty">${esc(s.short)} doesn't list ${S.majors.length>1?"any of your majors":esc(D.majors[S.major])} in this data.</p>${s.website?`<p><a href="${esc(s.website)}" target="_blank" rel="noopener">${esc(s.short)} website ↗</a></p>`:""}`}
+     ${!work&&r.match?`<div class="tm-acts" style="margin-top:8px"><button class="btn${r.on?"":" ghost"}" type="button" data-tmlist="${esc(s.id)}" aria-pressed="${r.on}">${r.on?"★ On your list":"Add to your list"}</button></div>`:""}</div>`;
+    $("#tmBack").onclick=()=>tmSelect("",true);
+    $$("[data-tmlist]",side).forEach(b=>b.onclick=()=>{ if(r.on&&S.schools.length===1){toast("Keep at least one school on your list");return} toggleSchool(b.dataset.tmlist); const nb=$("[data-tmlist]",side); if(nb)nb.focus() });
+    $$("[data-tmcmp]",side).forEach(b=>b.onclick=()=>{ S.major=b.dataset.tmcmp; S.track=null; autoTrack(); syncFocusSchoolForMajor(); save(); renderTrip(); setView("compare") });
+    if(focus)$("#tmDetH").focus({preventScroll:true});
+    return }
+  if(!rows.length){ side.innerHTML=`<p class="empty">${S.goal==="work"?"No next steps are listed yet for this path.":"Try another major, or turn on \"Show every school in the planner\"."}</p>`; return }
+  const grp=r=>!r.match?"Doesn't list your "+(S.majors.length>1?"majors":"major"):r.mi==null?"Location not on the map":r.mi<=30?"Within 30 miles of EvCC":r.pt[1]<-121.3?"Western Washington":"Central and eastern Washington";
+  const groups=[]; rows.forEach(r=>{ const g=grp(r); let G=groups.find(x=>x[0]===g); if(!G)groups.push(G=[g,[]]); G[1].push(r) });
+  const ORD=["Within 30 miles of EvCC","Western Washington","Central and eastern Washington","Location not on the map"]; const ord=g=>{const i=ORD.indexOf(g);return i<0?99:i}; groups.sort((a,b)=>ord(a[0])-ord(b[0]));
+  side.innerHTML=groups.map(([g,rs])=>`<div class="sect-t">${esc(g)}</div><ul class="tm-list">${rs.map(r=>`<li><button class="tm-item${r.match?"":" off"}" type="button" data-tms="${esc(r.s.id)}" title="${esc(schoolTitle(r.s)+(r.s.location?", "+r.s.location:""))}"><span class="tm-pin tm-mini${tmCls(r).replace(" sel","")}">${esc(tmLabel(r))}</span><span style="min-width:0"><b>${esc(r.s.short)}</b><small>${esc(r.items.length===1?r.items[0].label:r.items.length?r.items.length+" programs":(r.s.location||""))}</small></span><span class="tm-mi">${esc(tmMiles(r))}</span></button></li>`).join("")}</ul>`).join("");
+  $$("[data-tms]",side).forEach(b=>b.onclick=()=>tmSelect(b.dataset.tms,true));
+  if(focus){ const b=$(`[data-tms="${CSS.escape(focus)}"]`,side); if(b){b.focus({preventScroll:true});b.scrollIntoView({block:"nearest"})} }
+}
+function tmSelect(id,fromList){
+  const prev=S.tmSel; S.tmSel=id; tmSide(id?true:prev);
+  [prev,id].forEach(k=>{ const m=k&&TM.mk[k], r=k&&TM.rows.find(x=>x.s.id===k); if(m&&r)m.setIcon(tmIcon(r)) });
+  const m=id&&TM.mk[id];
+  if(m&&fromList&&TM.cl)TM.cl.zoomToShowLayer(m,()=>{ if(!TM.map.getBounds().pad(-.1).contains(m.getLatLng()))TM.map.panTo(m.getLatLng()) });
+  if(id&&!fromList&&matchMedia("(max-width:860px)").matches)$("#tmSide").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function tmIcon(r){ const lab=tmLabel(r), w=Math.round(18+lab.length*7.4);
+  const say=schoolTitle(r.s)+(r.on?", on your list":"")+(r.match?"":", doesn't list your major");
+  return window.L.divIcon({className:"tm-ic",html:`<span class="tm-pin${tmCls(r)}" data-label="${esc(say)}">${esc(lab)}</span>`,iconSize:[w,24],iconAnchor:[w/2,12]}) }
+function tmDraw(){
+  const box=$("#tmMap"); if(!box)return;
+  leafLib().then(L=>{
+    if(box!==$("#tmMap"))return; // the view changed while the map library loaded
+    if(!TM.map||TM.el!==box){
+      if(TM.map)TM.map.remove(); TM.el=box; TM.key=""; TM.mk={}; TM.home=null;
+      const m=TM.map=L.map(box,{scrollWheelZoom:false,zoomSnap:.5,minZoom:5,maxZoom:16,maxBounds:[[44.2,-127],[50.3,-115]]});
+      m.attributionControl.setPrefix(false);
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'}).addTo(m);
+      m.on("click",()=>m.scrollWheelZoom.enable()); box.addEventListener("focus",()=>m.scrollWheelZoom.enable()); box.addEventListener("mouseleave",()=>m.scrollWheelZoom.disable());
+      TM.cl=L.markerClusterGroup({showCoverageOnHover:false,maxClusterRadius:36,spiderfyOnMaxZoom:true,
+        iconCreateFunction:c=>{ const ms=c.getAllChildMarkers(), home=ms.some(x=>x.options.tmHome), n=ms.filter(x=>!x.options.tmHome).length, on=ms.some(x=>x.options.tmOn), off=ms.every(x=>x.options.tmOff||x.options.tmHome);
+          const lab=home?"EvCC +"+n:String(n), w=home?Math.round(20+lab.length*7.2):34;
+          return L.divIcon({className:"tm-ic",html:`<span class="tm-cl${home?" home":on?" on":off?" off":""}" data-label="${esc((home?"EvCC and "+n+" more":n+" schools")+", press Enter to zoom in")}">${esc(lab)}</span>`,iconSize:[w,home?26:34],iconAnchor:[w/2,home?13:17]}) }}).addTo(m);
+      // screen reader names for pins and clusters, and Enter on a cluster zooms in (Leaflet only opens popups on Enter)
+      m.on("layeradd",e=>{ const el=e.layer.getElement&&e.layer.getElement(), c=el&&el.querySelector("[data-label]"); if(c){el.setAttribute("role","button");el.setAttribute("aria-label",c.dataset.label)} });
+      TM.cl.on("clusterkeypress",e=>{ if(e.originalEvent.keyCode!==13)return; const c=e.layer, b=c.getBounds(); if(m.getZoom()>=m.getMaxZoom()||b.getNorthEast().equals(b.getSouthWest()))c.spiderfy(); else{c.zoomToBounds({padding:[40,40]}); m.getContainer().focus({preventScroll:true})} });
+    }
+    const m=TM.map, rows=TM.rows.filter(r=>r.pt); TM.cl.clearLayers(); TM.mk={};
+    const pts=[CAMPUS.evcc];
+    if(!TM.home)TM.home=L.marker(CAMPUS.evcc,{icon:L.divIcon({className:"tm-ic",html:`<span class="tm-pin home" aria-hidden="true">EvCC</span>`,iconSize:[52,24],iconAnchor:[26,12]}),keyboard:false,interactive:true,zIndexOffset:-1000}).bindTooltip("Everett Community College: you start here",{direction:"top",offset:[0,-12]});
+    if(rows.some(r=>r.s.id==="evcc"))TM.home.remove(); else TM.home.addTo(m);
+    rows.forEach(r=>{ pts.push(r.pt);
+      const mk=L.marker(r.pt,{icon:tmIcon(r),title:schoolTitle(r.s),riseOnHover:true,tmOn:r.on,tmOff:!r.match,tmHome:r.s.id==="evcc"});
+      mk.on("click",()=>tmSelect(r.s.id,false)); mk.on("keypress",e=>{ if(e.originalEvent.keyCode===13)tmSelect(r.s.id,false) });
+      TM.cl.addLayer(mk); TM.mk[r.s.id]=mk });
+    const key=S.goal+"|"+rows.map(r=>r.s.id).join(",");
+    if(key!==TM.key){ TM.key=key; if(pts.length>1)m.fitBounds(L.latLngBounds(pts),{padding:[36,36],maxZoom:11}); else m.fitBounds(TM_VIEWS.all) }
+    setTimeout(()=>m.invalidateSize(),0);
+  }).catch(e=>{ console.warn("Transfer map:",e); if(box===$("#tmMap"))box.innerHTML=`<div class="warnbox tm-fail">The map didn't load. It needs cdnjs.cloudflare.com and openstreetmap.org. Every school is in the list.</div>` });
+}
+
 /* ---------- data & sources ---------- */
 function renderData(){
   const rows=[]; D.schools.forEach(s=>s.programs.filter(p=>D.majors[p.major]&&p.major!=="other").forEach(p=>rows.push({s,p})));
@@ -1719,13 +1906,13 @@ function renderData(){
 /* ---------- views ---------- */
 function fixSchool(){ if(S.goal!=="transfer"){S.schools=[];S.focus="";S.school="";return} S.schools=S.schools.filter(id=>S.majors.some(m=>schoolProg(D.schools.find(s=>s.id===id),m))); if(!S.schools.length){const s=D.schools.find(s=>schoolProg(s,S.majors[0]||S.major));if(s)S.schools=[s.id]} syncFocus(); syncFocusSchoolForMajor() }
 function save(){ S.byGoal[S.goal]={majors:S.majors.slice(),major:S.major,schools:S.schools.slice(),track:S.track}; store.set("goal",S.goal); store.set("byGoal",S.byGoal); store.set("sel",{majors:S.majors,major:S.major,schools:S.schools,track:S.track}) }
-const GOAL_VIEWS={transfer:["route","map","compare","checklist"],work:["route","map","careers","checklist"],explore:["explore"]};
+const GOAL_VIEWS={transfer:["route","map","compare","tmap","checklist"],work:["route","map","careers","tmap","checklist"],explore:["explore"]};
 function setGoal(g){ save(); S.goal=g; const b=S.byGoal[g]||(g==="work"?{majors:[DEF_CAREER()],major:DEF_CAREER(),schools:[],track:null}:{majors:[DEF_MAJOR],major:DEF_MAJOR,schools:[],track:null});
   if(g!=="explore"){S.majors=b.majors.filter(m=>D.majors[m]&&(g==="work"?!!CAREER(m):!CAREER(m)));if(!S.majors.length)S.majors=[g==="work"?DEF_CAREER():DEF_MAJOR];S.major=S.majors.includes(b.major)?b.major:S.majors[0];S.schools=(b.schools||[]).slice();S.track=b.track||null;autoTrack();fixSchool()}
   save(); renderTrip(); applyGoal(true) }
-function applyGoal(go){ const vs=GOAL_VIEWS[S.goal]; $$("nav.views button").forEach(b=>{const v=b.dataset.view; b.hidden=!vs.includes(v)||(v==="route"&&!S.routeOn)}); $(".top-right").hidden=S.goal==="explore";
+function applyGoal(go){ const vs=GOAL_VIEWS[S.goal]; $('nav.views [data-view="tmap"]').textContent=S.goal==="work"?"Next steps map":"Transfer map"; $$("nav.views button").forEach(b=>{const v=b.dataset.view; b.hidden=!vs.includes(v)||(v==="route"&&!S.routeOn)}); $(".top-right").hidden=S.goal==="explore";
   if(go||!vs.includes(S.view))setView(S.goal==="explore"?"explore":(S.routeOn?"route":"map")) }
-function rerender(){ if(S.view==="map"){ const ak=[...areasSel()].sort().join("+")+"|"+S.majors.join(",")+"|"+S.schools.join(","); if($("#mapsvg")&&ak===S.mapKey){paint();renderLegend()}else{S.mapKey=ak;computeLayout();renderMap()} } else if(S.view==="compare")renderCompare(); else if(S.view==="checklist")renderChecklist(); else if(S.view==="careers")renderCareers(); else if(S.view==="explore")renderExplore(); else if(S.view==="data")renderData(); else renderRoute() }
+function rerender(){ if(S.view==="map"){ const ak=[...areasSel()].sort().join("+")+"|"+S.majors.join(",")+"|"+S.schools.join(","); if($("#mapsvg")&&ak===S.mapKey){paint();renderLegend()}else{S.mapKey=ak;computeLayout();renderMap()} } else if(S.view==="compare")renderCompare(); else if(S.view==="tmap")renderTmap(); else if(S.view==="checklist")renderChecklist(); else if(S.view==="careers")renderCareers(); else if(S.view==="explore")renderExplore(); else if(S.view==="data")renderData(); else renderRoute() }
 function applyRouteToggle(go){ $('nav.views [data-view="route"]').hidden=!S.routeOn||S.goal==="explore"; if(!D)return; renderTrip(); if(go)setView(S.routeOn?"route":(S.view==="route"?"map":S.view)) }
 function setView(v){ if(v==="route"&&!S.routeOn)v="map"; if(S.goal&&v!=="data"&&!GOAL_VIEWS[S.goal].includes(v))v=S.goal==="explore"?"explore":"map"; if(S.drawer&&v==="data")closeDrawer(); S.view=v; $$("nav.views button").forEach(b=>{if(b.dataset.view===v)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")}); $("#app").innerHTML=""; rerender(); try{history.replaceState(null,"","#"+v)}catch(e){} }
 
@@ -1740,6 +1927,7 @@ async function boot(){
   S.schools=[]; S.majors=[DEF_MAJOR]; S.major=DEF_MAJOR; const sel=S.goal==="work"?S.byGoal.work:(S.byGoal.transfer||store.get("sel",null));
   if(S.goal==="work"&&!sel){S.majors=[DEF_CAREER()];S.major=DEF_CAREER();S.schools=[]}
   if(sel&&D.majors[sel.major]){S.major=sel.major;S.majors=(sel.majors||[sel.major]).filter(m=>D.majors[m]&&(S.goal==="work"?!!CAREER(m):!CAREER(m)));if(!S.majors.length)S.majors=[S.goal==="work"?DEF_CAREER():DEF_MAJOR];if(!S.majors.includes(S.major))S.major=S.majors[0];S.schools=(sel.schools||[sel.school]).filter(id=>D.schools.find(s=>s.id===id));S.track=sel.track||null}
+  S.tmAll=!!store.get("tmAll",false); S.tmType=store.get("tmType","all"); S.tmSel="";
   S.routeOn=!!store.get("routeOn",false); $("#routeToggle").checked=S.routeOn; applyRouteToggle(false);
   $("#routeToggle").onchange=e=>{S.routeOn=e.target.checked;store.set("routeOn",S.routeOn);applyRouteToggle(true)};
   S.done=new Set(store.get("done",[])); S.who=store.get("who",{})||{}; S.advisor=false; S.listView=!!store.get("listView",false); S.ckLayout=store.get("ckLayout","sep")==="sbs"?"sbs":"sep"; Object.assign(S.plan,store.get("plan",{})); if(!S.plan.pins||typeof S.plan.pins!=="object")S.plan.pins={}; S.doneSlots=store.get("doneSlots",{})||{}; dndInit();
@@ -1755,7 +1943,7 @@ async function boot(){
   if(window.innerWidth<700)S.zoom=.72; renderTrip();
   $("#footMeta").innerHTML=`Demo built from the EvCC ${esc(D.meta.catalog_year)} catalog and university transfer pages checked ${esc(D.meta.checked)}. Not an official EvCC publication. Always confirm requirements with an advisor and the university. Your completed courses are saved only in this browser.`;
   $("#dataLink").onclick=()=>{setView("data");window.scrollTo({top:0,behavior:"smooth"})};
-  const h=(location.hash||"").slice(1); applyGoal(false); setView(["route","map","compare","checklist","data","careers","explore"].includes(h)?h:(S.goal==="explore"?"explore":S.routeOn?"route":"map"));
+  const h=(location.hash||"").slice(1); applyGoal(false); setView(["route","map","compare","tmap","checklist","data","careers","explore"].includes(h)?h:(S.goal==="explore"?"explore":S.routeOn?"route":"map"));
 }
 boot();
 })();
